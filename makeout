@@ -1,0 +1,288 @@
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-gcc -march=4281 -g -fno-optimize-sibling-calls -fno-builtin -c -EL -Os -G0 -Wall -mips16 -mno-data-in-code   -I./src/include -I/work/rsdk-4.9.2/cygwin/newlib/include -I./romsrc/include  ./src/OOBMAC.c -o obj/OOBMAC_sp.o
+./src/OOBMAC.c: In function 'test_free_oobmac':
+./src/OOBMAC.c:795:35: warning: comparison between pointer and integer
+   if(PA2VA(txdesc->BufferAddress) != NULL){
+                                   ^
+In file included from ./src/include/bsp.h:12:0,
+                 from ./src/OOBMAC.c:3:
+./src/include/bsp_fp_revA.h:372:23: warning: passing argument 1 of 'free' makes pointer from integer without a cast
+ #define PA2VA(vaddr)  ((INT32U) (vaddr) | 0x80000000)
+                       ^
+./src/OOBMAC.c:796:9: note: in expansion of macro 'PA2VA'
+    free(PA2VA(txdesc->BufferAddress));
+         ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:85:7: note: expected 'void *' but argument is of type 'INT32U'
+ _VOID _EXFUN_NOTHROW(free,(_PTR));
+       ^
+./src/OOBMAC.c:802:35: warning: comparison between pointer and integer
+   if(PA2VA(rxdesc->BufferAddress) != NULL){
+                                   ^
+In file included from ./src/include/bsp.h:12:0,
+                 from ./src/OOBMAC.c:3:
+./src/include/bsp_fp_revA.h:372:23: warning: passing argument 1 of 'free' makes pointer from integer without a cast
+ #define PA2VA(vaddr)  ((INT32U) (vaddr) | 0x80000000)
+                       ^
+./src/OOBMAC.c:803:9: note: in expansion of macro 'PA2VA'
+    free(PA2VA(rxdesc->BufferAddress));
+         ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:85:7: note: expected 'void *' but argument is of type 'INT32U'
+ _VOID _EXFUN_NOTHROW(free,(_PTR));
+       ^
+./src/OOBMAC.c: In function 'bsp_oobmac_init':
+./src/OOBMAC.c:883:2: warning: implicit declaration of function 'PacketFillDefault' [-Wimplicit-function-declaration]
+  PacketFillDefault();
+  ^
+./src/OOBMAC.c:819:25: warning: unused variable 'pstTCAM_Table' [-Wunused-variable]
+  TCAM_Entry_Setting_st *pstTCAM_Table=NULL;
+                         ^
+./src/OOBMAC.c:818:24: warning: unused variable 'stTCAM_Table' [-Wunused-variable]
+  TCAM_Entry_Setting_st stTCAM_Table={0,};
+                        ^
+./src/OOBMAC.c:817:8: warning: unused variable 'loop' [-Wunused-variable]
+  INT8U loop=1;
+        ^
+./src/OOBMAC.c:816:8: warning: unused variable 'Valid' [-Wunused-variable]
+  INT8U Valid=0;
+        ^
+./src/OOBMAC.c:815:9: warning: unused variable 'DataBit' [-Wunused-variable]
+  INT16U DataBit=0;
+         ^
+./src/OOBMAC.c:814:9: warning: unused variable 'test_num' [-Wunused-variable]
+  INT16U test_num;
+         ^
+./src/OOBMAC.c:813:9: warning: unused variable 'entry_number' [-Wunused-variable]
+  INT16U entry_number;
+         ^
+./src/OOBMAC.c:812:8: warning: variable 'RCRvalue' set but not used [-Wunused-but-set-variable]
+  INT8U RCRvalue;
+        ^
+./src/OOBMAC.c: In function 'bsp_oobmac_disable':
+./src/OOBMAC.c:1085:8: warning: variable 'MAC_CMD1' set but not used [-Wunused-but-set-variable]
+  INT8U MAC_CMD1;
+        ^
+./src/OOBMAC.c:1084:8: warning: variable 'TPPoll' set but not used [-Wunused-but-set-variable]
+  INT8U TPPoll;
+        ^
+./src/OOBMAC.c: In function 'bsp_oobmac_init_packet':
+./src/OOBMAC.c:1648:9: warning: unused variable 'sum' [-Wunused-variable]
+  INT32U sum;
+         ^
+./src/OOBMAC.c: In function 'bsp_oobmac_send':
+./src/OOBMAC.c:1818:11: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type
+    memset(pktbuf, 0xff, 6);
+           ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/string.h:25:7: note: expected 'void *' but argument is of type 'volatile INT8U *'
+ _PTR  _EXFUN(memset,(_PTR, int, size_t));
+       ^
+./src/OOBMAC.c:1796:18: warning: unused variable 'pkttotalnum' [-Wunused-variable]
+  INT32U pktlen=0,pkttotalnum=0,dataoffset=0;
+                  ^
+./src/OOBMAC.c:1796:9: warning: unused variable 'pktlen' [-Wunused-variable]
+  INT32U pktlen=0,pkttotalnum=0,dataoffset=0;
+         ^
+./src/OOBMAC.c:1794:10: warning: unused variable 'txdesc' [-Wunused-variable]
+  TXdesc *txdesc[4];
+          ^
+./src/OOBMAC.c:1792:18: warning: unused variable 'nextProtocol' [-Wunused-variable]
+  int i, sendCnt, nextProtocol,k;
+                  ^
+./src/OOBMAC.c:1792:9: warning: unused variable 'sendCnt' [-Wunused-variable]
+  int i, sendCnt, nextProtocol,k;
+         ^
+./src/OOBMAC.c:1792:6: warning: unused variable 'i' [-Wunused-variable]
+  int i, sendCnt, nextProtocol,k;
+      ^
+./src/OOBMAC.c: In function 'bsp_oobmac_test':
+./src/OOBMAC.c:1974:18: warning: passing argument 1 of 'fillDummyData' discards 'volatile' qualifier from pointer target type
+    fillDummyData(&pktbuf[12], 1, txd->Length);
+                  ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:808:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ fillDummyData(INT8U *pktBuf, const INT8U startValue, const int len);
+                 ^
+./src/OOBMAC.c:1979:18: warning: passing argument 1 of 'setMACHeader' discards 'volatile' qualifier from pointer target type
+     setMACHeader(pktbuf, etherProtocol);
+                  ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:809:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ setMACHeader(INT8U *pktBuf, INT8U *ethernetPro);
+                 ^
+./src/OOBMAC.c:1983:18: warning: passing argument 1 of 'setMACHeader' discards 'volatile' qualifier from pointer target type
+     setMACHeader(pktbuf, etherProtocol);
+                  ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:809:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ setMACHeader(INT8U *pktBuf, INT8U *ethernetPro);
+                 ^
+./src/OOBMAC.c:1984:19: warning: passing argument 1 of 'setIPv4Header' discards 'volatile' qualifier from pointer target type
+     setIPv4Header(&pktbuf[14], 5, 0xff);  //IPv4 headr length 20;
+                   ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:810:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ setIPv4Header(INT8U *pktBuf, const INT8U len, const int nextProtocol);
+                 ^
+./src/OOBMAC.c:1988:18: warning: passing argument 1 of 'setMACHeader' discards 'volatile' qualifier from pointer target type
+     setMACHeader(pktbuf, etherProtocol);
+                  ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:809:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ setMACHeader(INT8U *pktBuf, INT8U *ethernetPro);
+                 ^
+./src/OOBMAC.c:1989:19: warning: passing argument 1 of 'setIPv6Header' discards 'volatile' qualifier from pointer target type
+     setIPv6Header(&pktbuf[14], pktType);
+                   ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:811:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ setIPv6Header(INT8U *pktBuf, const int pktType);
+                 ^
+./src/OOBMAC.c:1990:18: warning: passing argument 1 of 'pseudoheader' discards 'volatile' qualifier from pointer target type
+     pseudoheader(pktbuf, pktType, txd->TCPHO-14);  //fill pseudo header checksum in TCP/UDP checksum field
+                  ^
+In file included from ./src/OOBMAC.c:6:0:
+./src/include/OOBMAC.h:807:17: note: expected 'INT8U *' but argument is of type 'volatile INT8U *'
+ void __inline__ pseudoheader(INT8U *sotreHere,const int pktType,const INT8U iplen);
+                 ^
+./src/OOBMAC.c:2092:4: warning: implicit declaration of function 'pseudoheader_multiDesc' [-Wimplicit-function-declaration]
+    pseudoheader_multiDesc(&((INT8U*)PA2VA(txdesc[2]->BufferAddress))[16], pktType, iplen*4); //HW has offload it
+    ^
+./src/OOBMAC.c:2099:11: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type
+    memset(pktbuf, 0x88, 4);
+           ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/string.h:25:7: note: expected 'void *' but argument is of type 'volatile INT8U *'
+ _PTR  _EXFUN(memset,(_PTR, int, size_t));
+       ^
+./src/OOBMAC.c: In function 'pseudoheader':
+./src/OOBMAC.c:2142:9: warning: unused variable 'sum' [-Wunused-variable]
+  INT32U sum;
+         ^
+./src/OOBMAC.c: At top level:
+./src/OOBMAC.c:2208:17: warning: conflicting types for 'pseudoheader_multiDesc'
+ void __inline__ pseudoheader_multiDesc(INT8U *protocolhdr,const int pktType,const INT8U iplen)
+                 ^
+./src/OOBMAC.c:2092:4: note: previous implicit declaration of 'pseudoheader_multiDesc' was here
+    pseudoheader_multiDesc(&((INT8U*)PA2VA(txdesc[2]->BufferAddress))[16], pktType, iplen*4); //HW has offload it
+    ^
+./src/OOBMAC.c: In function 'RKVM_OOBMAC_send':
+./src/OOBMAC.c:2407:10: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type
+   memset(pktBuf, 0xff, 6);  //DA
+          ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/string.h:25:7: note: expected 'void *' but argument is of type 'volatile INT8U *'
+ _PTR  _EXFUN(memset,(_PTR, int, size_t));
+       ^
+./src/OOBMAC.c:2419:42: warning: passing argument 2 of 'dma_large_RKVM' makes integer from pointer without a cast
+   dma_large_RKVM((INT32U)length_payload, payload_ptr, &pktBuf[14], &dma_info0);
+                                          ^
+./src/OOBMAC.c:12:13: note: expected 'INT32U' but argument is of type 'INT8U *'
+ extern void dma_large_RKVM(INT32U dma_size,INT32U src, INT32U des, struct DMA_INFO *dma_p);
+             ^
+./src/OOBMAC.c:2419:55: warning: passing argument 3 of 'dma_large_RKVM' makes integer from pointer without a cast
+   dma_large_RKVM((INT32U)length_payload, payload_ptr, &pktBuf[14], &dma_info0);
+                                                       ^
+./src/OOBMAC.c:12:13: note: expected 'INT32U' but argument is of type 'volatile INT8U *'
+ extern void dma_large_RKVM(INT32U dma_size,INT32U src, INT32U des, struct DMA_INFO *dma_p);
+             ^
+./src/OOBMAC.c:2456:11: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type
+    memset(pktBuf, 0xff, 6);  //DA
+           ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/string.h:25:7: note: expected 'void *' but argument is of type 'volatile INT8U *'
+ _PTR  _EXFUN(memset,(_PTR, int, size_t));
+       ^
+./src/OOBMAC.c:2469:66: warning: passing argument 2 of 'dma_large_RKVM' makes integer from pointer without a cast
+     dma_large_RKVM((INT32U)(length_payload-1496*(send_count-1)), payload_ptr+(send_count-1)*1496, &pktBuf[14], &dma_info0);
+                                                                  ^
+./src/OOBMAC.c:12:13: note: expected 'INT32U' but argument is of type 'INT8U *'
+ extern void dma_large_RKVM(INT32U dma_size,INT32U src, INT32U des, struct DMA_INFO *dma_p);
+             ^
+./src/OOBMAC.c:2469:99: warning: passing argument 3 of 'dma_large_RKVM' makes integer from pointer without a cast
+     dma_large_RKVM((INT32U)(length_payload-1496*(send_count-1)), payload_ptr+(send_count-1)*1496, &pktBuf[14], &dma_info0);
+                                                                                                   ^
+./src/OOBMAC.c:12:13: note: expected 'INT32U' but argument is of type 'volatile INT8U *'
+ extern void dma_large_RKVM(INT32U dma_size,INT32U src, INT32U des, struct DMA_INFO *dma_p);
+             ^
+./src/OOBMAC.c:2473:34: warning: passing argument 2 of 'dma_large_RKVM' makes integer from pointer without a cast
+     dma_large_RKVM((INT32U)1496, payload_ptr+(i-1)*1496, &pktBuf[14], &dma_info0);
+                                  ^
+./src/OOBMAC.c:12:13: note: expected 'INT32U' but argument is of type 'INT8U *'
+ extern void dma_large_RKVM(INT32U dma_size,INT32U src, INT32U des, struct DMA_INFO *dma_p);
+             ^
+./src/OOBMAC.c:2473:58: warning: passing argument 3 of 'dma_large_RKVM' makes integer from pointer without a cast
+     dma_large_RKVM((INT32U)1496, payload_ptr+(i-1)*1496, &pktBuf[14], &dma_info0);
+                                                          ^
+./src/OOBMAC.c:12:13: note: expected 'INT32U' but argument is of type 'volatile INT8U *'
+ extern void dma_large_RKVM(INT32U dma_size,INT32U src, INT32U des, struct DMA_INFO *dma_p);
+             ^
+./src/OOBMAC.c: In function 'bsp_oobmac_send_VGA':
+./src/OOBMAC.c:2528:9: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type
+  memset(pktbuf, 0xff, 6);
+         ^
+In file included from /work/rsdk-4.9.2/cygwin/newlib/include/stdlib.h:11:0,
+                 from ./src/OOBMAC.c:1:
+/work/rsdk-4.9.2/cygwin/newlib/include/string.h:25:7: note: expected 'void *' but argument is of type 'volatile INT8U *'
+ _PTR  _EXFUN(memset,(_PTR, int, size_t));
+       ^
+./src/OOBMAC.c:2502:41: warning: unused variable 'dataoffset' [-Wunused-variable]
+  volatile INT32U pktlen=0,pkttotalnum=0,dataoffset=0,j,Len;
+                                         ^
+./src/OOBMAC.c:2502:27: warning: unused variable 'pkttotalnum' [-Wunused-variable]
+  volatile INT32U pktlen=0,pkttotalnum=0,dataoffset=0,j,Len;
+                           ^
+./src/OOBMAC.c:2502:18: warning: unused variable 'pktlen' [-Wunused-variable]
+  volatile INT32U pktlen=0,pkttotalnum=0,dataoffset=0,j,Len;
+                  ^
+./src/OOBMAC.c:2501:17: warning: variable 'Block_line' set but not used [-Wunused-but-set-variable]
+  volatile INT8U Block_line;
+                 ^
+./src/OOBMAC.c:2500:19: warning: unused variable 'txdesc' [-Wunused-variable]
+  volatile TXdesc *txdesc[4];
+                   ^
+./src/OOBMAC.c:2498:27: warning: unused variable 'nextProtocol' [-Wunused-variable]
+  volatile int i, sendCnt, nextProtocol,k;
+                           ^
+./src/OOBMAC.c:2498:18: warning: unused variable 'sendCnt' [-Wunused-variable]
+  volatile int i, sendCnt, nextProtocol,k;
+                  ^
+./src/OOBMAC.c: In function 'test_flow_OOBMAC':
+./src/OOBMAC.c:2680:105: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+     REG32(OOBMAC_IOBASE + MAC_DUMMY_INFORM_IB_EVENT) = REG32(OOBMAC_IOBASE + MAC_DUMMY_INFORM_IB_EVENT) & (~DWBIT16) | DWBIT17;
+                                                                                                         ^
+./src/OOBMAC.c:2685:105: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+     REG32(OOBMAC_IOBASE + MAC_DUMMY_INFORM_IB_EVENT) = REG32(OOBMAC_IOBASE + MAC_DUMMY_INFORM_IB_EVENT) & (~DWBIT16) | DWBIT18;  //set checksum err bit 
+                                                                                                         ^
+./src/OOBMAC.c: In function 'OOBMAC_Test_Task':
+./src/OOBMAC.c:2730:10: warning: unused variable 'data_temp' [-Wunused-variable]
+   INT32U data_temp=0;
+          ^
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-ld romosobj/*.o obj/app_sp.o obj/smbus_sp.o obj/OOBMAC_sp.o obj/OOBMAC_COMMON_sp.o obj/rkvm_sp.o obj/dma_sp.o obj/kcs_sp.o obj/CMAC_Test_sp.o obj/VPD_sp.o obj/TCRF_sp.o obj/ssh_sp.o obj/dash_sp.o obj/client_sp.o obj/tcr_sp.o obj/language_sp.o obj/dummy_sp.o obj/bsp_sp.o obj/usb_sp.o obj/usb_interrupt_test_sp.o obj/ehci_sp.o obj/usb_ata_sp.o obj/usbdesc_sp.o obj/ehci_test_sp.o obj/init_opt.o obj/telnet_opt.o obj/flash_opt.o obj/asf_opt.o obj/genpage_opt.o obj/dram_opt.o obj/vnc_opt.o obj/des_opt.o obj/vga_opt.o obj/post_opt.o obj/http_opt.o obj/tls_opt.o obj/htm_opt.o obj/wcom_opt.o obj/const.o obj/hook.o obj/8168h.o obj/PCIE_HOST.o -T ./obj/linker.ld -o ./obj/dash_dbg.exe -N -n -EL -G0 -L. --defsym __BUILD_DATE=$(date +'%Y%m%d') --defsym __BUILD_NUMBER=$(cat .buildnum) --defsym __MAJOR_VER=1 --defsym __MINOR_VER=3  --defsym __EXTRA_VER=1 -Map ./obj/dash.map -lrom
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-ld:./obj/linker.ld:72: warning: memory region `ddr' not declared
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-objdump -h -D -l --show-raw-insn -m mips:4281 -S ./obj/dash_dbg.exe > ./obj/dash-4281.s
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-strip --remove-section=.comment ./obj/dash_dbg.exe -o ./obj/dash.exe
+#/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-strip --remove-section=.text --remove-section=.rodata --remove-section=.data --remove-section=.init --remove-section=.sram ./obj/dash_dbg.exe -O binary ./obj/dash_NT.exe
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-strip --remove-section=.text --remove-section=.rodata --remove-section=.data --remove-section=.init --remove-section=.sram --remove-section=.conf --remove-section=.wake --remove-section=.language_en --remove-section=.language_2 ./obj/dash_dbg.exe -o ./obj/dash_NT.exe
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+BFD: ./obj/dash_dbg.exe: warning: Empty loadable segment detected, is this intentional ?
+
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-objdump -h -D -l --show-raw-insn -m mips:4281 -S ./obj/dash_NT.exe > ./obj/dash-4281_NT.s
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-objcopy --weaken ./obj/dash_dbg.exe dashrom.elf

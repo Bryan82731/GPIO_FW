@@ -1,0 +1,224 @@
+Archive member included because of file (symbol)
+
+./libc.a(lib_a-memcmp.o)      app.o (memcmp)
+./libc.a(lib_a-memset.o)      app.o (memset)
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 rlx_cache.o
+ .reginfo       0x0000000000000000       0x18 crt0.o
+ .reginfo       0x0000000000000000       0x18 spi.o
+ .reginfo       0x0000000000000000       0x18 ./libc.a(lib_a-memcmp.o)
+ .reginfo       0x0000000000000000       0x18 ./libc.a(lib_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sram             0x0000000080200000 0x0000000000004000
+dmem             0x0000000080100200 0x0000000000001000
+rom              0x0000000080300000 0x0000000000040000
+flash            0x0000000080400000 0x0000000000080000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD app.o
+LOAD rlx_cache.o
+LOAD crt0.o
+LOAD spi.o
+
+.boot           0x0000000080200000       0x78
+ *(.boot)
+ .boot          0x0000000080200000       0x78 crt0.o
+                0x0000000080200000                _boot
+                0x0000000080200078                _end_boot = .
+
+.text           0x0000000080200078     0x1818
+                0x0000000080200078                __text_begin = .
+ *(.text)
+ .text          0x0000000080200078      0x684 app.o
+                0x0000000080200078                disable_master_engine
+                0x00000000802000d4                dummy
+                0x00000000802000f4                dummy0
+                0x0000000080200114                dummy1
+                0x0000000080200134                dummy2
+                0x0000000080200154                dummy3
+                0x0000000080200174                dummy4
+                0x0000000080200194                dummy5
+                0x00000000802001b4                dummy6
+                0x00000000802001d4                dummy7
+                0x00000000802001f4                dummy8
+                0x0000000080200214                main
+ .text          0x00000000802006fc      0x3c4 rlx_cache.o
+                0x00000000802006fc                rlx_dcache_flush
+                0x0000000080200778                rlx_dcache_invalidate
+                0x00000000802007f4                rlx_dcache_store
+                0x0000000080200870                rlx_dcache_invalidate_all
+                0x00000000802008c4                rlx_icache_invalidate_all
+                0x0000000080200918                rlx_icache_lock
+                0x00000000802009c8                rlx_dmem_enable
+                0x0000000080200a2c                rlx_imem_refill
+ .text          0x0000000080200ac0        0x0 crt0.o
+ .text          0x0000000080200ac0      0xcf0 spi.o
+                0x0000000080200ac0                ssi_wait_nobusy
+                0x0000000080200af0                spi_get_status
+                0x0000000080200b54                spi_chip_erase
+                0x0000000080200bbc                spi_blk_erase
+                0x0000000080200c50                spi_command
+                0x0000000080200ce4                spi_se_unprotect
+                0x0000000080200d78                spi_se_protect
+                0x0000000080200e0c                spi_se_erase
+                0x0000000080200ea0                spi_wait_busy
+                0x0000000080200f04                spi_set_status
+                0x0000000080200f7c                spi_dis_write
+                0x0000000080200fd0                spi_enable_write
+                0x0000000080201024                spi_set_protect_mem
+                0x00000000802010b0                spi_read_id
+                0x0000000080201134                spi_read_ect_id
+                0x00000000802011b0                spi_read_mf_id
+                0x000000008020123c                spi_enter_dp
+                0x0000000080201284                spi_release_dp
+                0x00000000802012cc                spi_write_byte
+                0x0000000080201368                spi_read_byte
+                0x00000000802013f4                spi_fastread_byte
+                0x0000000080201480                spi_write
+                0x000000008020152c                spi_write_word
+                0x00000000802015ec                spi_read_word
+                0x00000000802016d0                spi_fastread_word
+ .text          0x00000000802017b0       0x3c ./libc.a(lib_a-memcmp.o)
+                0x00000000802017b0                memcmp
+ .text          0x00000000802017ec       0xa4 ./libc.a(lib_a-memset.o)
+                0x00000000802017ec                memset
+                0x0000000080201890                __text_end = .
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.data           0x0000000080201890        0x0
+                0x0000000080201890                __data_begin = .
+ *(.data)
+ .data          0x0000000080201890        0x0 app.o
+ .data          0x0000000080201890        0x0 rlx_cache.o
+ .data          0x0000000080201890        0x0 crt0.o
+ .data          0x0000000080201890        0x0 spi.o
+ .data          0x0000000080201890        0x0 ./libc.a(lib_a-memcmp.o)
+ .data          0x0000000080201890        0x0 ./libc.a(lib_a-memset.o)
+ *(.sdata)
+ *(.lit4)
+ *(.lit8)
+                0x0000000080201890                . = ALIGN (0x4)
+                0x0000000080201890                __data_end = .
+                0x0000000080201890                _gp = ALIGN (0x10)
+
+.bss            0x0000000080201890      0x430
+                0x0000000080201890                . = ALIGN (0x4)
+                0x0000000080201890                __bss_start = .
+ *(.sbss)
+ *(.bss)
+ .bss           0x0000000080201890        0x1 app.o
+ .bss           0x0000000080201891        0x0 rlx_cache.o
+ *fill*         0x0000000080201891        0xf 
+ .bss           0x00000000802018a0      0x420 crt0.o
+                0x00000000802018a0                _stack_lo
+                0x0000000080201ca0                _stack_hi
+ .bss           0x0000000080201cc0        0x0 spi.o
+ .bss           0x0000000080201cc0        0x0 ./libc.a(lib_a-memcmp.o)
+ .bss           0x0000000080201cc0        0x0 ./libc.a(lib_a-memset.o)
+ *(.scommon)
+ *(COMMON)
+                0x0000000080201cc0                . = ALIGN (0x4)
+                0x0000000080201cc0                __bss_end = .
+LOAD ./libc.a
+LOAD ./libgcc.a
+OUTPUT(dash_dbg.exe elf32-littlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 app.o
+
+.pdr            0x0000000000000000      0x600
+ .pdr           0x0000000000000000      0x180 app.o
+ .pdr           0x0000000000000180      0x100 rlx_cache.o
+ .pdr           0x0000000000000280       0x20 crt0.o
+ .pdr           0x00000000000002a0      0x320 spi.o
+ .pdr           0x00000000000005c0       0x20 ./libc.a(lib_a-memcmp.o)
+ .pdr           0x00000000000005e0       0x20 ./libc.a(lib_a-memset.o)
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 app.o
+ .mdebug.abi32  0x0000000000000000        0x0 rlx_cache.o
+ .mdebug.abi32  0x0000000000000000        0x0 ./libc.a(lib_a-memcmp.o)
+ .mdebug.abi32  0x0000000000000000        0x0 ./libc.a(lib_a-memset.o)
+
+.comment        0x0000000000000000       0x41
+ .comment       0x0000000000000000       0x41 app.o
+                                         0x42 (size before relaxing)
+ .comment       0x0000000000000000       0x42 rlx_cache.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 app.o
+ .gnu.attributes
+                0x0000000000000010       0x10 rlx_cache.o
+
+.debug_info     0x0000000000000000      0x8c7
+ .debug_info    0x0000000000000000      0x217 app.o
+ .debug_info    0x0000000000000217      0x23c rlx_cache.o
+ .debug_info    0x0000000000000453       0x50 crt0.o
+ .debug_info    0x00000000000004a3       0x4f spi.o
+ .debug_info    0x00000000000004f2      0x1b1 ./libc.a(lib_a-memcmp.o)
+ .debug_info    0x00000000000006a3      0x224 ./libc.a(lib_a-memset.o)
+
+.debug_abbrev   0x0000000000000000      0x2ed
+ .debug_abbrev  0x0000000000000000       0xfd app.o
+ .debug_abbrev  0x00000000000000fd       0xb2 rlx_cache.o
+ .debug_abbrev  0x00000000000001af       0x14 crt0.o
+ .debug_abbrev  0x00000000000001c3       0x14 spi.o
+ .debug_abbrev  0x00000000000001d7       0x7f ./libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x0000000000000256       0x97 ./libc.a(lib_a-memset.o)
+
+.debug_aranges  0x0000000000000000       0xc0
+ .debug_aranges
+                0x0000000000000000       0x20 app.o
+ .debug_aranges
+                0x0000000000000020       0x20 rlx_cache.o
+ .debug_aranges
+                0x0000000000000040       0x20 crt0.o
+ .debug_aranges
+                0x0000000000000060       0x20 spi.o
+ .debug_aranges
+                0x0000000000000080       0x20 ./libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000000000000a0       0x20 ./libc.a(lib_a-memset.o)
+
+.debug_line     0x0000000000000000      0x71e
+ .debug_line    0x0000000000000000      0x105 app.o
+ .debug_line    0x0000000000000105       0xd2 rlx_cache.o
+ .debug_line    0x00000000000001d7       0x4c crt0.o
+ .debug_line    0x0000000000000223      0x33d spi.o
+ .debug_line    0x0000000000000560       0xd1 ./libc.a(lib_a-memcmp.o)
+ .debug_line    0x0000000000000631       0xed ./libc.a(lib_a-memset.o)
+
+.debug_str      0x0000000000000000      0x270
+ .debug_str     0x0000000000000000      0x18c app.o
+                                        0x1a5 (size before relaxing)
+ .debug_str     0x000000000000018c       0xca rlx_cache.o
+                                        0x1a1 (size before relaxing)
+ .debug_str     0x0000000000000256        0xd ./libc.a(lib_a-memcmp.o)
+ .debug_str     0x0000000000000263        0xd ./libc.a(lib_a-memset.o)
+
+.debug_frame    0x0000000000000000      0x304
+ .debug_frame   0x0000000000000000      0x19c app.o
+ .debug_frame   0x000000000000019c      0x128 rlx_cache.o
+ .debug_frame   0x00000000000002c4       0x20 ./libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00000000000002e4       0x20 ./libc.a(lib_a-memset.o)
+
+.debug_pubnames
+                0x0000000000000000       0x3a
+ .debug_pubnames
+                0x0000000000000000       0x1d ./libc.a(lib_a-memcmp.o)
+ .debug_pubnames
+                0x000000000000001d       0x1d ./libc.a(lib_a-memset.o)

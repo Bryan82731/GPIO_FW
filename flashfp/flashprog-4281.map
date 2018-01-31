@@ -1,0 +1,229 @@
+Archive member included because of file (symbol)
+
+./libc.a(lib_a-memcmp.o)      app.o (memcmp)
+./libc.a(lib_a-memset.o)      app.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+FLASH_ID            0x4               app.o
+flash_struct        0x10              flash_fp.o
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 rlx_cache.o
+ .reginfo       0x0000000000000000       0x18 flash_fp.o
+ .reginfo       0x0000000000000000       0x18 crt0.o
+ .reginfo       0x0000000000000000       0x18 ./libc.a(lib_a-memcmp.o)
+ .reginfo       0x0000000000000000       0x18 ./libc.a(lib_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sram             0x00000000800c0000 0x0000000000010000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD app.o
+LOAD rlx_cache.o
+LOAD flash_fp.o
+LOAD crt0.o
+LOAD linker.ld
+                0x0000000000000000                _gp = ALIGN (0x10)
+
+.boot           0x00000000800c0000       0x78
+ *(.boot)
+ .boot          0x00000000800c0000       0x78 crt0.o
+                0x00000000800c0000                _boot
+                0x00000000800c0078                _end_boot = .
+ *(.boot)
+                0x00000000800c0078                _end_boot = .
+
+.text           0x00000000800c0078     0x1430
+                0x00000000800c0078                __text_begin = .
+ *(.text)
+ .text          0x00000000800c0078      0x3d0 app.o
+                0x00000000800c0078                bsp_wait
+                0x00000000800c00f4                bsp_gmac_disable
+                0x00000000800c0184                disable_master_engine
+                0x00000000800c01e8                main
+ .text          0x00000000800c0448      0x33c rlx_cache.o
+                0x00000000800c0448                rlx_dcache_flush
+                0x00000000800c04b0                rlx_dcache_invalidate
+                0x00000000800c0518                rlx_dcache_store
+                0x00000000800c0580                rlx_dcache_invalidate_all
+                0x00000000800c05c8                rlx_icache_invalidate_all
+                0x00000000800c0610                rlx_icache_lock
+                0x00000000800c06b0                rlx_dmem_enable
+                0x00000000800c0704                rlx_imem_refill
+ .text          0x00000000800c0784      0xbd4 flash_fp.o
+                0x00000000800c0784                Check_SPIC_Busy
+                0x00000000800c07c4                Flash_RDSR
+                0x00000000800c0864                Flash_erase_all
+                0x00000000800c0940                Flash_erase_block
+                0x00000000800c0a6c                Flash_erase_sector
+                0x00000000800c0b98                Set_SPIC_Write_one_channel
+                0x00000000800c0c08                Flash_write_one_channel_User
+                0x00000000800c0fa0                Flash_RDID
+                0x00000000800c10c0                Set_SPIC_Clock
+                0x00000000800c111c                WRSR_Flash_one_two_channel
+                0x00000000800c1240                Flash_Init
+                0x00000000800c1288                Flash_Unprotect
+                0x00000000800c12ac                Compare_Flash
+ .text          0x00000000800c1358        0x0 crt0.o
+ .text          0x00000000800c1358       0x98 ./libc.a(lib_a-memcmp.o)
+                0x00000000800c1358                memcmp
+ .text          0x00000000800c13f0       0xb8 ./libc.a(lib_a-memset.o)
+                0x00000000800c13f0                bzero
+                0x00000000800c13f8                memset
+                0x00000000800c14a8                __text_end = .
+                0x00000000800c14a8                __text_begin = .
+ *(.text)
+                0x00000000800c14a8                __text_end = .
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+ *(.rodata1)
+
+.data           0x00000000800c14a8        0x0
+                0x00000000800c14a8                __data_begin = .
+ *(.data)
+ .data          0x00000000800c14a8        0x0 app.o
+ .data          0x00000000800c14a8        0x0 rlx_cache.o
+ .data          0x00000000800c14a8        0x0 flash_fp.o
+ .data          0x00000000800c14a8        0x0 crt0.o
+ .data          0x00000000800c14a8        0x0 ./libc.a(lib_a-memcmp.o)
+ .data          0x00000000800c14a8        0x0 ./libc.a(lib_a-memset.o)
+ *(.sdata)
+ *(.lit4)
+ *(.lit8)
+                0x00000000800c14a8                . = ALIGN (0x4)
+                0x00000000800c14a8                __data_end = .
+                0x00000000800c14a8                __data_begin = .
+ *(.data)
+ *(.sdata)
+ *(.lit4)
+ *(.lit8)
+                0x00000000800c14a8                . = ALIGN (0x4)
+                0x00000000800c14a8                __data_end = .
+                0x00000000800c14b0                _gp = ALIGN (0x10)
+
+.bss            0x00000000800c14b0      0x434
+                0x00000000800c14b0                . = ALIGN (0x4)
+                0x00000000800c14b0                __bss_start = .
+ *(.sbss)
+ *(.bss)
+ .bss           0x00000000800c14b0        0x0 app.o
+ .bss           0x00000000800c14b0        0x0 rlx_cache.o
+ .bss           0x00000000800c14b0        0x0 flash_fp.o
+ .bss           0x00000000800c14b0      0x420 crt0.o
+                0x00000000800c14b0                _stack_lo
+                0x00000000800c18b0                _stack_hi
+ .bss           0x00000000800c18d0        0x0 ./libc.a(lib_a-memcmp.o)
+ .bss           0x00000000800c18d0        0x0 ./libc.a(lib_a-memset.o)
+ *(.scommon)
+ *(COMMON)
+ COMMON         0x00000000800c18d0        0x4 app.o
+                0x00000000800c18d0                FLASH_ID
+ COMMON         0x00000000800c18d4       0x10 flash_fp.o
+                0x00000000800c18d4                flash_struct
+                0x00000000800c18e4                . = ALIGN (0x4)
+                0x00000000800c18e4                __bss_end = .
+                0x00000000800c18e4                . = ALIGN (0x4)
+                0x00000000800c18e4                __bss_start = .
+ *(.sbss)
+ *(.bss)
+ *(.scommon)
+ *(COMMON)
+                0x00000000800c18e4                . = ALIGN (0x4)
+                0x00000000800c18e4                __bss_end = .
+LOAD ./libc.a
+LOAD ./libgcc.a
+OUTPUT(flashprog-4281_dbg.exe elf32-littlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 app.o
+
+.pdr            0x0000000000000000      0x3a0
+ .pdr           0x0000000000000000       0x80 app.o
+ .pdr           0x0000000000000080      0x100 rlx_cache.o
+ .pdr           0x0000000000000180      0x1c0 flash_fp.o
+ .pdr           0x0000000000000340       0x20 crt0.o
+ .pdr           0x0000000000000360       0x20 ./libc.a(lib_a-memcmp.o)
+ .pdr           0x0000000000000380       0x20 ./libc.a(lib_a-memset.o)
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 app.o
+ .mdebug.abi32  0x0000000000000000        0x0 rlx_cache.o
+ .mdebug.abi32  0x0000000000000000        0x0 flash_fp.o
+
+.comment        0x0000000000000000       0x41
+ .comment       0x0000000000000000       0x41 app.o
+                                         0x42 (size before relaxing)
+ .comment       0x0000000000000000       0x42 rlx_cache.o
+ .comment       0x0000000000000000       0x42 flash_fp.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 app.o
+ .gnu.attributes
+                0x0000000000000010       0x10 rlx_cache.o
+ .gnu.attributes
+                0x0000000000000020       0x10 flash_fp.o
+
+.debug_info     0x0000000000000000      0xaa1
+ .debug_info    0x0000000000000000      0x291 app.o
+ .debug_info    0x0000000000000291      0x23c rlx_cache.o
+ .debug_info    0x00000000000004cd      0x3f8 flash_fp.o
+ .debug_info    0x00000000000008c5       0x8e crt0.o
+ .debug_info    0x0000000000000953       0xa7 ./libc.a(lib_a-memcmp.o)
+ .debug_info    0x00000000000009fa       0xa7 ./libc.a(lib_a-memset.o)
+
+.debug_abbrev   0x0000000000000000      0x429
+ .debug_abbrev  0x0000000000000000      0x17d app.o
+ .debug_abbrev  0x000000000000017d       0xb2 rlx_cache.o
+ .debug_abbrev  0x000000000000022f      0x1be flash_fp.o
+ .debug_abbrev  0x00000000000003ed       0x14 crt0.o
+ .debug_abbrev  0x0000000000000401       0x14 ./libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x0000000000000415       0x14 ./libc.a(lib_a-memset.o)
+
+.debug_aranges  0x0000000000000000       0xc0
+ .debug_aranges
+                0x0000000000000000       0x20 app.o
+ .debug_aranges
+                0x0000000000000020       0x20 rlx_cache.o
+ .debug_aranges
+                0x0000000000000040       0x20 flash_fp.o
+ .debug_aranges
+                0x0000000000000060       0x20 crt0.o
+ .debug_aranges
+                0x0000000000000080       0x20 ./libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000000000000a0       0x20 ./libc.a(lib_a-memset.o)
+
+.debug_line     0x0000000000000000      0x4ec
+ .debug_line    0x0000000000000000       0xe7 app.o
+ .debug_line    0x00000000000000e7       0xcc rlx_cache.o
+ .debug_line    0x00000000000001b3      0x1d1 flash_fp.o
+ .debug_line    0x0000000000000384       0x4c crt0.o
+ .debug_line    0x00000000000003d0       0x89 ./libc.a(lib_a-memcmp.o)
+ .debug_line    0x0000000000000459       0x93 ./libc.a(lib_a-memset.o)
+
+.debug_str      0x0000000000000000      0x44a
+ .debug_str     0x0000000000000000      0x249 app.o
+                                        0x262 (size before relaxing)
+ .debug_str     0x0000000000000249       0xa1 rlx_cache.o
+                                        0x1df (size before relaxing)
+ .debug_str     0x00000000000002ea      0x160 flash_fp.o
+                                        0x313 (size before relaxing)
+
+.debug_frame    0x0000000000000000      0x3d8
+ .debug_frame   0x0000000000000000       0xa4 app.o
+ .debug_frame   0x00000000000000a4      0x124 rlx_cache.o
+ .debug_frame   0x00000000000001c8      0x210 flash_fp.o

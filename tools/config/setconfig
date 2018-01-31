@@ -1,0 +1,163 @@
+#!/bin/sh
+#############################################################################
+#
+#    This script gets called in two ways,  the first is to set the
+#    default config up.  The second "final" pass is to save any settings
+#    back to the vendors directory for permanent inclusion.
+#
+#    Copyright (C) 2001       Lineo    <davidm@snapgear.com>
+#    Copyright (C) 2001-2002  SnapGear <davidm@snapgear.com>
+#
+#############################################################################
+#
+# Some basic starting points
+#
+#set -x
+
+CONFIG=.config
+if [ -f ./.oldconfig ]
+then
+    . ./.oldconfig
+fi
+
+PASS="$1"
+VENDOR=""
+PRODUCT=""
+RTOSDIR=""
+LIBCDIR=""
+LIBCBASEDIR=""
+
+get_product()
+{
+    PRODUCT="`grep '^CONFIG_PRODUCT=' ${CONFIG}`"
+
+    PRODUCT=${PRODUCT##CONFIG_PRODUCT=}
+    PRODUCT=${PRODUCT##\"}
+    PRODUCT=${PRODUCT%%\"}
+    return 0
+}
+
+
+var_isset() # because of make evironment inheritance,  we must look in the file
+{
+    if grep "$1=y" $CONFIG > /dev/null
+    then
+      return 0
+    fi
+
+    return 1
+}
+
+fix_name()
+{
+    echo $1 | tr '[\-\.\/\+a-z]' '[____A-Z]'
+}
+
+#
+# remove line containing $1 append line $2 to file in $3
+#
+replace_line()
+{
+    TMPR="/tmp/setconfig.$$"
+    if [ -f "$3" ]
+    then
+        cat "$3" | grep -v "$1" > "$TMPR"
+    else
+        touch "$TMPR"
+    fi
+    echo "$2" >> "$TMPR"
+    cp "$TMPR" "$3"
+    rm -f "$TMPR"
+}
+
+fix_conf_files()
+{
+    #
+    # add some bits for convienence, must be done after each stage
+    #
+
+    replace_line CONFIG_PRODUCT= "CONFIG_PRODUCT=$PRODUCT"    .config
+#    replace_line CONFIG_RTOSDIR= "CONFIG_RTOSDIR=$RTOSDIR"    .config
+#    replace_line CONFIG_LIBCDIR= "CONFIG_LIBCDIR=$LIBCDIR"    .config
+
+#    replace_line CONFIG_VENDOR "#define CONFIG_VENDOR \"$VENDOR\"" \
+#         autoconf.h
+#    replace_line CONFIG_PRODUCT "#define CONFIG_PRODUCT \"$PRODUCT\"" \
+#         autoconf.h
+#    replace_line CONFIG_RTOSDIR "#define CONFIG_RTOSDIR \"$RTOSDIR\"" \
+#         autoconf.h
+#    replace_line CONFIG_LIBCDIR "#define CONFIG_LIBCDIR \"$LIBCDIR\"" \
+#         autoconf.h
+#    replace_line "#undef AUTOCONF_INCLUDED" "#undef AUTOCONF_INCLUDED" \
+#         autoconf.h
+#    replace_line "#endif" "#endif" autoconf.h
+
+
+#    replace_line OLD_VENDOR   "OLD_VENDOR=\"$VENDOR\""   ./.oldconfig
+#    replace_line OLD_PRODUCT  "OLD_PRODUCT=\"$PRODUCT\"" ./.oldconfig
+#    replace_line OLD_RTOSDIR "OLD_RTOSDIR=\"$RTOSDIR\"" ./.oldconfig
+#    replace_line OLD_LIBCDIR  "OLD_LIBCDIR=\"$LIBCDIR\"" ./.oldconfig
+}
+
+#############################################################################
+if get_product;then
+    echo "";
+else
+    echo "Get product error!"
+fi
+
+#############################################################################
+
+if [ "$PRODUCT" = "" ]; then
+    echo "You have not selected a Product in the config." >&2
+    exit 1
+fi
+
+#############################################################################
+#
+# Now install the configs,  careful not dump on them unless they asked us to
+#
+
+#############################################################################
+#
+# The override config option is always turned off when we are done so that
+# someone doesn't get all upset that they lost their config files.
+#
+# Always add the VENDOR/PRODUCT dir for the build to work
+#
+
+if [ "$PASS" = "final" ]; then
+    fix_conf_files
+
+#    rm -f config.arch
+#    ln -s "users/$PRODUCT/build/config.arch" config.arch
+
+
+    #
+    # check for other config options
+    #
+
+#if var_isset CONFIG_DEFAULTS_OVERRIDE; then
+#        sed 's/^\(CONFIG_DEFAULTS_OVERRIDE\)=y/# \1 is not set/' < .config \
+#                > .config.tmp
+#        cp .config.tmp .config
+#        rm -f .config.tmp
+#    fi
+
+#    if var_isset CONFIG_DEFAULTS_VENDOR_UPDATE; then
+
+#        sed 's/^\(CONFIG_DEFAULTS_VENDOR_UPDATE\)=y/# \1 is not set/' <.config\
+#                > .config.tmp
+#        cp .config.tmp .config
+#        rm -f .config.tmp
+#
+#        if [ -d "users/$PRODUCT/build" ]
+#        then
+#            cp .config "users/$PRODUCT/build/config.product"
+#        fi
+#    fi
+
+fi
+
+#############################################################################
+exit 0

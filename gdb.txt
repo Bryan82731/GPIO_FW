@@ -1,0 +1,108 @@
+#==========================================================================*/
+define dv
+	print /x $pc
+	print /x *($pc)
+end	
+
+define na
+	if $sr & 0x01
+		set $sr = ($sr & 0xfffffffe)
+		si
+		set $sr = ($sr | 0x1)	
+	end
+	if ($sr & 0x01) == 0
+		print "No interrupt enable"
+	end
+end
+
+define nc
+	if $sr & 0x01
+		set $sr = ($sr & 0xfffffffe)
+		ni
+		set $sr = ($sr | 0x1)	
+	end
+	if ($sr & 0x01) == 0
+		print "No interrupt enable"
+	end
+end
+
+define ch
+	if $sr & 0x01
+		set $sr = ($sr & 0xfffffffe)
+		c
+		set $sr = ($sr | 0x1)	
+	end
+	if ($sr & 0x01) == 0
+		print "No interrupt enable"
+	end
+end
+
+#set a global value
+set $si_isr = 0
+
+#hook si command, hook-stepi execute before si
+#must use hook-stepi, do not use hook-si
+define hook-stepi
+	#p "begin"
+	set $si_isr = 0
+	if $sr & 0x01
+		set $sr = ($sr & 0xfffffffe)
+		set $si_isr = 1		
+	end
+end
+
+#hook si command, hookpost execute after si
+define hookpost-stepi
+	#p "pso"
+	if $si_isr
+		set $sr = ($sr | 0x1)
+	end
+end
+
+define hook-next
+	#p "begin"
+	set $si_isr = 0
+	if $sr & 0x01
+		set $sr = ($sr & 0xfffffffe)
+		set $si_isr = 1		
+	end
+end
+
+
+define hookpost-next
+	#p "pso"
+	if $si_isr
+		set $sr = ($sr | 0x1)
+	end
+end
+	 
+#set file name
+file obj/dash_dbg.exe
+add-symbol-file dashlib/fplib/dashromDBG.elf  0x80080000
+
+#connection 
+target remote localhost:4281
+
+#load your file to memory 
+#load
+#p /x $pc=0xbfc00000
+#b _boot
+#b *0x800bc860 
+#0x800bc860 =>init address
+
+#load obj/dash_NT.exe
+#layout asm
+#layout regs
+#focus cmd
+
+
+#set hardware break point
+#hb *0xbfc00060
+#hb *0x800bc66c
+set $pc=0xbfc00000
+p /x $pc
+#break at 0xbfc0002c and set $pc=_boot
+#if not break at 0xbfc0002c, IMEM/DMEM maybe disable
+hb *0xbfc0002c
+c
+#set $pc=_boot

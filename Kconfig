@@ -1,0 +1,659 @@
+#########################################################################
+#
+#  Realtek Semiconductor Corp.
+#  Kconfig -- Top Level Configuration file
+#
+#  phinex hung (phinexhung@realtek.com)
+#  July 7, 2009
+#
+
+mainmenu "RTL8111DP Configuration"
+
+choice
+    prompt "IC Version "
+    default IC_VERSION_A
+
+    menuconfig IC_VERSION_A
+        bool "Version A"
+
+    menuconfig IC_VERSION_B
+        bool "Version B"
+
+    menuconfig IC_VERSION_D
+        bool "Version D"
+
+    menuconfig IC_VERSION_F
+        bool "Version F"
+        
+    menuconfig IC_VERSION_EP_RevA
+        bool "Version EP_RevA"
+
+    menuconfig IC_VERSION_EP_RevB
+        bool "Version EP_RevB"
+
+	menuconfig IC_VERSION_FP_RevA
+        bool "Version FP_RevA"
+endchoice
+
+
+config ROMNAME
+    string
+    default 68DPSPI.bin   if IC_VERSION_A
+    default 68DPSPIB.bin  if IC_VERSION_D
+    default 68DPSPIC.bin  if IC_VERSION_F
+    default 68EPSPI.bin   if IC_VERSION_EP_RevA
+    default 68EPSPIB.bin  if IC_VERSION_EP_RevB
+	default 68EPSPIFA.bin  if IC_VERSION_FP_RevA
+
+config DISTVERSION
+    string
+    default 1.0.0
+
+config PRODUCT
+    string 
+    default dash
+
+choice
+    prompt "Customization UI"
+    default REALTEK_WEB_UI
+
+    menuconfig REALTEK_WEB_UI
+        bool "Realtek web UI"
+
+    menuconfig ACER_WEB_UI
+        bool "Acer web UI"
+endchoice
+
+menu "Vendor Specific Options"
+choice
+    prompt "MB  Vendor "
+    default VENDOR_FSC
+
+    config  VENDOR_FSC
+        bool "Fujitsu "
+
+    config  VENDOR_EVERLIGHT
+        bool "E-Light "
+
+    config  VENDOR_GENERIC
+        bool "Generic "
+
+    config  VENDOR_SAMSUNG
+        bool "Samsung "
+
+    config  VENDOR_DELL
+        bool "DELL    "
+ 
+endchoice	
+
+choice
+    prompt "SMBUS Cont."
+    default CHIPSET_INTEL
+
+    config  CHIPSET_INTEL
+        bool "INTEL   "
+
+    config  CHIPSET_AMD
+        bool "AMD     "
+
+    config  CHIPSET_NVIDIA
+        bool "NVIDIA  "
+
+    config  CHIPSET_HP
+        bool "HP      "
+
+    config  CHIPSET_LENOVO
+        bool "LENOVO  "
+
+    config  CHIPSET_AMDSOC
+        bool "AMDSOC  "
+endchoice
+
+choice 
+    prompt "BIOS Vendor"
+    default BIOS_PHOENIX
+
+    config BIOS_AMI
+        bool "AMI     "
+
+    config BIOS_PHOENIX
+        bool "PHOENIX "
+
+    config BIOS_DELL
+        bool "DELL    "
+
+endchoice
+
+choice 
+    prompt  "BIOS Type  "
+    default LEGACY_BIOS
+
+    config LEGACY_BIOS
+        bool "LEGACY  "
+
+    config UEFI_BIOS
+        depends on BIOS_AMI
+        bool "UEFI    "
+
+endchoice
+
+choice 
+    prompt  "PLDM Method"
+    default BLOCK_READ
+
+    config  BLOCK_READ
+        bool "BLOCK RD"
+
+    config  BLOCK_WRITE
+        bool "BLOCK WR"
+endchoice
+
+config  PLDM_MULTI_TRANSFER
+        bool "PLDM MULTI Tx"
+	depends on BLOCK_WRITE
+
+config PLDM_SENSOR
+    bool "PLDM SENSOR"
+    depends on BLOCK_WRITE  
+
+config  ENABLED_DEFAULT_PEC
+        bool "Enable PEC"
+	depends on CHIPSET_AMD
+	default y
+
+config TCR_BYTEMODE
+    bool "TCR ByteMod"
+    depends on VENDOR_DELL 
+
+config LATITUDE
+    bool "Latitude NB"
+    depends on VENDOR_DELL 
+
+config SENSOR_AGGREGATE
+    bool "Aggregate Legacy Sensor"
+
+
+choice
+    prompt "Default SMBIOS Table"
+    default SMBIOS_RTK
+
+    config  SMBIOS_RTK
+        bool "Realtek "
+
+    config  SMBIOS_ASUS
+        bool "Asus "
+
+endchoice
+
+#refer to src/include/smbus.h
+config CHIPSET
+    int
+    default 0         if CHIPSET_INTEL
+    default 1         if CHIPSET_AMD
+    default 2         if CHIPSET_NVIDIA
+    default 3         if CHIPSET_HP
+    default 4         if CHIPSET_LENOVO
+    default 5         if CHIPSET_AMDSOC
+
+config BIOS
+    int
+    default 0         if BIOS_AMI
+    default 1         if BIOS_PHOENIX
+    default 2         if BIOS_DELL
+
+config BIOSTYPE
+    int
+    default 0         if LEGACY_BIOS
+    default 1         if UEFI_BIOS
+
+config PLDMTYPE
+    int
+    default 0         if BLOCK_READ
+    default 1         if BLOCK_WRITE
+
+config VENDOR
+    int
+    default 0         if VENDOR_FSC
+    default 1         if VENDOR_PEGATRON
+    default 2         if VENDOR_EVERLIGHT
+    default 3         if VENDOR_GENERIC
+    default 4         if VENDOR_SAMSUNG
+    default 5         if VENDOR_DELL
+
+endmenu
+
+
+
+menu "ROM Configurations     "
+
+config BUILDROM
+    bool "Generate ROMs for New IC  "
+
+config FPGA_REFILL
+    depends on BUILDROM
+    bool "- Refill IMEM via Flash"
+    default y
+
+config TEST_FW_UPDATE
+    depends on BUILDROM
+    bool "- Firmware Update Mode  "
+
+config ROM_VERIFY
+    depends on IC_VERSION_EP_RevA || IC_VERSION_EP_RevB || IC_VERSION_FP_RevA
+    bool "Enable ROM code module that do not in bulitin int ROM  code"
+endmenu
+
+config VERSION
+    int
+    default 99        if BUILDROM
+    default 1         if IC_VERSION_A
+    default 2         if IC_VERSION_B
+    default 4         if IC_VERSION_D
+    default 6         if IC_VERSION_F
+    default 10        if IC_VERSION_EP_RevA
+    default 11        if IC_VERSION_EP_RevB
+	default 15        if IC_VERSION_FP_RevA
+
+menu "Firmware Debug Settings"
+
+config RELEASE
+    bool "Release Firmware"
+
+config DEBUG
+    bool "Debug Firmware"
+    depends on !RELEASE
+    default y
+
+config MEMDEBUG
+    bool "Memory Hook Debug"
+    depends on DEBUG
+
+config UART_DEBUG
+    bool "Use UART to Debug"
+    depends on DEBUG && !REMOTE_DEBUG 
+
+config REMOTE_DEBUG
+    bool "Remote  Debugging"
+    depends on DEBUG  
+
+config SMBUSLOG_DEBUG
+    bool "Log SMBUS traffic"
+    depends on DEBUG
+
+config GPIO_DEBUG
+    bool "GPIO Debug"
+
+config USBLOG_DEBUG
+    bool "Log USB transfers"
+    depends on DEBUG && USB_ENABLED
+
+config TASK_STK_CHK
+    bool "Stack size check "
+    depends on DEBUG
+
+endmenu    
+
+menu "Debug Level Settings   "
+depends on REMOTE_DEBUG || UART_DEBUG
+
+config LIB_DEBUG
+    bool "Library Debug"
+
+config ARP_DEBUG
+    bool "ARP Debug"
+
+config IP_DEBUG
+    bool "IP Debug"
+
+config UDP_DEBUG
+    bool "UDP Debug"
+
+config ICMP_DEBUG
+    bool "ICMP Debug"
+
+config DHCPv4_DEBUG
+    bool "DHCPv4 Debug"
+
+config DHCPv6_DEBUG
+    bool "DHCPv6 Debug"
+
+config TCP_DEBUG
+    bool "TCP Debug"
+
+config TCP_RX_DEBUG
+    bool "TCP Rx Debug"
+
+config TCP_TX_DEBUG
+    bool "TCP Tx Debug"
+
+config SKT_DEBUG
+    bool "Socket Debug"
+
+config HTTP_DEBUG
+    bool "HTTP Debug"
+
+config HTTPS_DEBUG
+    bool "HTTPS Debug"
+
+config CLIENT_DEBUG
+    bool "Client Debug"
+
+config SRV_DEBUG
+    bool "Server Debug"
+
+config HTTP_CA_DEBUG
+    bool "HTTP Class A Debug"
+
+config HTTP_CB_DEBUG
+    bool "HTTP Class B Debug"
+
+config HTML_DEBUG
+    bool "HTML Debug"
+
+config SMBIOS_DEBUG
+    bool "SMBIOS Debug"
+
+config DASH_DEBUG
+    bool "DASH Debug"
+
+config PROVISION_DEBUG
+    bool "Provisioning Debug"
+
+config PLDM_DEBUG
+    bool "PLDM Debug"
+
+config WCOM_DEBUG
+    bool "PCI-E Bridge Debug"
+
+config USB_DEBUG
+    bool "USB Redirection Debug"
+    depends on USB_ENABLED
+
+config TCR_DEBUG
+    bool "TCR Debug"
+
+config HOOK_DEBUG
+    bool "Memory Hook Debug"
+
+config SMBUS_DEBUG
+    bool "SMBUS Debug"
+
+config SMBUSTRA_DEBUG
+    bool "SMBUS Trace"
+    depends on SMBUSLOG_DEBUG
+
+config SENSOR_DEBUG
+    bool "Sensor Polling Debug"
+
+config DRIVER_DEBUG
+    bool "Driver Debug"
+
+config MESSAGE_DEBUG
+    bool "Message Level Debug"
+
+config CRITICAL_ERROR
+    bool "Critical Error Debug"
+
+endmenu
+
+menu "Modules Configuration  "
+
+config IPv6_ENABLED
+    bool "Enable IPv6"
+    default n
+config TEREDO_ENABLED
+    bool "Enable Teredo"
+    depends on IPv6_ENABLED
+config TEREDO_WAKEUP_ENABLED
+    bool "Enable Teredo wakeup"
+    depends on TEREDO_ENABLED
+config TEREDO_SEC_WOL_ENABLED
+    bool "Enable RTK Teredo security WOL"
+    depends on TEREDO_ENABLED
+            
+config LLMNR_ENABLED
+    bool "Enable LLMNR For IPv6"
+    depends on IPv6_ENABLED
+    default n 
+        
+config PROVISIONING
+    bool "Provisioning"
+    default n
+
+config PROVISIONING_AUTO
+    bool "Full UnProvisioned"
+    depends on PROVISIONING
+
+config TCR_ENABLED
+    bool "TCR   "
+    default y
+
+config USB_ENABLED
+    bool "USB   "
+    default y
+
+config OTG_ENABLED
+    bool "OTG   "
+    depends on USB_ENABLED
+    default n
+    
+config DOORBELL_CHECK_ENABLED
+    bool "TurnOff DoorBell periodically(For XP Only)"
+    depends on USB_ENABLED
+    default n
+
+config EHCI_INTEP
+    bool "Enable EHCI_INT_EP for USBHID"
+    depends on USB_ENABLED && !OTG_ENABLED 
+    default n  
+	
+config PCIE_ENABLED
+    bool "PCIe host module"
+
+config PCIE_DEV_ENABLED
+    bool "Init pci dev"
+    default not
+	depends on PCIE_ENABLED
+	
+config DASH_ENABLED
+    bool "DASH  "
+    default y
+    select HTTP_ENABLED 
+    select SMBIOS_ENABLED
+
+config SMBIOS_ENABLED
+    bool "SMBIOS"
+    default y
+
+config HTTP_ENABLED
+    bool "HTTP  "
+    default y
+    select CODEC_ENABLED
+
+config CODEC_ENABLED
+    bool "CODEC "
+    default y
+
+config WEB_SKT_STYLE
+    bool "Web SKT ver"
+    default n
+    select CODEC_ENABLED
+
+config EZSHAE_ENABLED
+    bool "Enable EzShare"
+    depends on WEB_SKT_STYLE
+    default n   
+
+config EZSHAE_TASK_ENABLED
+    bool "Enable EzShare use 6230 port"    
+    default n 
+            
+config UDP_ENABLED
+    bool "UDP  "
+    default y
+
+config ASF_ENABLED
+    depends on UDP_ENABLED
+    bool "ASF  "
+    default y
+
+config DHCP_ENABLED
+    depends on UDP_ENABLED
+    bool "DHCP "
+    default y
+
+config KCS_ENABLED
+    bool "KCS  "
+    default n
+
+config PRINTER_WEB_PAGE
+	bool "Printer Demo"
+	default n
+
+config WAKE_UP_PATTERN_ENABLED
+        bool "Flexible Wake Up Pattern"
+	default n
+	
+config mDNS_OFFLOAD_ENABLED
+        bool "Support MacOS 10.6 mDNS offload"
+	default n
+
+config 8021X_ENABLED
+	bool "IEEE 802.1x"
+	default n
+config MSAD_ENABLED
+	bool "MSAD"
+	default n
+
+config DDR_ENABLED
+    bool "DDR   "
+    default not
+
+config VNC_ENABLED
+    bool "VNC   "
+    default not
+	depends on DDR_ENABLED
+
+config VNC_VIDEO_ENABLED
+    bool "VNC VIDEO"
+    default not
+	depends on VNC_ENABLED
+
+config VNC_KM_ENABLED
+    bool "VNC keyboard board and mouse"
+    default not
+	depends on VNC_ENABLED
+	
+config WIFI_ENABLED
+    bool "WIFI   "
+    default not	
+	
+choice 
+    prompt  "Remote login"
+    default TELNET_DISABLED
+
+menuconfig TELNET_DISABLED 
+    bool "None  "
+    
+menuconfig TELNET_ENABLED
+    bool "Telnet  "
+    
+menuconfig SSH_ENABLED
+    bool "SSH  "
+endchoice       
+
+config TRNG_ENABLED
+	bool "True Random Number Generator"
+	default n
+
+config CPU_SLEEP_ENABLED
+	bool "CPU sleep mode"
+	default n
+endmenu
+
+menu "Miscellaneous Settings "
+
+config FPGA_TEST
+    bool "Use FPGA       "
+
+config CODEC_TEST
+    bool "Open CODEC test"
+
+config USB_FLASH
+    bool "USB  Flash test"
+    depends on USB_ENABLED && OTG_ENABLED
+
+config USB_BULK_TEST
+    bool "USB  BULK  test"
+
+config USB_BACK_VOLTAGE
+    bool "USB Back-V test"
+
+config PROFILING
+    bool "ICMP SPEED test"
+
+config PCI_Bridge_Test
+    bool "PCI bridge(CMAC) test"
+    
+config IPERF_Test
+    bool "Enable IPerf test" 
+
+config UDPSRV_Test
+    bool "Enable UDP server test" 
+    
+config Client_Test
+    bool "Enable Client test" 
+    
+config PortMatch_Test
+    bool "Port match test(Must enable web skt and dash port will be changed to 80)"  
+
+config PXE_SMBIOS
+    bool "USE PXE SMBIOS "
+	
+config USB_HID
+    bool "USB Hid test"	
+    
+config OOBMAC_TEST_ENABLED 
+    bool "MACSD OOBMAC test"
+    default y
+    
+config RKVM_TEST_ENABLED 
+    bool "MACSD RKVM test"
+    default y
+    
+config KCS_TEST_ENABLED
+    bool "MACSD KCS test"
+    default y
+    
+config CMAC_TEST_ENABLED 
+    bool "MACSD CMAC test"
+    default y
+    
+config VPD_TEST_ENABLED 
+    bool "MACSD VPD test"
+    default y
+    
+config DDR_TEST_ENABLED
+    bool "MACSD DDR test"
+	depends on DDR_ENABLED
+    default y
+    
+config VGA_TEST_ENABLED 
+    bool "MACSD VGA test"
+	depends on DDR_ENABLED
+    default y
+    
+config EHCI_TEST_ENABLED 
+    bool "MACSD EHCI test"
+    default y
+    
+config TCR_TEST_ENABLED
+    bool "MACSD TCR test"
+    default y
+    
+config SMBUS_TEST_ENABLED
+    bool "MACSD SMBUS test"
+    default y
+    
+endmenu
+

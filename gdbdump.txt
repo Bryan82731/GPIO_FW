@@ -1,0 +1,10 @@
+#==========================================================================*/
+
+#set file name
+file obj/dash_dbg.exe
+
+#connection 
+target remote localhost:4281
+
+dump binary memory bootdump.img 0x8A020000 0x8A027fff
+dump binary memory imemdump.img 0x80000000 0x8003FFFF

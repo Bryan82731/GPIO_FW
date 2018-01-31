@@ -1,0 +1,32 @@
+#==========================================================================*/
+
+#set file name
+file obj/dash_dbg.exe
+
+#connection 
+target remote localhost:4281
+
+#load your file to memory 
+#load
+#p /x $pc=0xbfc00000
+
+#set hardware break point
+#hb *0xbfc00080
+#c
+restore flashrlxep/irom.img binary 0x80000000
+#restore img/irom.img binary 0x80000000
+#p /x memlist= {0}
+#p /x memlist
+#restore test.img binary 0x8A020000
+#dump binary memory testdump.img 0x8A020000 0x8A027fff
+restore flashrlxep/boot.img binary 0x8A020000
+#restore img/boot.img binary 0x8A020000
+p /x $CCTL0=0x440
+p /x $CCTL0=0x640
+#dump binary memory bootdump.img 0x8A020000 0x8A027fff
+#dump binary memory imemdump.img 0x80000000 0x8003FFFF
+#hb *0x880000b4
+#hb *0x8B030088
+#b main
+#b bsp_setup
+#hb *0x8b01025c

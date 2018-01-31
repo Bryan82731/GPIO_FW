@@ -1,0 +1,223 @@
+#ifndef _OOBMAC_TESTITEM_H_
+#define _OOBMAC_TESTITEM_H_
+
+#include <rlx/rlx_types.h>
+
+#define OOBMAC_IOBASE			0xBAF70000  //for FP OOB MAC1 slave
+#define NCSI_IOBASE				0xBAFC0000 
+
+enum OOBAction{
+	OOB_CombineTest=0x01,
+
+	//0.for PCIEHOST
+	OOB_SWITCH_PCIEHOST_BYPASSMODE=0x0f,
+	OOB_CombineTest_PCIEHOST,
+	OOB_CombineTest_STOP_PCIEHOST,
+	
+	//1.for CMAC
+	OOB_CMAC_TX=0x36,
+	OOB_CMAC_STOPTX,
+	//2.for RKVM(CMAC2)
+	OOB_CMAC2_TX=0x38,
+	OOB_CMAC2_STOPTX,
+	OOB_CMAC2_DISABLE,
+	//3.for OOBMAC
+	OOB_GMAC_TX=0x4a,
+	OOB_GMAC_STOPTX,
+	OOB_GMAC_TXSLOWENABLE,
+	OOB_GMAC_TXSLOWDISABLE,
+	OOB_CMAC_RESET,
+	OOB_GMAC_DUMPRER,
+	OOB_GMAC_DUMPRFO,
+	OOB_GMAC_DUMPRX,
+	OOB_GMAC_DUMPTX,
+	OOB_GMAC_RESETCNT,
+	OOB_GMAC_SINGLE_TX=0x60,
+	//4.for FT/EQC test
+	OOB_FT_EQC_test_OOBMAC=0x70,
+	OOB_FT_EQC_test_stop_OOBMAC=0x71,
+	OOB_FT_EQC_test_RKVM=0x72,
+	OOB_FT_EQC_test_stop_RKVM=0x73,
+};
+
+//using dummy register 0x198 to inform the event
+enum OOBAction_SWINT{
+	//SWINT_BIT0.for PCIEHOST  BIT0-2  0x01-0x07
+	OOB_SWITCH_PCIEHOST_BYPASSMODE_2=0x01,
+	OOB_CombineTest_PCIEHOST_2=0x02,
+	OOB_CombineTest_STOP_PCIEHOST_2=0x03,
+	
+	//SWINT_BIT1.for CMAC  0x08-0xf
+	OOB_CMAC_TX_2=0x08,
+	OOB_CMAC_STOPTX_2=0x09,
+	//SWINT_BIT2.for RKVM(CMAC2)
+	OOB_CMAC2_TX_2=0x38,
+	OOB_CMAC2_STOPTX_2,
+	OOB_CMAC2_DISABLE_2,
+	//SWINT_BIT3.for OOBMAC
+	OOB_GMAC_TX_2=0x4a,
+	OOB_GMAC_STOPTX_2,
+	OOB_GMAC_TXSLOWENABLE_2,
+	OOB_GMAC_TXSLOWDISABLE_2,
+	OOB_CMAC_RESET_2,
+	OOB_GMAC_DUMPRER_2,
+	OOB_GMAC_DUMPRFO_2,
+	OOB_GMAC_DUMPRX_2,
+	OOB_GMAC_DUMPTX_2,
+	OOB_GMAC_RESETCNT_2,
+	OOB_GMAC_SINGLE_TX_2=0x60,
+	//SWINT_BIT4.for FT/EQC test
+	OOB_FT_EQC_test_OOBMAC_2=0x70,
+	OOB_FT_EQC_test_stop_OOBMAC_2=0x71,
+	OOB_FT_EQC_test_RKVM_2=0x72,
+	OOB_FT_EQC_test_stop_RKVM_2=0x73,
+};
+
+typedef enum{
+    PERSTB_ISOLATEB_LANWAKE_CLKREQB,   //table1
+	LEDPIN0TO2,
+	EJTAG_SMBALERT0,
+	SMBCLK0_SMBDATA0,
+	SPISCK_SPISI_SPISO0_2_3,
+	NF_ALE_NF_DD1_3_5_7,
+	NF_DD0_6_RDYWR_N_RD_N_NF_CLE,
+	UARTTX_UARTRX,
+	SMBCLK1_SMBDATA1,
+	NCSI_GPIO,
+	GPIPIN,
+	
+}SharePin_type;
+
+typedef enum{
+    NOT_USED_MODE,
+	FUNCTION_MODE,
+	DEBUG_MODE,
+	TESTIO_MODE,
+	GPIO_MODE,
+	BOUNDARY_SCAN_MODE,
+	
+}SharePin_mode;
+
+typedef enum{
+    OOBMAC,
+	NCSI,
+
+}OOBMAC_type;
+
+typedef enum{
+    READ,
+	WRITE,
+
+}ReadWrite_type;
+
+
+typedef enum{
+	GPI=1,	
+	GPO,
+	GPIO1,
+	GPIO2,
+	GPIO3,
+	GPIO4,  //6
+	GPIO5,
+	GPIO6,
+	GPIO7,	//9
+	GPIO8,
+	GPIO9,
+	GPIO10,
+	GPIO11,
+	GPIO12,
+	GPIO13,
+	GPIO14,//16
+	GPIO15,
+	GPIO16,
+	GPIO17,
+	GPIO18,
+	GPIO19,
+	GPIO20,//22
+	GPIO21,
+	GPIO22,
+	GPIO23,
+	GPIO24,
+	GPIO25,
+	GPIO26,
+	GPIO27,
+	GPIO28,
+	GPIO29,
+	GPIO30,//32
+	GPIO31,
+	GPIO32,
+	GPIO33,
+	GPIO34,
+	GPIO35,
+	GPIO36,
+	GPIO37,
+}OOBMAC_gpio_no;
+
+
+#define MDC_PIN		GPIO12
+#define MDIO_PIN 	GPIO6
+
+#define MCS_PIN  GPIO3 
+
+
+typedef enum{
+    INPUT,
+	OUTPUT,
+
+}OOBMAC_gpio_dir;
+
+typedef enum{
+    DISABLE,
+	ENABLE,
+
+}OOBMAC_gpio_en;
+
+void OOB_READ_IB(INT32U baseAddr,INT8U ByteEn,INT16U regAddr,INT32U *data);
+void OOB_WRITE_IB(INT32U baseAddr,INT8U ByteEn,INT16U regAddr,INT32U data);
+void OOB_WRITE_IB_BIT(INT32U baseAddr, INT16U reg, INT8U highBit, INT8U lowBit, INT32U value);
+
+
+INT8U OOBMAC_sharepin_mode_set(SharePin_type sharepin,SharePin_mode mode);
+void OOBMAC_gpio_init(OOBMAC_gpio_no gpio_num,OOBMAC_gpio_dir dir,INT8U val);//if dir is GPIO_INPUT, then val is useless,but you should enable interrupt
+void OOBMAC_gpio_output(OOBMAC_gpio_no gpio_num,INT8U val);
+INT8U OOBMAC_gpio_input(OOBMAC_gpio_no gpio_num);
+
+
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

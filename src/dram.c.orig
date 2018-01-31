@@ -1,0 +1,382 @@
+#include <bsp_cfg.h>
+#include "uart.h"
+#include "dram.h"
+#include <string.h>
+#include "bsp_fp_revA.h"
+
+
+#include "OOBMAC.h"
+/* ddr init code for ASIC phy */
+/* this should be build in rom code, becasue not all 8111Fp packedge support ddr */
+
+void ddr_asic_phy_init(void)
+{
+
+	volatile INT32U temp;
+	//init ddr ASIC Phy
+	temp = 0x00802140;
+	REG32(CPU1_IOBASE+4) = temp;
+
+	//crt_reset_n
+	temp = REG32(CPU1_IOBASE+4);
+	temp |= 1<<24;
+	REG32(CPU1_IOBASE+4) = temp;
+
+	//clken dcphy/pllreg
+    temp = REG32(CPU1_IOBASE+4);
+	temp |= (1<<29)|(1<<30);
+	REG32(CPU1_IOBASE+4) = temp;
+
+	//ldo_reset_n
+	temp = REG32(CPU1_IOBASE+4);
+	temp |= 1<<25;
+	REG32(CPU1_IOBASE+4) = temp;
+
+	//wait 50us
+	bsp_wait(50);
+
+	//ddr_phy_ctrl
+	// clk rate 400MHz optimal setting
+	REG32(DDR_PHY_IOBASE + 0x1c) = 0x22505151;
+	// dpi_post_cp_mode, bit12
+	REG32(DDR_PHY_IOBASE + 0x04) = 0x00001FFF;
+	
+	// DQS1 pi  = 0x9 ,DQS0 pi = 0xa ,CK_Pi = 0x3
+	REG32(DDR_PHY_IOBASE + 0x10) = 0x090a0003;
+	
+	// dq0_pi, bit16-bit 21, 0x19
+	REG32(DDR_PHY_IOBASE + 0x14) = 0x190000;
+	// dq1_pi, bit0 - bit5 ,0x18
+	REG32(DDR_PHY_IOBASE + 0x18) = 0x17;
+	// op_sel,dq1,dq0...dqs1,dqs0..ck , only dq1, dq0 = 1
+	REG32(DDR_PHY_IOBASE + 0x08) = 0xc0;
+	
+
+	//set DDR PLL - F code
+	REG32(DDR_PHY_IOBASE + 0x24) = 0x00000000;
+	// set DDR PLL - N code
+	REG32(DDR_PHY_IOBASE + 0x28) = 0x0000001e;
+	//REG32(DDR_PHY_IOBASE + 0x28) = 0x0000000E;//400MHz=(2+14)*25MHZ
+	//REG32(DDR_PHY_IOBASE + 0x28) = 0x00000006;//200MHz=(2+6)*25MHZ
+  	//REG32(DDR_PHY_IOBASE + 0x28) = 0x00000002;//100MHz=(2+2)*25MHZ
+	// DFI rate 2:1, DDR2_en=1 !!!
+	//REG32(DDR_PHY_IOBASE + 0) = 0x00000042;//0x42 is wrong pinmux
+
+	//set dq clk source
+	REG32(DDR_PHY_IOBASE + 0) = 0x00000012;
+
+	//rst_n/ptr_rst_n
+	temp = REG32(CPU1_IOBASE+4);
+	temp |= (1<<26)|(1<<27);
+	REG32(CPU1_IOBASE+4) = temp;
+
+	//wait 50us
+	bsp_wait(50);
+
+	// CLK ENable
+	REG32(DDR_PHY_IOBASE + 0x04) = 0x00CF1FFF;
+	// output ENable
+	REG32(DDR_PHY_IOBASE + 0x08) |= 0x00CF0000;
+
+	//mux table, should be enabled after clk output
+	temp = REG32(DDR_PHY_IOBASE + 0x228);
+	temp &= 0xfff0000f;
+	temp |= 0x30030;//0x30030
+	REG32(DDR_PHY_IOBASE + 0x228) = temp;
+
+	// for BIST clk
+	REG32(DDR_IOBASE + 0xc) = 0x00000300;
+
+	// DFI rate 1:2 ( PHY : MAC)
+	REG32(DDR_PHY_IOBASE + 0x3d8) = 0xb0000000;
+	
+}
+
+
+/* ddr init code for ASIC controller , this should be run in spi flash*/
+void ddr_asic_controllor_init(void)
+{
+	volatile INT32U R480_ZQ_CAL;
+	volatile INT32U ZQ_CAL,ZQ_CAL_75;
+	volatile INT32U temp;
+
+	temp = REG32(DDR_PHY_IOBASE + 0x214);
+    temp &= ~(1<<18);//0: for DDR2, 1: for DDR3
+	REG32(DDR_PHY_IOBASE + 0x214) = temp;
+
+	//set DDR PHY cmd phase delay cycle
+	temp = REG32(DDR_PHY_IOBASE + 0x37c);
+	//temp |= (1<<24)|(1<<25);
+    temp |= (1<<24)|(1<<26);
+	REG32(DDR_PHY_IOBASE + 0x37c) = temp;
+	
+	// set DDR PHY CS pin delay cycle for writing
+	temp = REG32(DDR_PHY_IOBASE + 0x228);
+	//temp |= (1<<21)|(1<<29);
+    temp |= (1<<22)|(1<<29);
+    REG32(DDR_PHY_IOBASE + 0x228) = temp;
+	
+	
+	// fw_Set_mode = immediately mode
+	temp = REG32(DDR_PHY_IOBASE + 0x37c);
+	temp &= 0xfffffffc;
+	temp |= 0x2;
+	REG32(DDR_PHY_IOBASE + 0x37c) = temp;
+	
+	
+	/*********************ZQ CAL************************/
+	//480Om
+	REG32(DDR_PHY_IOBASE + 0x21c) |= 0x00200000;
+	do{
+		//wait 480om R cal done
+		temp = REG32(DDR_PHY_IOBASE + 0x224);
+	}while((temp&0x1) == 0);
+
+	R480_ZQ_CAL = temp&0x3e;//R480 zq cal val
+	
+	//ZQ cal
+	temp = (1<<27)|(1<<25)|0x10ba;
+	REG32(DDR_PHY_IOBASE + 0x21c) = temp;
+	REG32(DDR_PHY_IOBASE + 0x21c) = temp | (1<<24);//write second time, ZQ cal start
+	//wait ZQ cal done
+	do{
+		//wait ZQ cal done
+		temp = REG32(DDR_PHY_IOBASE + 0x220);
+	}while((temp&(1<<30)) == 0);
+	ZQ_CAL = temp&0x3fffffff;//zq cal val
+
+	REG32(DDR_PHY_IOBASE + 0x21c) = ~(1<<24);//clear ZQ cal start
+	
+	//ZQ cal, 75O
+	temp = (1<<28)|(1<<27)|(1<<25)|0x213a;//75O cal resoult store in set1
+	REG32(DDR_PHY_IOBASE + 0x21c) = temp;
+	REG32(DDR_PHY_IOBASE + 0x21c) = temp | (1<<24);//write second time, ZQ cal start
+	//wait ZQ cal done
+	do{
+		//wait ZQ cal done
+		temp = REG32(DDR_PHY_IOBASE + 0x220);
+	}while((temp&(1<<30)) == 0);
+	ZQ_CAL_75 = temp&0x3fffffff;//zq cal val
+
+	//set cmd line zq to point to group 0, because ZQ cal result stores there
+	REG32(DDR_PHY_IOBASE + 0x354) = 0;
+	REG32(DDR_PHY_IOBASE + 0x358) = 0;
+	REG32(DDR_PHY_IOBASE + 0x35c) = 0x00110011;//dqs_p odt set1, dqs_n odt set0
+	REG32(DDR_PHY_IOBASE + 0x360) = 0x11001100;//dqs#_p odt set0, dqs#_n odt set1
+	REG32(DDR_PHY_IOBASE + 0x364) = 0;//DQS  OCD
+	
+	REG32(DDR_PHY_IOBASE + 0x368) = 0;
+	REG32(DDR_PHY_IOBASE + 0x36c) = 0;
+	/*********************ZQ CAL************************/
+	
+	//write_en_1 & fw_set_wr_dly = 1
+	temp = REG32(DDR_PHY_IOBASE + 0x380);
+	temp |= 0x3;
+	REG32(DDR_PHY_IOBASE + 0x380) = temp;
+
+	// add dqs_en 0.5T delay
+	temp = REG32(DDR_PHY_IOBASE + 0x254);
+	temp &= ~(0x1f);
+	temp |= 0x9;
+	REG32(DDR_PHY_IOBASE + 0x254) = temp;
+	REG32(DDR_PHY_IOBASE + 0x258) = temp;
+	REG32(DDR_PHY_IOBASE + 0x25c) = temp;
+	REG32(DDR_PHY_IOBASE + 0x260) = temp;
+
+	//read FIFO latency from read cmd
+	temp = REG32(DDR_PHY_IOBASE + 0x264);
+	temp= (temp&0xFFFFFFE0)|0xa;
+	REG32(DDR_PHY_IOBASE + 0x264) = temp;
+
+	/*
+	//odt always on before cal done
+	temp = REG32(DDR_PHY_IOBASE + 0x268);
+	temp |= (1<<22)|(1<<23);
+	REG32(DDR_PHY_IOBASE + 0x268) = temp;
+	//odt always on before cal done
+	temp = REG32(DDR_PHY_IOBASE + 0x26c);
+	temp |= (1<<22)|(1<<23);
+	REG32(DDR_PHY_IOBASE + 0x26c) = temp;
+	*/
+	REG32(DDR_PHY_IOBASE + 0x268) = 0xfc;// odt window
+	REG32(DDR_PHY_IOBASE + 0x26c) = 0xfc;// odt window
+
+	
+	// 3-point calibration, set 5 = 7 taps, central to edge
+	REG32(DDR_PHY_IOBASE + 0x294) = 0x11117777;
+	REG32(DDR_PHY_IOBASE + 0x298) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x29c) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x2a0) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x2a4) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x2a8) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x2ac) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x2b0) = 0x55555555;
+	REG32(DDR_PHY_IOBASE + 0x2b4) = 0x55555555;
+
+
+	//update 3-point calibration range
+	temp = REG32(DDR_PHY_IOBASE + 0x380);
+	temp |= 0x30;
+	REG32(DDR_PHY_IOBASE + 0x380) = temp;
+	
+	
+	//rx dq , set dqs to sample DQ center
+	//dqp0 = 0xa,dq1p = 0xc, dqn0 = 0xb, dqn1 = 0xd
+	REG32(DDR_PHY_IOBASE + 0x2b8) = 0x0b0b0c0a;
+	REG32(DDR_PHY_IOBASE + 0x2d8) = 0x0b0b0d0b;
+	
+	REG32(DDR_PHY_IOBASE + 0x2c8) = 0x0b0b0b0b;
+	REG32(DDR_PHY_IOBASE + 0x2e8) = 0x0b0b0b0b;
+
+	REG32(DDR_PHY_IOBASE + 0x2bc) = 0x0b0b0b0b;
+	REG32(DDR_PHY_IOBASE + 0x2dc) = 0x0b0b0b0b;
+	
+	REG32(DDR_PHY_IOBASE + 0x2cc) = 0x0b0b0b0b;
+	REG32(DDR_PHY_IOBASE + 0x2ec) = 0x0b0b0b0b;
+	
+	
+	//write_en_1 & fw_set_rd_dly = 1
+	temp = REG32(DDR_PHY_IOBASE + 0x380);
+	temp |= 0xc;
+	REG32(DDR_PHY_IOBASE + 0x380) = temp;
+
+	
+
+	//ddr_ctrl_base
+	//REG32(DDR_IOBASE + 0x228) = 0x00000013;
+	REG32(DDR_IOBASE + 0x0) = 0x00000100; // flush
+	
+	do // make sure controller flush is done
+	{
+		
+	}while(REG32(DDR_IOBASE + 0x0)&0x100);
+	//burst size 4, bank size 4, page size 1K
+	REG32(DDR_IOBASE + 0x224) = 0x00000012;
+	//DFI rate 1:2( PHY : MAC) + DQ16 + DDR2
+	REG32(DDR_IOBASE + 0x4) = 0x00000222;
+	//TPHY_WLAT=1,bit 4 for 2T width
+	REG32(DDR_IOBASE + 0x8) = 0x00201010;
+	//set MODE Register 2
+	REG32(DDR_IOBASE + 0x3c) = 0x0;
+	//set MODE Register 1
+	REG32(DDR_IOBASE + 0x38) = 0x6;//enable dll
+	//REG32(DDR_IOBASE + 0x38) = 0x7;//disable dll
+	//set MODE Register 0, WR =6, cas latehcy =6, bl = 4
+	REG32(DDR_IOBASE + 0x34) = 0xa62;
+	//set Read / Write Latency
+	REG32(DDR_IOBASE + 0x30) = 0x63;
+	//set Refresh cycle, ref num = 9, tref = 0x36d8, trfc = 16
+	REG32(DDR_IOBASE + 0x10) = 0x0936d810;
+	//set Precharge cycle, trtp =2, twr = 3, tras = 9,trp = 3
+	REG32(DDR_IOBASE + 0x14) = 0x00004693;
+	//set TRCD ,tfaw = 7, trtw = 3,twtr = 5, tccd = 2, trcd = 3, trc = 12, trrd = 2
+	REG32(DDR_IOBASE + 0x18) = 0x073a1cc2;
+	//set TMRD
+	REG32(DDR_IOBASE + 0x1c) = 0x00000042;
+	//set MEM_IDLE or BSTC_IDLE
+	REG32(DDR_IOBASE + 0x0c) = 0x00000700;
+	//start INIT flow 
+	REG32(DDR_IOBASE + 0x00) = 0x00000001;
+	do{
+		temp = REG32(DDR_IOBASE + 0x00);
+	}while((temp & 0x1) == 0);// wait INIT_DONE
+	//BSTC_IDLE=1
+	temp = 0x00000600;
+	REG32(DDR_IOBASE + 0x0c) = temp;
+	do{
+		temp = REG32(DDR_IOBASE + 0x0c);
+	}while(temp != 0x00000600);
+	REG32(DDR_IOBASE + 0x0) = 0x00000100;
+	REG32(DDR_IOBASE + 0x0);
+	REG32(DDR_IOBASE + 0x0);
+}
+
+volatile INT8U	MemTestFlag;
+INT32U channel_toggle_test(void){
+ 
+         INT32U i;
+ 
+        
+         volatile unsigned int *dcr;
+         unsigned int *addr;
+         unsigned int temp, single_map;
+         unsigned char row, col, bank, bus_width;
+        
+        
+         single_map = 0;
+         col = 9;
+         row = 12;
+         bus_width = 1;  //16bit
+         bank = 2; // 4 banks
+        
+         if (bus_width == 1) { //bus_width=16bit
+ 
+                   addr = (unsigned int *)(0xa8000000);
+                   *addr = ((unsigned int)addr);
+                   *(addr+1) = ~(*addr);
+                           
+                   for (temp=col; temp <= col+row+bank; temp++) {
+                            addr = (unsigned int *)(0xa8000000 | (0x1 << (temp )));// first row start bit, col + 1
+                            *addr = ((unsigned int)addr);
+                            *(addr+1) = ~(*addr);
+                   }
+ 
+                   //check
+                   addr = (unsigned int *)(0xa8000000);
+                   if(*addr != (unsigned int)addr){
+                            single_map |= 1 ;
+                   }
+                   if(*(addr+1) != (~(*addr))){
+                            single_map |= 1;
+                   }
+                  
+                   for (temp=col; temp <= col+row+bank; temp++) {
+                            addr = (unsigned int *)(0xa8000000 | (0x1 << (temp)));// first row start bit, col + 1
+                            if(*addr != (unsigned int)addr){
+                                     single_map |= (1 << temp);
+                            }
+                            if(*(addr+1) != (~(*addr))){
+                                     single_map |= (1 << temp);
+                            }
+                   }
+ 
+                   if (single_map) {
+                            return BUS_TOGGLE_ERR;
+                   }
+         }
+ 
+         // for DM
+         *(INT16U *)(0xa8000000) = 0xffff ;
+         *(INT8U *)(0xa8000000) = 0x00 ;
+         if(0xff00 != (*(INT16U *)(0xa8000000))){
+                   return BUS_TOGGLE_ERR;
+         }
+ 
+         return TEST_PASS;
+ 
+}
+
+
+void DDR_Test_Task(void)
+{
+
+	INT32U retval;
+
+	REG32(OOBMAC_IOBASE + MAC_DUMMY_INFORM_IB) &= 0xffffff00;  //initial the dummy register
+//	ddr_asic_phy_init();
+//	ddr_asic_controllor_init();
+
+	//while(1){
+		retval=channel_toggle_test();
+
+		//added by melody 20160825
+		REG32(OOBMAC_IOBASE + MAC_DUMMY_INFORM_IB) |= retval+1;   //inform IB DDR testing result
+	//	REG16(OOBMAC_IOBASE + MAC_OOB2IB_INT) |= 0x1;          //OOBMAC to IBMAC interrupt(ISR_BIT15)
+		
+	/*	if(retval != TEST_PASS)  
+		{
+			while(1);
+		}*/
+	//}	
+
+}

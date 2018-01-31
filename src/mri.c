@@ -1,0 +1,1019 @@
+#include <sys/autoconf.h>
+
+#if CONFIG_VERSION == 1
+PUBLIC _boot, 0xbfc00000
+PUBLIC __romdata_start_lma,0x81070fd4
+PUBLIC __romdata_start_vma,0x8021e000
+PUBLIC __romdata_size,0x504
+PUBLIC __rombss_start,0x8021e508
+PUBLIC __rombss_end,0x8021f720
+PUBLIC _gp,0x8021e510
+PUBLIC __udivdi3, 0x800001bc
+PUBLIC __umoddi3, 0x8000084c
+PUBLIC mpi_sub_mpi,0x80003ab0
+PUBLIC mpi_copy,0x800011f8
+PUBLIC mpi_div_mpi,0x80007568
+PUBLIC mpi_sub_int,0x80003cd0
+PUBLIC mpi_div_int,0x80008380
+PUBLIC mpi_mul_int,0x800074fc
+PUBLIC mpi_mul_mpi,0x800071f4
+PUBLIC mpi_add_abs,0x800032dc
+PUBLIC mpi_init,0x80000ee8
+PUBLIC mpi_msb,0x800015f8
+PUBLIC mpi_add_mpi,0x80003954
+PUBLIC mpi_cmp_int,0x80003220
+PUBLIC mpi_add_int,0x80003c0c
+PUBLIC mpi_exp_mod,0x80008b88
+PUBLIC mpi_lsb,0x80001500
+PUBLIC mpi_grow,0x800010a0
+PUBLIC mpi_mod_int,0x80008540
+PUBLIC mpi_gen_prime,0x8000a80c
+PUBLIC mpi_mod_mpi,0x8000844c
+PUBLIC mpi_read_binary,0x800021fc
+PUBLIC mpi_swap,0x80001374
+PUBLIC mpi_lset,0x800013e0
+PUBLIC mpi_shift_l,0x80002670
+PUBLIC mpi_size,0x8000171c
+PUBLIC mpi_sub_abs,0x800037a0
+PUBLIC mpi_inv_mod,0x8000993c
+PUBLIC mpi_cmp_abs,0x80002c70
+PUBLIC mpi_write_string,0x80001e8c
+PUBLIC mpi_shift_r,0x800029c8
+PUBLIC mpi_read_string,0x80001884
+PUBLIC mpi_free,0x80000f94
+PUBLIC mpi_is_prime,0x8000a134
+PUBLIC mpi_gcd,0x80009658
+PUBLIC mpi_write_binary,0x800024a0
+PUBLIC mpi_cmp_mpi,0x80002eec
+PUBLIC settimeofday,0x8000acf8
+PUBLIC inctimeofday,0x8000ad04
+PUBLIC isatty,0x8000ad20
+PUBLIC abort,0x8000ad38
+PUBLIC abs,0x8000ad50
+PUBLIC asctime,0x8000ad60
+PUBLIC asctime_r,0x8000ad6c
+PUBLIC __assert,0x8000adfc
+PUBLIC _atoi_r,0x8000ae34
+PUBLIC atoi,0x8000ae28
+PUBLIC ctime,0x8000ae40
+PUBLIC div,0x8000ae60
+PUBLIC fclose,0x8000affc
+PUBLIC fflush,0x8000b00c
+PUBLIC fiprintf,0x8000b4bc
+PUBLIC fread,0x8000b63c
+PUBLIC iswspace,0x8000bc44
+PUBLIC labs,0x8000bc74
+PUBLIC localtime,0x8000bc88
+PUBLIC localtime_r,0x8000bc94
+PUBLIC setlocale,0x8000bd38
+PUBLIC localeconv,0x8000bd4c
+PUBLIC mbrtowc,0x8000bf30
+PUBLIC memchr,0x8000bfa8
+PUBLIC memcmp,0x8000bfe0
+PUBLIC memcpy,0x8000c01c
+PUBLIC memmove,0x8000c0e0
+PUBLIC memset,0x8000c168
+PUBLIC mktime,0x8000c5b4
+PUBLIC printf,0x8000d394
+PUBLIC rand,0x8000d3e4
+PUBLIC srand,0x8000d3d0
+PUBLIC snprintf,0x8000da0c
+PUBLIC sprintf,0x8000dad8
+PUBLIC sscanf,0x8000db44
+PUBLIC strcat,0x8000dd8c
+PUBLIC strchr,0x8000ddc8
+PUBLIC strcmp,0x8000de08
+PUBLIC strcpy,0x8000de7c
+PUBLIC strftime,0x8000e05c
+PUBLIC strlen,0x8000f014
+PUBLIC strncat,0x8000f03c
+PUBLIC strncmp,0x8000f0b8
+PUBLIC strncpy,0x8000f130
+PUBLIC strpbrk,0x8000f28c
+PUBLIC strrchr,0x8000f308
+PUBLIC strstr,0x8000f378
+PUBLIC strtok,0x8000f3e0
+PUBLIC strtok_r,0x8000f4b0
+PUBLIC strtol,0x8000f668
+PUBLIC strtoul,0x8000faf0
+PUBLIC gettimeofday,0x8000fda0
+PUBLIC open,0x8000fdb4
+PUBLIC time,0x8000fdec
+PUBLIC ungetc,0x800100e8
+PUBLIC vfiprintf,0x80011224
+PUBLIC vfprintf,0x80012368
+PUBLIC vfscanf,0x80013444
+PUBLIC wcrtomb,0x80013510
+PUBLIC wcsrtombs,0x8001368c
+PUBLIC reassign,0x80013fbc
+PUBLIC malloc,0x80013e08
+PUBLIC parfind,0x80013e14
+PUBLIC realloc,0x8001403c
+PUBLIC findsize,0x80013c6c
+PUBLIC free,0x80013f10
+PUBLIC OSIntEnter,0x80014458
+PUBLIC OS_TCBInit,0x80015a60
+PUBLIC OS_EventTaskRemove,0x80014ecc
+PUBLIC OSEventNameGet,0x80014104
+PUBLIC OSIntExit,0x800144b8
+PUBLIC OS_MemCopy,0x800154e0
+PUBLIC OS_Sched,0x80015564
+PUBLIC OS_TaskStat,0x80015844
+PUBLIC OS_MemClr,0x80015474
+PUBLIC OS_EventTaskRdy,0x80014bbc
+PUBLIC OSSchedUnlock,0x80014694
+PUBLIC OSStatInit,0x80014828
+PUBLIC OS_Dummy,0x80014b9c
+PUBLIC OSEventNameSet,0x80014268
+PUBLIC OS_EventTaskWait,0x80014d68
+PUBLIC OS_TaskStatStkChk,0x8001595c
+PUBLIC OSStart,0x80014784
+PUBLIC OSTimeTick,0x800148c4
+PUBLIC OSSchedLock,0x800145fc
+PUBLIC OSInit,0x800143e8
+PUBLIC OS_EventWaitListInit,0x80014f98
+PUBLIC OS_TaskIdle,0x800157f4
+PUBLIC OSStartHighRdy,0x80015dc0
+PUBLIC OSLopIrqHandler,0x800163c0
+PUBLIC OSCtxSw,0x80015fb0
+PUBLIC OSIntCtxSw,0x80015e90
+PUBLIC OS_CPU_SR_Restore,0x80015f8c
+PUBLIC OSIrqHandler,0x8001614c
+PUBLIC OS_CPU_SR_Save,0x80015f70
+PUBLIC OSTaskStkInit,0x80016480
+PUBLIC OSFlagPendGetFlagsRdy,0x80017be4
+PUBLIC OSFlagAccept,0x80016918
+PUBLIC OS_FlagUnlink,0x8001860c
+PUBLIC OS_FlagInit,0x800183c4
+PUBLIC OSFlagQuery,0x800180d8
+PUBLIC OSFlagPost,0x80017c44
+PUBLIC OSFlagCreate,0x80016d0c
+PUBLIC OSFlagDel,0x80016e5c
+PUBLIC OSFlagPend,0x8001746c
+PUBLIC OSFlagNameSet,0x800172f0
+PUBLIC OSFlagNameGet,0x80017190
+PUBLIC OSQFlush,0x80019798
+PUBLIC OSQAccept,0x80019060
+PUBLIC OSQPost,0x80019d90
+PUBLIC OSQPend,0x80019880
+PUBLIC OSQPostFront,0x80019f48
+PUBLIC OSQCreate,0x800191f4
+PUBLIC OSQPostOpt,0x8001a108
+PUBLIC OSQDel,0x8001940c
+PUBLIC OSQPendAbort,0x80019bdc
+PUBLIC OS_QInit,0x8001a590
+PUBLIC OSQQuery,0x8001a3ac
+PUBLIC OSSemPend,0x8001ab6c
+PUBLIC OSSemAccept,0x8001a660
+PUBLIC OSSemPendAbort,0x8001adfc
+PUBLIC OSSemPost,0x8001afb0
+PUBLIC OSSemCreate,0x8001a738
+PUBLIC OSSemQuery,0x8001b0e8
+PUBLIC OSSemSet,0x8001b250
+PUBLIC OSSemDel,0x8001a850
+PUBLIC OSTaskCreateExt,0x8001ba10
+PUBLIC OSTaskCreate,0x8001b840
+PUBLIC OSTaskChangePrio,0x8001b384
+PUBLIC OSTaskDel,0x8001bc24
+PUBLIC OSTaskNameSet,0x8001c3c4
+PUBLIC OSTaskDelReq,0x8001c050
+PUBLIC OSTaskResume,0x8001c5cc
+PUBLIC OSTaskNameGet,0x8001c1d4
+PUBLIC OSTaskStkChk,0x8001c7f0
+PUBLIC OSTaskQuery,0x8001cc94
+PUBLIC OS_TaskStkClr,0x8001cdf8
+PUBLIC OSTaskSuspend,0x8001ca28
+PUBLIC OSTimeSet,0x8001d4a4
+PUBLIC OSTimeDly,0x8001ce90
+PUBLIC OSTimeDlyHMSM,0x8001cfd8
+PUBLIC OSTimeDlyResume,0x8001d220
+PUBLIC OSTimeGet,0x8001d44c
+PUBLIC _read_r,0x8001d7d8
+PUBLIC rlx_dcache_invalidate_all,0x8001d978
+PUBLIC rlx_dcache_invalidate,0x8001d880
+PUBLIC rlx_dmem_enable,0x8001daf0
+PUBLIC rlx_icache_invalidate_all,0x8001d9d4
+PUBLIC rlx_icache_lock,0x8001da30
+PUBLIC rlx_dcache_store,0x8001d8fc
+PUBLIC rlx_dcache_flush,0x8001d804
+PUBLIC rlx_cp3_init,0x8001db5c
+PUBLIC cp3_clear_counter,0x8001dc10
+PUBLIC rlx_cp3_save_counters,0x8001dbbc
+PUBLIC rlx_cp3_get_counter_lo,0x8001dc7c
+PUBLIC rlx_cp3_stop,0x8001dbb4
+PUBLIC rlx_cp3_set_counter_lo,0x8001dcc0
+PUBLIC rlx_cp3_get_counter_hi,0x8001dc38
+PUBLIC rlx_cp3_start,0x8001dbac
+PUBLIC rlx_irq_set_handler,0x8001df04
+PUBLIC rlx_irq_set_mask,0x8001dd68
+PUBLIC rlx_irq_register,0x8001dfa4
+PUBLIC rlx_irq_init,0x8001dd04
+PUBLIC rsa_free,0x8001fb50
+PUBLIC rsa_pkcs1_verify,0x8001f6f0
+PUBLIC rsa_init,0x8001dff4
+PUBLIC rsa_pkcs1_encrypt,0x8001ee84
+PUBLIC rsa_check_privkey,0x8001e738
+PUBLIC rsa_public,0x8001e9b4
+PUBLIC rsa_check_pubkey,0x8001e5dc
+PUBLIC rsa_pkcs1_sign,0x8001f310
+PUBLIC rsa_pkcs1_decrypt,0x8001f0a4
+PUBLIC rsa_gen_key,0x8001e080
+PUBLIC rsa_private,0x8001eb4c
+PUBLIC flash_erase,0x8001fc2c
+PUBLIC flash_write_data,0x8001fc94
+PUBLIC _write_r,0x8001fd30
+PUBLIC sizearr,0x81070000
+PUBLIC parsize,0x81070028
+PUBLIC __clz_tab,0x81070050
+PUBLIC _ctype_,0x810704ff
+PUBLIC OSUnMapTbl,0x81070e3c
+PUBLIC dev_spi,0x81070f64
+PUBLIC dev_uart,0x81070f80
+PUBLIC heap_size,0x8021e004
+PUBLIC heap_start,0x8021e000
+PUBLIC __ctype_ptr,0x8021e008
+PUBLIC _global_impure_ptr,0x8021e450
+PUBLIC _impure_ptr,0x8021e454
+PUBLIC memlist,0x8021e490
+PUBLIC dev_list,0x8021e4f0
+PUBLIC OSLockNesting,0x8021e518
+PUBLIC OSRunning,0x8021e519
+PUBLIC OSIdleCtr,0x8021e51c
+PUBLIC OSPrioHighRdy,0x8021e520
+PUBLIC OSFlagTbl,0x8021e524
+PUBLIC OSPrioCur,0x8021e5b0
+PUBLIC OSTCBList,0x8021e5b4
+PUBLIC OSMemTbl,0x8021e5b8
+PUBLIC OSTickStepState,0x8021e720
+PUBLIC OSTaskStatStk,0x8021e724
+PUBLIC OSCtxSwCtr,0x8021e924
+PUBLIC OSIdleCtrMax,0x8021e928
+PUBLIC OSTCBFreeList,0x8021e92c
+PUBLIC OSCPUUsage,0x8021e930
+PUBLIC OSTaskCtr,0x8021e931
+PUBLIC OSMemFreeList,0x8021e934
+PUBLIC OSQTbl,0x8021e938
+PUBLIC OSTCBHighRdy,0x8021e9f8
+PUBLIC OSQFreeList,0x8021e9fc
+PUBLIC OSRdyGrp,0x8021ea00
+PUBLIC OSRdyTbl,0x8021ea04
+PUBLIC OSEventFreeList,0x8021ea0c
+PUBLIC OSIntNesting,0x8021ea10
+PUBLIC OSTCBCur,0x8021ea14
+PUBLIC OSTime,0x8021ea18
+PUBLIC OSTaskIdleStk,0x8021ea1c
+PUBLIC OSEventTbl,0x8021ec1c
+PUBLIC OSTCBTbl,0x8021f01c
+PUBLIC OSFlagFreeList,0x8021f64c
+PUBLIC OSStatRdy,0x8021f650
+PUBLIC OSTCBPrioTbl,0x8021f654
+PUBLIC OSIdleCtrRun,0x8021f6d8
+PUBLIC traps_sp,0x8021f6dc
+PUBLIC rlx_irq_handler_table,0x8021f6e0
+#elif CONFIG_VERSION == 2
+PUBLIC mpi_sub_mpi, 0x80001f84
+PUBLIC mpi_copy, 0x800010c8
+PUBLIC mpi_div_mpi, 0x80003248
+PUBLIC mpi_sub_int, 0x80002050
+PUBLIC mpi_div_int, 0x8000398c
+PUBLIC mpi_mul_int, 0x80002fe8
+PUBLIC mpi_mul_mpi, 0x80002e38
+PUBLIC mpi_add_abs, 0x80001b90
+PUBLIC mpi_init, 0x80000ee8
+PUBLIC mpi_msb, 0x800012ac
+PUBLIC mpi_add_mpi, 0x80001e80
+PUBLIC mpi_cmp_int, 0x80001b40
+PUBLIC mpi_add_int, 0x80001f34
+PUBLIC mpi_exp_mod, 0x80003f90
+PUBLIC mpi_lsb, 0x8000124c
+PUBLIC mpi_grow, 0x80000ff8
+PUBLIC mpi_mod_int, 0x800013d8
+PUBLIC mpi_gen_prime, 0x8000507c
+PUBLIC mpi_mod_mpi, 0x80003ce8
+PUBLIC mpi_read_binary, 0x800014e0
+PUBLIC mpi_swap, 0x80001190
+PUBLIC mpi_lset, 0x800011cc
+PUBLIC mpi_shift_l, 0x8000169c
+PUBLIC mpi_size, 0x80001330
+PUBLIC mpi_sub_abs, 0x80001d74
+PUBLIC mpi_inv_mod, 0x800047c8
+PUBLIC mpi_cmp_abs, 0x800018d8
+PUBLIC mpi_write_string, 0x80003af0
+PUBLIC mpi_shift_r, 0x800017f8
+PUBLIC mpi_read_string, 0x80003020
+PUBLIC mpi_free, 0x80000f30
+PUBLIC mpi_is_prime, 0x80004c64
+PUBLIC mpi_gcd, 0x800045ec
+PUBLIC mpi_write_binary, 0x800015e4
+PUBLIC mpi_cmp_mpi, 0x800019e4
+PUBLIC ntohl, 0x8000577c
+PUBLIC disable_master_engine, 0x800053e8
+PUBLIC htonl, 0x80005754
+PUBLIC ntohs, 0x80005734
+PUBLIC bsp_wdt_kick, 0x800054f0
+PUBLIC htons, 0x8000571c
+PUBLIC bsp_irq_disable, 0x800053c4
+PUBLIC settimeofday, 0x80006a50
+PUBLIC inctimeofday, 0x80006a5c
+PUBLIC isatty, 0x80006a78
+PUBLIC abort, 0x80006a90
+PUBLIC abs, 0x80006aa8
+PUBLIC asctime, 0x80006ab8
+PUBLIC asctime_r, 0x80006ac4
+PUBLIC __assert, 0x80006b54
+PUBLIC _atoi_r, 0x80006b8c
+PUBLIC atoi, 0x80006b80
+PUBLIC ctime, 0x80006b98
+PUBLIC div, 0x80006bb8
+PUBLIC fclose, 0x80006da0
+PUBLIC fflush, 0x80006db0
+PUBLIC fiprintf, 0x80007290
+PUBLIC fread, 0x80007550
+PUBLIC iswspace, 0x80007bdc
+PUBLIC labs, 0x80007c08
+PUBLIC localtime, 0x80007c1c
+PUBLIC localtime_r, 0x80007c28
+PUBLIC setlocale, 0x80007cdc
+PUBLIC localeconv, 0x80007cf0
+PUBLIC mbrtowc, 0x80007eec
+PUBLIC memchr, 0x80007f64
+PUBLIC memcmp, 0x80008040
+PUBLIC memcpy, 0x800080c4
+PUBLIC memmove, 0x800080f4
+PUBLIC memset, 0x8000821c
+PUBLIC mktime, 0x80008664
+PUBLIC printf, 0x80009528
+PUBLIC rand, 0x80009578
+PUBLIC srand, 0x80009564
+PUBLIC snprintf, 0x80009c4c
+PUBLIC sprintf, 0x80009d18
+PUBLIC sscanf, 0x80009d84
+PUBLIC strcat, 0x8000a01c
+PUBLIC strchr, 0x8000a0cc
+PUBLIC strcmp, 0x8000a190
+PUBLIC strcpy, 0x8000a204
+PUBLIC strftime, 0x8000a444
+PUBLIC strlen, 0x8000b4b0
+PUBLIC strncat, 0x8000b540
+PUBLIC strncmp, 0x8000b624
+PUBLIC strncpy, 0x8000b778
+PUBLIC strpbrk, 0x8000b7c0
+PUBLIC strrchr, 0x8000b858
+PUBLIC strstr, 0x8000b8d8
+PUBLIC strtok, 0x8000b94c
+PUBLIC strtok_r, 0x8000ba28
+PUBLIC strtol, 0x8000bc08
+PUBLIC strtoul, 0x8000c0dc
+PUBLIC gettimeofday, 0x8000c3b8
+PUBLIC open, 0x8000c3cc
+PUBLIC time, 0x8000c404
+PUBLIC ungetc, 0x8000c770
+PUBLIC vfiprintf, 0x8000dc38
+PUBLIC _vfiprintf_r, 0x8000c7e0
+PUBLIC vfprintf, 0x8000f108
+PUBLIC vfscanf, 0x80010174
+PUBLIC wcrtomb, 0x80010274
+PUBLIC wcsrtombs, 0x80010434
+PUBLIC reassign, 0x80010df4
+PUBLIC malloc, 0x80010c34
+PUBLIC parfind, 0x80010c40
+PUBLIC realloc, 0x80010e74
+PUBLIC findsize, 0x80010a60
+PUBLIC free, 0x80010d48
+PUBLIC OSIntEnter, 0x80011178
+PUBLIC OS_TCBInit, 0x80011c9c
+PUBLIC OS_EventTaskRemove, 0x800116c4
+PUBLIC OSEventNameGet, 0x80010fb4
+PUBLIC OSIntExit, 0x800111ec
+PUBLIC OS_MemCopy, 0x80011ad0
+PUBLIC OS_Sched, 0x80011348
+PUBLIC OS_TaskStat, 0x80011bd8
+PUBLIC OS_MemClr, 0x80011890
+PUBLIC OS_EventTaskRdy, 0x8001170c
+PUBLIC OSSchedUnlock, 0x800113fc
+PUBLIC OSStatInit, 0x800114f4
+PUBLIC OS_Dummy, 0x800116bc
+PUBLIC OSEventNameSet, 0x800110a0
+PUBLIC OS_EventTaskWait, 0x800117dc
+PUBLIC OS_TaskStatStkChk, 0x80011b3c
+PUBLIC OSStart, 0x8001149c
+PUBLIC OSTimeTick, 0x80011564
+PUBLIC OSSchedLock, 0x800112cc
+PUBLIC OSInit, 0x800118b8
+PUBLIC OS_EventWaitListInit, 0x80011864
+PUBLIC OS_TaskIdle, 0x80011b00
+PUBLIC OSStartHighRdy, 0x80011e40
+PUBLIC OSLopIrqHandler, 0x80012440
+PUBLIC OSCtxSw, 0x80012030
+PUBLIC OSIntCtxSw, 0x80011f10
+PUBLIC OS_CPU_SR_Restore, 0x8001200c
+PUBLIC OSIrqHandler, 0x800121cc
+PUBLIC OS_CPU_SR_Save, 0x80011ff0
+PUBLIC OSTaskStkInit, 0x80012500
+PUBLIC OSDebugInit, 0x8001266c
+PUBLIC OSFlagPendGetFlagsRdy, 0x800130a8
+PUBLIC OSFlagAccept, 0x80012674
+PUBLIC OS_FlagUnlink, 0x80012b64
+PUBLIC OS_FlagInit, 0x80013394
+PUBLIC OSFlagQuery, 0x80013314
+PUBLIC OSFlagPost, 0x800130ec
+PUBLIC OSFlagCreate, 0x80012844
+PUBLIC OSFlagDel, 0x80012c28
+PUBLIC OSFlagPend, 0x80012dbc
+PUBLIC OSFlagNameSet, 0x800129d8
+PUBLIC OSFlagNameGet, 0x80012918
+PUBLIC OSMboxQuery, 0x80013bdc
+PUBLIC OSMboxPost, 0x800139c0
+PUBLIC OSMboxPendAbort, 0x8001388c
+PUBLIC OSMboxCreate, 0x80013478
+PUBLIC OSMboxPend, 0x800136a8
+PUBLIC OSMboxAccept, 0x80013414
+PUBLIC OSMboxPostOpt, 0x80013aac
+PUBLIC OSMboxDel, 0x80013510
+PUBLIC OSMutexAccept, 0x800141b4
+PUBLIC OSMutexPend, 0x800146cc
+PUBLIC OSMutexDel, 0x800144bc
+PUBLIC OSMutexCreate, 0x800142c4
+PUBLIC OSMutexQuery, 0x80014b90
+PUBLIC OSMutexPost, 0x80014a04
+PUBLIC OSQFlush, 0x80015044
+PUBLIC OSQAccept, 0x80014c8c
+PUBLIC OSQPost, 0x800153f8
+PUBLIC OSQPend, 0x800150c4
+PUBLIC OSQPostFront, 0x80015514
+PUBLIC OSQCreate, 0x80014d78
+PUBLIC OSQPostOpt, 0x80015634
+PUBLIC OSQDel, 0x80014e8c
+PUBLIC OSQPendAbort, 0x800152c8
+PUBLIC OS_QInit, 0x800158d4
+PUBLIC OSQQuery, 0x800157dc
+PUBLIC OSSemPend, 0x80015bf8
+PUBLIC OSSemAccept, 0x80015938
+PUBLIC OSSemPendAbort, 0x80015d5c
+PUBLIC OSSemPost, 0x80015e8c
+PUBLIC OSSemCreate, 0x800159c8
+PUBLIC OSSemQuery, 0x80015f68
+PUBLIC OSSemSet, 0x80016028
+PUBLIC OSSemDel, 0x80015a60
+PUBLIC OSTaskCreateExt, 0x80016484
+PUBLIC OSTaskCreate, 0x800162f4
+PUBLIC OSTaskChangePrio, 0x800160e0
+PUBLIC OSTaskDel, 0x80016614
+PUBLIC OSTaskNameSet, 0x80016ab4
+PUBLIC OSTaskDelReq, 0x8001689c
+PUBLIC OSTaskResume, 0x80016be0
+PUBLIC OSTaskNameGet, 0x8001699c
+PUBLIC OSTaskStkChk, 0x80016d24
+PUBLIC OSTaskQuery, 0x80016fb8
+PUBLIC OS_TaskStkClr, 0x80016448
+PUBLIC OSTaskSuspend, 0x80016e60
+PUBLIC OSTimeSet, 0x800173d8
+PUBLIC OSTimeDly, 0x8001709c
+PUBLIC OSTimeDlyHMSM, 0x80017144
+PUBLIC OSTimeDlyResume, 0x80017268
+PUBLIC OSTimeGet, 0x80017398
+PUBLIC OSTmrSignal, 0x800175d0
+PUBLIC OSTmrDel, 0x80017ce4
+PUBLIC OSTmrRemainGet, 0x80017aa4
+PUBLIC OSTmrStateGet, 0x800179fc
+PUBLIC OSTmr_Init, 0x800175f4
+PUBLIC OSTmrStart, 0x80017908
+PUBLIC OSTmrStop, 0x80017760
+PUBLIC OSTmrCreate, 0x80017dd8
+PUBLIC OSTmrNameGet, 0x80017bf8
+PUBLIC set_file_open_hdl, 0x80018060
+PUBLIC set_file_close_hdl, 0x80018080
+PUBLIC set_file_read_hdl, 0x800180a0
+PUBLIC set_file_write_hdl, 0x800180c0
+PUBLIC _read_r, 0x8001829c
+PUBLIC rlx_dcache_invalidate_all, 0x80018334
+PUBLIC rlx_dcache_invalidate, 0x800182ec
+PUBLIC rlx_dmem_enable, 0x800183c4
+PUBLIC rlx_icache_invalidate_all, 0x80018354
+PUBLIC rlx_icache_lock, 0x80018374
+PUBLIC rlx_dcache_store, 0x80018310
+PUBLIC rlx_dcache_flush, 0x800182c8
+PUBLIC rlx_cp3_init, 0x800183ec
+PUBLIC cp3_clear_counter, 0x800184a0
+PUBLIC rlx_cp3_save_counters, 0x8001844c
+PUBLIC rlx_cp3_get_counter_lo, 0x8001850c
+PUBLIC rlx_cp3_stop, 0x80018444
+PUBLIC rlx_cp3_set_counter_lo, 0x80018550
+PUBLIC rlx_cp3_get_counter_hi, 0x800184c8
+PUBLIC rlx_cp3_start, 0x8001843c
+PUBLIC rlx_irq_set_handler, 0x800186c0
+PUBLIC rlx_irq_set_mask, 0x800185bc
+PUBLIC rlx_irq_register, 0x80018730
+PUBLIC rlx_irq_init, 0x80018594
+PUBLIC inet_chksum, 0x80018864
+PUBLIC trimspace, 0x800187dc
+PUBLIC strltrim, 0x8001875c
+PUBLIC chksum, 0x80018818
+PUBLIC inet_chksum_pseudo, 0x8001889c
+PUBLIC set_time, 0x80018994
+PUBLIC parsebios, 0x80018974
+PUBLIC strrtrim, 0x800187ac
+PUBLIC rsa_free, 0x80018a84
+PUBLIC rsa_pkcs1_verify, 0x80019d34
+PUBLIC rsa_init, 0x80018a20
+PUBLIC rsa_pkcs1_encrypt, 0x800192a0
+PUBLIC rsa_check_privkey, 0x80018e54
+PUBLIC rsa_public, 0x80018ffc
+PUBLIC rsa_check_pubkey, 0x80018d78
+PUBLIC rsa_pkcs1_sign, 0x800194ec
+PUBLIC rsa_pkcs1_decrypt, 0x800193ec
+PUBLIC rsa_gen_key, 0x80018af0
+PUBLIC rsa_private, 0x800190ec
+PUBLIC spi_write_byte, 0x8001a5bc
+PUBLIC spi_write_word, 0x8001a81c
+PUBLIC spi_dis_write, 0x8001a26c
+PUBLIC spi_enable_write, 0x8001a2c0
+PUBLIC spi_release_dp, 0x8001a574
+PUBLIC spi_chip_erase, 0x8001a000
+PUBLIC spi_read_ect_id, 0x8001a424
+PUBLIC spi_read_byte, 0x8001a658
+PUBLIC spi_read_id, 0x8001a3a0
+PUBLIC spi_se_erase, 0x8001a0fc
+PUBLIC spi_write, 0x8001a770
+PUBLIC spi_read_mf_id, 0x8001a4a0
+PUBLIC spi_set_protect_mem, 0x8001a314
+PUBLIC spi_blk_erase, 0x8001a068
+PUBLIC _write_r, 0x8001aaa0
+PUBLIC __romdata_start_lma, 0xbfc00384
+PUBLIC __romdata_start_vma, 0x8021a000
+PUBLIC __romdata_size, 0x1d38
+PUBLIC __rombss_start, 0x8021bd38
+PUBLIC __rombss_end, 0x8021f3ec
+PUBLIC _gp, 0x8021bd40
+PUBLIC __ctype_ptr, 0x8021b778
+PUBLIC heap_start, 0x8021a000
+PUBLIC heap_size, 0x8021a004
+PUBLIC sizearr, 0x8021a008
+PUBLIC parsize, 0x8021a048
+PUBLIC __udivdi3,0x800001bc
+PUBLIC __umoddi3,0x8000084c
+PUBLIC init, 0xbfc0008c
+PUBLIC dev_list, 0x8021bce8
+PUBLIC dev_socket, 0x8021bcfc
+PUBLIC dev_uart, 0x8021bd24
+PUBLIC uart_open, 0x80018114
+#elif CONFIG_VERSION == 4
+PUBLIC _boot, 0xbfc00000
+PUBLIC rlx_trap_handler, 0x80000080
+PUBLIC rlx_cp3_init, 0x800001b4
+PUBLIC cp3_clear_counter, 0x80000268
+PUBLIC rlx_cp3_save_counters, 0x80000214
+PUBLIC rlx_cp3_get_counter_lo, 0x800002d4
+PUBLIC rlx_cp3_stop, 0x8000020c
+PUBLIC rlx_cp3_set_counter_lo, 0x80000318
+PUBLIC rlx_cp3_get_counter_hi, 0x80000290
+PUBLIC rlx_cp3_start, 0x80000204
+PUBLIC rlx_cp3_get_counter, 0x80000450
+PUBLIC rlx_cp3_get_counters, 0x800004d0
+PUBLIC rlx_cp3_print_counters, 0x8000035c
+PUBLIC abort, 0x80000570
+PUBLIC abs, 0x80000588
+PUBLIC asctime, 0x80000598
+PUBLIC __assert, 0x80000634
+PUBLIC _atoi_r, 0x8000066c
+PUBLIC atoi, 0x80000660
+PUBLIC bcopy, 0x80000678
+PUBLIC bzero, 0x80000688
+PUBLIC ctime, 0x800006ac
+PUBLIC div, 0x800006cc
+PUBLIC fclose, 0x80000868
+PUBLIC fflush, 0x80000878
+PUBLIC __sinit, 0x80000b78
+PUBLIC __sfmoreglue, 0x80000ac4
+PUBLIC _cleanup, 0x80000b5c
+PUBLIC __fp_lock_all, 0x80000d08
+PUBLIC __sfp_lock_acquire, 0x80000b40
+PUBLIC __sfp, 0x80000c10
+PUBLIC __sinit_lock_release, 0x80000b70
+PUBLIC __fp_unlock_all, 0x80000d18
+PUBLIC __sfp_lock_release, 0x80000b48
+PUBLIC __sinit_lock_acquire, 0x80000b68
+PUBLIC fiprintf, 0x80000d28
+PUBLIC fread, 0x80000ea8
+PUBLIC _fread_r, 0x80000d50
+PUBLIC _fwalk, 0x8000132c
+PUBLIC _fwalk_reent, 0x800013e0
+PUBLIC __gettzinfo, 0x800014a4
+PUBLIC iswspace, 0x800014b0
+PUBLIC labs, 0x800014e0
+PUBLIC localtime, 0x800014f4
+PUBLIC setlocale, 0x800015a4
+PUBLIC localeconv, 0x800015b8
+PUBLIC __smakebuf, 0x800015c4
+PUBLIC mbrtowc, 0x8000179c
+PUBLIC memccpy, 0x80001814
+PUBLIC memchr, 0x8000185c
+PUBLIC memcmp, 0x80001894
+PUBLIC memcpy, 0x800018d0
+PUBLIC memmove, 0x80001994
+PUBLIC mempcpy, 0x80001a1c
+PUBLIC memset, 0x80001a48
+PUBLIC mktime, 0x80001e94
+PUBLIC __tzcalc_limits, 0x800022f4
+PUBLIC printf, 0x80002c74
+PUBLIC putc, 0x80002da4
+PUBLIC putchar, 0x80002dc4
+PUBLIC puts, 0x80002e64
+PUBLIC rand, 0x80002e88
+PUBLIC srand, 0x80002e74
+PUBLIC __sccl, 0x800030b8
+PUBLIC signal, 0x80003408
+PUBLIC _init_signal, 0x8000341c
+PUBLIC __sigtramp, 0x80003428
+PUBLIC raise, 0x800033f8
+PUBLIC snprintf, 0x800034a8
+PUBLIC sprintf, 0x80003574
+PUBLIC sscanf, 0x800035e0
+PUBLIC _sscanf_r, 0x80003654
+PUBLIC __sseek, 0x800037b4
+PUBLIC __sread, 0x800036d4
+PUBLIC __sclose, 0x80003818
+PUBLIC __swrite, 0x8000373c
+PUBLIC strcat, 0x80003828
+PUBLIC strchr, 0x80003864
+PUBLIC strcmp, 0x800038a4
+PUBLIC strcpy, 0x80003918
+PUBLIC strftime, 0x80003af8
+PUBLIC strlen, 0x80004ab0
+PUBLIC strncat, 0x80004ad8
+PUBLIC strncmp, 0x80004b54
+PUBLIC strncpy, 0x80004bcc
+PUBLIC strpbrk, 0x80004d28
+PUBLIC strrchr, 0x80004da4
+PUBLIC strstr, 0x80004e14
+PUBLIC strtok, 0x80004e7c
+PUBLIC strtol, 0x80005104
+PUBLIC strtoul, 0x80005580
+PUBLIC gettimeofday, 0x80005824
+PUBLIC time, 0x80005838
+PUBLIC __tz_unlock, 0x80005894
+PUBLIC __tz_lock, 0x8000588c
+PUBLIC ungetc, 0x80005b34
+PUBLIC __submore, 0x8000589c
+PUBLIC vfiprintf, 0x80006c70
+PUBLIC vfprintf, 0x80007db4
+PUBLIC __svfscanf, 0x80008e74
+PUBLIC vfscanf, 0x80008e90
+PUBLIC __swbuf, 0x80009028
+PUBLIC wcrtomb, 0x800090a0
+PUBLIC wcsrtombs, 0x8000921c
+PUBLIC __swsetup, 0x800096c4
+PUBLIC flash_write, 0x80009a3c
+PUBLIC uart_check_busy, 0x800098cc
+PUBLIC set_file_open_hdl, 0x8000984c
+PUBLIC uart_write, 0x800099a4
+PUBLIC set_file_close_hdl, 0x8000986c
+PUBLIC flash_open, 0x80009a34
+PUBLIC flash_read, 0x80009a44
+PUBLIC flash_close, 0x80009a4c
+PUBLIC uart_close, 0x80009984
+PUBLIC set_file_read_hdl, 0x8000988c
+PUBLIC uart_open, 0x80009900
+PUBLIC uart_read, 0x80009a2c
+PUBLIC set_file_write_hdl, 0x800098ac
+PUBLIC settimeofday, 0x80009aa8
+PUBLIC inctimeofday, 0x80009ab4
+PUBLIC isatty, 0x80009b14
+PUBLIC _exit, 0x80009b48
+PUBLIC reassign, 0x80009eb4
+PUBLIC malloc, 0x80009d00
+PUBLIC parfind, 0x80009d0c
+PUBLIC realloc, 0x80009f34
+PUBLIC findsize, 0x80009b50
+PUBLIC free, 0x80009e08
+PUBLIC __udivdi3, 0x80009f44
+PUBLIC __umoddi3, 0x8000a5d4
+PUBLIC OSTaskStkInit, 0x8000ac70
+PUBLIC rlx_irq_set_handler, 0x8000af08
+PUBLIC rlx_irq_set_mask, 0x8000ae04
+PUBLIC rlx_irq_register, 0x8000af78
+PUBLIC rlx_irq_init, 0x8000addc
+PUBLIC rlx_dcache_invalidate_all, 0x8000b014
+PUBLIC rlx_dcache_invalidate, 0x8000afcc
+PUBLIC rlx_dmem_enable, 0x8000b0a4
+PUBLIC rlx_icache_invalidate_all, 0x8000b034
+PUBLIC rlx_icache_lock, 0x8000b054
+PUBLIC rlx_dcache_store, 0x8000aff0
+PUBLIC rlx_dcache_flush, 0x8000afa8
+PUBLIC OSIntEnter, 0x8000b2d0
+PUBLIC OS_TCBInit, 0x8000bf20
+PUBLIC OS_EventTaskRemove, 0x8000b8d0
+PUBLIC OSEventNameGet, 0x8000b100
+PUBLIC OSIntExit, 0x8000b350
+PUBLIC OS_MemCopy, 0x8000bd2c
+PUBLIC OS_Sched, 0x8000b4d0
+PUBLIC OS_TaskStat, 0x8000be3c
+PUBLIC OS_MemClr, 0x8000baa8
+PUBLIC OS_EventTaskRdy, 0x8000b918
+PUBLIC OSSchedUnlock, 0x8000b598
+PUBLIC OSStatInit, 0x8000b6c0
+PUBLIC OS_Dummy, 0x8000b8c8
+PUBLIC OSEventNameSet, 0x8000b1f4
+PUBLIC OS_EventTaskWait, 0x8000b9ec
+PUBLIC OS_TaskStatStkChk, 0x8000bda0
+PUBLIC OSStart, 0x8000b644
+PUBLIC OSTimeTick, 0x8000b73c
+PUBLIC OSSchedLock, 0x8000b448
+PUBLIC OS_StrCopy, 0x8000b0cc
+PUBLIC OSInit, 0x8000bad0
+PUBLIC OS_StrLen, 0x8000b1c8
+PUBLIC OSVersion, 0x8000b8c0
+PUBLIC OS_EventWaitListInit, 0x8000ba7c
+PUBLIC OS_TaskIdle, 0x8000bd5c
+PUBLIC OSFlagPendGetFlagsRdy, 0x8000cb44
+PUBLIC OSFlagAccept, 0x8000c0cc
+PUBLIC OS_FlagUnlink, 0x8000c5d8
+PUBLIC OS_FlagInit, 0x8000ce34
+PUBLIC OSFlagQuery, 0x8000cdb4
+PUBLIC OSFlagPost, 0x8000cb8c
+PUBLIC OSFlagCreate, 0x8000c29c
+PUBLIC OSFlagDel, 0x8000c6a4
+PUBLIC OSFlagPend, 0x8000c844
+PUBLIC OSFlagNameSet, 0x8000c440
+PUBLIC OSFlagNameGet, 0x8000c378
+PUBLIC OSMboxQuery, 0x8000d6b0
+PUBLIC OSMboxPost, 0x8000d494
+PUBLIC OSMboxPendAbort, 0x8000d360
+PUBLIC OSMboxCreate, 0x8000cf1c
+PUBLIC OSMboxPend, 0x8000d158
+PUBLIC OSMboxAccept, 0x8000ceb8
+PUBLIC OSMboxPostOpt, 0x8000d580
+PUBLIC OSMboxDel, 0x8000cfb8
+PUBLIC OS_MemInit, 0x8000dc10
+PUBLIC OSMemNameGet, 0x8000d968
+PUBLIC OSMemGet, 0x8000d8c4
+PUBLIC OSMemPut, 0x8000dae8
+PUBLIC OSMemCreate, 0x8000d770
+PUBLIC OSMemQuery, 0x8000db7c
+PUBLIC OSMemNameSet, 0x8000da28
+PUBLIC OSMutexAccept, 0x8000dc98
+PUBLIC OSMutexPend, 0x8000e1d8
+PUBLIC OSMutexDel, 0x8000dfbc
+PUBLIC OSMutexCreate, 0x8000ddb8
+PUBLIC OSMutexQuery, 0x8000e6b8
+PUBLIC OSMutexPost, 0x8000e524
+PUBLIC OSQFlush, 0x8000eb90
+PUBLIC OSQAccept, 0x8000e7b8
+PUBLIC OSQPost, 0x8000ef64
+PUBLIC OSQPend, 0x8000ec10
+PUBLIC OSQPostFront, 0x8000f080
+PUBLIC OSQCreate, 0x8000e8a4
+PUBLIC OSQPostOpt, 0x8000f1a0
+PUBLIC OSQDel, 0x8000e9c8
+PUBLIC OSQPendAbort, 0x8000ee34
+PUBLIC OS_QInit, 0x8000f440
+PUBLIC OSQQuery, 0x8000f348
+PUBLIC OSSemPend, 0x8000f774
+PUBLIC OSSemAccept, 0x8000f4a8
+PUBLIC OSSemPendAbort, 0x8000f8ec
+PUBLIC OSSemPost, 0x8000fa1c
+PUBLIC OSSemCreate, 0x8000f538
+PUBLIC OSSemQuery, 0x8000faf8
+PUBLIC OSSemSet, 0x8000fbb8
+PUBLIC OSSemDel, 0x8000f5d4
+PUBLIC OSTaskCreateExt, 0x80010024
+PUBLIC OSTaskCreate, 0x8000fe8c
+PUBLIC OSTaskChangePrio, 0x8000fc70
+PUBLIC OSTaskDel, 0x800101bc
+PUBLIC OSTaskNameSet, 0x8001069c
+PUBLIC OSTaskDelReq, 0x80010478
+PUBLIC OSTaskResume, 0x800107cc
+PUBLIC OSTaskNameGet, 0x8001057c
+PUBLIC OSTaskStkChk, 0x80010918
+PUBLIC OSTaskQuery, 0x80010bb0
+PUBLIC OS_TaskStkClr, 0x8000ffe8
+PUBLIC OSTaskSuspend, 0x80010a54
+PUBLIC OSTimeSet, 0x80010ff0
+PUBLIC OSTimeDly, 0x80010c94
+PUBLIC OSTimeDlyHMSM, 0x80010d4c
+PUBLIC OSTimeDlyResume, 0x80010e74
+PUBLIC OSTimeGet, 0x80010fac
+PUBLIC OSTmrSignal, 0x80011214
+PUBLIC OSTmrDel, 0x80011978
+PUBLIC OSTmrRemainGet, 0x80011724
+PUBLIC OSTmrStateGet, 0x80011678
+PUBLIC OSTmr_Init, 0x8001123c
+PUBLIC OSTmrStart, 0x80011578
+PUBLIC OSTmrStop, 0x800113c4
+PUBLIC OSTmrCreate, 0x80011a78
+PUBLIC OSTmrNameGet, 0x80011880
+PUBLIC mpi_sub_mpi, 0x80012dcc
+PUBLIC mpi_copy, 0x80011f00
+PUBLIC mpi_div_mpi, 0x80014084
+PUBLIC mpi_sub_int, 0x80012e98
+PUBLIC mpi_div_int, 0x800147b8
+PUBLIC mpi_mul_int, 0x80013e24
+PUBLIC mpi_mul_mpi, 0x80013c74
+PUBLIC mpi_add_abs, 0x800129d8
+PUBLIC mpi_init, 0x80011d20
+PUBLIC mpi_msb, 0x80012104
+PUBLIC mpi_add_mpi, 0x80012cc8
+PUBLIC mpi_cmp_int, 0x80012988
+PUBLIC mpi_add_int, 0x80012d7c
+PUBLIC mpi_exp_mod, 0x80014dc0
+PUBLIC mpi_lsb, 0x800120a4
+PUBLIC mpi_grow, 0x80011e30
+PUBLIC mpi_mod_int, 0x80012230
+PUBLIC mpi_gen_prime, 0x80015e80
+PUBLIC mpi_mod_mpi, 0x80014b14
+PUBLIC mpi_read_binary, 0x80012328
+PUBLIC mpi_swap, 0x80011fc8
+PUBLIC mpi_lset, 0x80012024
+PUBLIC mpi_shift_l, 0x800124e4
+PUBLIC mpi_size, 0x80012188
+PUBLIC mpi_sub_abs, 0x80012bbc
+PUBLIC mpi_inv_mod, 0x800155cc
+PUBLIC mpi_cmp_abs, 0x80012720
+PUBLIC mpi_write_string, 0x8001491c
+PUBLIC mpi_shift_r, 0x80012640
+PUBLIC mpi_read_string, 0x80013e5c
+PUBLIC mpi_free, 0x80011d68
+PUBLIC mpi_is_prime, 0x80015a68
+PUBLIC mpi_gcd, 0x800153f0
+PUBLIC mpi_write_binary, 0x8001242c
+PUBLIC mpi_cmp_mpi, 0x8001282c
+PUBLIC rsa_free, 0x8001615c
+PUBLIC rsa_pkcs1_verify, 0x80016df4
+PUBLIC rsa_init, 0x800160f8
+PUBLIC rsa_pkcs1_encrypt, 0x80016978
+PUBLIC rsa_check_privkey, 0x8001652c
+PUBLIC rsa_public, 0x800166d4
+PUBLIC rsa_check_pubkey, 0x80016450
+PUBLIC rsa_pkcs1_sign, 0x80016bb4
+PUBLIC rsa_pkcs1_decrypt, 0x80016ab4
+PUBLIC rsa_gen_key, 0x800161c8
+PUBLIC rsa_private, 0x800167c4
+PUBLIC getRxPkt, 0x80017130
+PUBLIC addEthernetHeaderFW, 0x800179f0
+PUBLIC allocFWUPkt, 0x8001797c
+PUBLIC MDUPDATE, 0x8001751c
+PUBLIC fwVerify, 0x80017e74
+PUBLIC fwUpdateInput, 0x80018760
+PUBLIC udpSendFW, 0x80017b50
+PUBLIC udpInputFW, 0x80018584
+PUBLIC fwCfgWrite, 0x800181c0
+PUBLIC FW_ostimer_handler, 0x80017024
+PUBLIC makeFWUHdr, 0x800179d8
+PUBLIC MDINIT, 0x800174f4
+PUBLIC arpReplyFW, 0x80017834
+PUBLIC fwWrite, 0x80017f60
+PUBLIC ntohl, 0x800174a0
+PUBLIC MDFINAL, 0x80017690
+PUBLIC FW_main, 0x80018ae0
+PUBLIC disable_master_engine, 0x800170f8
+PUBLIC freeFWPkt, 0x800174c0
+PUBLIC htonl, 0x80017478
+PUBLIC FW_gmac_init, 0x80018828
+PUBLIC genVerifyCode, 0x80017bcc
+PUBLIC FW_inituser, 0x80017720
+PUBLIC FW_setup, 0x80018aa8
+PUBLIC ntohs, 0x80017458
+PUBLIC fwUpdateInit, 0x80018694
+PUBLIC bsp_wdt_kick, 0x80017210
+PUBLIC FW_timer_init, 0x80017058
+PUBLIC fwAuth, 0x80017cd0
+PUBLIC addIPHeaderFW, 0x80017a80
+PUBLIC htons, 0x80017440
+PUBLIC sendFW, 0x80017284
+PUBLIC ipInputFW, 0x80018610
+PUBLIC fwUpdate, 0x800184c4
+PUBLIC bsp_irq_disable, 0x800170d4
+PUBLIC fwUpdateFinish, 0x8001836c
+PUBLIC inet_chksum, 0x80018d08
+PUBLIC inet_chksum_pseudo, 0x80018d40
+//PUBLIC OSGetTimeSec, 0x80018fa4
+//PUBLIC cp3_wait, 0x80018ec4
+PUBLIC trimspace, 0x80018c80
+PUBLIC strltrim, 0x80018bf8
+PUBLIC bsp_wait, 0x80018bc0
+PUBLIC set_time, 0x80018e38
+PUBLIC parsebios, 0x80018e18
+PUBLIC chksum, 0x80018cbc
+PUBLIC strrtrim, 0x80018c4c
+PUBLIC dummy_std_call, 0x800190e4
+PUBLIC dummy_call, 0x80018fd4
+//PUBLIC aes_setkey_enc_sw, 0x80019158
+//PUBLIC aes_crypt_cbc_sw, 0x8001aef8
+//PUBLIC aes_crypt_cfb_sw, 0x8001b030
+//PUBLIC aes_crypt_ecb_sw, 0x80019bc8
+//PUBLIC aes_setkey_dec_sw, 0x80019954
+PUBLIC OSStartHighRdy, 0x8001b380
+PUBLIC OSLopIrqHandler, 0x8001b980
+PUBLIC OSCtxSw, 0x8001b570
+PUBLIC OSIntCtxSw, 0x8001b450
+PUBLIC OS_CPU_SR_Restore, 0x8001b54c
+PUBLIC OSIrqHandler, 0x8001b70c
+PUBLIC OS_CPU_SR_Save, 0x8001b530
+PUBLIC spi_write_byte, 0x8001c24c
+PUBLIC spi_se_unprotect, 0x8001bc64
+PUBLIC spi_wait_busy, 0x8001be20
+PUBLIC spi_write_word, 0x8001c4ac
+PUBLIC spi_enter_dp, 0x8001c1bc
+PUBLIC spi_dis_write, 0x8001befc
+PUBLIC spi_enable_write, 0x8001bf50
+PUBLIC spi_release_dp, 0x8001c204
+PUBLIC spi_fastread_word, 0x8001c650
+PUBLIC spi_chip_erase, 0x8001bad4
+PUBLIC spi_se_protect, 0x8001bcf8
+PUBLIC spi_get_status, 0x8001ba70
+PUBLIC spi_read_ect_id, 0x8001c0b4
+PUBLIC spi_read_byte, 0x8001c2e8
+PUBLIC spi_read_id, 0x8001c030
+PUBLIC ssi_wait_nobusy, 0x8001ba40
+PUBLIC spi_fastread_byte, 0x8001c374
+PUBLIC spi_read_word, 0x8001c56c
+PUBLIC spi_command, 0x8001bbd0
+PUBLIC spi_se_erase, 0x8001bd8c
+PUBLIC spi_set_status, 0x8001be84
+PUBLIC spi_write, 0x8001c400
+PUBLIC spi_read_mf_id, 0x8001c130
+PUBLIC spi_set_protect_mem, 0x8001bfa4
+PUBLIC spi_blk_erase, 0x8001bb3c
+PUBLIC heap_size, 0x80219004
+PUBLIC heap_start, 0x80219000
+PUBLIC sizearr, 0x80219008
+PUBLIC parsize, 0x80219048
+PUBLIC __ctype_ptr, 0x80219088
+PUBLIC _global_impure_ptr, 0x802194d0
+PUBLIC _impure_ptr, 0x802194d4
+PUBLIC __lc_ctype, 0x802194d8
+PUBLIC __mb_cur_max, 0x802194f0
+PUBLIC __nlocale_changed, 0x802194ec
+PUBLIC __mlocale_changed, 0x802194e8
+PUBLIC _PathLocale, 0x802194e4
+PUBLIC _daylight, 0x80219504
+PUBLIC _tzname, 0x80219508
+PUBLIC _timezone, 0x80219500
+PUBLIC dev_spi, 0x80219538
+PUBLIC dev_socket, 0x80219524
+PUBLIC dev_uart, 0x8021954c
+PUBLIC dev_list, 0x80219510
+PUBLIC memlist, 0x80219560
+PUBLIC Sector, 0x802199e8
+PUBLIC SSI_MAP, 0x802199ec
+PUBLIC fwconf, 0x802199e4
+PUBLIC CurFWUAuthPw, 0x802199f0
+PUBLIC CurFWAuthUser, 0x80219a00
+PUBLIC _gp, 0x8021aa70
+PUBLIC __romdata_start_vma, 0x80219000
+PUBLIC __romdata_start_lma, 0xbfc0141c
+PUBLIC __romdata_size, 0xa64
+PUBLIC _stack_hi, 0x8021a270
+PUBLIC _stack_lo, 0x80219a70
+PUBLIC __rombss_start, 0x8021a290
+PUBLIC rlx_irq_handler_table, 0x8021a2a0
+PUBLIC OSTmrFreeList, 0x8021a2e0
+PUBLIC OSTmrWheelTbl, 0x8021a2e4
+PUBLIC OSLockNesting, 0x8021a324
+PUBLIC OSTmrSemSignal, 0x8021a328
+PUBLIC OSRunning, 0x8021a32c
+PUBLIC OSIdleCtr, 0x8021a330
+PUBLIC OSTmrUsed, 0x8021a334
+PUBLIC OSPrioHighRdy, 0x8021a336
+PUBLIC OSFlagTbl, 0x8021a338
+PUBLIC OSTmrTbl, 0x8021a3c4
+PUBLIC OSPrioCur, 0x8021a684
+PUBLIC OSTCBList, 0x8021a688
+PUBLIC OSMemTbl, 0x8021a68c
+PUBLIC OSTickStepState, 0x8021a8cc
+PUBLIC OSTaskStatStk, 0x8021a8d0
+PUBLIC OSCtxSwCtr, 0x8021aad0
+PUBLIC OSTmrFree, 0x8021aad4
+PUBLIC OSIdleCtrMax, 0x8021aad8
+PUBLIC OSTCBFreeList, 0x8021aadc
+PUBLIC OSCPUUsage, 0x8021aae0
+PUBLIC OSTaskCtr, 0x8021aae1
+PUBLIC OSMemFreeList, 0x8021aae4
+PUBLIC OSQTbl, 0x8021aae8
+PUBLIC OSTCBHighRdy, 0x8021ac68
+PUBLIC OSQFreeList, 0x8021ac6c
+PUBLIC OSRdyGrp, 0x8021ac70
+PUBLIC OSRdyTbl, 0x8021ac74
+PUBLIC OSTmrTaskStk, 0x8021ac7c
+PUBLIC OSEventFreeList, 0x8021ae7c
+PUBLIC OSIntNesting, 0x8021ae80
+PUBLIC OSTCBCur, 0x8021ae84
+PUBLIC OSTmrTime, 0x8021ae88
+PUBLIC OSTime, 0x8021ae8c
+PUBLIC OSTmrSem, 0x8021ae90
+PUBLIC OSTaskIdleStk, 0x8021ae94
+PUBLIC OSEventTbl, 0x8021b094
+PUBLIC OSTCBTbl, 0x8021c294
+PUBLIC OSFlagFreeList, 0x8021d7e4
+PUBLIC OSStatRdy, 0x8021d7e8
+PUBLIC OSTCBPrioTbl, 0x8021d7ec
+PUBLIC OSIdleCtrRun, 0x8021d8ec
+PUBLIC DummyMutex, 0x8021d930
+PUBLIC DummyMbox, 0x8021d934
+PUBLIC dbgbuf, 0x8021fb60
+PUBLIC traps_sp, 0x8021fb64
+PUBLIC __rombss_end, 0x8021fb68
+PUBLIC init, 0xbfc001f8
+PUBLIC dev_list, 0x80219510
+PUBLIC rlx_imem_refill, 0xbfc000b4
+#endif

@@ -1,0 +1,137 @@
+#==========================================================================*/
+#
+#  Realtek Semiconductor Corp.
+#  GDB Script for automatically flash programming
+#  
+#  Usage : just use the run.sh script to get everthing worked
+#
+#
+#  phinex hung (phinexhung@realtek.com)
+#  Nov. 16, 2011
+#
+#==========================================================================*/
+
+#set height to 0 to avoid "return" press needed for scroll
+set height 0
+set width 0
+
+#set file name
+file flashprog-4281_dbg.exe
+
+#connection 
+target remote localhost:4281
+#target remote localhost:4281
+
+#load your file to memory 
+load
+
+#break before setting flash_addr
+b load_flash_addr
+#break before load memory
+b load_memory
+#break in case of memory comparision error
+b compare_error
+
+#disable all messages
+set verbose off
+set complaints 0
+set confirm off
+set exec-done-display off
+#set debug aix-thread off
+#set debug dwarf2-die 0
+#set debug displaced off 
+#set debug event 0
+set debug expression 0
+set debug frame 0
+#set debug infrun off
+set debug observer 0
+set debug overload 0
+#set debugvarobj 0
+set pagination off
+#set remote memory-write-packet-size fixed
+#set remote memory-write-packet-size 3000
+#set download-write-size 4096
+disable display
+
+set $start_addr = 0
+set $end_addr = 0x10000
+
+
+set $file_size = 262144
+set $unit_size = 0x10000
+
+set $left_size = $file_size % $unit_size
+
+if ($left_size != 0)
+set $loop_num = $file_size / $unit_size + 1
+else
+set $loop_num = $file_size / $unit_size
+end
+
+printf "File size 0x%x;Loop Count 0x%x\n", $file_size, $loop_num
+
+set $spi_addr = 0x82100000
+set $load_addr = 0x80040000
+set $count = 0
+set remotetimeout 1000
+c
+
+printf "\n=================GO======================\n"
+
+while $loop_num > 0
+
+  if (flag != 0)
+    printf "Error in comparision!\n"
+  end
+
+
+  set flash_addr = $spi_addr + $count * $unit_size
+  printf "set load_addr %x %x!\n",load_addr,  $load_addr
+  set load_addr = $load_addr
+  set load_size = $end_addr-$start_addr
+  
+  #flash_addr is app.c variable, $spi_addr is script variable
+  #will erase a block size 64KB
+
+  printf "Erase SPI flash block with address %x!\n", flash_addr
+ 
+  c 
+  printf "Loading file to memory 0x%x from 0x%x to 0x%x\n", $load_addr, $start_addr, $end_addr
+  p /x flash_addr  
+  p /x load_addr  
+  p /x load_size
+   #read data to memory from a file to be loaded to SPI flash
+  restore usbimage.bin binary $load_addr-$start_addr $start_addr $end_addr
+  x /16x flash_addr
+  x /16x load_addr
+  x /16x 0xA2020000
+  
+  c
+  
+  set $start_addr = $start_addr + 0x10000 
+  set $end_addr = $end_addr + 0x10000
+  
+  
+  #decrease the counter  
+  set $loop_num = $loop_num - 1
+
+  set $count = $count + 1
+
+end
+
+#printf your message
+#printf "Automatically programing flash process has been completed successfully!\n"
+
+#printf your message
+#set remotetimeout 1000
+#set $end_addr = $start_addr + $left_size
+
+set $dump_end_addr = $spi_addr + $file_size
+#printf "dump data to file for check from address 0x%x to address 0x%x...\n", $spi_addr , $dump_end_addr
+
+#dump binary memory usbimage.bin.chk $spi_addr $dump_end_addr
+#printf "dump data finished ! please verify your data with hex compare software .\n"
+#quit from GDB
+quit
+#confirm for GDB input
+y

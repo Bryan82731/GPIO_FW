@@ -1,0 +1,4 @@
+
+dashrom.elf:     file format elf32-little
+dashrom.elf
+

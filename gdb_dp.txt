@@ -1,0 +1,17 @@
+#==========================================================================*/
+
+#set file name
+file obj/dash_dbg.exe
+
+#connection 
+target remote localhost:4181
+
+#load your file to memory 
+#load
+p /x $pc=0xbfc00000
+
+#set hardware break point
+#hb *0x880000b4
+hb *0x8101006C
+#b main
+#hb *0x8b01025c

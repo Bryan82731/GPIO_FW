@@ -1,0 +1,1 @@
+/work/rsdk-4.9.2/cygwin/newlib/bin/rsdk-elf-gcc -march=4281 -g -fno-optimize-sibling-calls -fno-builtin -c -EL -Os -G0 -Wall -mips16 -mno-data-in-code   -I./src/include -I/work/rsdk-4.9.2/cygwin/newlib/include -I./romsrc/include  ./src/app.c -o obj/app_sp.o

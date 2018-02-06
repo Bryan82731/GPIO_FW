@@ -401,7 +401,9 @@ C_SOURCE_SPACE += uart.c
 endif
 endif
 
-C_SOURCE_SPACE += bsp.c usb.c  usbdevice_interrupt.c  usb_ata.c usbdesc.c parammd.c mmd.c mdio_bitbang.c testio_gpio.c i2c_gpio.c i2c_gpio_slave.c
+#C_SOURCE_SPACE += bsp.c usb.c  usbdevice_interrupt.c  usb_ata.c usbdesc.c parammd.c mmd.c mdio_bitbang.c testio_gpio.c i2c_gpio.c i2c_gpio_slave.c
+C_SOURCE_SPACE += bsp.c usb.c  usbdevice_interrupt.c  usb_ata.c usbdesc.c parammd.c mmd.c mdio_bitbang.c testio_gpio.c i2c_gpio.c i2c_gpio_master.c
+
 ifeq ($(CONFIG_BUILDROM), y)
 ROM_SOURCEO2 = os_cpu_c.c rlx_irq.c os_core.c os_flag.c os_mbox.c os_mem.c os_mutex.c os_q.c os_sem.c os_task.c os_time.c os_tmr.c
 ROM_SOURCEOS = cmac.c rtskt.c tcp.c arp.c ip.c udp.c dhcp.c icmp.c netbios.c bsp.c hwpf.c tlshw.c rlx_cache.c testio.c dram.c flash_nand.c

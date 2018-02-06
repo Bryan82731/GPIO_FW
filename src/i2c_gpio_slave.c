@@ -185,6 +185,7 @@ void Start_Condition(void)
 
 void I2C_gpio_init(void)
 {
+	printk("1 \r\n");
 	//OOBMAC_gpio_init(SCL,INPUT,1);
 	//OOBMAC_gpio_init(SDA,INPUT,1);
 	init_gpio_dir(SDA,OUTPUT,1);
@@ -192,7 +193,6 @@ void I2C_gpio_init(void)
 	set_gpio_output(SDA,1);
 	set_gpio_output(SCL,1);
 
-	
 	
 	REG32(OOBMAC_IOBASE + 0x0518)&=(~BIT29);
 	REG32(OOBMAC_IOBASE + 0x0518)|=BIT30;

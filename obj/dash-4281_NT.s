@@ -3,75 +3,75 @@
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text.unlikely 000000bc  8205f438  8205f438  00000114  2**2
+  0 .text.unlikely 000000bc  8205f3e8  8205f3e8  00000114  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .bss          00007108  800cf2fc  82071a70  000001d0  2**2
+  1 .bss          00007108  800cf2ac  82071a00  000001d0  2**2
                   ALLOC
   2 .comment      00000041  00000000  00000000  000001d0  2**0
                   CONTENTS, READONLY
   3 .reginfo      00000018  00000000  00000000  00000214  2**2
                   CONTENTS, READONLY, LINK_ONCE_SAME_SIZE
-  4 .pdr          00004900  00000000  00000000  0000022c  2**2
+  4 .pdr          00004940  00000000  00000000  0000022c  2**2
                   CONTENTS, READONLY
-  5 .gnu.attributes 00000010  00000000  00000000  00004b2c  2**0
+  5 .gnu.attributes 00000010  00000000  00000000  00004b6c  2**0
                   CONTENTS, READONLY
-  6 .mdebug.abi32 00000000  800cf2fc  800cf2fc  00004b3c  2**0
+  6 .mdebug.abi32 00000000  800cf2ac  800cf2ac  00004b7c  2**0
                   CONTENTS, READONLY
 
 Disassembly of section .text.unlikely:
 
-8205f438 <.text.unlikely>:
-8205f438:	620963fb 	0x620963fb
-8205f43c:	d007d108 	0xd007d108
-8205f440:	67266f02 	0x67266f02
-8205f444:	18240604 	0x18240604
-8205f448:	67042a4c 	0x67042a4c
-8205f44c:	98a02a09 	lwr	zero,10761(a1)
-8205f450:	18406791 	blez	v0,0x82079298
-8205f454:	9604787b 	lhu	a0,30843(s0)
-8205f458:	95049880 	lhu	a0,-26496(t0)
-8205f45c:	d860e4ad 	0xd860e4ad
-8205f460:	91089709 	lbu	t0,-26871(t0)
-8205f464:	ef009007 	swc3	$0,-28665(t8)
-8205f468:	65006305 	0x65006305
-8205f46c:	620763fc 	0x620763fc
-8205f470:	d005d106 	0xd005d106
-8205f474:	9c606a00 	0x9c606a00
-8205f478:	6019ebaa 	0x6019ebaa
-8205f47c:	6726a340 	0x6726a340
-8205f480:	67044e04 	0x67044e04
-8205f484:	de5cf7ff 	0xde5cf7ff
-8205f488:	18246aa0 	0x18246aa0
-8205f48c:	ef4d2a4c 	swc3	$13,10828(k0)
-8205f490:	22066762 	addi	a2,s0,26466
-8205f494:	6a007216 	0x6a007216
-8205f498:	24096798 	li	t1,26520
-8205f49c:	10076743 	beq	zero,a3,0x820791ac
-8205f4a0:	d9429840 	0xd9429840
-8205f4a4:	99419860 	lwr	at,-26528(t2)
-8205f4a8:	d840e349 	0xd840e349
-8205f4ac:	97076a00 	lhu	a3,27136(t8)
-8205f4b0:	90059106 	lbu	a1,-28410(zero)
-8205f4b4:	6304ef00 	0x6304ef00
-8205f4b8:	620963fb 	0x620963fb
-8205f4bc:	d007d108 	0xd007d108
-8205f4c0:	67266f01 	0x67266f01
-8205f4c4:	18240604 	0x18240604
-8205f4c8:	67042a4c 	0x67042a4c
-8205f4cc:	92042a0d 	lbu	a0,10765(s0)
-8205f4d0:	6a187201 	0x6a187201
-8205f4d4:	98606109 	lwr	zero,24841(v1)
-8205f4d8:	4b01a340 	c2	0x101a340
-8205f4dc:	f7c0ea4b 	sdc1	$f0,-5557(s8)
-8205f4e0:	d9403242 	0xd9403242
-8205f4e4:	d8606a00 	0xd8606a00
-8205f4e8:	91089709 	lbu	t0,-26871(t0)
-8205f4ec:	ef009007 	swc3	$0,-28665(t8)
-8205f4f0:	65006305 	0x65006305
+8205f3e8 <.text.unlikely>:
+8205f3e8:	620963fb 	0x620963fb
+8205f3ec:	d007d108 	0xd007d108
+8205f3f0:	67266f02 	0x67266f02
+8205f3f4:	18240604 	0x18240604
+8205f3f8:	67042a38 	0x67042a38
+8205f3fc:	98a02a09 	lwr	zero,10761(a1)
+8205f400:	18406791 	blez	v0,0x82079248
+8205f404:	9604787b 	lhu	a0,30843(s0)
+8205f408:	95049880 	lhu	a0,-26496(t0)
+8205f40c:	d860e4ad 	0xd860e4ad
+8205f410:	91089709 	lbu	t0,-26871(t0)
+8205f414:	ef009007 	swc3	$0,-28665(t8)
+8205f418:	65006305 	0x65006305
+8205f41c:	620763fc 	0x620763fc
+8205f420:	d005d106 	0xd005d106
+8205f424:	9c606a00 	0x9c606a00
+8205f428:	6019ebaa 	0x6019ebaa
+8205f42c:	6726a340 	0x6726a340
+8205f430:	67044e04 	0x67044e04
+8205f434:	de5cf7ff 	0xde5cf7ff
+8205f438:	18246aa0 	0x18246aa0
+8205f43c:	ef4d2a38 	swc3	$13,10808(k0)
+8205f440:	22066762 	addi	a2,s0,26466
+8205f444:	6a007216 	0x6a007216
+8205f448:	24096798 	li	t1,26520
+8205f44c:	10076743 	beq	zero,a3,0x8207915c
+8205f450:	d9429840 	0xd9429840
+8205f454:	99419860 	lwr	at,-26528(t2)
+8205f458:	d840e349 	0xd840e349
+8205f45c:	97076a00 	lhu	a3,27136(t8)
+8205f460:	90059106 	lbu	a1,-28410(zero)
+8205f464:	6304ef00 	0x6304ef00
+8205f468:	620963fb 	0x620963fb
+8205f46c:	d007d108 	0xd007d108
+8205f470:	67266f01 	0x67266f01
+8205f474:	18240604 	0x18240604
+8205f478:	67042a38 	0x67042a38
+8205f47c:	92042a0d 	lbu	a0,10765(s0)
+8205f480:	6a187201 	0x6a187201
+8205f484:	98606109 	lwr	zero,24841(v1)
+8205f488:	4b01a340 	c2	0x101a340
+8205f48c:	f7c0ea4b 	sdc1	$f0,-5557(s8)
+8205f490:	d9403242 	0xd9403242
+8205f494:	d8606a00 	0xd8606a00
+8205f498:	91089709 	lbu	t0,-26871(t0)
+8205f49c:	ef009007 	swc3	$0,-28665(t8)
+8205f4a0:	65006305 	0x65006305
 
 Disassembly of section .bss:
 
-800cf2fc <.bss>:
+800cf2ac <.bss>:
 	...
 
 Disassembly of section .comment:
@@ -104,90 +104,90 @@ Disassembly of section .reginfo:
 Disassembly of section .pdr:
 
 00000000 <.pdr>:
-       0:	8203bcc1 	lb	v1,-17215(s0)
+       0:	8203bc71 	lb	v1,-17295(s0)
        4:	80000000 	lb	zero,0(zero)
        8:	fffffffc 	0xfffffffc
 	...
       14:	00000030 	0x30
       18:	0000001d 	0x1d
       1c:	0000001f 	0x1f
-      20:	8205f39d 	lb	a1,-3171(s0)
+      20:	8205f34d 	lb	a1,-3251(s0)
       24:	80010000 	lb	at,0(zero)
       28:	fffffffc 	0xfffffffc
 	...
       34:	00000038 	0x38
       38:	0000001d 	0x1d
       3c:	0000001f 	0x1f
-      40:	8203bd59 	lb	v1,-17063(s0)
+      40:	8203bd09 	lb	v1,-17143(s0)
 	...
       54:	00000008 	jr	zero
       58:	0000001d 	0x1d
       5c:	0000001f 	0x1f
-      60:	8203bd6d 	lb	v1,-17043(s0)
+      60:	8203bd1d 	lb	v1,-17123(s0)
 	...
       74:	00000008 	jr	zero
       78:	0000001d 	0x1d
       7c:	0000001f 	0x1f
-      80:	8203bd7d 	lb	v1,-17027(s0)
+      80:	8203bd2d 	lb	v1,-17107(s0)
 	...
       94:	00000008 	jr	zero
       98:	0000001d 	0x1d
       9c:	0000001f 	0x1f
-      a0:	8203bdc1 	lb	v1,-16959(s0)
+      a0:	8203bd71 	lb	v1,-17039(s0)
       a4:	80000000 	lb	zero,0(zero)
       a8:	fffffffc 	0xfffffffc
 	...
       b4:	00000018 	mult	zero,zero
       b8:	0000001d 	0x1d
       bc:	0000001f 	0x1f
-      c0:	8203bdfd 	lb	v1,-16899(s0)
+      c0:	8203bdad 	lb	v1,-16979(s0)
 	...
       d8:	0000001d 	0x1d
       dc:	0000001f 	0x1f
-      e0:	8203be31 	lb	v1,-16847(s0)
+      e0:	8203bde1 	lb	v1,-16927(s0)
       e4:	80030000 	lb	v1,0(zero)
       e8:	fffffffc 	0xfffffffc
 	...
       f4:	00000030 	0x30
       f8:	0000001d 	0x1d
       fc:	0000001f 	0x1f
-     100:	8203be7d 	lb	v1,-16771(s0)
+     100:	8203be2d 	lb	v1,-16851(s0)
      104:	80030000 	lb	v1,0(zero)
      108:	fffffffc 	0xfffffffc
 	...
      114:	00000030 	0x30
      118:	0000001d 	0x1d
      11c:	0000001f 	0x1f
-     120:	8203bec1 	lb	v1,-16703(s0)
+     120:	8203be71 	lb	v1,-16783(s0)
      124:	80030000 	lb	v1,0(zero)
      128:	fffffffc 	0xfffffffc
 	...
      134:	00000030 	0x30
      138:	0000001d 	0x1d
      13c:	0000001f 	0x1f
-     140:	8203bfad 	lb	v1,-16467(s0)
+     140:	8203bf5d 	lb	v1,-16547(s0)
      144:	80030000 	lb	v1,0(zero)
      148:	fffffffc 	0xfffffffc
 	...
      154:	00000028 	0x28
      158:	0000001d 	0x1d
      15c:	0000001f 	0x1f
-     160:	8203c075 	lb	v1,-16267(s0)
+     160:	8203c025 	lb	v1,-16347(s0)
      164:	80030000 	lb	v1,0(zero)
      168:	fffffffc 	0xfffffffc
 	...
      174:	00000028 	0x28
      178:	0000001d 	0x1d
      17c:	0000001f 	0x1f
-     180:	8203c16d 	lb	v1,-16019(s0)
+     180:	8203c11d 	lb	v1,-16099(s0)
 	...
      198:	0000001d 	0x1d
      19c:	0000001f 	0x1f
-     1a0:	8203c1c5 	lb	v1,-15931(s0)
+     1a0:	8203c175 	lb	v1,-16011(s0)
 	...
      1b8:	0000001d 	0x1d
      1bc:	0000001f 	0x1f
-     1c0:	8203c1e5 	lb	v1,-15899(s0)
+     1c0:	8203c195 	lb	v1,-15979(s0)
 	...
      1d8:	0000001d 	0x1d
      1dc:	0000001f 	0x1f
@@ -384,947 +384,947 @@ Disassembly of section .pdr:
      554:	00000078 	0x78
      558:	0000001d 	0x1d
      55c:	0000001f 	0x1f
-     560:	8203c239 	lb	v1,-15815(s0)
+     560:	8203c1e9 	lb	v1,-15895(s0)
      564:	80030000 	lb	v1,0(zero)
      568:	fffffffc 	0xfffffffc
 	...
      574:	00000020 	add	zero,zero,zero
      578:	0000001d 	0x1d
      57c:	0000001f 	0x1f
-     580:	8203c2a9 	lb	v1,-15703(s0)
+     580:	8203c259 	lb	v1,-15783(s0)
 	...
      598:	0000001d 	0x1d
      59c:	0000001f 	0x1f
-     5a0:	8203c2fd 	lb	v1,-15619(s0)
+     5a0:	8203c2ad 	lb	v1,-15699(s0)
      5a4:	80000000 	lb	zero,0(zero)
      5a8:	fffffffc 	0xfffffffc
 	...
      5b4:	00000018 	mult	zero,zero
      5b8:	0000001d 	0x1d
      5bc:	0000001f 	0x1f
-     5c0:	8203c349 	lb	v1,-15543(s0)
+     5c0:	8203c2f9 	lb	v1,-15623(s0)
      5c4:	80000000 	lb	zero,0(zero)
      5c8:	fffffffc 	0xfffffffc
 	...
      5d4:	00000018 	mult	zero,zero
      5d8:	0000001d 	0x1d
      5dc:	0000001f 	0x1f
-     5e0:	8203c391 	lb	v1,-15471(s0)
+     5e0:	8203c341 	lb	v1,-15551(s0)
      5e4:	80000000 	lb	zero,0(zero)
      5e8:	fffffffc 	0xfffffffc
 	...
      5f4:	00000018 	mult	zero,zero
      5f8:	0000001d 	0x1d
      5fc:	0000001f 	0x1f
-     600:	8203c3d9 	lb	v1,-15399(s0)
+     600:	8203c389 	lb	v1,-15479(s0)
      604:	80000000 	lb	zero,0(zero)
      608:	fffffffc 	0xfffffffc
 	...
      614:	00000018 	mult	zero,zero
      618:	0000001d 	0x1d
      61c:	0000001f 	0x1f
-     620:	8203c40d 	lb	v1,-15347(s0)
+     620:	8203c3bd 	lb	v1,-15427(s0)
      624:	80010000 	lb	at,0(zero)
      628:	fffffffc 	0xfffffffc
 	...
      634:	00000018 	mult	zero,zero
      638:	0000001d 	0x1d
      63c:	0000001f 	0x1f
-     640:	8203c481 	lb	v1,-15231(s0)
+     640:	8203c431 	lb	v1,-15311(s0)
      644:	80030000 	lb	v1,0(zero)
      648:	fffffffc 	0xfffffffc
 	...
      654:	00000028 	0x28
      658:	0000001d 	0x1d
      65c:	0000001f 	0x1f
-     660:	8203c4ed 	lb	v1,-15123(s0)
+     660:	8203c49d 	lb	v1,-15203(s0)
      664:	80030000 	lb	v1,0(zero)
      668:	fffffffc 	0xfffffffc
 	...
      674:	00000028 	0x28
      678:	0000001d 	0x1d
      67c:	0000001f 	0x1f
-     680:	8203c559 	lb	v1,-15015(s0)
+     680:	8203c509 	lb	v1,-15095(s0)
      684:	80030000 	lb	v1,0(zero)
      688:	fffffffc 	0xfffffffc
 	...
      694:	00000028 	0x28
      698:	0000001d 	0x1d
      69c:	0000001f 	0x1f
-     6a0:	8203c5c5 	lb	v1,-14907(s0)
+     6a0:	8203c575 	lb	v1,-14987(s0)
      6a4:	80030000 	lb	v1,0(zero)
      6a8:	fffffffc 	0xfffffffc
 	...
      6b4:	00000028 	0x28
      6b8:	0000001d 	0x1d
      6bc:	0000001f 	0x1f
-     6c0:	8203c631 	lb	v1,-14799(s0)
+     6c0:	8203c5e1 	lb	v1,-14879(s0)
      6c4:	80030000 	lb	v1,0(zero)
      6c8:	fffffffc 	0xfffffffc
 	...
      6d4:	00000028 	0x28
      6d8:	0000001d 	0x1d
      6dc:	0000001f 	0x1f
-     6e0:	8203c699 	lb	v1,-14695(s0)
+     6e0:	8203c649 	lb	v1,-14775(s0)
      6e4:	80030000 	lb	v1,0(zero)
      6e8:	fffffffc 	0xfffffffc
 	...
      6f4:	00000028 	0x28
      6f8:	0000001d 	0x1d
      6fc:	0000001f 	0x1f
-     700:	8203c701 	lb	v1,-14591(s0)
+     700:	8203c6b1 	lb	v1,-14671(s0)
      704:	80030000 	lb	v1,0(zero)
      708:	fffffffc 	0xfffffffc
 	...
      714:	00000028 	0x28
      718:	0000001d 	0x1d
      71c:	0000001f 	0x1f
-     720:	8203c769 	lb	v1,-14487(s0)
+     720:	8203c719 	lb	v1,-14567(s0)
      724:	80030000 	lb	v1,0(zero)
      728:	fffffffc 	0xfffffffc
 	...
      734:	00000028 	0x28
      738:	0000001d 	0x1d
      73c:	0000001f 	0x1f
-     740:	8203c945 	lb	v1,-14011(s0)
+     740:	8203c8f5 	lb	v1,-14091(s0)
      744:	80010000 	lb	at,0(zero)
      748:	fffffffc 	0xfffffffc
 	...
      754:	00000018 	mult	zero,zero
      758:	0000001d 	0x1d
      75c:	0000001f 	0x1f
-     760:	8203cab9 	lb	v1,-13639(s0)
+     760:	8203ca69 	lb	v1,-13719(s0)
      764:	80030000 	lb	v1,0(zero)
      768:	fffffffc 	0xfffffffc
 	...
      774:	00000020 	add	zero,zero,zero
      778:	0000001d 	0x1d
      77c:	0000001f 	0x1f
-     780:	8203cb51 	lb	v1,-13487(s0)
+     780:	8203cb01 	lb	v1,-13567(s0)
      784:	80030000 	lb	v1,0(zero)
      788:	fffffffc 	0xfffffffc
 	...
      794:	00000020 	add	zero,zero,zero
      798:	0000001d 	0x1d
      79c:	0000001f 	0x1f
-     7a0:	8203cb99 	lb	v1,-13415(s0)
+     7a0:	8203cb49 	lb	v1,-13495(s0)
      7a4:	80030000 	lb	v1,0(zero)
      7a8:	fffffffc 	0xfffffffc
 	...
      7b4:	00000028 	0x28
      7b8:	0000001d 	0x1d
      7bc:	0000001f 	0x1f
-     7c0:	8203cfbd 	lb	v1,-12355(s0)
+     7c0:	8203cf6d 	lb	v1,-12435(s0)
      7c4:	80030000 	lb	v1,0(zero)
      7c8:	fffffffc 	0xfffffffc
 	...
      7d4:	00000020 	add	zero,zero,zero
      7d8:	0000001d 	0x1d
      7dc:	0000001f 	0x1f
-     7e0:	8203d059 	lb	v1,-12199(s0)
+     7e0:	8203d009 	lb	v1,-12279(s0)
      7e4:	80000000 	lb	zero,0(zero)
      7e8:	fffffffc 	0xfffffffc
 	...
      7f4:	00000018 	mult	zero,zero
      7f8:	0000001d 	0x1d
      7fc:	0000001f 	0x1f
-     800:	8203d08d 	lb	v1,-12147(s0)
+     800:	8203d03d 	lb	v1,-12227(s0)
 	...
      818:	0000001d 	0x1d
      81c:	0000001f 	0x1f
-     820:	8203d09d 	lb	v1,-12131(s0)
+     820:	8203d04d 	lb	v1,-12211(s0)
      824:	80030000 	lb	v1,0(zero)
      828:	fffffffc 	0xfffffffc
 	...
      834:	00000028 	0x28
      838:	0000001d 	0x1d
      83c:	0000001f 	0x1f
-     840:	8203d1c5 	lb	v1,-11835(s0)
+     840:	8203d175 	lb	v1,-11915(s0)
      844:	80030000 	lb	v1,0(zero)
      848:	fffffffc 	0xfffffffc
 	...
      854:	00000028 	0x28
      858:	0000001d 	0x1d
      85c:	0000001f 	0x1f
-     860:	8203d2c5 	lb	v1,-11579(s0)
+     860:	8203d275 	lb	v1,-11659(s0)
      864:	80030000 	lb	v1,0(zero)
      868:	fffffffc 	0xfffffffc
 	...
      874:	00000020 	add	zero,zero,zero
      878:	0000001d 	0x1d
      87c:	0000001f 	0x1f
-     880:	8203d361 	lb	v1,-11423(s0)
+     880:	8203d311 	lb	v1,-11503(s0)
      884:	80010000 	lb	at,0(zero)
      888:	fffffffc 	0xfffffffc
 	...
      894:	00000018 	mult	zero,zero
      898:	0000001d 	0x1d
      89c:	0000001f 	0x1f
-     8a0:	8203d3b9 	lb	v1,-11335(s0)
+     8a0:	8203d369 	lb	v1,-11415(s0)
      8a4:	80030000 	lb	v1,0(zero)
      8a8:	fffffffc 	0xfffffffc
 	...
      8b4:	00000028 	0x28
      8b8:	0000001d 	0x1d
      8bc:	0000001f 	0x1f
-     8c0:	8203d401 	lb	v1,-11263(s0)
+     8c0:	8203d3b1 	lb	v1,-11343(s0)
      8c4:	80010000 	lb	at,0(zero)
      8c8:	fffffffc 	0xfffffffc
 	...
      8d4:	00000018 	mult	zero,zero
      8d8:	0000001d 	0x1d
      8dc:	0000001f 	0x1f
-     8e0:	8203d459 	lb	v1,-11175(s0)
+     8e0:	8203d409 	lb	v1,-11255(s0)
      8e4:	80030000 	lb	v1,0(zero)
      8e8:	fffffffc 	0xfffffffc
 	...
      8f4:	00000028 	0x28
      8f8:	0000001d 	0x1d
      8fc:	0000001f 	0x1f
-     900:	8203d4a1 	lb	v1,-11103(s0)
+     900:	8203d451 	lb	v1,-11183(s0)
      904:	80030000 	lb	v1,0(zero)
      908:	fffffffc 	0xfffffffc
 	...
      914:	00000068 	0x68
      918:	0000001d 	0x1d
      91c:	0000001f 	0x1f
-     920:	8203d5a5 	lb	v1,-10843(s0)
+     920:	8203d555 	lb	v1,-10923(s0)
 	...
      938:	0000001d 	0x1d
      93c:	0000001f 	0x1f
-     940:	8203d5bd 	lb	v1,-10819(s0)
+     940:	8203d56d 	lb	v1,-10899(s0)
 	...
      958:	0000001d 	0x1d
      95c:	0000001f 	0x1f
-     960:	8203d629 	lb	v1,-10711(s0)
+     960:	8203d5d9 	lb	v1,-10791(s0)
      964:	80030000 	lb	v1,0(zero)
      968:	fffffffc 	0xfffffffc
 	...
      974:	00000028 	0x28
      978:	0000001d 	0x1d
      97c:	0000001f 	0x1f
-     980:	8203d6a9 	lb	v1,-10583(s0)
+     980:	8203d659 	lb	v1,-10663(s0)
      984:	80030000 	lb	v1,0(zero)
      988:	fffffffc 	0xfffffffc
 	...
      994:	00000038 	0x38
      998:	0000001d 	0x1d
      99c:	0000001f 	0x1f
-     9a0:	8203d735 	lb	v1,-10443(s0)
+     9a0:	8203d6e5 	lb	v1,-10523(s0)
      9a4:	80030000 	lb	v1,0(zero)
      9a8:	fffffffc 	0xfffffffc
 	...
      9b4:	00000020 	add	zero,zero,zero
      9b8:	0000001d 	0x1d
      9bc:	0000001f 	0x1f
-     9c0:	8203d7ad 	lb	v1,-10323(s0)
+     9c0:	8203d75d 	lb	v1,-10403(s0)
      9c4:	80010000 	lb	at,0(zero)
      9c8:	fffffffc 	0xfffffffc
 	...
      9d4:	00000018 	mult	zero,zero
      9d8:	0000001d 	0x1d
      9dc:	0000001f 	0x1f
-     9e0:	8203d7c9 	lb	v1,-10295(s0)
+     9e0:	8203d779 	lb	v1,-10375(s0)
      9e4:	80010000 	lb	at,0(zero)
      9e8:	fffffffc 	0xfffffffc
 	...
      9f4:	00000018 	mult	zero,zero
      9f8:	0000001d 	0x1d
      9fc:	0000001f 	0x1f
-     a00:	8203d811 	lb	v1,-10223(s0)
+     a00:	8203d7c1 	lb	v1,-10303(s0)
      a04:	80010000 	lb	at,0(zero)
      a08:	fffffffc 	0xfffffffc
 	...
      a14:	00000018 	mult	zero,zero
      a18:	0000001d 	0x1d
      a1c:	0000001f 	0x1f
-     a20:	8203d859 	lb	v1,-10151(s0)
+     a20:	8203d809 	lb	v1,-10231(s0)
      a24:	80010000 	lb	at,0(zero)
      a28:	fffffffc 	0xfffffffc
 	...
      a34:	00000018 	mult	zero,zero
      a38:	0000001d 	0x1d
      a3c:	0000001f 	0x1f
-     a40:	8203d8a1 	lb	v1,-10079(s0)
+     a40:	8203d851 	lb	v1,-10159(s0)
      a44:	80010000 	lb	at,0(zero)
      a48:	fffffffc 	0xfffffffc
 	...
      a54:	00000018 	mult	zero,zero
      a58:	0000001d 	0x1d
      a5c:	0000001f 	0x1f
-     a60:	8203d8e9 	lb	v1,-10007(s0)
+     a60:	8203d899 	lb	v1,-10087(s0)
      a64:	80010000 	lb	at,0(zero)
      a68:	fffffffc 	0xfffffffc
 	...
      a74:	00000018 	mult	zero,zero
      a78:	0000001d 	0x1d
      a7c:	0000001f 	0x1f
-     a80:	8203d931 	lb	v1,-9935(s0)
+     a80:	8203d8e1 	lb	v1,-10015(s0)
      a84:	80010000 	lb	at,0(zero)
      a88:	fffffffc 	0xfffffffc
 	...
      a94:	00000018 	mult	zero,zero
      a98:	0000001d 	0x1d
      a9c:	0000001f 	0x1f
-     aa0:	8203d979 	lb	v1,-9863(s0)
+     aa0:	8203d929 	lb	v1,-9943(s0)
      aa4:	80010000 	lb	at,0(zero)
      aa8:	fffffffc 	0xfffffffc
 	...
      ab4:	00000018 	mult	zero,zero
      ab8:	0000001d 	0x1d
      abc:	0000001f 	0x1f
-     ac0:	8203d9c1 	lb	v1,-9791(s0)
+     ac0:	8203d971 	lb	v1,-9871(s0)
      ac4:	80030000 	lb	v1,0(zero)
      ac8:	fffffffc 	0xfffffffc
 	...
      ad4:	00000028 	0x28
      ad8:	0000001d 	0x1d
      adc:	0000001f 	0x1f
-     ae0:	8203db9d 	lb	v1,-9315(s0)
+     ae0:	8203db4d 	lb	v1,-9395(s0)
      ae4:	80010000 	lb	at,0(zero)
      ae8:	fffffffc 	0xfffffffc
 	...
      af4:	00000018 	mult	zero,zero
      af8:	0000001d 	0x1d
      afc:	0000001f 	0x1f
-     b00:	8203dbcd 	lb	v1,-9267(s0)
+     b00:	8203db7d 	lb	v1,-9347(s0)
      b04:	80010000 	lb	at,0(zero)
      b08:	fffffffc 	0xfffffffc
 	...
      b14:	00000018 	mult	zero,zero
      b18:	0000001d 	0x1d
      b1c:	0000001f 	0x1f
-     b20:	8203dc15 	lb	v1,-9195(s0)
+     b20:	8203dbc5 	lb	v1,-9275(s0)
      b24:	80010000 	lb	at,0(zero)
      b28:	fffffffc 	0xfffffffc
 	...
      b34:	00000018 	mult	zero,zero
      b38:	0000001d 	0x1d
      b3c:	0000001f 	0x1f
-     b40:	8203dc5d 	lb	v1,-9123(s0)
+     b40:	8203dc0d 	lb	v1,-9203(s0)
      b44:	80030000 	lb	v1,0(zero)
      b48:	fffffffc 	0xfffffffc
 	...
      b54:	00000028 	0x28
      b58:	0000001d 	0x1d
      b5c:	0000001f 	0x1f
-     b60:	8203dc99 	lb	v1,-9063(s0)
+     b60:	8203dc49 	lb	v1,-9143(s0)
      b64:	80030000 	lb	v1,0(zero)
      b68:	fffffffc 	0xfffffffc
 	...
      b74:	00000020 	add	zero,zero,zero
      b78:	0000001d 	0x1d
      b7c:	0000001f 	0x1f
-     b80:	8203dcd5 	lb	v1,-9003(s0)
+     b80:	8203dc85 	lb	v1,-9083(s0)
      b84:	80030000 	lb	v1,0(zero)
      b88:	fffffffc 	0xfffffffc
 	...
      b94:	00000020 	add	zero,zero,zero
      b98:	0000001d 	0x1d
      b9c:	0000001f 	0x1f
-     ba0:	8203dd69 	lb	v1,-8855(s0)
+     ba0:	8203dd19 	lb	v1,-8935(s0)
      ba4:	80030000 	lb	v1,0(zero)
      ba8:	fffffffc 	0xfffffffc
 	...
      bb4:	00000028 	0x28
      bb8:	0000001d 	0x1d
      bbc:	0000001f 	0x1f
-     bc0:	8203de5d 	lb	v1,-8611(s0)
+     bc0:	8203de0d 	lb	v1,-8691(s0)
      bc4:	80030000 	lb	v1,0(zero)
      bc8:	fffffffc 	0xfffffffc
 	...
      bd4:	00000030 	0x30
      bd8:	0000001d 	0x1d
      bdc:	0000001f 	0x1f
-     be0:	8203ded1 	lb	v1,-8495(s0)
+     be0:	8203de81 	lb	v1,-8575(s0)
      be4:	80030000 	lb	v1,0(zero)
      be8:	fffffffc 	0xfffffffc
 	...
      bf4:	00000030 	0x30
      bf8:	0000001d 	0x1d
      bfc:	0000001f 	0x1f
-     c00:	8203e011 	lb	v1,-8175(s0)
+     c00:	8203dfc1 	lb	v1,-8255(s0)
      c04:	80030000 	lb	v1,0(zero)
      c08:	fffffffc 	0xfffffffc
 	...
      c14:	00000028 	0x28
      c18:	0000001d 	0x1d
      c1c:	0000001f 	0x1f
-     c20:	8203e089 	lb	v1,-8055(s0)
+     c20:	8203e039 	lb	v1,-8135(s0)
      c24:	80030000 	lb	v1,0(zero)
      c28:	fffffffc 	0xfffffffc
 	...
      c34:	00000028 	0x28
      c38:	0000001d 	0x1d
      c3c:	0000001f 	0x1f
-     c40:	8203e0cd 	lb	v1,-7987(s0)
+     c40:	8203e07d 	lb	v1,-8067(s0)
      c44:	80030000 	lb	v1,0(zero)
      c48:	fffffffc 	0xfffffffc
 	...
      c54:	00000048 	0x48
      c58:	0000001d 	0x1d
      c5c:	0000001f 	0x1f
-     c60:	8203e219 	lb	v1,-7655(s0)
+     c60:	8203e1c9 	lb	v1,-7735(s0)
      c64:	80030000 	lb	v1,0(zero)
      c68:	fffffffc 	0xfffffffc
 	...
      c74:	00000028 	0x28
      c78:	0000001d 	0x1d
      c7c:	0000001f 	0x1f
-     c80:	8203e279 	lb	v1,-7559(s0)
+     c80:	8203e229 	lb	v1,-7639(s0)
      c84:	80030000 	lb	v1,0(zero)
      c88:	fffffffc 	0xfffffffc
 	...
      c94:	00000040 	ssnop
      c98:	0000001d 	0x1d
      c9c:	0000001f 	0x1f
-     ca0:	8203e429 	lb	v1,-7127(s0)
+     ca0:	8203e3d9 	lb	v1,-7207(s0)
      ca4:	80030000 	lb	v1,0(zero)
      ca8:	fffffffc 	0xfffffffc
 	...
      cb4:	00000040 	ssnop
      cb8:	0000001d 	0x1d
      cbc:	0000001f 	0x1f
-     cc0:	8203e605 	lb	v1,-6651(s0)
+     cc0:	8203e5b5 	lb	v1,-6731(s0)
      cc4:	80030000 	lb	v1,0(zero)
      cc8:	fffffffc 	0xfffffffc
 	...
      cd4:	00000048 	0x48
      cd8:	0000001d 	0x1d
      cdc:	0000001f 	0x1f
-     ce0:	8203e82d 	lb	v1,-6099(s0)
+     ce0:	8203e7dd 	lb	v1,-6179(s0)
      ce4:	80030000 	lb	v1,0(zero)
      ce8:	fffffffc 	0xfffffffc
 	...
      cf4:	00000070 	0x70
      cf8:	0000001d 	0x1d
      cfc:	0000001f 	0x1f
-     d00:	8203eb8d 	lb	v1,-5235(s0)
+     d00:	8203eb3d 	lb	v1,-5315(s0)
      d04:	80030000 	lb	v1,0(zero)
      d08:	fffffffc 	0xfffffffc
 	...
      d14:	00000090 	0x90
      d18:	0000001d 	0x1d
      d1c:	0000001f 	0x1f
-     d20:	8203f2bd 	lb	v1,-3395(s0)
+     d20:	8203f26d 	lb	v1,-3475(s0)
      d24:	80010000 	lb	at,0(zero)
      d28:	fffffffc 	0xfffffffc
 	...
      d34:	00000018 	mult	zero,zero
      d38:	0000001d 	0x1d
      d3c:	0000001f 	0x1f
-     d40:	8203f305 	lb	v1,-3323(s0)
+     d40:	8203f2b5 	lb	v1,-3403(s0)
      d44:	80010000 	lb	at,0(zero)
      d48:	fffffffc 	0xfffffffc
 	...
      d54:	00000018 	mult	zero,zero
      d58:	0000001d 	0x1d
      d5c:	0000001f 	0x1f
-     d60:	8203f349 	lb	v1,-3255(s0)
+     d60:	8203f2f9 	lb	v1,-3335(s0)
      d64:	80030000 	lb	v1,0(zero)
      d68:	fffffffc 	0xfffffffc
 	...
      d74:	00000048 	0x48
      d78:	0000001d 	0x1d
      d7c:	0000001f 	0x1f
-     d80:	8203f3c5 	lb	v1,-3131(s0)
+     d80:	8203f375 	lb	v1,-3211(s0)
      d84:	80030000 	lb	v1,0(zero)
      d88:	fffffffc 	0xfffffffc
 	...
      d94:	00000048 	0x48
      d98:	0000001d 	0x1d
      d9c:	0000001f 	0x1f
-     da0:	8203fa59 	lb	v1,-1447(s0)
+     da0:	8203fa09 	lb	v1,-1527(s0)
      da4:	80010000 	lb	at,0(zero)
      da8:	fffffffc 	0xfffffffc
 	...
      db4:	00000018 	mult	zero,zero
      db8:	0000001d 	0x1d
      dbc:	0000001f 	0x1f
-     dc0:	8203faad 	lb	v1,-1363(s0)
+     dc0:	8203fa5d 	lb	v1,-1443(s0)
      dc4:	80010000 	lb	at,0(zero)
      dc8:	fffffffc 	0xfffffffc
 	...
      dd4:	00000018 	mult	zero,zero
      dd8:	0000001d 	0x1d
      ddc:	0000001f 	0x1f
-     de0:	8203faf5 	lb	v1,-1291(s0)
+     de0:	8203faa5 	lb	v1,-1371(s0)
      de4:	80030000 	lb	v1,0(zero)
      de8:	fffffffc 	0xfffffffc
 	...
      df4:	00000050 	0x50
      df8:	0000001d 	0x1d
      dfc:	0000001f 	0x1f
-     e00:	8203fcf5 	lb	v1,-779(s0)
+     e00:	8203fca5 	lb	v1,-859(s0)
      e04:	80030000 	lb	v1,0(zero)
      e08:	fffffffc 	0xfffffffc
 	...
      e14:	00000048 	0x48
      e18:	0000001d 	0x1d
      e1c:	0000001f 	0x1f
-     e20:	8203fe81 	lb	v1,-383(s0)
+     e20:	8203fe31 	lb	v1,-463(s0)
      e24:	80030000 	lb	v1,0(zero)
      e28:	fffffffc 	0xfffffffc
 	...
      e34:	00000050 	0x50
      e38:	0000001d 	0x1d
      e3c:	0000001f 	0x1f
-     e40:	820400a1 	lb	a0,161(s0)
+     e40:	82040051 	lb	a0,81(s0)
      e44:	80030000 	lb	v1,0(zero)
      e48:	fffffffc 	0xfffffffc
 	...
      e54:	00000058 	0x58
      e58:	0000001d 	0x1d
      e5c:	0000001f 	0x1f
-     e60:	820403b9 	lb	a0,953(s0)
+     e60:	82040369 	lb	a0,873(s0)
      e64:	80010000 	lb	at,0(zero)
      e68:	fffffffc 	0xfffffffc
 	...
      e74:	00000018 	mult	zero,zero
      e78:	0000001d 	0x1d
      e7c:	0000001f 	0x1f
-     e80:	820403fd 	lb	a0,1021(s0)
+     e80:	820403ad 	lb	a0,941(s0)
 	...
      e98:	0000001d 	0x1d
      e9c:	0000001f 	0x1f
-     ea0:	8204043d 	lb	a0,1085(s0)
+     ea0:	820403ed 	lb	a0,1005(s0)
      ea4:	80030000 	lb	v1,0(zero)
      ea8:	fffffffc 	0xfffffffc
 	...
      eb4:	00000040 	ssnop
      eb8:	0000001d 	0x1d
      ebc:	0000001f 	0x1f
-     ec0:	820405c1 	lb	a0,1473(s0)
+     ec0:	82040571 	lb	a0,1393(s0)
      ec4:	80030000 	lb	v1,0(zero)
      ec8:	fffffffc 	0xfffffffc
 	...
      ed4:	00000050 	0x50
      ed8:	0000001d 	0x1d
      edc:	0000001f 	0x1f
-     ee0:	8204095d 	lb	a0,2397(s0)
+     ee0:	8204090d 	lb	a0,2317(s0)
      ee4:	80030000 	lb	v1,0(zero)
      ee8:	fffffffc 	0xfffffffc
 	...
      ef4:	00000030 	0x30
      ef8:	0000001d 	0x1d
      efc:	0000001f 	0x1f
-     f00:	82040a39 	lb	a0,2617(s0)
+     f00:	820409e9 	lb	a0,2537(s0)
      f04:	80030000 	lb	v1,0(zero)
      f08:	fffffffc 	0xfffffffc
 	...
      f14:	00000038 	0x38
      f18:	0000001d 	0x1d
      f1c:	0000001f 	0x1f
-     f20:	82040c05 	lb	a0,3077(s0)
+     f20:	82040bb5 	lb	a0,2997(s0)
      f24:	80030000 	lb	v1,0(zero)
      f28:	fffffffc 	0xfffffffc
 	...
      f34:	00000078 	0x78
      f38:	0000001d 	0x1d
      f3c:	0000001f 	0x1f
-     f40:	82040e31 	lb	a0,3633(s0)
+     f40:	82040de1 	lb	a0,3553(s0)
      f44:	80030000 	lb	v1,0(zero)
      f48:	fffffffc 	0xfffffffc
 	...
      f54:	00000028 	0x28
      f58:	0000001d 	0x1d
      f5c:	0000001f 	0x1f
-     f60:	82040ef5 	lb	a0,3829(s0)
+     f60:	82040ea5 	lb	a0,3749(s0)
      f64:	80030000 	lb	v1,0(zero)
      f68:	fffffffc 	0xfffffffc
 	...
      f74:	00000030 	0x30
      f78:	0000001d 	0x1d
      f7c:	0000001f 	0x1f
-     f80:	82041095 	lb	a0,4245(s0)
+     f80:	82041045 	lb	a0,4165(s0)
      f84:	80030000 	lb	v1,0(zero)
      f88:	fffffffc 	0xfffffffc
 	...
      f94:	00000030 	0x30
      f98:	0000001d 	0x1d
      f9c:	0000001f 	0x1f
-     fa0:	820412d9 	lb	a0,4825(s0)
+     fa0:	82041289 	lb	a0,4745(s0)
      fa4:	80030000 	lb	v1,0(zero)
      fa8:	fffffffc 	0xfffffffc
 	...
      fb4:	00000030 	0x30
      fb8:	0000001d 	0x1d
      fbc:	0000001f 	0x1f
-     fc0:	82041421 	lb	a0,5153(s0)
+     fc0:	820413d1 	lb	a0,5073(s0)
      fc4:	80030000 	lb	v1,0(zero)
      fc8:	fffffffc 	0xfffffffc
 	...
      fd4:	00000028 	0x28
      fd8:	0000001d 	0x1d
      fdc:	0000001f 	0x1f
-     fe0:	8204151d 	lb	a0,5405(s0)
+     fe0:	820414cd 	lb	a0,5325(s0)
      fe4:	80030000 	lb	v1,0(zero)
      fe8:	fffffffc 	0xfffffffc
 	...
      ff4:	00000028 	0x28
      ff8:	0000001d 	0x1d
      ffc:	0000001f 	0x1f
-    1000:	82041619 	lb	a0,5657(s0)
+    1000:	820415c9 	lb	a0,5577(s0)
     1004:	80030000 	lb	v1,0(zero)
     1008:	fffffffc 	0xfffffffc
 	...
     1014:	00000028 	0x28
     1018:	0000001d 	0x1d
     101c:	0000001f 	0x1f
-    1020:	82041679 	lb	a0,5753(s0)
+    1020:	82041629 	lb	a0,5673(s0)
     1024:	80030000 	lb	v1,0(zero)
     1028:	fffffffc 	0xfffffffc
 	...
     1034:	00000038 	0x38
     1038:	0000001d 	0x1d
     103c:	0000001f 	0x1f
-    1040:	820417c1 	lb	a0,6081(s0)
+    1040:	82041771 	lb	a0,6001(s0)
     1044:	80030000 	lb	v1,0(zero)
     1048:	fffffffc 	0xfffffffc
 	...
     1054:	00000030 	0x30
     1058:	0000001d 	0x1d
     105c:	0000001f 	0x1f
-    1060:	820418f9 	lb	a0,6393(s0)
+    1060:	820418a9 	lb	a0,6313(s0)
     1064:	80030000 	lb	v1,0(zero)
     1068:	fffffffc 	0xfffffffc
 	...
     1074:	00000030 	0x30
     1078:	0000001d 	0x1d
     107c:	0000001f 	0x1f
-    1080:	82041989 	lb	a0,6537(s0)
+    1080:	82041939 	lb	a0,6457(s0)
 	...
     1098:	0000001d 	0x1d
     109c:	0000001f 	0x1f
-    10a0:	820419bd 	lb	a0,6589(s0)
+    10a0:	8204196d 	lb	a0,6509(s0)
 	...
     10b8:	0000001d 	0x1d
     10bc:	0000001f 	0x1f
-    10c0:	82041a21 	lb	a0,6689(s0)
+    10c0:	820419d1 	lb	a0,6609(s0)
     10c4:	80030000 	lb	v1,0(zero)
     10c8:	fffffffc 	0xfffffffc
 	...
     10d4:	00000028 	0x28
     10d8:	0000001d 	0x1d
     10dc:	0000001f 	0x1f
-    10e0:	82041a79 	lb	a0,6777(s0)
+    10e0:	82041a29 	lb	a0,6697(s0)
     10e4:	80030000 	lb	v1,0(zero)
     10e8:	fffffffc 	0xfffffffc
 	...
     10f4:	00000048 	0x48
     10f8:	0000001d 	0x1d
     10fc:	0000001f 	0x1f
-    1100:	82041c51 	lb	a0,7249(s0)
+    1100:	82041c01 	lb	a0,7169(s0)
     1104:	80030000 	lb	v1,0(zero)
     1108:	fffffffc 	0xfffffffc
 	...
     1114:	00000078 	0x78
     1118:	0000001d 	0x1d
     111c:	0000001f 	0x1f
-    1120:	82042b51 	lb	a0,11089(s0)
+    1120:	82042b01 	lb	a0,11009(s0)
     1124:	80010000 	lb	at,0(zero)
     1128:	fffffffc 	0xfffffffc
 	...
     1134:	00000018 	mult	zero,zero
     1138:	0000001d 	0x1d
     113c:	0000001f 	0x1f
-    1140:	82042ba5 	lb	a0,11173(s0)
+    1140:	82042b55 	lb	a0,11093(s0)
     1144:	80010000 	lb	at,0(zero)
     1148:	fffffffc 	0xfffffffc
 	...
     1154:	00000018 	mult	zero,zero
     1158:	0000001d 	0x1d
     115c:	0000001f 	0x1f
-    1160:	82042bf9 	lb	a0,11257(s0)
+    1160:	82042ba9 	lb	a0,11177(s0)
     1164:	80030000 	lb	v1,0(zero)
     1168:	fffffffc 	0xfffffffc
 	...
     1174:	00000030 	0x30
     1178:	0000001d 	0x1d
     117c:	0000001f 	0x1f
-    1180:	82042ee9 	lb	a0,12009(s0)
+    1180:	82042e99 	lb	a0,11929(s0)
     1184:	80010000 	lb	at,0(zero)
     1188:	fffffffc 	0xfffffffc
 	...
     1194:	00000018 	mult	zero,zero
     1198:	0000001d 	0x1d
     119c:	0000001f 	0x1f
-    11a0:	82042f39 	lb	a0,12089(s0)
+    11a0:	82042ee9 	lb	a0,12009(s0)
     11a4:	80030000 	lb	v1,0(zero)
     11a8:	fffffffc 	0xfffffffc
 	...
     11b4:	00000058 	0x58
     11b8:	0000001d 	0x1d
     11bc:	0000001f 	0x1f
-    11c0:	8204334d 	lb	a0,13133(s0)
+    11c0:	820432fd 	lb	a0,13053(s0)
     11c4:	80030000 	lb	v1,0(zero)
     11c8:	fffffffc 	0xfffffffc
 	...
     11d4:	00000060 	0x60
     11d8:	0000001d 	0x1d
     11dc:	0000001f 	0x1f
-    11e0:	82043b8d 	lb	a0,15245(s0)
+    11e0:	82043b3d 	lb	a0,15165(s0)
     11e4:	80030000 	lb	v1,0(zero)
     11e8:	fffffffc 	0xfffffffc
 	...
     11f4:	00000028 	0x28
     11f8:	0000001d 	0x1d
     11fc:	0000001f 	0x1f
-    1200:	82043c8d 	lb	a0,15501(s0)
+    1200:	82043c3d 	lb	a0,15421(s0)
     1204:	80030000 	lb	v1,0(zero)
     1208:	fffffffc 	0xfffffffc
 	...
     1214:	00000028 	0x28
     1218:	0000001d 	0x1d
     121c:	0000001f 	0x1f
-    1220:	82043da1 	lb	a0,15777(s0)
+    1220:	82043d51 	lb	a0,15697(s0)
     1224:	80030000 	lb	v1,0(zero)
     1228:	fffffffc 	0xfffffffc
 	...
     1234:	00000040 	ssnop
     1238:	0000001d 	0x1d
     123c:	0000001f 	0x1f
-    1240:	82044021 	lb	a0,16417(s0)
+    1240:	82043fd1 	lb	a0,16337(s0)
     1244:	80030000 	lb	v1,0(zero)
     1248:	fffffffc 	0xfffffffc
 	...
     1254:	00000028 	0x28
     1258:	0000001d 	0x1d
     125c:	0000001f 	0x1f
-    1260:	82044149 	lb	a0,16713(s0)
+    1260:	820440f9 	lb	a0,16633(s0)
     1264:	80030000 	lb	v1,0(zero)
     1268:	fffffffc 	0xfffffffc
 	...
     1274:	00000058 	0x58
     1278:	0000001d 	0x1d
     127c:	0000001f 	0x1f
-    1280:	82044475 	lb	a0,17525(s0)
+    1280:	82044425 	lb	a0,17445(s0)
     1284:	80010000 	lb	at,0(zero)
     1288:	fffffffc 	0xfffffffc
 	...
     1294:	00000018 	mult	zero,zero
     1298:	0000001d 	0x1d
     129c:	0000001f 	0x1f
-    12a0:	82044559 	lb	a0,17753(s0)
+    12a0:	82044509 	lb	a0,17673(s0)
     12a4:	80030000 	lb	v1,0(zero)
     12a8:	fffffffc 	0xfffffffc
 	...
     12b4:	00000060 	0x60
     12b8:	0000001d 	0x1d
     12bc:	0000001f 	0x1f
-    12c0:	82044799 	lb	a0,18329(s0)
+    12c0:	82044749 	lb	a0,18249(s0)
     12c4:	80030000 	lb	v1,0(zero)
     12c8:	fffffffc 	0xfffffffc
 	...
     12d4:	000000b0 	0xb0
     12d8:	0000001d 	0x1d
     12dc:	0000001f 	0x1f
-    12e0:	82044911 	lb	a0,18705(s0)
+    12e0:	820448c1 	lb	a0,18625(s0)
     12e4:	80030000 	lb	v1,0(zero)
     12e8:	fffffffc 	0xfffffffc
 	...
     12f4:	00000030 	0x30
     12f8:	0000001d 	0x1d
     12fc:	0000001f 	0x1f
-    1300:	8204498d 	lb	a0,18829(s0)
+    1300:	8204493d 	lb	a0,18749(s0)
     1304:	80030000 	lb	v1,0(zero)
     1308:	fffffffc 	0xfffffffc
 	...
     1314:	00000058 	0x58
     1318:	0000001d 	0x1d
     131c:	0000001f 	0x1f
-    1320:	82044dad 	lb	a0,19885(s0)
+    1320:	82044d5d 	lb	a0,19805(s0)
     1324:	80030000 	lb	v1,0(zero)
     1328:	fffffffc 	0xfffffffc
 	...
     1334:	00000028 	0x28
     1338:	0000001d 	0x1d
     133c:	0000001f 	0x1f
-    1340:	82044ec9 	lb	a0,20169(s0)
+    1340:	82044e79 	lb	a0,20089(s0)
 	...
     1358:	0000001d 	0x1d
     135c:	0000001f 	0x1f
-    1360:	82044ecd 	lb	a0,20173(s0)
+    1360:	82044e7d 	lb	a0,20093(s0)
     1364:	80030000 	lb	v1,0(zero)
     1368:	fffffffc 	0xfffffffc
 	...
     1374:	00000028 	0x28
     1378:	0000001d 	0x1d
     137c:	0000001f 	0x1f
-    1380:	82044f45 	lb	a0,20293(s0)
+    1380:	82044ef5 	lb	a0,20213(s0)
     1384:	80030000 	lb	v1,0(zero)
     1388:	fffffffc 	0xfffffffc
 	...
     1394:	00000038 	0x38
     1398:	0000001d 	0x1d
     139c:	0000001f 	0x1f
-    13a0:	8204506d 	lb	a0,20589(s0)
+    13a0:	8204501d 	lb	a0,20509(s0)
     13a4:	80030000 	lb	v1,0(zero)
     13a8:	fffffffc 	0xfffffffc
 	...
     13b4:	00000028 	0x28
     13b8:	0000001d 	0x1d
     13bc:	0000001f 	0x1f
-    13c0:	82045125 	lb	a0,20773(s0)
+    13c0:	820450d5 	lb	a0,20693(s0)
     13c4:	80030000 	lb	v1,0(zero)
     13c8:	fffffffc 	0xfffffffc
 	...
     13d4:	00000040 	ssnop
     13d8:	0000001d 	0x1d
     13dc:	0000001f 	0x1f
-    13e0:	820452d9 	lb	a0,21209(s0)
+    13e0:	82045289 	lb	a0,21129(s0)
     13e4:	80030000 	lb	v1,0(zero)
     13e8:	fffffffc 	0xfffffffc
 	...
     13f4:	00000030 	0x30
     13f8:	0000001d 	0x1d
     13fc:	0000001f 	0x1f
-    1400:	82045451 	lb	a0,21585(s0)
+    1400:	82045401 	lb	a0,21505(s0)
     1404:	80030000 	lb	v1,0(zero)
     1408:	fffffffc 	0xfffffffc
 	...
     1414:	00000038 	0x38
     1418:	0000001d 	0x1d
     141c:	0000001f 	0x1f
-    1420:	820455ed 	lb	a0,21997(s0)
+    1420:	8204559d 	lb	a0,21917(s0)
     1424:	80030000 	lb	v1,0(zero)
     1428:	fffffffc 	0xfffffffc
 	...
     1434:	00000038 	0x38
     1438:	0000001d 	0x1d
     143c:	0000001f 	0x1f
-    1440:	820457cd 	lb	a0,22477(s0)
+    1440:	8204577d 	lb	a0,22397(s0)
     1444:	80030000 	lb	v1,0(zero)
     1448:	fffffffc 	0xfffffffc
 	...
     1454:	00000028 	0x28
     1458:	0000001d 	0x1d
     145c:	0000001f 	0x1f
-    1460:	82045849 	lb	a0,22601(s0)
+    1460:	820457f9 	lb	a0,22521(s0)
 	...
     1478:	0000001d 	0x1d
     147c:	0000001f 	0x1f
-    1480:	82045865 	lb	a0,22629(s0)
+    1480:	82045815 	lb	a0,22549(s0)
     1484:	80030000 	lb	v1,0(zero)
     1488:	fffffffc 	0xfffffffc
 	...
     1494:	00000040 	ssnop
     1498:	0000001d 	0x1d
     149c:	0000001f 	0x1f
-    14a0:	82045981 	lb	a0,22913(s0)
+    14a0:	82045931 	lb	a0,22833(s0)
     14a4:	80030000 	lb	v1,0(zero)
     14a8:	fffffffc 	0xfffffffc
 	...
     14b4:	00000040 	ssnop
     14b8:	0000001d 	0x1d
     14bc:	0000001f 	0x1f
-    14c0:	82045be1 	lb	a0,23521(s0)
+    14c0:	82045b91 	lb	a0,23441(s0)
     14c4:	80030000 	lb	v1,0(zero)
     14c8:	fffffffc 	0xfffffffc
 	...
     14d4:	00000030 	0x30
     14d8:	0000001d 	0x1d
     14dc:	0000001f 	0x1f
-    14e0:	82045d35 	lb	a0,23861(s0)
+    14e0:	82045ce5 	lb	a0,23781(s0)
     14e4:	80030000 	lb	v1,0(zero)
     14e8:	fffffffc 	0xfffffffc
 	...
     14f4:	00000028 	0x28
     14f8:	0000001d 	0x1d
     14fc:	0000001f 	0x1f
-    1500:	82045df9 	lb	a0,24057(s0)
+    1500:	82045da9 	lb	a0,23977(s0)
     1504:	80030000 	lb	v1,0(zero)
     1508:	fffffffc 	0xfffffffc
 	...
     1514:	00000028 	0x28
     1518:	0000001d 	0x1d
     151c:	0000001f 	0x1f
-    1520:	82045e45 	lb	a0,24133(s0)
+    1520:	82045df5 	lb	a0,24053(s0)
 	...
     1538:	0000001d 	0x1d
     153c:	0000001f 	0x1f
-    1540:	82045e75 	lb	a0,24181(s0)
+    1540:	82045e25 	lb	a0,24101(s0)
     1544:	80030000 	lb	v1,0(zero)
     1548:	fffffffc 	0xfffffffc
 	...
     1554:	000000c8 	0xc8
     1558:	0000001d 	0x1d
     155c:	0000001f 	0x1f
-    1560:	82046c25 	lb	a0,27685(s0)
+    1560:	82046bd5 	lb	a0,27605(s0)
     1564:	80030000 	lb	v1,0(zero)
     1568:	fffffffc 	0xfffffffc
 	...
     1574:	00000068 	0x68
     1578:	0000001d 	0x1d
     157c:	0000001f 	0x1f
-    1580:	820471bd 	lb	a0,29117(s0)
+    1580:	8204716d 	lb	a0,29037(s0)
     1584:	80030000 	lb	v1,0(zero)
     1588:	fffffffc 	0xfffffffc
 	...
     1594:	00000158 	0x158
     1598:	0000001d 	0x1d
     159c:	0000001f 	0x1f
-    15a0:	8204745d 	lb	a0,29789(s0)
+    15a0:	8204740d 	lb	a0,29709(s0)
     15a4:	80010000 	lb	at,0(zero)
     15a8:	fffffffc 	0xfffffffc
 	...
     15b4:	00000018 	mult	zero,zero
     15b8:	0000001d 	0x1d
     15bc:	0000001f 	0x1f
-    15c0:	8204747d 	lb	a0,29821(s0)
+    15c0:	8204742d 	lb	a0,29741(s0)
 	...
     15d8:	0000001d 	0x1d
     15dc:	0000001f 	0x1f
-    15e0:	820474bd 	lb	a0,29885(s0)
+    15e0:	8204746d 	lb	a0,29805(s0)
     15e4:	80000000 	lb	zero,0(zero)
     15e8:	fffffffc 	0xfffffffc
 	...
     15f4:	00000018 	mult	zero,zero
     15f8:	0000001d 	0x1d
     15fc:	0000001f 	0x1f
-    1600:	820474e9 	lb	a0,29929(s0)
+    1600:	82047499 	lb	a0,29849(s0)
     1604:	80030000 	lb	v1,0(zero)
     1608:	fffffffc 	0xfffffffc
 	...
     1614:	00000050 	0x50
     1618:	0000001d 	0x1d
     161c:	0000001f 	0x1f
-    1620:	82047815 	lb	a0,30741(s0)
+    1620:	820477c5 	lb	a0,30661(s0)
     1624:	80010000 	lb	at,0(zero)
     1628:	fffffffc 	0xfffffffc
 	...
     1634:	00000018 	mult	zero,zero
     1638:	0000001d 	0x1d
     163c:	0000001f 	0x1f
-    1640:	820478e1 	lb	a0,30945(s0)
+    1640:	82047891 	lb	a0,30865(s0)
     1644:	80030000 	lb	v1,0(zero)
     1648:	fffffffc 	0xfffffffc
 	...
     1654:	000000a8 	0xa8
     1658:	0000001d 	0x1d
     165c:	0000001f 	0x1f
-    1660:	82047ff5 	lb	a0,32757(s0)
+    1660:	82047fa5 	lb	a0,32677(s0)
     1664:	80030000 	lb	v1,0(zero)
     1668:	fffffffc 	0xfffffffc
 	...
     1674:	00000020 	add	zero,zero,zero
     1678:	0000001d 	0x1d
     167c:	0000001f 	0x1f
-    1680:	820480bd 	lb	a0,-32579(s0)
+    1680:	8204806d 	lb	a0,-32659(s0)
     1684:	80030000 	lb	v1,0(zero)
     1688:	fffffffc 	0xfffffffc
 	...
     1694:	00000020 	add	zero,zero,zero
     1698:	0000001d 	0x1d
     169c:	0000001f 	0x1f
-    16a0:	82048171 	lb	a0,-32399(s0)
+    16a0:	82048121 	lb	a0,-32479(s0)
     16a4:	80030000 	lb	v1,0(zero)
     16a8:	fffffffc 	0xfffffffc
 	...
     16b4:	00000028 	0x28
     16b8:	0000001d 	0x1d
     16bc:	0000001f 	0x1f
-    16c0:	8204823d 	lb	a0,-32195(s0)
+    16c0:	820481ed 	lb	a0,-32275(s0)
     16c4:	80030000 	lb	v1,0(zero)
     16c8:	fffffffc 	0xfffffffc
 	...
@@ -1412,91 +1412,91 @@ Disassembly of section .pdr:
     1854:	00000060 	0x60
     1858:	0000001d 	0x1d
     185c:	0000001f 	0x1f
-    1860:	8204830d 	lb	a0,-31987(s0)
+    1860:	820482bd 	lb	a0,-32067(s0)
     1864:	80030000 	lb	v1,0(zero)
     1868:	fffffffc 	0xfffffffc
 	...
     1874:	00000030 	0x30
     1878:	0000001d 	0x1d
     187c:	0000001f 	0x1f
-    1880:	82048505 	lb	a0,-31483(s0)
+    1880:	820484b5 	lb	a0,-31563(s0)
     1884:	80030000 	lb	v1,0(zero)
     1888:	fffffffc 	0xfffffffc
 	...
     1894:	00000038 	0x38
     1898:	0000001d 	0x1d
     189c:	0000001f 	0x1f
-    18a0:	82048701 	lb	a0,-30975(s0)
+    18a0:	820486b1 	lb	a0,-31055(s0)
     18a4:	80030000 	lb	v1,0(zero)
     18a8:	fffffffc 	0xfffffffc
 	...
     18b4:	00000020 	add	zero,zero,zero
     18b8:	0000001d 	0x1d
     18bc:	0000001f 	0x1f
-    18c0:	82048809 	lb	a0,-30711(s0)
+    18c0:	820487b9 	lb	a0,-30791(s0)
     18c4:	80030000 	lb	v1,0(zero)
     18c8:	fffffffc 	0xfffffffc
 	...
     18d4:	00000028 	0x28
     18d8:	0000001d 	0x1d
     18dc:	0000001f 	0x1f
-    18e0:	82048959 	lb	a0,-30375(s0)
+    18e0:	82048909 	lb	a0,-30455(s0)
     18e4:	80030000 	lb	v1,0(zero)
     18e8:	fffffffc 	0xfffffffc
 	...
     18f4:	00000020 	add	zero,zero,zero
     18f8:	0000001d 	0x1d
     18fc:	0000001f 	0x1f
-    1900:	82048a4d 	lb	a0,-30131(s0)
+    1900:	820489fd 	lb	a0,-30211(s0)
     1904:	00010000 	sll	zero,at,0x0
     1908:	fffffffc 	0xfffffffc
 	...
     1914:	00000008 	jr	zero
     1918:	0000001d 	0x1d
     191c:	0000001f 	0x1f
-    1920:	82048ad9 	lb	a0,-29991(s0)
+    1920:	82048a89 	lb	a0,-30071(s0)
     1924:	80010000 	lb	at,0(zero)
     1928:	fffffffc 	0xfffffffc
 	...
     1934:	00000020 	add	zero,zero,zero
     1938:	0000001d 	0x1d
     193c:	0000001f 	0x1f
-    1940:	82048b51 	lb	a0,-29871(s0)
+    1940:	82048b01 	lb	a0,-29951(s0)
     1944:	80000000 	lb	zero,0(zero)
     1948:	fffffffc 	0xfffffffc
 	...
     1954:	00000018 	mult	zero,zero
     1958:	0000001d 	0x1d
     195c:	0000001f 	0x1f
-    1960:	82048dad 	lb	a0,-29267(s0)
+    1960:	82048d5d 	lb	a0,-29347(s0)
     1964:	80030000 	lb	v1,0(zero)
     1968:	fffffffc 	0xfffffffc
 	...
     1974:	00000078 	0x78
     1978:	0000001d 	0x1d
     197c:	0000001f 	0x1f
-    1980:	8204957d 	lb	a0,-27267(s0)
+    1980:	8204952d 	lb	a0,-27347(s0)
     1984:	80000000 	lb	zero,0(zero)
     1988:	fffffffc 	0xfffffffc
 	...
     1994:	00000018 	mult	zero,zero
     1998:	0000001d 	0x1d
     199c:	0000001f 	0x1f
-    19a0:	82049599 	lb	a0,-27239(s0)
+    19a0:	82049549 	lb	a0,-27319(s0)
     19a4:	80030000 	lb	v1,0(zero)
     19a8:	fffffffc 	0xfffffffc
 	...
     19b4:	00000028 	0x28
     19b8:	0000001d 	0x1d
     19bc:	0000001f 	0x1f
-    19c0:	82049d65 	lb	a0,-25243(s0)
+    19c0:	82049d15 	lb	a0,-25323(s0)
     19c4:	80030000 	lb	v1,0(zero)
     19c8:	fffffffc 	0xfffffffc
 	...
     19d4:	00000030 	0x30
     19d8:	0000001d 	0x1d
     19dc:	0000001f 	0x1f
-    19e0:	82049e1d 	lb	a0,-25059(s0)
+    19e0:	82049dcd 	lb	a0,-25139(s0)
     19e4:	80030000 	lb	v1,0(zero)
     19e8:	fffffffc 	0xfffffffc
 	...
@@ -1510,7 +1510,7 @@ Disassembly of section .pdr:
     1a14:	00000020 	add	zero,zero,zero
     1a18:	0000001d 	0x1d
     1a1c:	0000001f 	0x1f
-    1a20:	82049f1d 	lb	a0,-24803(s0)
+    1a20:	82049ecd 	lb	a0,-24883(s0)
     1a24:	80030000 	lb	v1,0(zero)
     1a28:	fffffffc 	0xfffffffc
 	...
@@ -1524,60 +1524,60 @@ Disassembly of section .pdr:
     1a54:	00000018 	mult	zero,zero
     1a58:	0000001d 	0x1d
     1a5c:	0000001f 	0x1f
-    1a60:	82049fdd 	lb	a0,-24611(s0)
+    1a60:	82049f8d 	lb	a0,-24691(s0)
     1a64:	80010000 	lb	at,0(zero)
     1a68:	fffffffc 	0xfffffffc
 	...
     1a74:	00000018 	mult	zero,zero
     1a78:	0000001d 	0x1d
     1a7c:	0000001f 	0x1f
-    1a80:	8204a09d 	lb	a0,-24419(s0)
+    1a80:	8204a04d 	lb	a0,-24499(s0)
 	...
     1a98:	0000001d 	0x1d
     1a9c:	0000001f 	0x1f
-    1aa0:	8204a0a1 	lb	a0,-24415(s0)
+    1aa0:	8204a051 	lb	a0,-24495(s0)
     1aa4:	80000000 	lb	zero,0(zero)
     1aa8:	fffffffc 	0xfffffffc
 	...
     1ab4:	00000018 	mult	zero,zero
     1ab8:	0000001d 	0x1d
     1abc:	0000001f 	0x1f
-    1ac0:	8204a0d9 	lb	a0,-24359(s0)
+    1ac0:	8204a089 	lb	a0,-24439(s0)
     1ac4:	80000000 	lb	zero,0(zero)
     1ac8:	fffffffc 	0xfffffffc
 	...
     1ad4:	00000018 	mult	zero,zero
     1ad8:	0000001d 	0x1d
     1adc:	0000001f 	0x1f
-    1ae0:	8204a0f9 	lb	a0,-24327(s0)
+    1ae0:	8204a0a9 	lb	a0,-24407(s0)
 	...
     1af8:	0000001d 	0x1d
     1afc:	0000001f 	0x1f
-    1b00:	8204a135 	lb	a0,-24267(s0)
+    1b00:	8204a0e5 	lb	a0,-24347(s0)
 	...
     1b18:	0000001d 	0x1d
     1b1c:	0000001f 	0x1f
-    1b20:	8204a175 	lb	a0,-24203(s0)
+    1b20:	8204a125 	lb	a0,-24283(s0)
     1b24:	80010000 	lb	at,0(zero)
     1b28:	fffffffc 	0xfffffffc
 	...
     1b34:	00000018 	mult	zero,zero
     1b38:	0000001d 	0x1d
     1b3c:	0000001f 	0x1f
-    1b40:	8204a1c5 	lb	a0,-24123(s0)
+    1b40:	8204a175 	lb	a0,-24203(s0)
 	...
     1b54:	00000008 	jr	zero
     1b58:	0000001d 	0x1d
     1b5c:	0000001f 	0x1f
-    1b60:	8204a231 	lb	a0,-24015(s0)
+    1b60:	8204a1e1 	lb	a0,-24095(s0)
 	...
     1b78:	0000001d 	0x1d
     1b7c:	0000001f 	0x1f
-    1b80:	8204a26d 	lb	a0,-23955(s0)
+    1b80:	8204a21d 	lb	a0,-24035(s0)
 	...
     1b98:	0000001d 	0x1d
     1b9c:	0000001f 	0x1f
-    1ba0:	8204a2ad 	lb	a0,-23891(s0)
+    1ba0:	8204a25d 	lb	a0,-23971(s0)
     1ba4:	80030000 	lb	v1,0(zero)
     1ba8:	fffffffc 	0xfffffffc
 	...
@@ -1591,189 +1591,189 @@ Disassembly of section .pdr:
     1bd4:	00000020 	add	zero,zero,zero
     1bd8:	0000001d 	0x1d
     1bdc:	0000001f 	0x1f
-    1be0:	8204a331 	lb	a0,-23759(s0)
+    1be0:	8204a2e1 	lb	a0,-23839(s0)
     1be4:	80030000 	lb	v1,0(zero)
     1be8:	fffffffc 	0xfffffffc
 	...
     1bf4:	00000028 	0x28
     1bf8:	0000001d 	0x1d
     1bfc:	0000001f 	0x1f
-    1c00:	8204a405 	lb	a0,-23547(s0)
+    1c00:	8204a3b5 	lb	a0,-23627(s0)
     1c04:	80030000 	lb	v1,0(zero)
     1c08:	fffffffc 	0xfffffffc
 	...
     1c14:	00000020 	add	zero,zero,zero
     1c18:	0000001d 	0x1d
     1c1c:	0000001f 	0x1f
-    1c20:	8204a455 	lb	a0,-23467(s0)
+    1c20:	8204a405 	lb	a0,-23547(s0)
     1c24:	80030000 	lb	v1,0(zero)
     1c28:	fffffffc 	0xfffffffc
 	...
     1c34:	00000038 	0x38
     1c38:	0000001d 	0x1d
     1c3c:	0000001f 	0x1f
-    1c40:	8204a78d 	lb	a0,-22643(s0)
+    1c40:	8204a73d 	lb	a0,-22723(s0)
     1c44:	80030000 	lb	v1,0(zero)
     1c48:	fffffffc 	0xfffffffc
 	...
     1c54:	00000020 	add	zero,zero,zero
     1c58:	0000001d 	0x1d
     1c5c:	0000001f 	0x1f
-    1c60:	8204a849 	lb	a0,-22455(s0)
+    1c60:	8204a7f9 	lb	a0,-22535(s0)
     1c64:	00010000 	sll	zero,at,0x0
     1c68:	fffffffc 	0xfffffffc
 	...
     1c74:	00000008 	jr	zero
     1c78:	0000001d 	0x1d
     1c7c:	0000001f 	0x1f
-    1c80:	8204a8b1 	lb	a0,-22351(s0)
+    1c80:	8204a861 	lb	a0,-22431(s0)
     1c84:	80000000 	lb	zero,0(zero)
     1c88:	fffffffc 	0xfffffffc
 	...
     1c94:	00000018 	mult	zero,zero
     1c98:	0000001d 	0x1d
     1c9c:	0000001f 	0x1f
-    1ca0:	8204a8d5 	lb	a0,-22315(s0)
+    1ca0:	8204a885 	lb	a0,-22395(s0)
     1ca4:	80030000 	lb	v1,0(zero)
     1ca8:	fffffffc 	0xfffffffc
 	...
     1cb4:	00000020 	add	zero,zero,zero
     1cb8:	0000001d 	0x1d
     1cbc:	0000001f 	0x1f
-    1cc0:	8204a931 	lb	a0,-22223(s0)
+    1cc0:	8204a8e1 	lb	a0,-22303(s0)
     1cc4:	80000000 	lb	zero,0(zero)
     1cc8:	fffffffc 	0xfffffffc
 	...
     1cd4:	00000018 	mult	zero,zero
     1cd8:	0000001d 	0x1d
     1cdc:	0000001f 	0x1f
-    1ce0:	8204a955 	lb	a0,-22187(s0)
+    1ce0:	8204a905 	lb	a0,-22267(s0)
     1ce4:	80030000 	lb	v1,0(zero)
     1ce8:	fffffffc 	0xfffffffc
 	...
     1cf4:	00000078 	0x78
     1cf8:	0000001d 	0x1d
     1cfc:	0000001f 	0x1f
-    1d00:	8204a9f1 	lb	a0,-22031(s0)
+    1d00:	8204a9a1 	lb	a0,-22111(s0)
     1d04:	80030000 	lb	v1,0(zero)
     1d08:	fffffffc 	0xfffffffc
 	...
     1d14:	00000030 	0x30
     1d18:	0000001d 	0x1d
     1d1c:	0000001f 	0x1f
-    1d20:	8205f439 	lb	a1,-3015(s0)
+    1d20:	8205f3e9 	lb	a1,-3095(s0)
     1d24:	80030000 	lb	v1,0(zero)
     1d28:	fffffffc 	0xfffffffc
 	...
     1d34:	00000028 	0x28
     1d38:	0000001d 	0x1d
     1d3c:	0000001f 	0x1f
-    1d40:	8205f46d 	lb	a1,-2963(s0)
+    1d40:	8205f41d 	lb	a1,-3043(s0)
     1d44:	80030000 	lb	v1,0(zero)
     1d48:	fffffffc 	0xfffffffc
 	...
     1d54:	00000020 	add	zero,zero,zero
     1d58:	0000001d 	0x1d
     1d5c:	0000001f 	0x1f
-    1d60:	8205f4b9 	lb	a1,-2887(s0)
+    1d60:	8205f469 	lb	a1,-2967(s0)
     1d64:	80030000 	lb	v1,0(zero)
     1d68:	fffffffc 	0xfffffffc
 	...
     1d74:	00000028 	0x28
     1d78:	0000001d 	0x1d
     1d7c:	0000001f 	0x1f
-    1d80:	8204aae1 	lb	a0,-21791(s0)
+    1d80:	8204aa91 	lb	a0,-21871(s0)
     1d84:	80030000 	lb	v1,0(zero)
     1d88:	fffffffc 	0xfffffffc
 	...
     1d94:	00000030 	0x30
     1d98:	0000001d 	0x1d
     1d9c:	0000001f 	0x1f
-    1da0:	8204ab55 	lb	a0,-21675(s0)
+    1da0:	8204ab05 	lb	a0,-21755(s0)
     1da4:	80030000 	lb	v1,0(zero)
     1da8:	fffffffc 	0xfffffffc
 	...
     1db4:	00000028 	0x28
     1db8:	0000001d 	0x1d
     1dbc:	0000001f 	0x1f
-    1dc0:	8204abad 	lb	a0,-21587(s0)
+    1dc0:	8204ab5d 	lb	a0,-21667(s0)
     1dc4:	80030000 	lb	v1,0(zero)
     1dc8:	fffffffc 	0xfffffffc
 	...
     1dd4:	00000028 	0x28
     1dd8:	0000001d 	0x1d
     1ddc:	0000001f 	0x1f
-    1de0:	8204ac01 	lb	a0,-21503(s0)
+    1de0:	8204abb1 	lb	a0,-21583(s0)
     1de4:	80030000 	lb	v1,0(zero)
     1de8:	fffffffc 	0xfffffffc
 	...
     1df4:	00000028 	0x28
     1df8:	0000001d 	0x1d
     1dfc:	0000001f 	0x1f
-    1e00:	8204ac51 	lb	a0,-21423(s0)
+    1e00:	8204ac01 	lb	a0,-21503(s0)
     1e04:	80030000 	lb	v1,0(zero)
     1e08:	fffffffc 	0xfffffffc
 	...
     1e14:	00000028 	0x28
     1e18:	0000001d 	0x1d
     1e1c:	0000001f 	0x1f
-    1e20:	8204aca5 	lb	a0,-21339(s0)
+    1e20:	8204ac55 	lb	a0,-21419(s0)
     1e24:	80030000 	lb	v1,0(zero)
     1e28:	fffffffc 	0xfffffffc
 	...
     1e34:	000000b0 	0xb0
     1e38:	0000001d 	0x1d
     1e3c:	0000001f 	0x1f
-    1e40:	8204ae75 	lb	a0,-20875(s0)
+    1e40:	8204ae25 	lb	a0,-20955(s0)
     1e44:	80010000 	lb	at,0(zero)
     1e48:	fffffffc 	0xfffffffc
 	...
     1e54:	00000020 	add	zero,zero,zero
     1e58:	0000001d 	0x1d
     1e5c:	0000001f 	0x1f
-    1e60:	8204aec9 	lb	a0,-20791(s0)
+    1e60:	8204ae79 	lb	a0,-20871(s0)
     1e64:	80030000 	lb	v1,0(zero)
     1e68:	fffffffc 	0xfffffffc
 	...
     1e74:	00000020 	add	zero,zero,zero
     1e78:	0000001d 	0x1d
     1e7c:	0000001f 	0x1f
-    1e80:	8204af09 	lb	a0,-20727(s0)
+    1e80:	8204aeb9 	lb	a0,-20807(s0)
     1e84:	80030000 	lb	v1,0(zero)
     1e88:	fffffffc 	0xfffffffc
 	...
     1e94:	000000a8 	0xa8
     1e98:	0000001d 	0x1d
     1e9c:	0000001f 	0x1f
-    1ea0:	8204b119 	lb	a0,-20199(s0)
+    1ea0:	8204b0c9 	lb	a0,-20279(s0)
     1ea4:	80030000 	lb	v1,0(zero)
     1ea8:	fffffffc 	0xfffffffc
 	...
     1eb4:	00000028 	0x28
     1eb8:	0000001d 	0x1d
     1ebc:	0000001f 	0x1f
-    1ec0:	8204b1bd 	lb	a0,-20035(s0)
+    1ec0:	8204b16d 	lb	a0,-20115(s0)
     1ec4:	80030000 	lb	v1,0(zero)
     1ec8:	fffffffc 	0xfffffffc
 	...
     1ed4:	00000048 	0x48
     1ed8:	0000001d 	0x1d
     1edc:	0000001f 	0x1f
-    1ee0:	8204b7fd 	lb	a0,-18435(s0)
+    1ee0:	8204b7ad 	lb	a0,-18515(s0)
     1ee4:	80030000 	lb	v1,0(zero)
     1ee8:	fffffffc 	0xfffffffc
 	...
     1ef4:	00000028 	0x28
     1ef8:	0000001d 	0x1d
     1efc:	0000001f 	0x1f
-    1f00:	8204b895 	lb	a0,-18283(s0)
+    1f00:	8204b845 	lb	a0,-18363(s0)
     1f04:	80030000 	lb	v1,0(zero)
     1f08:	fffffffc 	0xfffffffc
 	...
     1f14:	00000048 	0x48
     1f18:	0000001d 	0x1d
     1f1c:	0000001f 	0x1f
-    1f20:	8204bc95 	lb	a0,-17259(s0)
+    1f20:	8204bc45 	lb	a0,-17339(s0)
     1f24:	80030000 	lb	v1,0(zero)
     1f28:	fffffffc 	0xfffffffc
 	...
@@ -1784,87 +1784,87 @@ Disassembly of section .pdr:
 	...
     1f58:	0000001d 	0x1d
     1f5c:	0000001f 	0x1f
-    1f60:	8204bd15 	lb	a0,-17131(s0)
+    1f60:	8204bcc5 	lb	a0,-17211(s0)
 	...
     1f78:	0000001d 	0x1d
     1f7c:	0000001f 	0x1f
-    1f80:	8204bd19 	lb	a0,-17127(s0)
+    1f80:	8204bcc9 	lb	a0,-17207(s0)
 	...
     1f98:	0000001d 	0x1d
     1f9c:	0000001f 	0x1f
-    1fa0:	8204bd49 	lb	a0,-17079(s0)
+    1fa0:	8204bcf9 	lb	a0,-17159(s0)
     1fa4:	80030000 	lb	v1,0(zero)
     1fa8:	fffffffc 	0xfffffffc
 	...
     1fb4:	00000038 	0x38
     1fb8:	0000001d 	0x1d
     1fbc:	0000001f 	0x1f
-    1fc0:	8204bf49 	lb	a0,-16567(s0)
+    1fc0:	8204bef9 	lb	a0,-16647(s0)
     1fc4:	80000000 	lb	zero,0(zero)
     1fc8:	fffffffc 	0xfffffffc
 	...
     1fd4:	00000018 	mult	zero,zero
     1fd8:	0000001d 	0x1d
     1fdc:	0000001f 	0x1f
-    1fe0:	8204bfb9 	lb	a0,-16455(s0)
+    1fe0:	8204bf69 	lb	a0,-16535(s0)
     1fe4:	80000000 	lb	zero,0(zero)
     1fe8:	fffffffc 	0xfffffffc
 	...
     1ff4:	00000018 	mult	zero,zero
     1ff8:	0000001d 	0x1d
     1ffc:	0000001f 	0x1f
-    2000:	8204bfe1 	lb	a0,-16415(s0)
+    2000:	8204bf91 	lb	a0,-16495(s0)
 	...
     2018:	0000001d 	0x1d
     201c:	0000001f 	0x1f
-    2020:	8204bff1 	lb	a0,-16399(s0)
+    2020:	8204bfa1 	lb	a0,-16479(s0)
     2024:	80000000 	lb	zero,0(zero)
     2028:	fffffffc 	0xfffffffc
 	...
     2034:	00000018 	mult	zero,zero
     2038:	0000001d 	0x1d
     203c:	0000001f 	0x1f
-    2040:	8204c015 	lb	a0,-16363(s0)
+    2040:	8204bfc5 	lb	a0,-16443(s0)
     2044:	80000000 	lb	zero,0(zero)
     2048:	fffffffc 	0xfffffffc
 	...
     2054:	00000018 	mult	zero,zero
     2058:	0000001d 	0x1d
     205c:	0000001f 	0x1f
-    2060:	8204c039 	lb	a0,-16327(s0)
+    2060:	8204bfe9 	lb	a0,-16407(s0)
     2064:	80000000 	lb	zero,0(zero)
     2068:	fffffffc 	0xfffffffc
 	...
     2074:	00000020 	add	zero,zero,zero
     2078:	0000001d 	0x1d
     207c:	0000001f 	0x1f
-    2080:	8204c0a1 	lb	a0,-16223(s0)
+    2080:	8204c051 	lb	a0,-16303(s0)
     2084:	80030000 	lb	v1,0(zero)
     2088:	fffffffc 	0xfffffffc
 	...
     2094:	00000038 	0x38
     2098:	0000001d 	0x1d
     209c:	0000001f 	0x1f
-    20a0:	8204c235 	lb	a0,-15819(s0)
+    20a0:	8204c1e5 	lb	a0,-15899(s0)
 	...
     20b8:	0000001d 	0x1d
     20bc:	0000001f 	0x1f
-    20c0:	8204c261 	lb	a0,-15775(s0)
+    20c0:	8204c211 	lb	a0,-15855(s0)
     20c4:	80030000 	lb	v1,0(zero)
     20c8:	fffffffc 	0xfffffffc
 	...
     20d4:	00000040 	ssnop
     20d8:	0000001d 	0x1d
     20dc:	0000001f 	0x1f
-    20e0:	8204c3e1 	lb	a0,-15391(s0)
+    20e0:	8204c391 	lb	a0,-15471(s0)
 	...
     20f8:	0000001d 	0x1d
     20fc:	0000001f 	0x1f
-    2100:	8204c411 	lb	a0,-15343(s0)
+    2100:	8204c3c1 	lb	a0,-15423(s0)
 	...
     2118:	0000001d 	0x1d
     211c:	0000001f 	0x1f
-    2120:	8204c415 	lb	a0,-15339(s0)
+    2120:	8204c3c5 	lb	a0,-15419(s0)
 	...
     2138:	0000001d 	0x1d
     213c:	0000001f 	0x1f
@@ -1875,7 +1875,7 @@ Disassembly of section .pdr:
     2154:	00000030 	0x30
     2158:	0000001d 	0x1d
     215c:	0000001f 	0x1f
-    2160:	8204c419 	lb	a0,-15335(s0)
+    2160:	8204c3c9 	lb	a0,-15415(s0)
     2164:	80030000 	lb	v1,0(zero)
     2168:	fffffffc 	0xfffffffc
 	...
@@ -1903,7 +1903,7 @@ Disassembly of section .pdr:
     21d4:	00000030 	0x30
     21d8:	0000001d 	0x1d
     21dc:	0000001f 	0x1f
-    21e0:	8204c7d9 	lb	a0,-14375(s0)
+    21e0:	8204c789 	lb	a0,-14455(s0)
     21e4:	80030000 	lb	v1,0(zero)
     21e8:	fffffffc 	0xfffffffc
 	...
@@ -1924,14 +1924,14 @@ Disassembly of section .pdr:
     2234:	00000030 	0x30
     2238:	0000001d 	0x1d
     223c:	0000001f 	0x1f
-    2240:	8204c8e5 	lb	a0,-14107(s0)
+    2240:	8204c895 	lb	a0,-14187(s0)
     2244:	80030000 	lb	v1,0(zero)
     2248:	fffffffc 	0xfffffffc
 	...
     2254:	00000028 	0x28
     2258:	0000001d 	0x1d
     225c:	0000001f 	0x1f
-    2260:	8204ca4d 	lb	a0,-13747(s0)
+    2260:	8204c9fd 	lb	a0,-13827(s0)
 	...
     2278:	0000001d 	0x1d
     227c:	0000001f 	0x1f
@@ -1956,49 +1956,49 @@ Disassembly of section .pdr:
     22d4:	00000020 	add	zero,zero,zero
     22d8:	0000001d 	0x1d
     22dc:	0000001f 	0x1f
-    22e0:	8204ca71 	lb	a0,-13711(s0)
+    22e0:	8204ca21 	lb	a0,-13791(s0)
     22e4:	80030000 	lb	v1,0(zero)
     22e8:	fffffffc 	0xfffffffc
 	...
     22f4:	00000028 	0x28
     22f8:	0000001d 	0x1d
     22fc:	0000001f 	0x1f
-    2300:	8204cb39 	lb	a0,-13511(s0)
+    2300:	8204cae9 	lb	a0,-13591(s0)
     2304:	80010000 	lb	at,0(zero)
     2308:	fffffffc 	0xfffffffc
 	...
     2314:	00000018 	mult	zero,zero
     2318:	0000001d 	0x1d
     231c:	0000001f 	0x1f
-    2320:	8204cb79 	lb	a0,-13447(s0)
+    2320:	8204cb29 	lb	a0,-13527(s0)
     2324:	80010000 	lb	at,0(zero)
     2328:	fffffffc 	0xfffffffc
 	...
     2334:	00000018 	mult	zero,zero
     2338:	0000001d 	0x1d
     233c:	0000001f 	0x1f
-    2340:	8204cbf9 	lb	a0,-13319(s0)
+    2340:	8204cba9 	lb	a0,-13399(s0)
     2344:	80030000 	lb	v1,0(zero)
     2348:	fffffffc 	0xfffffffc
 	...
     2354:	00000040 	ssnop
     2358:	0000001d 	0x1d
     235c:	0000001f 	0x1f
-    2360:	8204ce01 	lb	a0,-12799(s0)
+    2360:	8204cdb1 	lb	a0,-12879(s0)
     2364:	80030000 	lb	v1,0(zero)
     2368:	fffffffc 	0xfffffffc
 	...
     2374:	00000030 	0x30
     2378:	0000001d 	0x1d
     237c:	0000001f 	0x1f
-    2380:	8204cf9d 	lb	a0,-12387(s0)
+    2380:	8204cf4d 	lb	a0,-12467(s0)
     2384:	80030000 	lb	v1,0(zero)
     2388:	fffffffc 	0xfffffffc
 	...
     2394:	00000048 	0x48
     2398:	0000001d 	0x1d
     239c:	0000001f 	0x1f
-    23a0:	8204d135 	lb	a0,-11979(s0)
+    23a0:	8204d0e5 	lb	a0,-12059(s0)
     23a4:	80030000 	lb	v1,0(zero)
     23a8:	fffffffc 	0xfffffffc
 	...
@@ -2205,53 +2205,53 @@ Disassembly of section .pdr:
     2754:	00000028 	0x28
     2758:	0000001d 	0x1d
     275c:	0000001f 	0x1f
-    2760:	8204d38d 	lb	a0,-11379(s0)
+    2760:	8204d33d 	lb	a0,-11459(s0)
     2764:	80030000 	lb	v1,0(zero)
     2768:	fffffffc 	0xfffffffc
 	...
     2774:	00000028 	0x28
     2778:	0000001d 	0x1d
     277c:	0000001f 	0x1f
-    2780:	8204d3ed 	lb	a0,-11283(s0)
+    2780:	8204d39d 	lb	a0,-11363(s0)
 	...
     2798:	0000001d 	0x1d
     279c:	0000001f 	0x1f
-    27a0:	8204d41d 	lb	a0,-11235(s0)
+    27a0:	8204d3cd 	lb	a0,-11315(s0)
     27a4:	80030000 	lb	v1,0(zero)
     27a8:	fffffffc 	0xfffffffc
 	...
     27b4:	00000020 	add	zero,zero,zero
     27b8:	0000001d 	0x1d
     27bc:	0000001f 	0x1f
-    27c0:	8204d459 	lb	a0,-11175(s0)
+    27c0:	8204d409 	lb	a0,-11255(s0)
     27c4:	80030000 	lb	v1,0(zero)
     27c8:	fffffffc 	0xfffffffc
 	...
     27d4:	00000020 	add	zero,zero,zero
     27d8:	0000001d 	0x1d
     27dc:	0000001f 	0x1f
-    27e0:	8204d4cd 	lb	a0,-11059(s0)
+    27e0:	8204d47d 	lb	a0,-11139(s0)
     27e4:	80030000 	lb	v1,0(zero)
     27e8:	fffffffc 	0xfffffffc
 	...
     27f4:	00000070 	0x70
     27f8:	0000001d 	0x1d
     27fc:	0000001f 	0x1f
-    2800:	8204d675 	lb	a0,-10635(s0)
+    2800:	8204d625 	lb	a0,-10715(s0)
     2804:	80030000 	lb	v1,0(zero)
     2808:	fffffffc 	0xfffffffc
 	...
     2814:	00000030 	0x30
     2818:	0000001d 	0x1d
     281c:	0000001f 	0x1f
-    2820:	8204d7dd 	lb	a0,-10275(s0)
+    2820:	8204d78d 	lb	a0,-10355(s0)
     2824:	80000000 	lb	zero,0(zero)
     2828:	fffffffc 	0xfffffffc
 	...
     2834:	00000018 	mult	zero,zero
     2838:	0000001d 	0x1d
     283c:	0000001f 	0x1f
-    2840:	8204d809 	lb	a0,-10231(s0)
+    2840:	8204d7b9 	lb	a0,-10311(s0)
     2844:	00030000 	sll	zero,v1,0x0
     2848:	fffffffc 	0xfffffffc
 	...
@@ -2265,57 +2265,57 @@ Disassembly of section .pdr:
     2874:	00000038 	0x38
     2878:	0000001d 	0x1d
     287c:	0000001f 	0x1f
-    2880:	8204d889 	lb	a0,-10103(s0)
+    2880:	8204d839 	lb	a0,-10183(s0)
     2884:	80030000 	lb	v1,0(zero)
     2888:	fffffffc 	0xfffffffc
 	...
     2894:	00000028 	0x28
     2898:	0000001d 	0x1d
     289c:	0000001f 	0x1f
-    28a0:	8204d9d9 	lb	a0,-9767(s0)
+    28a0:	8204d989 	lb	a0,-9847(s0)
     28a4:	80030000 	lb	v1,0(zero)
     28a8:	fffffffc 	0xfffffffc
 	...
     28b4:	00000030 	0x30
     28b8:	0000001d 	0x1d
     28bc:	0000001f 	0x1f
-    28c0:	8204dd45 	lb	a0,-8891(s0)
+    28c0:	8204dcf5 	lb	a0,-8971(s0)
 	...
     28d8:	0000001d 	0x1d
     28dc:	0000001f 	0x1f
-    28e0:	8204dd49 	lb	a0,-8887(s0)
+    28e0:	8204dcf9 	lb	a0,-8967(s0)
 	...
     28f8:	0000001d 	0x1d
     28fc:	0000001f 	0x1f
-    2900:	8204dd75 	lb	a0,-8843(s0)
+    2900:	8204dd25 	lb	a0,-8923(s0)
     2904:	80030000 	lb	v1,0(zero)
     2908:	fffffffc 	0xfffffffc
 	...
     2914:	00000038 	0x38
     2918:	0000001d 	0x1d
     291c:	0000001f 	0x1f
-    2920:	8204ded5 	lb	a0,-8491(s0)
+    2920:	8204de85 	lb	a0,-8571(s0)
     2924:	80010000 	lb	at,0(zero)
     2928:	fffffffc 	0xfffffffc
 	...
     2934:	00000020 	add	zero,zero,zero
     2938:	0000001d 	0x1d
     293c:	0000001f 	0x1f
-    2940:	8204df6d 	lb	a0,-8339(s0)
+    2940:	8204df1d 	lb	a0,-8419(s0)
     2944:	80030000 	lb	v1,0(zero)
     2948:	fffffffc 	0xfffffffc
 	...
     2954:	00000030 	0x30
     2958:	0000001d 	0x1d
     295c:	0000001f 	0x1f
-    2960:	8204e239 	lb	a0,-7623(s0)
+    2960:	8204e1e9 	lb	a0,-7703(s0)
     2964:	80030000 	lb	v1,0(zero)
     2968:	fffffffc 	0xfffffffc
 	...
     2974:	00000030 	0x30
     2978:	0000001d 	0x1d
     297c:	0000001f 	0x1f
-    2980:	8204e3bd 	lb	a0,-7235(s0)
+    2980:	8204e36d 	lb	a0,-7315(s0)
     2984:	80030000 	lb	v1,0(zero)
     2988:	fffffffc 	0xfffffffc
 	...
@@ -3013,998 +3013,1010 @@ Disassembly of section .pdr:
     36b4:	00000008 	jr	zero
     36b8:	0000001d 	0x1d
     36bc:	0000001f 	0x1f
-    36c0:	800cb409 	lb	t4,-19447(zero)
+    36c0:	800cb405 	lb	t4,-19451(zero)
     36c4:	80000000 	lb	zero,0(zero)
     36c8:	fffffffc 	0xfffffffc
 	...
     36d4:	00000018 	mult	zero,zero
     36d8:	0000001d 	0x1d
     36dc:	0000001f 	0x1f
-    36e0:	800cb419 	lb	t4,-19431(zero)
-    36e4:	00010000 	sll	zero,at,0x0
-    36e8:	fffffffc 	0xfffffffc
+    36e0:	800cb415 	lb	t4,-19435(zero)
 	...
     36f4:	00000008 	jr	zero
     36f8:	0000001d 	0x1d
     36fc:	0000001f 	0x1f
-    3700:	800cb469 	lb	t4,-19351(zero)
+    3700:	800cb45d 	lb	t4,-19363(zero)
     3704:	80000000 	lb	zero,0(zero)
     3708:	fffffffc 	0xfffffffc
 	...
     3714:	00000018 	mult	zero,zero
     3718:	0000001d 	0x1d
     371c:	0000001f 	0x1f
-    3720:	800cb4ad 	lb	t4,-19283(zero)
+    3720:	800cb46d 	lb	t4,-19347(zero)
+    3724:	00010000 	sll	zero,at,0x0
+    3728:	fffffffc 	0xfffffffc
 	...
+    3734:	00000008 	jr	zero
     3738:	0000001d 	0x1d
     373c:	0000001f 	0x1f
-    3740:	800cb4dd 	lb	t4,-19235(zero)
-    3744:	80030000 	lb	v1,0(zero)
+    3740:	800cb4bd 	lb	t4,-19267(zero)
+    3744:	80000000 	lb	zero,0(zero)
     3748:	fffffffc 	0xfffffffc
 	...
-    3754:	00000020 	add	zero,zero,zero
+    3754:	00000018 	mult	zero,zero
     3758:	0000001d 	0x1d
     375c:	0000001f 	0x1f
-    3760:	800cb549 	lb	t4,-19127(zero)
-    3764:	80000000 	lb	zero,0(zero)
-    3768:	fffffffc 	0xfffffffc
+    3760:	800cb501 	lb	t4,-19199(zero)
 	...
-    3774:	00000018 	mult	zero,zero
     3778:	0000001d 	0x1d
     377c:	0000001f 	0x1f
-    3780:	800cb5a9 	lb	t4,-19031(zero)
-    3784:	80010000 	lb	at,0(zero)
+    3780:	800cb531 	lb	t4,-19151(zero)
+    3784:	80030000 	lb	v1,0(zero)
     3788:	fffffffc 	0xfffffffc
 	...
-    3794:	00000018 	mult	zero,zero
+    3794:	00000020 	add	zero,zero,zero
     3798:	0000001d 	0x1d
     379c:	0000001f 	0x1f
-    37a0:	800cb5fd 	lb	t4,-18947(zero)
-    37a4:	80030000 	lb	v1,0(zero)
+    37a0:	800cb59d 	lb	t4,-19043(zero)
+    37a4:	80000000 	lb	zero,0(zero)
     37a8:	fffffffc 	0xfffffffc
 	...
-    37b4:	00000028 	0x28
+    37b4:	00000018 	mult	zero,zero
     37b8:	0000001d 	0x1d
     37bc:	0000001f 	0x1f
-    37c0:	800cb669 	lb	t4,-18839(zero)
-    37c4:	80030000 	lb	v1,0(zero)
+    37c0:	800cb5fd 	lb	t4,-18947(zero)
+    37c4:	80010000 	lb	at,0(zero)
     37c8:	fffffffc 	0xfffffffc
 	...
-    37d4:	00000028 	0x28
+    37d4:	00000018 	mult	zero,zero
     37d8:	0000001d 	0x1d
     37dc:	0000001f 	0x1f
-    37e0:	800cb6bd 	lb	t4,-18755(zero)
+    37e0:	800cb651 	lb	t4,-18863(zero)
     37e4:	80030000 	lb	v1,0(zero)
     37e8:	fffffffc 	0xfffffffc
 	...
     37f4:	00000028 	0x28
     37f8:	0000001d 	0x1d
     37fc:	0000001f 	0x1f
-    3800:	800cb70d 	lb	t4,-18675(zero)
+    3800:	800cb6b9 	lb	t4,-18759(zero)
     3804:	80030000 	lb	v1,0(zero)
     3808:	fffffffc 	0xfffffffc
 	...
     3814:	00000028 	0x28
     3818:	0000001d 	0x1d
     381c:	0000001f 	0x1f
-    3820:	800cb799 	lb	t4,-18535(zero)
+    3820:	800cb711 	lb	t4,-18671(zero)
     3824:	80030000 	lb	v1,0(zero)
     3828:	fffffffc 	0xfffffffc
 	...
-    3834:	00000038 	0x38
+    3834:	00000028 	0x28
     3838:	0000001d 	0x1d
     383c:	0000001f 	0x1f
-    3840:	800cb7fd 	lb	t4,-18435(zero)
+    3840:	800cb761 	lb	t4,-18591(zero)
     3844:	80030000 	lb	v1,0(zero)
     3848:	fffffffc 	0xfffffffc
 	...
     3854:	00000028 	0x28
     3858:	0000001d 	0x1d
     385c:	0000001f 	0x1f
-    3860:	800cb881 	lb	t4,-18303(zero)
+    3860:	800cb7ed 	lb	t4,-18451(zero)
     3864:	80030000 	lb	v1,0(zero)
     3868:	fffffffc 	0xfffffffc
 	...
     3874:	00000038 	0x38
     3878:	0000001d 	0x1d
     387c:	0000001f 	0x1f
-    3880:	800cb99d 	lb	t4,-18019(zero)
-    3884:	80000000 	lb	zero,0(zero)
+    3880:	800cb851 	lb	t4,-18351(zero)
+    3884:	80030000 	lb	v1,0(zero)
     3888:	fffffffc 	0xfffffffc
 	...
-    3894:	00000020 	add	zero,zero,zero
+    3894:	00000028 	0x28
     3898:	0000001d 	0x1d
     389c:	0000001f 	0x1f
-    38a0:	800cb9dd 	lb	t4,-17955(zero)
+    38a0:	800cb8d5 	lb	t4,-18219(zero)
     38a4:	80030000 	lb	v1,0(zero)
     38a8:	fffffffc 	0xfffffffc
 	...
-    38b4:	00000030 	0x30
+    38b4:	00000038 	0x38
     38b8:	0000001d 	0x1d
     38bc:	0000001f 	0x1f
-    38c0:	82030000 	lb	v1,0(s0)
+    38c0:	800cb9f1 	lb	t4,-17935(zero)
     38c4:	80000000 	lb	zero,0(zero)
     38c8:	fffffffc 	0xfffffffc
 	...
-    38d4:	00000018 	mult	zero,zero
+    38d4:	00000020 	add	zero,zero,zero
     38d8:	0000001d 	0x1d
     38dc:	0000001f 	0x1f
-    38e0:	82030080 	lb	v1,128(s0)
+    38e0:	800cba31 	lb	t4,-17871(zero)
     38e4:	80000000 	lb	zero,0(zero)
     38e8:	fffffffc 	0xfffffffc
 	...
-    38f4:	00000020 	add	zero,zero,zero
+    38f4:	00000018 	mult	zero,zero
     38f8:	0000001d 	0x1d
     38fc:	0000001f 	0x1f
-    3900:	820300e0 	lb	v1,224(s0)
-    3904:	80010000 	lb	at,0(zero)
+    3900:	82030000 	lb	v1,0(s0)
+    3904:	80000000 	lb	zero,0(zero)
     3908:	fffffffc 	0xfffffffc
 	...
     3914:	00000018 	mult	zero,zero
     3918:	0000001d 	0x1d
     391c:	0000001f 	0x1f
-    3920:	800c0000 	lb	t4,0(zero)
-    3924:	807f0000 	lb	ra,0(v1)
+    3920:	82030080 	lb	v1,128(s0)
+    3924:	80000000 	lb	zero,0(zero)
     3928:	fffffffc 	0xfffffffc
 	...
-    3934:	00000030 	0x30
+    3934:	00000020 	add	zero,zero,zero
     3938:	0000001d 	0x1d
     393c:	0000001f 	0x1f
-    3940:	800c02a4 	lb	t4,676(zero)
-    3944:	c0ff0000 	ll	ra,0(a3)
+    3940:	820300e0 	lb	v1,224(s0)
+    3944:	80010000 	lb	at,0(zero)
     3948:	fffffffc 	0xfffffffc
 	...
-    3954:	00000048 	0x48
+    3954:	00000018 	mult	zero,zero
     3958:	0000001d 	0x1d
     395c:	0000001f 	0x1f
-    3960:	800c062c 	lb	t4,1580(zero)
-    3964:	80000000 	lb	zero,0(zero)
+    3960:	800c0000 	lb	t4,0(zero)
+    3964:	807f0000 	lb	ra,0(v1)
     3968:	fffffffc 	0xfffffffc
 	...
-    3974:	00000018 	mult	zero,zero
+    3974:	00000030 	0x30
     3978:	0000001d 	0x1d
     397c:	0000001f 	0x1f
-    3980:	800c0664 	lb	t4,1636(zero)
-    3984:	803f0000 	lb	ra,0(at)
+    3980:	800c02a4 	lb	t4,676(zero)
+    3984:	c0ff0000 	ll	ra,0(a3)
     3988:	fffffffc 	0xfffffffc
 	...
-    3994:	00000038 	0x38
+    3994:	00000048 	0x48
     3998:	0000001d 	0x1d
     399c:	0000001f 	0x1f
-    39a0:	800c0718 	lb	t4,1816(zero)
-    39a4:	80070000 	lb	a3,0(zero)
+    39a0:	800c062c 	lb	t4,1580(zero)
+    39a4:	80000000 	lb	zero,0(zero)
     39a8:	fffffffc 	0xfffffffc
 	...
-    39b4:	00000020 	add	zero,zero,zero
+    39b4:	00000018 	mult	zero,zero
     39b8:	0000001d 	0x1d
     39bc:	0000001f 	0x1f
-    39c0:	800c08dc 	lb	t4,2268(zero)
-    39c4:	80070000 	lb	a3,0(zero)
+    39c0:	800c0664 	lb	t4,1636(zero)
+    39c4:	803f0000 	lb	ra,0(at)
     39c8:	fffffffc 	0xfffffffc
 	...
-    39d4:	00000020 	add	zero,zero,zero
+    39d4:	00000038 	0x38
     39d8:	0000001d 	0x1d
     39dc:	0000001f 	0x1f
-    39e0:	800c094c 	lb	t4,2380(zero)
-    39e4:	80030000 	lb	v1,0(zero)
+    39e0:	800c0718 	lb	t4,1816(zero)
+    39e4:	80070000 	lb	a3,0(zero)
     39e8:	fffffffc 	0xfffffffc
 	...
     39f4:	00000020 	add	zero,zero,zero
     39f8:	0000001d 	0x1d
     39fc:	0000001f 	0x1f
-    3a00:	800c09c8 	lb	t4,2504(zero)
-    3a04:	80ff0000 	lb	ra,0(a3)
+    3a00:	800c08dc 	lb	t4,2268(zero)
+    3a04:	80070000 	lb	a3,0(zero)
     3a08:	fffffffc 	0xfffffffc
 	...
-    3a14:	00000038 	0x38
+    3a14:	00000020 	add	zero,zero,zero
     3a18:	0000001d 	0x1d
     3a1c:	0000001f 	0x1f
-    3a20:	800c0b20 	lb	t4,2848(zero)
+    3a20:	800c094c 	lb	t4,2380(zero)
+    3a24:	80030000 	lb	v1,0(zero)
+    3a28:	fffffffc 	0xfffffffc
 	...
+    3a34:	00000020 	add	zero,zero,zero
     3a38:	0000001d 	0x1d
     3a3c:	0000001f 	0x1f
-    3a40:	800c0b50 	lb	t4,2896(zero)
-    3a44:	80030000 	lb	v1,0(zero)
+    3a40:	800c09c8 	lb	t4,2504(zero)
+    3a44:	80ff0000 	lb	ra,0(a3)
     3a48:	fffffffc 	0xfffffffc
 	...
-    3a54:	00000020 	add	zero,zero,zero
+    3a54:	00000038 	0x38
     3a58:	0000001d 	0x1d
     3a5c:	0000001f 	0x1f
-    3a60:	800c0ba4 	lb	t4,2980(zero)
-    3a64:	800f0000 	lb	t7,0(zero)
-    3a68:	fffffffc 	0xfffffffc
+    3a60:	800c0b20 	lb	t4,2848(zero)
 	...
-    3a74:	00000030 	0x30
     3a78:	0000001d 	0x1d
     3a7c:	0000001f 	0x1f
-    3a80:	800c0fec 	lb	t4,4076(zero)
+    3a80:	800c0b50 	lb	t4,2896(zero)
     3a84:	80030000 	lb	v1,0(zero)
     3a88:	fffffffc 	0xfffffffc
 	...
     3a94:	00000020 	add	zero,zero,zero
     3a98:	0000001d 	0x1d
     3a9c:	0000001f 	0x1f
-    3aa0:	800c106c 	lb	t4,4204(zero)
-    3aa4:	c0ff0000 	ll	ra,0(a3)
+    3aa0:	800c0ba4 	lb	t4,2980(zero)
+    3aa4:	800f0000 	lb	t7,0(zero)
     3aa8:	fffffffc 	0xfffffffc
 	...
-    3ab4:	00000038 	0x38
+    3ab4:	00000030 	0x30
     3ab8:	0000001d 	0x1d
     3abc:	0000001f 	0x1f
-    3ac0:	800c1294 	lb	t4,4756(zero)
-    3ac4:	80010000 	lb	at,0(zero)
+    3ac0:	800c0fec 	lb	t4,4076(zero)
+    3ac4:	80030000 	lb	v1,0(zero)
     3ac8:	fffffffc 	0xfffffffc
 	...
-    3ad4:	00000018 	mult	zero,zero
+    3ad4:	00000020 	add	zero,zero,zero
     3ad8:	0000001d 	0x1d
     3adc:	0000001f 	0x1f
-    3ae0:	800c1368 	lb	t4,4968(zero)
+    3ae0:	800c106c 	lb	t4,4204(zero)
+    3ae4:	c0ff0000 	ll	ra,0(a3)
+    3ae8:	fffffffc 	0xfffffffc
 	...
+    3af4:	00000038 	0x38
     3af8:	0000001d 	0x1d
     3afc:	0000001f 	0x1f
-    3b00:	800c1370 	lb	t4,4976(zero)
+    3b00:	800c1294 	lb	t4,4756(zero)
     3b04:	80010000 	lb	at,0(zero)
     3b08:	fffffffc 	0xfffffffc
 	...
     3b14:	00000018 	mult	zero,zero
     3b18:	0000001d 	0x1d
     3b1c:	0000001f 	0x1f
-    3b20:	800c141c 	lb	t4,5148(zero)
+    3b20:	800c1368 	lb	t4,4968(zero)
 	...
     3b38:	0000001d 	0x1d
     3b3c:	0000001f 	0x1f
-    3b40:	800c1424 	lb	t4,5156(zero)
-    3b44:	80030000 	lb	v1,0(zero)
+    3b40:	800c1370 	lb	t4,4976(zero)
+    3b44:	80010000 	lb	at,0(zero)
     3b48:	fffffffc 	0xfffffffc
 	...
-    3b54:	00000028 	0x28
+    3b54:	00000018 	mult	zero,zero
     3b58:	0000001d 	0x1d
     3b5c:	0000001f 	0x1f
-    3b60:	800c1670 	lb	t4,5744(zero)
-    3b64:	80000000 	lb	zero,0(zero)
-    3b68:	fffffffc 	0xfffffffc
+    3b60:	800c141c 	lb	t4,5148(zero)
 	...
-    3b74:	00000018 	mult	zero,zero
     3b78:	0000001d 	0x1d
     3b7c:	0000001f 	0x1f
-    3b80:	800c16cc 	lb	t4,5836(zero)
-    3b84:	803f0000 	lb	ra,0(at)
+    3b80:	800c1424 	lb	t4,5156(zero)
+    3b84:	80030000 	lb	v1,0(zero)
     3b88:	fffffffc 	0xfffffffc
 	...
-    3b94:	00000030 	0x30
+    3b94:	00000028 	0x28
     3b98:	0000001d 	0x1d
     3b9c:	0000001f 	0x1f
-    3ba0:	800c17e8 	lb	t4,6120(zero)
-    3ba4:	c0ff0000 	ll	ra,0(a3)
+    3ba0:	800c1670 	lb	t4,5744(zero)
+    3ba4:	80000000 	lb	zero,0(zero)
     3ba8:	fffffffc 	0xfffffffc
 	...
-    3bb4:	00000040 	ssnop
+    3bb4:	00000018 	mult	zero,zero
     3bb8:	0000001d 	0x1d
     3bbc:	0000001f 	0x1f
-    3bc0:	8204f018 	lb	a0,-4072(s0)
-    3bc4:	80070000 	lb	a3,0(zero)
+    3bc0:	800c16cc 	lb	t4,5836(zero)
+    3bc4:	803f0000 	lb	ra,0(at)
     3bc8:	fffffffc 	0xfffffffc
 	...
-    3bd4:	00000020 	add	zero,zero,zero
+    3bd4:	00000030 	0x30
     3bd8:	0000001d 	0x1d
     3bdc:	0000001f 	0x1f
-    3be0:	8204f0e0 	lb	a0,-3872(s0)
+    3be0:	800c17e8 	lb	t4,6120(zero)
     3be4:	c0ff0000 	ll	ra,0(a3)
     3be8:	fffffffc 	0xfffffffc
 	...
-    3bf4:	00000070 	0x70
+    3bf4:	00000040 	ssnop
     3bf8:	0000001d 	0x1d
     3bfc:	0000001f 	0x1f
-    3c00:	8204f8f0 	lb	a0,-1808(s0)
+    3c00:	8204efc8 	lb	a0,-4152(s0)
+    3c04:	80070000 	lb	a3,0(zero)
+    3c08:	fffffffc 	0xfffffffc
 	...
+    3c14:	00000020 	add	zero,zero,zero
     3c18:	0000001d 	0x1d
     3c1c:	0000001f 	0x1f
-    3c20:	8204f958 	lb	a0,-1704(s0)
-    3c24:	80030000 	lb	v1,0(zero)
+    3c20:	8204f090 	lb	a0,-3952(s0)
+    3c24:	c0ff0000 	ll	ra,0(a3)
     3c28:	fffffffc 	0xfffffffc
 	...
-    3c34:	00000020 	add	zero,zero,zero
+    3c34:	00000070 	0x70
     3c38:	0000001d 	0x1d
     3c3c:	0000001f 	0x1f
-    3c40:	8204f9e0 	lb	a0,-1568(s0)
-    3c44:	c0ff0000 	ll	ra,0(a3)
-    3c48:	fffffffc 	0xfffffffc
+    3c40:	8204f8a0 	lb	a0,-1888(s0)
 	...
-    3c54:	00000040 	ssnop
     3c58:	0000001d 	0x1d
     3c5c:	0000001f 	0x1f
-    3c60:	800c8e74 	lb	t4,-29068(zero)
+    3c60:	8204f908 	lb	a0,-1784(s0)
     3c64:	80030000 	lb	v1,0(zero)
     3c68:	fffffffc 	0xfffffffc
 	...
     3c74:	00000020 	add	zero,zero,zero
     3c78:	0000001d 	0x1d
     3c7c:	0000001f 	0x1f
-    3c80:	8204ff14 	lb	a0,-236(s0)
+    3c80:	8204f990 	lb	a0,-1648(s0)
     3c84:	c0ff0000 	ll	ra,0(a3)
     3c88:	fffffffc 	0xfffffffc
 	...
-    3c94:	00000060 	0x60
+    3c94:	00000040 	ssnop
     3c98:	0000001d 	0x1d
     3c9c:	0000001f 	0x1f
-    3ca0:	82050398 	lb	a1,920(s0)
-    3ca4:	c0ff0000 	ll	ra,0(a3)
+    3ca0:	800c8e74 	lb	t4,-29068(zero)
+    3ca4:	80030000 	lb	v1,0(zero)
     3ca8:	fffffffc 	0xfffffffc
 	...
-    3cb4:	00000048 	0x48
+    3cb4:	00000020 	add	zero,zero,zero
     3cb8:	0000001d 	0x1d
     3cbc:	0000001f 	0x1f
-    3cc0:	82050518 	lb	a1,1304(s0)
+    3cc0:	8204fec4 	lb	a0,-316(s0)
     3cc4:	c0ff0000 	ll	ra,0(a3)
     3cc8:	fffffffc 	0xfffffffc
 	...
-    3cd4:	00000048 	0x48
+    3cd4:	00000060 	0x60
     3cd8:	0000001d 	0x1d
     3cdc:	0000001f 	0x1f
-    3ce0:	82050698 	lb	a1,1688(s0)
+    3ce0:	82050348 	lb	a1,840(s0)
     3ce4:	c0ff0000 	ll	ra,0(a3)
     3ce8:	fffffffc 	0xfffffffc
 	...
     3cf4:	00000048 	0x48
     3cf8:	0000001d 	0x1d
     3cfc:	0000001f 	0x1f
-    3d00:	82050818 	lb	a1,2072(s0)
-    3d04:	803f0000 	lb	ra,0(at)
+    3d00:	820504c8 	lb	a1,1224(s0)
+    3d04:	c0ff0000 	ll	ra,0(a3)
     3d08:	fffffffc 	0xfffffffc
 	...
-    3d14:	00000040 	ssnop
+    3d14:	00000048 	0x48
     3d18:	0000001d 	0x1d
     3d1c:	0000001f 	0x1f
-    3d20:	82050938 	lb	a1,2360(s0)
+    3d20:	82050648 	lb	a1,1608(s0)
     3d24:	c0ff0000 	ll	ra,0(a3)
     3d28:	fffffffc 	0xfffffffc
 	...
     3d34:	00000048 	0x48
     3d38:	0000001d 	0x1d
     3d3c:	0000001f 	0x1f
-    3d40:	82050b48 	lb	a1,2888(s0)
-    3d44:	c0ff0000 	ll	ra,0(a3)
+    3d40:	820507c8 	lb	a1,1992(s0)
+    3d44:	803f0000 	lb	ra,0(at)
     3d48:	fffffffc 	0xfffffffc
 	...
-    3d54:	00000048 	0x48
+    3d54:	00000040 	ssnop
     3d58:	0000001d 	0x1d
     3d5c:	0000001f 	0x1f
-    3d60:	82050d44 	lb	a1,3396(s0)
+    3d60:	820508e8 	lb	a1,2280(s0)
     3d64:	c0ff0000 	ll	ra,0(a3)
     3d68:	fffffffc 	0xfffffffc
 	...
-    3d74:	00000040 	ssnop
+    3d74:	00000048 	0x48
     3d78:	0000001d 	0x1d
     3d7c:	0000001f 	0x1f
-    3d80:	82050f04 	lb	a1,3844(s0)
+    3d80:	82050af8 	lb	a1,2808(s0)
     3d84:	c0ff0000 	ll	ra,0(a3)
     3d88:	fffffffc 	0xfffffffc
 	...
     3d94:	00000048 	0x48
     3d98:	0000001d 	0x1d
     3d9c:	0000001f 	0x1f
-    3da0:	820510d8 	lb	a1,4312(s0)
+    3da0:	82050cf4 	lb	a1,3316(s0)
     3da4:	c0ff0000 	ll	ra,0(a3)
     3da8:	fffffffc 	0xfffffffc
 	...
-    3db4:	00000048 	0x48
+    3db4:	00000040 	ssnop
     3db8:	0000001d 	0x1d
     3dbc:	0000001f 	0x1f
-    3dc0:	820512a8 	lb	a1,4776(s0)
+    3dc0:	82050eb4 	lb	a1,3764(s0)
     3dc4:	c0ff0000 	ll	ra,0(a3)
     3dc8:	fffffffc 	0xfffffffc
 	...
     3dd4:	00000048 	0x48
     3dd8:	0000001d 	0x1d
     3ddc:	0000001f 	0x1f
-    3de0:	8205144c 	lb	a1,5196(s0)
+    3de0:	82051088 	lb	a1,4232(s0)
     3de4:	c0ff0000 	ll	ra,0(a3)
     3de8:	fffffffc 	0xfffffffc
 	...
-    3df4:	00000060 	0x60
+    3df4:	00000048 	0x48
     3df8:	0000001d 	0x1d
     3dfc:	0000001f 	0x1f
-    3e00:	8205161c 	lb	a1,5660(s0)
+    3e00:	82051258 	lb	a1,4696(s0)
     3e04:	c0ff0000 	ll	ra,0(a3)
     3e08:	fffffffc 	0xfffffffc
 	...
-    3e14:	00000038 	0x38
+    3e14:	00000048 	0x48
     3e18:	0000001d 	0x1d
     3e1c:	0000001f 	0x1f
-    3e20:	820517e8 	lb	a1,6120(s0)
+    3e20:	820513fc 	lb	a1,5116(s0)
     3e24:	c0ff0000 	ll	ra,0(a3)
     3e28:	fffffffc 	0xfffffffc
 	...
-    3e34:	00000078 	0x78
+    3e34:	00000060 	0x60
     3e38:	0000001d 	0x1d
     3e3c:	0000001f 	0x1f
-    3e40:	82051b18 	lb	a1,6936(s0)
-    3e44:	80070000 	lb	a3,0(zero)
+    3e40:	820515cc 	lb	a1,5580(s0)
+    3e44:	c0ff0000 	ll	ra,0(a3)
     3e48:	fffffffc 	0xfffffffc
 	...
-    3e54:	00000028 	0x28
+    3e54:	00000038 	0x38
     3e58:	0000001d 	0x1d
     3e5c:	0000001f 	0x1f
-    3e60:	82051c14 	lb	a1,7188(s0)
+    3e60:	82051798 	lb	a1,6040(s0)
     3e64:	c0ff0000 	ll	ra,0(a3)
     3e68:	fffffffc 	0xfffffffc
 	...
-    3e74:	00000058 	0x58
+    3e74:	00000078 	0x78
     3e78:	0000001d 	0x1d
     3e7c:	0000001f 	0x1f
-    3e80:	82051f30 	lb	a1,7984(s0)
+    3e80:	82051ac8 	lb	a1,6856(s0)
+    3e84:	80070000 	lb	a3,0(zero)
+    3e88:	fffffffc 	0xfffffffc
 	...
+    3e94:	00000028 	0x28
     3e98:	0000001d 	0x1d
     3e9c:	0000001f 	0x1f
-    3ea0:	82051f40 	lb	a1,8000(s0)
-    3ea4:	801f0000 	lb	ra,0(zero)
+    3ea0:	82051bc4 	lb	a1,7108(s0)
+    3ea4:	c0ff0000 	ll	ra,0(a3)
     3ea8:	fffffffc 	0xfffffffc
 	...
-    3eb4:	00000040 	ssnop
+    3eb4:	00000058 	0x58
     3eb8:	0000001d 	0x1d
     3ebc:	0000001f 	0x1f
-    3ec0:	820520c8 	lb	a1,8392(s0)
-    3ec4:	c0ff0000 	ll	ra,0(a3)
-    3ec8:	fffffffc 	0xfffffffc
+    3ec0:	82051ee0 	lb	a1,7904(s0)
 	...
-    3ed4:	00000038 	0x38
     3ed8:	0000001d 	0x1d
     3edc:	0000001f 	0x1f
-    3ee0:	8205225c 	lb	a1,8796(s0)
-    3ee4:	c0ff0000 	ll	ra,0(a3)
+    3ee0:	82051ef0 	lb	a1,7920(s0)
+    3ee4:	801f0000 	lb	ra,0(zero)
     3ee8:	fffffffc 	0xfffffffc
 	...
-    3ef4:	00000068 	0x68
+    3ef4:	00000040 	ssnop
     3ef8:	0000001d 	0x1d
     3efc:	0000001f 	0x1f
-    3f00:	82052c38 	lb	a1,11320(s0)
-    3f04:	800f0000 	lb	t7,0(zero)
+    3f00:	82052078 	lb	a1,8312(s0)
+    3f04:	c0ff0000 	ll	ra,0(a3)
     3f08:	fffffffc 	0xfffffffc
 	...
-    3f14:	00000028 	0x28
+    3f14:	00000038 	0x38
     3f18:	0000001d 	0x1d
     3f1c:	0000001f 	0x1f
-    3f20:	82052e0c 	lb	a1,11788(s0)
-    3f24:	807f0000 	lb	ra,0(v1)
+    3f20:	8205220c 	lb	a1,8716(s0)
+    3f24:	c0ff0000 	ll	ra,0(a3)
     3f28:	fffffffc 	0xfffffffc
 	...
-    3f34:	00000038 	0x38
+    3f34:	00000068 	0x68
     3f38:	0000001d 	0x1d
     3f3c:	0000001f 	0x1f
-    3f40:	82053324 	lb	a1,13092(s0)
-    3f44:	801f0000 	lb	ra,0(zero)
+    3f40:	82052be8 	lb	a1,11240(s0)
+    3f44:	800f0000 	lb	t7,0(zero)
     3f48:	fffffffc 	0xfffffffc
 	...
-    3f54:	00000050 	0x50
+    3f54:	00000028 	0x28
     3f58:	0000001d 	0x1d
     3f5c:	0000001f 	0x1f
-    3f60:	82053524 	lb	a1,13604(s0)
-    3f64:	801f0000 	lb	ra,0(zero)
+    3f60:	82052dbc 	lb	a1,11708(s0)
+    3f64:	807f0000 	lb	ra,0(v1)
     3f68:	fffffffc 	0xfffffffc
 	...
-    3f74:	00000028 	0x28
+    3f74:	00000038 	0x38
     3f78:	0000001d 	0x1d
     3f7c:	0000001f 	0x1f
-    3f80:	82053618 	lb	a1,13848(s0)
-    3f84:	807f0000 	lb	ra,0(v1)
+    3f80:	820532d4 	lb	a1,13012(s0)
+    3f84:	801f0000 	lb	ra,0(zero)
     3f88:	fffffffc 	0xfffffffc
 	...
-    3f94:	00000030 	0x30
+    3f94:	00000050 	0x50
     3f98:	0000001d 	0x1d
     3f9c:	0000001f 	0x1f
-    3fa0:	82053704 	lb	a1,14084(s0)
-    3fa4:	803f0000 	lb	ra,0(at)
+    3fa0:	820534d4 	lb	a1,13524(s0)
+    3fa4:	801f0000 	lb	ra,0(zero)
     3fa8:	fffffffc 	0xfffffffc
 	...
-    3fb4:	00000030 	0x30
+    3fb4:	00000028 	0x28
     3fb8:	0000001d 	0x1d
     3fbc:	0000001f 	0x1f
-    3fc0:	820537e8 	lb	a1,14312(s0)
-    3fc4:	803f0000 	lb	ra,0(at)
+    3fc0:	820535c8 	lb	a1,13768(s0)
+    3fc4:	807f0000 	lb	ra,0(v1)
     3fc8:	fffffffc 	0xfffffffc
 	...
     3fd4:	00000030 	0x30
     3fd8:	0000001d 	0x1d
     3fdc:	0000001f 	0x1f
-    3fe0:	820539c0 	lb	a1,14784(s0)
+    3fe0:	820536b4 	lb	a1,14004(s0)
     3fe4:	803f0000 	lb	ra,0(at)
     3fe8:	fffffffc 	0xfffffffc
 	...
     3ff4:	00000030 	0x30
     3ff8:	0000001d 	0x1d
     3ffc:	0000001f 	0x1f
-    4000:	82053ac0 	lb	a1,15040(s0)
-    4004:	807f0000 	lb	ra,0(v1)
+    4000:	82053798 	lb	a1,14232(s0)
+    4004:	803f0000 	lb	ra,0(at)
     4008:	fffffffc 	0xfffffffc
 	...
     4014:	00000030 	0x30
     4018:	0000001d 	0x1d
     401c:	0000001f 	0x1f
-    4020:	82053ca4 	lb	a1,15524(s0)
-    4024:	c0ff0000 	ll	ra,0(a3)
+    4020:	82053970 	lb	a1,14704(s0)
+    4024:	803f0000 	lb	ra,0(at)
     4028:	fffffffc 	0xfffffffc
 	...
-    4034:	000000a8 	0xa8
+    4034:	00000030 	0x30
     4038:	0000001d 	0x1d
     403c:	0000001f 	0x1f
-    4040:	82054120 	lb	a1,16672(s0)
-    4044:	c0ff0000 	ll	ra,0(a3)
+    4040:	82053a70 	lb	a1,14960(s0)
+    4044:	807f0000 	lb	ra,0(v1)
     4048:	fffffffc 	0xfffffffc
 	...
-    4054:	00000048 	0x48
+    4054:	00000030 	0x30
     4058:	0000001d 	0x1d
     405c:	0000001f 	0x1f
-    4060:	82054808 	lb	a1,18440(s0)
+    4060:	82053c54 	lb	a1,15444(s0)
     4064:	c0ff0000 	ll	ra,0(a3)
     4068:	fffffffc 	0xfffffffc
 	...
-    4074:	00000050 	0x50
+    4074:	000000a8 	0xa8
     4078:	0000001d 	0x1d
     407c:	0000001f 	0x1f
-    4080:	82054de0 	lb	a1,19936(s0)
-    4084:	801f0000 	lb	ra,0(zero)
+    4080:	820540d0 	lb	a1,16592(s0)
+    4084:	c0ff0000 	ll	ra,0(a3)
     4088:	fffffffc 	0xfffffffc
 	...
-    4094:	00000030 	0x30
+    4094:	00000048 	0x48
     4098:	0000001d 	0x1d
     409c:	0000001f 	0x1f
-    40a0:	82055044 	lb	a1,20548(s0)
+    40a0:	820547b8 	lb	a1,18360(s0)
     40a4:	c0ff0000 	ll	ra,0(a3)
     40a8:	fffffffc 	0xfffffffc
 	...
-    40b4:	00000048 	0x48
+    40b4:	00000050 	0x50
     40b8:	0000001d 	0x1d
     40bc:	0000001f 	0x1f
-    40c0:	82055580 	lb	a1,21888(s0)
+    40c0:	82054d90 	lb	a1,19856(s0)
     40c4:	801f0000 	lb	ra,0(zero)
     40c8:	fffffffc 	0xfffffffc
 	...
-    40d4:	00000028 	0x28
+    40d4:	00000030 	0x30
     40d8:	0000001d 	0x1d
     40dc:	0000001f 	0x1f
-    40e0:	8205565c 	lb	a1,22108(s0)
-    40e4:	801f0000 	lb	ra,0(zero)
+    40e0:	82054ff4 	lb	a1,20468(s0)
+    40e4:	c0ff0000 	ll	ra,0(a3)
     40e8:	fffffffc 	0xfffffffc
 	...
-    40f4:	00000030 	0x30
+    40f4:	00000048 	0x48
     40f8:	0000001d 	0x1d
     40fc:	0000001f 	0x1f
-    4100:	820557fc 	lb	a1,22524(s0)
-    4104:	80070000 	lb	a3,0(zero)
+    4100:	82055530 	lb	a1,21808(s0)
+    4104:	801f0000 	lb	ra,0(zero)
     4108:	fffffffc 	0xfffffffc
 	...
-    4114:	00000020 	add	zero,zero,zero
+    4114:	00000028 	0x28
     4118:	0000001d 	0x1d
     411c:	0000001f 	0x1f
-    4120:	820558e0 	lb	a1,22752(s0)
-    4124:	80030000 	lb	v1,0(zero)
+    4120:	8205560c 	lb	a1,22028(s0)
+    4124:	801f0000 	lb	ra,0(zero)
     4128:	fffffffc 	0xfffffffc
 	...
-    4134:	00000020 	add	zero,zero,zero
+    4134:	00000030 	0x30
     4138:	0000001d 	0x1d
     413c:	0000001f 	0x1f
-    4140:	820559b4 	lb	a1,22964(s0)
-    4144:	800f0000 	lb	t7,0(zero)
+    4140:	820557ac 	lb	a1,22444(s0)
+    4144:	80070000 	lb	a3,0(zero)
     4148:	fffffffc 	0xfffffffc
 	...
-    4154:	00000028 	0x28
+    4154:	00000020 	add	zero,zero,zero
     4158:	0000001d 	0x1d
     415c:	0000001f 	0x1f
-    4160:	82055bf8 	lb	a1,23544(s0)
-    4164:	807f0000 	lb	ra,0(v1)
+    4160:	82055890 	lb	a1,22672(s0)
+    4164:	80030000 	lb	v1,0(zero)
     4168:	fffffffc 	0xfffffffc
 	...
-    4174:	00000030 	0x30
+    4174:	00000020 	add	zero,zero,zero
     4178:	0000001d 	0x1d
     417c:	0000001f 	0x1f
-    4180:	82055e1c 	lb	a1,24092(s0)
+    4180:	82055964 	lb	a1,22884(s0)
+    4184:	800f0000 	lb	t7,0(zero)
+    4188:	fffffffc 	0xfffffffc
 	...
+    4194:	00000028 	0x28
     4198:	0000001d 	0x1d
     419c:	0000001f 	0x1f
-    41a0:	82055e24 	lb	a1,24100(s0)
-    41a4:	80010000 	lb	at,0(zero)
+    41a0:	82055ba8 	lb	a1,23464(s0)
+    41a4:	807f0000 	lb	ra,0(v1)
     41a8:	fffffffc 	0xfffffffc
 	...
-    41b4:	00000018 	mult	zero,zero
+    41b4:	00000030 	0x30
     41b8:	0000001d 	0x1d
     41bc:	0000001f 	0x1f
-    41c0:	82055e70 	lb	a1,24176(s0)
-    41c4:	80010000 	lb	at,0(zero)
-    41c8:	fffffffc 	0xfffffffc
+    41c0:	82055dcc 	lb	a1,24012(s0)
 	...
-    41d4:	00000018 	mult	zero,zero
     41d8:	0000001d 	0x1d
     41dc:	0000001f 	0x1f
-    41e0:	82055eac 	lb	a1,24236(s0)
-    41e4:	80030000 	lb	v1,0(zero)
+    41e0:	82055dd4 	lb	a1,24020(s0)
+    41e4:	80010000 	lb	at,0(zero)
     41e8:	fffffffc 	0xfffffffc
 	...
-    41f4:	00000020 	add	zero,zero,zero
+    41f4:	00000018 	mult	zero,zero
     41f8:	0000001d 	0x1d
     41fc:	0000001f 	0x1f
-    4200:	82055f10 	lb	a1,24336(s0)
-    4204:	800f0000 	lb	t7,0(zero)
+    4200:	82055e20 	lb	a1,24096(s0)
+    4204:	80010000 	lb	at,0(zero)
     4208:	fffffffc 	0xfffffffc
 	...
-    4214:	00000028 	0x28
+    4214:	00000018 	mult	zero,zero
     4218:	0000001d 	0x1d
     421c:	0000001f 	0x1f
-    4220:	82056214 	lb	a1,25108(s0)
-    4224:	80070000 	lb	a3,0(zero)
+    4220:	82055e5c 	lb	a1,24156(s0)
+    4224:	80030000 	lb	v1,0(zero)
     4228:	fffffffc 	0xfffffffc
 	...
     4234:	00000020 	add	zero,zero,zero
     4238:	0000001d 	0x1d
     423c:	0000001f 	0x1f
-    4240:	8205634c 	lb	a1,25420(s0)
+    4240:	82055ec0 	lb	a1,24256(s0)
     4244:	800f0000 	lb	t7,0(zero)
     4248:	fffffffc 	0xfffffffc
 	...
-    4254:	00000030 	0x30
+    4254:	00000028 	0x28
     4258:	0000001d 	0x1d
     425c:	0000001f 	0x1f
-    4260:	82056568 	lb	a1,25960(s0)
-    4264:	807f0000 	lb	ra,0(v1)
+    4260:	820561c4 	lb	a1,25028(s0)
+    4264:	80070000 	lb	a3,0(zero)
     4268:	fffffffc 	0xfffffffc
 	...
-    4274:	00000060 	0x60
+    4274:	00000020 	add	zero,zero,zero
     4278:	0000001d 	0x1d
     427c:	0000001f 	0x1f
-    4280:	82056b80 	lb	a1,27520(s0)
-    4284:	80070000 	lb	a3,0(zero)
+    4280:	820562fc 	lb	a1,25340(s0)
+    4284:	800f0000 	lb	t7,0(zero)
     4288:	fffffffc 	0xfffffffc
 	...
-    4294:	00000020 	add	zero,zero,zero
+    4294:	00000030 	0x30
     4298:	0000001d 	0x1d
     429c:	0000001f 	0x1f
-    42a0:	82056c1c 	lb	a1,27676(s0)
+    42a0:	82056518 	lb	a1,25880(s0)
+    42a4:	807f0000 	lb	ra,0(v1)
+    42a8:	fffffffc 	0xfffffffc
 	...
+    42b4:	00000060 	0x60
     42b8:	0000001d 	0x1d
     42bc:	0000001f 	0x1f
-    42c0:	82056c40 	lb	a1,27712(s0)
-    42c4:	801f0000 	lb	ra,0(zero)
+    42c0:	82056b30 	lb	a1,27440(s0)
+    42c4:	80070000 	lb	a3,0(zero)
     42c8:	fffffffc 	0xfffffffc
 	...
-    42d4:	00000028 	0x28
+    42d4:	00000020 	add	zero,zero,zero
     42d8:	0000001d 	0x1d
     42dc:	0000001f 	0x1f
-    42e0:	82056d70 	lb	a1,28016(s0)
-    42e4:	803f0000 	lb	ra,0(at)
-    42e8:	fffffffc 	0xfffffffc
+    42e0:	82056bcc 	lb	a1,27596(s0)
 	...
-    42f4:	00000030 	0x30
     42f8:	0000001d 	0x1d
     42fc:	0000001f 	0x1f
-    4300:	82056f5c 	lb	a1,28508(s0)
-    4304:	800f0000 	lb	t7,0(zero)
+    4300:	82056bf0 	lb	a1,27632(s0)
+    4304:	801f0000 	lb	ra,0(zero)
     4308:	fffffffc 	0xfffffffc
 	...
     4314:	00000028 	0x28
     4318:	0000001d 	0x1d
     431c:	0000001f 	0x1f
-    4320:	820570c8 	lb	a1,28872(s0)
-    4324:	80070000 	lb	a3,0(zero)
+    4320:	82056d20 	lb	a1,27936(s0)
+    4324:	803f0000 	lb	ra,0(at)
     4328:	fffffffc 	0xfffffffc
 	...
-    4334:	00000020 	add	zero,zero,zero
+    4334:	00000030 	0x30
     4338:	0000001d 	0x1d
     433c:	0000001f 	0x1f
-    4340:	820571bc 	lb	a1,29116(s0)
-    4344:	80030000 	lb	v1,0(zero)
+    4340:	82056f0c 	lb	a1,28428(s0)
+    4344:	800f0000 	lb	t7,0(zero)
     4348:	fffffffc 	0xfffffffc
 	...
-    4354:	00000020 	add	zero,zero,zero
+    4354:	00000028 	0x28
     4358:	0000001d 	0x1d
     435c:	0000001f 	0x1f
-    4360:	82057228 	lb	a1,29224(s0)
-    4364:	80030000 	lb	v1,0(zero)
+    4360:	82057078 	lb	a1,28792(s0)
+    4364:	80070000 	lb	a3,0(zero)
     4368:	fffffffc 	0xfffffffc
 	...
     4374:	00000020 	add	zero,zero,zero
     4378:	0000001d 	0x1d
     437c:	0000001f 	0x1f
-    4380:	820572a8 	lb	a1,29352(s0)
+    4380:	8205716c 	lb	a1,29036(s0)
     4384:	80030000 	lb	v1,0(zero)
     4388:	fffffffc 	0xfffffffc
 	...
     4394:	00000020 	add	zero,zero,zero
     4398:	0000001d 	0x1d
     439c:	0000001f 	0x1f
-    43a0:	82057338 	lb	a1,29496(s0)
-    43a4:	803f0000 	lb	ra,0(at)
+    43a0:	820571d8 	lb	a1,29144(s0)
+    43a4:	80030000 	lb	v1,0(zero)
     43a8:	fffffffc 	0xfffffffc
 	...
-    43b4:	00000040 	ssnop
+    43b4:	00000020 	add	zero,zero,zero
     43b8:	0000001d 	0x1d
     43bc:	0000001f 	0x1f
-    43c0:	82057690 	lb	a1,30352(s0)
+    43c0:	82057258 	lb	a1,29272(s0)
     43c4:	80030000 	lb	v1,0(zero)
     43c8:	fffffffc 	0xfffffffc
 	...
     43d4:	00000020 	add	zero,zero,zero
     43d8:	0000001d 	0x1d
     43dc:	0000001f 	0x1f
-    43e0:	820576e0 	lb	a1,30432(s0)
-    43e4:	800f0000 	lb	t7,0(zero)
+    43e0:	820572e8 	lb	a1,29416(s0)
+    43e4:	803f0000 	lb	ra,0(at)
     43e8:	fffffffc 	0xfffffffc
 	...
-    43f4:	00000028 	0x28
+    43f4:	00000040 	ssnop
     43f8:	0000001d 	0x1d
     43fc:	0000001f 	0x1f
-    4400:	820577a0 	lb	a1,30624(s0)
+    4400:	82057640 	lb	a1,30272(s0)
+    4404:	80030000 	lb	v1,0(zero)
+    4408:	fffffffc 	0xfffffffc
 	...
+    4414:	00000020 	add	zero,zero,zero
     4418:	0000001d 	0x1d
     441c:	0000001f 	0x1f
-    4420:	820577e8 	lb	a1,30696(s0)
-    4424:	80ff0000 	lb	ra,0(a3)
+    4420:	82057690 	lb	a1,30352(s0)
+    4424:	800f0000 	lb	t7,0(zero)
     4428:	fffffffc 	0xfffffffc
 	...
-    4434:	00000040 	ssnop
+    4434:	00000028 	0x28
     4438:	0000001d 	0x1d
     443c:	0000001f 	0x1f
-    4440:	82057bec 	lb	a1,31724(s0)
-    4444:	801f0000 	lb	ra,0(zero)
-    4448:	fffffffc 	0xfffffffc
+    4440:	82057750 	lb	a1,30544(s0)
 	...
-    4454:	00000030 	0x30
     4458:	0000001d 	0x1d
     445c:	0000001f 	0x1f
-    4460:	82057e28 	lb	a1,32296(s0)
-    4464:	80070000 	lb	a3,0(zero)
+    4460:	82057798 	lb	a1,30616(s0)
+    4464:	80ff0000 	lb	ra,0(a3)
     4468:	fffffffc 	0xfffffffc
 	...
-    4474:	00000020 	add	zero,zero,zero
+    4474:	00000040 	ssnop
     4478:	0000001d 	0x1d
     447c:	0000001f 	0x1f
-    4480:	82057fac 	lb	a1,32684(s0)
-    4484:	800f0000 	lb	t7,0(zero)
+    4480:	82057b9c 	lb	a1,31644(s0)
+    4484:	801f0000 	lb	ra,0(zero)
     4488:	fffffffc 	0xfffffffc
 	...
-    4494:	00000028 	0x28
+    4494:	00000030 	0x30
     4498:	0000001d 	0x1d
     449c:	0000001f 	0x1f
-    44a0:	82058338 	lb	a1,-31944(s0)
-    44a4:	c0ff0000 	ll	ra,0(a3)
+    44a0:	82057dd8 	lb	a1,32216(s0)
+    44a4:	80070000 	lb	a3,0(zero)
     44a8:	fffffffc 	0xfffffffc
 	...
-    44b4:	00000048 	0x48
+    44b4:	00000020 	add	zero,zero,zero
     44b8:	0000001d 	0x1d
     44bc:	0000001f 	0x1f
-    44c0:	82058a80 	lb	a1,-30080(s0)
-    44c4:	801f0000 	lb	ra,0(zero)
+    44c0:	82057f5c 	lb	a1,32604(s0)
+    44c4:	800f0000 	lb	t7,0(zero)
     44c8:	fffffffc 	0xfffffffc
 	...
     44d4:	00000028 	0x28
     44d8:	0000001d 	0x1d
     44dc:	0000001f 	0x1f
-    44e0:	82058b88 	lb	a1,-29816(s0)
-    44e4:	80010000 	lb	at,0(zero)
+    44e0:	820582e8 	lb	a1,-32024(s0)
+    44e4:	c0ff0000 	ll	ra,0(a3)
     44e8:	fffffffc 	0xfffffffc
 	...
-    44f4:	00000018 	mult	zero,zero
+    44f4:	00000048 	0x48
     44f8:	0000001d 	0x1d
     44fc:	0000001f 	0x1f
-    4500:	82058bf8 	lb	a1,-29704(s0)
-    4504:	80010000 	lb	at,0(zero)
+    4500:	82058a30 	lb	a1,-30160(s0)
+    4504:	801f0000 	lb	ra,0(zero)
     4508:	fffffffc 	0xfffffffc
 	...
-    4514:	00000018 	mult	zero,zero
+    4514:	00000028 	0x28
     4518:	0000001d 	0x1d
     451c:	0000001f 	0x1f
-    4520:	82058ce0 	lb	a1,-29472(s0)
-    4524:	80070000 	lb	a3,0(zero)
+    4520:	82058b38 	lb	a1,-29896(s0)
+    4524:	80010000 	lb	at,0(zero)
     4528:	fffffffc 	0xfffffffc
 	...
-    4534:	00000020 	add	zero,zero,zero
+    4534:	00000018 	mult	zero,zero
     4538:	0000001d 	0x1d
     453c:	0000001f 	0x1f
-    4540:	82058dc4 	lb	a1,-29244(s0)
-    4544:	80000000 	lb	zero,0(zero)
+    4540:	82058ba8 	lb	a1,-29784(s0)
+    4544:	80010000 	lb	at,0(zero)
     4548:	fffffffc 	0xfffffffc
 	...
-    4554:	00000020 	add	zero,zero,zero
+    4554:	00000018 	mult	zero,zero
     4558:	0000001d 	0x1d
     455c:	0000001f 	0x1f
-    4560:	82058e04 	lb	a1,-29180(s0)
-    4564:	80000000 	lb	zero,0(zero)
+    4560:	82058c90 	lb	a1,-29552(s0)
+    4564:	80070000 	lb	a3,0(zero)
     4568:	fffffffc 	0xfffffffc
 	...
-    4574:	00000018 	mult	zero,zero
+    4574:	00000020 	add	zero,zero,zero
     4578:	0000001d 	0x1d
     457c:	0000001f 	0x1f
-    4580:	82058e30 	lb	a1,-29136(s0)
-    4584:	800f0000 	lb	t7,0(zero)
+    4580:	82058d74 	lb	a1,-29324(s0)
+    4584:	80000000 	lb	zero,0(zero)
     4588:	fffffffc 	0xfffffffc
 	...
-    4594:	00000028 	0x28
+    4594:	00000020 	add	zero,zero,zero
     4598:	0000001d 	0x1d
     459c:	0000001f 	0x1f
-    45a0:	82058f34 	lb	a1,-28876(s0)
-    45a4:	c0ff0000 	ll	ra,0(a3)
+    45a0:	82058db4 	lb	a1,-29260(s0)
+    45a4:	80000000 	lb	zero,0(zero)
     45a8:	fffffffc 	0xfffffffc
 	...
-    45b4:	00000070 	0x70
+    45b4:	00000018 	mult	zero,zero
     45b8:	0000001d 	0x1d
     45bc:	0000001f 	0x1f
-    45c0:	82059190 	lb	a1,-28272(s0)
-    45c4:	803f0000 	lb	ra,0(at)
+    45c0:	82058de0 	lb	a1,-29216(s0)
+    45c4:	800f0000 	lb	t7,0(zero)
     45c8:	fffffffc 	0xfffffffc
 	...
-    45d4:	00000040 	ssnop
+    45d4:	00000028 	0x28
     45d8:	0000001d 	0x1d
     45dc:	0000001f 	0x1f
-    45e0:	8205926c 	lb	a1,-28052(s0)
+    45e0:	82058ee4 	lb	a1,-28956(s0)
     45e4:	c0ff0000 	ll	ra,0(a3)
     45e8:	fffffffc 	0xfffffffc
 	...
-    45f4:	00000078 	0x78
+    45f4:	00000070 	0x70
     45f8:	0000001d 	0x1d
     45fc:	0000001f 	0x1f
-    4600:	820596f8 	lb	a1,-26888(s0)
-    4604:	c0ff0000 	ll	ra,0(a3)
+    4600:	82059140 	lb	a1,-28352(s0)
+    4604:	803f0000 	lb	ra,0(at)
     4608:	fffffffc 	0xfffffffc
 	...
-    4614:	000000b8 	0xb8
+    4614:	00000040 	ssnop
     4618:	0000001d 	0x1d
     461c:	0000001f 	0x1f
-    4620:	82059c5c 	lb	a1,-25508(s0)
+    4620:	8205921c 	lb	a1,-28132(s0)
     4624:	c0ff0000 	ll	ra,0(a3)
     4628:	fffffffc 	0xfffffffc
 	...
-    4634:	00000068 	0x68
+    4634:	00000078 	0x78
     4638:	0000001d 	0x1d
     463c:	0000001f 	0x1f
-    4640:	8205a060 	lb	a1,-24480(s0)
+    4640:	820596a8 	lb	a1,-26968(s0)
     4644:	c0ff0000 	ll	ra,0(a3)
     4648:	fffffffc 	0xfffffffc
 	...
-    4654:	00000068 	0x68
+    4654:	000000b8 	0xb8
     4658:	0000001d 	0x1d
     465c:	0000001f 	0x1f
-    4660:	8205a470 	lb	a1,-23440(s0)
+    4660:	82059c0c 	lb	a1,-25588(s0)
     4664:	c0ff0000 	ll	ra,0(a3)
     4668:	fffffffc 	0xfffffffc
 	...
-    4674:	000000a0 	0xa0
+    4674:	00000068 	0x68
     4678:	0000001d 	0x1d
     467c:	0000001f 	0x1f
-    4680:	8205b3f0 	lb	a1,-19472(s0)
+    4680:	8205a010 	lb	a1,-24560(s0)
     4684:	c0ff0000 	ll	ra,0(a3)
     4688:	fffffffc 	0xfffffffc
 	...
-    4694:	00000058 	0x58
+    4694:	00000068 	0x68
     4698:	0000001d 	0x1d
     469c:	0000001f 	0x1f
-    46a0:	8205b8e0 	lb	a1,-18208(s0)
+    46a0:	8205a420 	lb	a1,-23520(s0)
     46a4:	c0ff0000 	ll	ra,0(a3)
     46a8:	fffffffc 	0xfffffffc
 	...
-    46b4:	00000068 	0x68
+    46b4:	000000a0 	0xa0
     46b8:	0000001d 	0x1d
     46bc:	0000001f 	0x1f
-    46c0:	8205bcec 	lb	a1,-17172(s0)
+    46c0:	8205b3a0 	lb	a1,-19552(s0)
     46c4:	c0ff0000 	ll	ra,0(a3)
     46c8:	fffffffc 	0xfffffffc
 	...
-    46d4:	00000068 	0x68
+    46d4:	00000058 	0x58
     46d8:	0000001d 	0x1d
     46dc:	0000001f 	0x1f
-    46e0:	8205bf64 	lb	a1,-16540(s0)
-    46e4:	801f0000 	lb	ra,0(zero)
+    46e0:	8205b890 	lb	a1,-18288(s0)
+    46e4:	c0ff0000 	ll	ra,0(a3)
     46e8:	fffffffc 	0xfffffffc
 	...
-    46f4:	00000028 	0x28
+    46f4:	00000068 	0x68
     46f8:	0000001d 	0x1d
     46fc:	0000001f 	0x1f
-    4700:	8205c000 	lb	a1,-16384(s0)
-    4704:	800f0000 	lb	t7,0(zero)
+    4700:	8205bc9c 	lb	a1,-17252(s0)
+    4704:	c0ff0000 	ll	ra,0(a3)
     4708:	fffffffc 	0xfffffffc
 	...
-    4714:	00000028 	0x28
+    4714:	00000068 	0x68
     4718:	0000001d 	0x1d
     471c:	0000001f 	0x1f
-    4720:	8205c09c 	lb	a1,-16228(s0)
-    4724:	80030000 	lb	v1,0(zero)
+    4720:	8205bf14 	lb	a1,-16620(s0)
+    4724:	801f0000 	lb	ra,0(zero)
     4728:	fffffffc 	0xfffffffc
 	...
-    4734:	00000020 	add	zero,zero,zero
+    4734:	00000028 	0x28
     4738:	0000001d 	0x1d
     473c:	0000001f 	0x1f
-    4740:	8205c34c 	lb	a1,-15540(s0)
-    4744:	80010000 	lb	at,0(zero)
+    4740:	8205bfb0 	lb	a1,-16464(s0)
+    4744:	800f0000 	lb	t7,0(zero)
     4748:	fffffffc 	0xfffffffc
 	...
-    4754:	00000018 	mult	zero,zero
+    4754:	00000028 	0x28
     4758:	0000001d 	0x1d
     475c:	0000001f 	0x1f
-    4760:	8205c7cc 	lb	a1,-14388(s0)
-    4764:	80000000 	lb	zero,0(zero)
+    4760:	8205c04c 	lb	a1,-16308(s0)
+    4764:	80030000 	lb	v1,0(zero)
     4768:	fffffffc 	0xfffffffc
 	...
-    4774:	00000018 	mult	zero,zero
+    4774:	00000020 	add	zero,zero,zero
     4778:	0000001d 	0x1d
     477c:	0000001f 	0x1f
-    4780:	8205c824 	lb	a1,-14300(s0)
-    4784:	80000000 	lb	zero,0(zero)
+    4780:	8205c2fc 	lb	a1,-15620(s0)
+    4784:	80010000 	lb	at,0(zero)
     4788:	fffffffc 	0xfffffffc
 	...
-    4794:	00000020 	add	zero,zero,zero
+    4794:	00000018 	mult	zero,zero
     4798:	0000001d 	0x1d
     479c:	0000001f 	0x1f
-    47a0:	8205c884 	lb	a1,-14204(s0)
+    47a0:	8205c77c 	lb	a1,-14468(s0)
+    47a4:	80000000 	lb	zero,0(zero)
+    47a8:	fffffffc 	0xfffffffc
 	...
+    47b4:	00000018 	mult	zero,zero
     47b8:	0000001d 	0x1d
     47bc:	0000001f 	0x1f
-    47c0:	8205c930 	lb	a1,-14032(s0)
-    47c4:	801f0000 	lb	ra,0(zero)
+    47c0:	8205c7d4 	lb	a1,-14380(s0)
+    47c4:	80000000 	lb	zero,0(zero)
     47c8:	fffffffc 	0xfffffffc
 	...
-    47d4:	000000a0 	0xa0
+    47d4:	00000020 	add	zero,zero,zero
     47d8:	0000001d 	0x1d
     47dc:	0000001f 	0x1f
-    47e0:	8205ced0 	lb	a1,-12592(s0)
-    47e4:	80070000 	lb	a3,0(zero)
-    47e8:	fffffffc 	0xfffffffc
+    47e0:	8205c834 	lb	a1,-14284(s0)
 	...
-    47f4:	000000b8 	0xb8
     47f8:	0000001d 	0x1d
     47fc:	0000001f 	0x1f
-    4800:	8205d0c0 	lb	a1,-12096(s0)
-    4804:	80070000 	lb	a3,0(zero)
+    4800:	8205c8e0 	lb	a1,-14112(s0)
+    4804:	801f0000 	lb	ra,0(zero)
     4808:	fffffffc 	0xfffffffc
 	...
-    4814:	00000028 	0x28
+    4814:	000000a0 	0xa0
     4818:	0000001d 	0x1d
     481c:	0000001f 	0x1f
-    4820:	8205d164 	lb	a1,-11932(s0)
-    4824:	80ff0000 	lb	ra,0(a3)
+    4820:	8205ce80 	lb	a1,-12672(s0)
+    4824:	80070000 	lb	a3,0(zero)
     4828:	fffffffc 	0xfffffffc
 	...
-    4834:	00000038 	0x38
+    4834:	000000b8 	0xb8
     4838:	0000001d 	0x1d
     483c:	0000001f 	0x1f
-    4840:	8205d334 	lb	a1,-11468(s0)
-    4844:	c0ff0000 	ll	ra,0(a3)
+    4840:	8205d070 	lb	a1,-12176(s0)
+    4844:	80070000 	lb	a3,0(zero)
     4848:	fffffffc 	0xfffffffc
 	...
-    4854:	00000048 	0x48
+    4854:	00000028 	0x28
     4858:	0000001d 	0x1d
     485c:	0000001f 	0x1f
-    4860:	8205d60c 	lb	a1,-10740(s0)
-    4864:	801f0000 	lb	ra,0(zero)
+    4860:	8205d114 	lb	a1,-12012(s0)
+    4864:	80ff0000 	lb	ra,0(a3)
     4868:	fffffffc 	0xfffffffc
 	...
-    4874:	00000028 	0x28
+    4874:	00000038 	0x38
     4878:	0000001d 	0x1d
     487c:	0000001f 	0x1f
-    4880:	8205d6d0 	lb	a1,-10544(s0)
-    4884:	803f0000 	lb	ra,0(at)
+    4880:	8205d2e4 	lb	a1,-11548(s0)
+    4884:	c0ff0000 	ll	ra,0(a3)
     4888:	fffffffc 	0xfffffffc
 	...
-    4894:	00000030 	0x30
+    4894:	00000048 	0x48
     4898:	0000001d 	0x1d
     489c:	0000001f 	0x1f
-    48a0:	8205d7b8 	lb	a1,-10312(s0)
-    48a4:	803f0000 	lb	ra,0(at)
+    48a0:	8205d5bc 	lb	a1,-10820(s0)
+    48a4:	801f0000 	lb	ra,0(zero)
     48a8:	fffffffc 	0xfffffffc
 	...
-    48b4:	00000038 	0x38
+    48b4:	00000028 	0x28
     48b8:	0000001d 	0x1d
     48bc:	0000001f 	0x1f
-    48c0:	8205df48 	lb	a1,-8376(s0)
-    48c4:	c0ff0000 	ll	ra,0(a3)
+    48c0:	8205d680 	lb	a1,-10624(s0)
+    48c4:	803f0000 	lb	ra,0(at)
     48c8:	fffffffc 	0xfffffffc
 	...
-    48d4:	00000038 	0x38
+    48d4:	00000030 	0x30
     48d8:	0000001d 	0x1d
     48dc:	0000001f 	0x1f
-    48e0:	8205e100 	lb	a1,-7936(s0)
-    48e4:	c0ff0000 	ll	ra,0(a3)
+    48e0:	8205d768 	lb	a1,-10392(s0)
+    48e4:	803f0000 	lb	ra,0(at)
     48e8:	fffffffc 	0xfffffffc
 	...
-    48f4:	00000080 	sll	zero,zero,0x2
+    48f4:	00000038 	0x38
     48f8:	0000001d 	0x1d
     48fc:	0000001f 	0x1f
+    4900:	8205def8 	lb	a1,-8456(s0)
+    4904:	c0ff0000 	ll	ra,0(a3)
+    4908:	fffffffc 	0xfffffffc
+	...
+    4914:	00000038 	0x38
+    4918:	0000001d 	0x1d
+    491c:	0000001f 	0x1f
+    4920:	8205e0b0 	lb	a1,-8016(s0)
+    4924:	c0ff0000 	ll	ra,0(a3)
+    4928:	fffffffc 	0xfffffffc
+	...
+    4934:	00000080 	sll	zero,zero,0x2
+    4938:	0000001d 	0x1d
+    493c:	0000001f 	0x1f
 
 Disassembly of section .gnu.attributes:
 

@@ -326,7 +326,7 @@ LOAD obj/hook.o
                 0x00000000820300e0                init_testItem_SD
  *(.init)
 
-.sram           0x00000000800c0000     0xbb48 load address 0x0000000082030178
+.sram           0x00000000800c0000     0xbaf8 load address 0x0000000082030178
  obj/8168h*.o(.text)
  obj/vga*.o(.text)
  obj/vnc*.o(.text)
@@ -557,1074 +557,1076 @@ LOAD obj/hook.o
                 0x00000000800cb12d                GPIO_IIC_Init
                 0x00000000800cb141                GPIO_Processing
                 0x00000000800cb209                GPIO_Parsing
- .text          0x00000000800cb2dc      0x86c obj/i2c_gpio_master_sp.o
+ .text          0x00000000800cb2dc      0x81c obj/i2c_gpio_master_sp.o
                 0x00000000800cb309                wait_us
-                0x00000000800cb409                I2C_delay
-                0x00000000800cb419                init_gpio_dir
-                0x00000000800cb469                set_gpio_output
-                0x00000000800cb4ad                get_gpio_input
-                0x00000000800cb4dd                i2c_start_cond
-                0x00000000800cb549                i2c_stop_cond
-                0x00000000800cb5a9                i2c_write_bit
-                0x00000000800cb5fd                i2c_read_bit
-                0x00000000800cb669                i2c_write_byte_M
-                0x00000000800cb6bd                i2c_read_byte_M
-                0x00000000800cb70d                i2c_cp_write_byte
-                0x00000000800cb799                i2c_write_byte_retry
-                0x00000000800cb7fd                i2c_cp_write_multibyte
-                0x00000000800cb881                i2c_cp_read_multibyte
-                0x00000000800cb99d                i2c_chargerIC_USB3750_reset
-                0x00000000800cb9dd                I2C_gpio_init
+                0x00000000800cb405                I2C_delay
+                0x00000000800cb415                wait_us_S
+                0x00000000800cb45d                I2C_delay_S
+                0x00000000800cb46d                init_gpio_dir
+                0x00000000800cb4bd                set_gpio_output
+                0x00000000800cb501                get_gpio_input
+                0x00000000800cb531                i2c_start_cond
+                0x00000000800cb59d                i2c_stop_cond
+                0x00000000800cb5fd                i2c_write_bit
+                0x00000000800cb651                i2c_read_bit
+                0x00000000800cb6b9                i2c_write_byte_M
+                0x00000000800cb711                i2c_read_byte_M
+                0x00000000800cb761                i2c_cp_write_byte
+                0x00000000800cb7ed                i2c_write_byte_retry
+                0x00000000800cb851                i2c_cp_write_multibyte
+                0x00000000800cb8d5                i2c_cp_read_multibyte
+                0x00000000800cb9f1                i2c_chargerIC_USB3750_reset
+                0x00000000800cba31                I2C_gpio_init
 
 .ddr
                 0x0000000082030178                __sram_start_lma = LOADADDR (.sram)
                 0x00000000800c0000                __sram_start_vma = ADDR (.sram)
-                0x000000000000bb48                __sram_size = SIZEOF (.sram)
+                0x000000000000baf8                __sram_size = SIZEOF (.sram)
 
-.text           0x000000008203bcc0    0x23778
+.text           0x000000008203bc70    0x23778
  *(.text)
- .text          0x000000008203bcc0      0x13c obj/app_sp.o
-                0x000000008203bd59                bsp_KCS_RKVM_NCSI_shareHandler
-                0x000000008203bd6d                bsp_FUN0_EHCI_shareHandler
-                0x000000008203bd7d                Function0_Interrupt_shareHandler
-                0x000000008203bdc1                RISC_FRE_divide
- .text          0x000000008203bdfc      0x43c obj/OOBMAC_COMMON_sp.o
-                0x000000008203bdfd                OOB_access_IB_channel
-                0x000000008203be31                OOB_READ_IB
-                0x000000008203be7d                OOB_WRITE_IB
-                0x000000008203bec1                OOB_WRITE_IB_BIT
-                0x000000008203bfad                OOBMAC_sharepin_mode_set
-                0x000000008203c075                OOBMAC_gpio_init
-                0x000000008203c16d                OOBMAC_gpio_output
-                0x000000008203c1c5                OOBMAC_gpio_input
-                0x000000008203c1e5                OOBMAC_gpio_input_general
- .text          0x000000008203c238     0xc0d4 obj/dash_sp.o
-                0x000000008203c239                UpdateComputerSystemCIM
-                0x000000008203c2a9                getEnableState
-                0x000000008203c2fd                getRequestedState
-                0x000000008203c349                getOperationalStatus
-                0x000000008203c391                getMemoryType
-                0x000000008203c3d9                getAccess
-                0x000000008203c40d                getHealthState
-                0x000000008203c481                getSwIdInstanceCount
-                0x000000008203c4ed                getbiosAttrInstanceCount
-                0x000000008203c559                getMemInstanceCount
-                0x000000008203c5c5                getProcessorInstanceCount
-                0x000000008203c631                getbiosEleInstanceCount
-                0x000000008203c699                getFanInstanceCount
-                0x000000008203c701                getSensorInstanceCount
-                0x000000008203c769                getCommonInstanceCount
-                0x000000008203c945                returnOperationSys
-                0x000000008203cab9                getBIOSElemProperty
-                0x000000008203cb51                getBIOSAttrProperty
-                0x000000008203cb99                getCommonProperty
-                0x000000008203cfbd                getPowerMangSrvProperty
-                0x000000008203d059                getTestCIMProperty_debug
-                0x000000008203d08d                getOsPropertyFromIdata
-                0x000000008203d09d                getOperationSysProperty
-                0x000000008203d1c5                getComputerSysProperty
-                0x000000008203d2c5                getPowerMangCapProperty
-                0x000000008203d361                NewMem
-                0x000000008203d3b9                ReleaseBuf
-                0x000000008203d401                TmpNewMem
-                0x000000008203d459                TmpReleaseBuf
-                0x000000008203d4a1                generate_uuid
-                0x000000008203d5a5                strback
-                0x000000008203d5bd                str2hex
-                0x000000008203d629                subscribe
-                0x000000008203d6a9                unsubscribe
-                0x000000008203d735                sendpacket
-                0x000000008203d7ad                ReleaseProfile
-                0x000000008203d7c9                releaseSoftwareIdCIM
-                0x000000008203d811                releaseBIOSElementCIM
-                0x000000008203d859                releaseBIOSAttrCIM
-                0x000000008203d8a1                releaseProcessorCIM
-                0x000000008203d8e9                releaseMemoryCIM
-                0x000000008203d931                releaseSensorCIM
-                0x000000008203d979                releaseFanCIM
-                0x000000008203d9c1                releaseCommonCIM
-                0x000000008203db9d                releaseOperationSysCIM
-                0x000000008203dbcd                releaseCardCIM
-                0x000000008203dc15                releaseChassisCIM
-                0x000000008203dc5d                ClearSendBuf
-                0x000000008203dc99                new_send_list
-                0x000000008203dcd5                insertlen
-                0x000000008203dd69                ProfileEntry
-                0x000000008203de5d                SearchEnd
-                0x000000008203ded1                GetInstanceCount
-                0x000000008203e011                GetElement
-                0x000000008203e089                SetElement
-                0x000000008203e0cd                SelectElement
-                0x000000008203e219                SearchIndex
-                0x000000008203e279                DefaultRoleInstance
-                0x000000008203e429                DefaultLogInstance
-                0x000000008203e605                DefaultIndicationInstance
-                0x000000008203e82d                DefaultPldmInstance
-                0x000000008203eb8d                DefaultInbandInstance
-                0x000000008203f2bd                UpdateOperationSysCIM
-                0x000000008203f305                UpdateSoftwareIdCIM
-                0x000000008203f349                GetTotalValue
-                0x000000008203f3c5                DefaultSensorInstance
-                0x000000008203fa59                UpdateFanCIM
-                0x000000008203faad                UpdateSensorCIM
-                0x000000008203faf5                DefaultPrivilegeInstance
-                0x000000008203fcf5                DefaultElementConformsInstance
-                0x000000008203fe81                DefaultRegisterInstance
-                0x00000000820400a1                DefaultBiosInstance
-                0x00000000820403b9                UpdateBIOSAttrCIM
-                0x00000000820403fd                InitialRegister
-                0x000000008204043d                ParserNsData
-                0x00000000820405c1                PutBodyElement
-                0x000000008204095d                gen_nsdata
-                0x0000000082040a39                gen_action
-                0x0000000082040c05                wsman_identify_stub
-                0x0000000082040e31                create_release_response_envelope
-                0x0000000082040ef5                create_delete_response_envelope
-                0x0000000082041095                create_create_response_envelope
-                0x00000000820412d9                create_enumerate_response_envelope
-                0x0000000082041421                create_evt_getstatus_response_envelope
-                0x000000008204151d                create_evt_renew_response_envelope
-                0x0000000082041619                auth_anon
-                0x0000000082041679                auth_error
-                0x00000000820417c1                response_fault
-                0x00000000820418f9                ParserAction
-                0x0000000082041989                ResetUsed
-                0x00000000820419bd                InitElement
-                0x0000000082041a21                getUserState
-                0x0000000082041a79                DefaultAccountInstance
-                0x0000000082041c51                DefaultInstance
-                0x0000000082042b51                UpdateProcessorCIM
-                0x0000000082042ba5                UpdateMemoryCIM
-                0x0000000082042bf9                UpdateCommonCIM
-                0x0000000082042ee9                UpdateBIOSElementCIM
-                0x0000000082042f39                genXML
-                0x000000008204334d                create_pull_response_envelope
-                0x0000000082043b8d                create_get_response_envelope
-                0x0000000082043c8d                create_put_response_envelope
-                0x0000000082043da1                create_subscribe_response_envelope
-                0x0000000082044021                create_unsubscribe_response_envelope
-                0x0000000082044149                create_invoke_response_envelope
-                0x0000000082044475                register_endpoint
-                0x0000000082044559                SearchKey
-                0x0000000082044799                SearchReference
-                0x0000000082044911                EnableUser
-                0x000000008204498d                md_RequestStateChange
-                0x0000000082044dad                md_RequestPowerStateChange
-                0x0000000082044ec9                md_ApplyBootConfigSetting
-                0x0000000082044ecd                md_CreateBootConfigSetting
-                0x0000000082044f45                md_ChangeBootOrderPldm
-                0x000000008204506d                md_SetBootConfigRole
-                0x0000000082045125                md_CreateAccount
-                0x00000000820452d9                md_AssignRoles
-                0x0000000082045451                md_ModifyRole
-                0x00000000820455ed                md_CreateRole
-                0x00000000820457cd                md_DeleteRole
-                0x0000000082045849                md_FirmwareUpdate
-                0x0000000082045865                md_CreateOpaque
-                0x0000000082045981                md_ReadWriteOpaque
-                0x0000000082045be1                md_ReassignOwnershipOpaque
-                0x0000000082045d35                md_SetBIOSAttribute
-                0x0000000082045df9                md_RestoreBIOSDefaults
-                0x0000000082045e45                CheckSensor
-                0x0000000082045e75                ParserBody
-                0x0000000082046c25                check_envelope
-                0x00000000820471bd                ParserElement
-                0x000000008204745d                parseelt
-                0x000000008204747d                check_missing
-                0x00000000820474bd                debug_printfIP
-                0x00000000820474e9                ConnectControl
-                0x0000000082047815                wsinit
-                0x00000000820478e1                wsman
-                0x0000000082047ff5                wsmanSrv
-                0x00000000820480bd                wsmanSrvIPv6
-                0x0000000082048171                wsmanSrvTLS
-                0x000000008204823d                wsmanSrvTLSIPv6
- .text          0x000000008204830c      0x844 obj/tcr_sp.o
-                0x000000008204830d                bsp_tcr_init
-                0x0000000082048505                tcrrx
-                0x0000000082048701                bsp_kcs_init_patch
-                0x0000000082048809                bsp_tcr_handler
-                0x0000000082048959                bsp_kcs_handler_patch
-                0x0000000082048a4d                tcrread
-                0x0000000082048ad9                stopTCR
- .text          0x0000000082048b50      0xa48 obj/language_sp.o
-                0x0000000082048b51                setLanguageType
-                0x0000000082048dad                buildKeyworkTable_foreign
-                0x000000008204957d                buildKeyworkTable
- .text          0x0000000082049598      0x7cc obj/eventlog_sp.o
-                0x0000000082049599                getEventLogParser
- .text          0x0000000082049d64      0x1b8 obj/gmac_sp.o
-                0x0000000082049d65                bsp_inband_push_ack
-                0x0000000082049e1d                bsp_get_inband_data
- .text          0x0000000082049f1c      0x414 obj/bsp_sp.o
-                0x0000000082049f1d                setIPAddress_withoutFlash
-                0x0000000082049fdd                bsp_timer_reinit
-                0x000000008204a09d                SetPowerSavingParameter
-                0x000000008204a0a1                bsp_setup_R
-                0x000000008204a0d9                bsp_IODrvAP_exist
-                0x000000008204a0f9                ReadIBReg
-                0x000000008204a135                WriteIBReg
-                0x000000008204a175                lan_wake
-                0x000000008204a1c5                UMAC_RST
-                0x000000008204a231                OOB_READ_IB_0
-                0x000000008204a26d                OOB_WRITE_IB_0
-                0x000000008204a2ad                usb_otg_patch
- .text          0x000000008204a330      0x518 obj/sensor_sp.o
-                0x000000008204a405                set_pldm_snr_slave_address
-                0x000000008204a455                ParserSensor
-                0x000000008204a78d                pldm_snr_read
- .text          0x000000008204a848        0x0 obj/netlib_sp.o
- .text          0x000000008204a848     0x144c obj/x509parse_sp.o
-                0x000000008204a931                asn1_get_tag
-                0x000000008204abad                asn1_get_int
-                0x000000008204ac01                asn1_get_char
-                0x000000008204ac51                asn1_get_uint
-                0x000000008204aca5                x509parse_dn_gets
-                0x000000008204ae75                x509parse_time_expired
-                0x000000008204aec9                x509parse_revoked
-                0x000000008204af09                x509parse_verify
-                0x000000008204b119                x509_free
-                0x000000008204b1bd                x509parse_crt
-                0x000000008204b7fd                x509_crl_free
-                0x000000008204b895                x509parse_crl
- .text          0x000000008204bc94      0x40c obj/lib_sp.o
-                0x000000008204bc95                allocIPPkt_4bytesAlignment
-                0x000000008204bd15                makeAlertEvent
-                0x000000008204bd19                setdirtylen
-                0x000000008204bd49                writeflash
-                0x000000008204bf49                AcquireIbOobMutex
-                0x000000008204bfb9                ReleaseIbOobMutex
-                0x000000008204bfe1                setSleepDeep
-                0x000000008204bff1                TCRDisable
-                0x000000008204c015                TCREnable
-                0x000000008204c039                getFwLogParser
- .text          0x000000008204c0a0      0x194 obj/arp_sp.o
-                0x000000008204c0a1                findEtherAddr
- .text          0x000000008204c234      0x5a4 obj/rtskt_sp.o
-                0x000000008204c235                getDNSAnsRRPos
-                0x000000008204c261                getIPAddrPos
-                0x000000008204c3e1                getPortNumber
-                0x000000008204c411                rtSktEnableRMCPPortFilter
-                0x000000008204c415                rtSktDisableRMCPPortFilter
-                0x000000008204c419                rtGethostbyname
- .text          0x000000008204c7d8      0x10c obj/ip_sp.o
-                0x000000008204c7d9                ipInput
- .text          0x000000008204c8e4      0xaa8 obj/tcp_sp.o
-                0x000000008204c8e5                removePCB
-                0x000000008204ca4d                matchIntf
-                0x000000008204ca71                reserveIBPort
-                0x000000008204cb39                SetIBPF
-                0x000000008204cb79                SetOOBPF
-                0x000000008204cbf9                removePortFilterTableEP
-                0x000000008204ce01                reloadFilterTableEP
-                0x000000008204cf9d                setNewIBTCAMPortPF
-                0x000000008204d135                setPortFilterTableEP
- .text          0x000000008204d38c        0x0 obj/dhcp_sp.o
- .text          0x000000008204d38c     0x1c8c obj/pldm_sp.o
-                0x000000008204d38d                _unicode
-                0x000000008204d3ed                AddItem
-                0x000000008204d41d                ReleasePldm
-                0x000000008204d459                SearchAttr
-                0x000000008204d4cd                SetValue
-                0x000000008204d675                InitialPLDM
-                0x000000008204d7dd                getPLDMElement
-                0x000000008204d809                CreateAttrVal
-                0x000000008204d889                handle_pldm_br_phoenix
-                0x000000008204d9d9                handle_pldm_br_ami
-                0x000000008204dd45                handle_pldm_bw
-                0x000000008204dd49                setPLDMEndPoint
-                0x000000008204dd75                handle_pldm_tags
-                0x000000008204ded5                pldm_handle_setgettime
-                0x000000008204df6d                smbus_process_pldm_br_ami
-                0x000000008204e239                smbus_process_pldm_br_phoenix
-                0x000000008204e3bd                smbus_process_pldm_bw
- .text          0x000000008204f018      0x8d8 obj/flash_opt.o
-                0x000000008204f018                CompareSMBIOS
-                0x000000008204f0e0                FlashTask
- .text          0x000000008204f8f0      0x624 obj/asf_opt.o
-                0x000000008204f8f0                bsp_set_pldm_slave_address
-                0x000000008204f958                bsp_set_asftbl
-                0x000000008204f9e0                ParserASFTable
- .text          0x000000008204ff14     0x1d00 obj/genpage_opt.o
-                0x000000008204ff14                biosPage
-                0x0000000082050398                sysInfoPage
-                0x0000000082050518                basedBoardPage
-                0x0000000082050698                chassisPage
-                0x0000000082050818                sysBootPage
-                0x0000000082050938                processorPage
-                0x0000000082050b48                phyMemArrayPage
-                0x0000000082050d44                cachePage
-                0x0000000082050f04                portConnectorPage
-                0x00000000820510d8                sysSlotPage
-                0x00000000820512a8                memDevPage
-                0x000000008205144c                memArrayMapAddrPage
-                0x000000008205161c                onBoardDevPage
-                0x00000000820517e8                sysEventLogPage
-                0x0000000082051b18                genSMBIOSWebPage
- .text          0x0000000082051c14     0x1a04 obj/post_opt.o
-                0x0000000082051f30                verifyIPField
-                0x0000000082051f40                netSetIPv4Value
-                0x00000000820520c8                netSetIPv6Value
-                0x000000008205225c                netSet
-                0x0000000082052c38                serviceSet
-                0x0000000082052e0c                remoteCtlSet
-                0x0000000082053324                tlsAuth
-                0x0000000082053524                urltoken
- .text          0x0000000082053618     0x280c obj/http_opt.o
-                0x0000000082053704                isLegalAuthcredential
-                0x00000000820537e8                setAuthCredential
-                0x00000000820539c0                releaseAuthCredential
-                0x0000000082053ac0                basicAuth
-                0x0000000082053ca4                digestAuth
-                0x0000000082054de0                webPost
-                0x0000000082055044                parsePostRequest
-                0x0000000082055580                httpPost
-                0x000000008205565c                httpGet
-                0x00000000820557fc                http_debug
-                0x00000000820558e0                getLanguageType
-                0x00000000820559b4                httpRx
-                0x0000000082055bf8                getHttpHeaderInfo
-                0x0000000082055e1c                initTCPService
- .text          0x0000000082055e24     0x2dd4 obj/tls_opt.o
-                0x0000000082055e24                getCertificate
-                0x0000000082055e70                createSSL
-                0x0000000082055eac                authedSSL
-                0x0000000082055f10                getPCBMatchSSL
-                0x0000000082056214                parseRecordLayer
-                0x000000008205634c                tlsEncodeData
-                0x0000000082056568                deCodeTLSData
-                0x0000000082056b80                processCertificateVerify
-                0x0000000082056c1c                makeTLSRecordLayer
-                0x0000000082056c40                processClientHello
-                0x0000000082056d70                processClientHelloSSLv2
-                0x0000000082056f5c                serverHello
-                0x00000000820570c8                serverCertificate
-                0x00000000820571bc                serverHelloDone
-                0x0000000082057228                serverCertificateReq
-                0x00000000820572a8                serverKeyExchange
-                0x0000000082057338                sendServerHelloSequence
-                0x0000000082057690                tlsPktSend
-                0x00000000820576e0                processClientKeyExchange
-                0x00000000820577a0                parseChangeCipherSpec
-                0x00000000820577e8                parseClientFinish
-                0x0000000082057bec                serverFinish
-                0x0000000082057e28                sendServerFinish
-                0x0000000082057fac                doServerHandshake
-                0x0000000082058338                doTLSAccept
-                0x0000000082058a80                sendTLSWebPage
-                0x0000000082058b88                sendTLSAlert
- .text          0x0000000082058bf8     0x5350 obj/htm_opt.o
-                0x0000000082058bf8                atoull
-                0x0000000082058ce0                parseBytesToSizeString
-                0x0000000082058dc4                genWelcomePage
-                0x0000000082058e04                genBannerPage
-                0x0000000082058e30                sendWebPagePkt
-                0x0000000082058f34                genInfoPage
-                0x0000000082059190                genOperationSystemPage
-                0x000000008205926c                genPROCESSORPage
-                0x00000000820596f8                genMemoryPage
-                0x0000000082059c5c                genFanPage
-                0x000000008205a060                genSensorPage
-                0x000000008205a470                genAssetPage
-                0x000000008205b3f0                genBIOSPage
-                0x000000008205b8e0                genSoftwareIdentityPage
-                0x000000008205bcec                genComputerSystemPage
-                0x000000008205bf64                genShowCounterPage
-                0x000000008205c000                genClearCounterPage
-                0x000000008205c09c                chkSMBIOSReqPages
-                0x000000008205c34c                getWebPageID
-                0x000000008205c7cc                genSrvSetPage
-                0x000000008205c824                IPtoStr
-                0x000000008205c884                IPv6toStr
-                0x000000008205c930                genNetSetPage
-                0x000000008205ced0                genNetSetv6Page
-                0x000000008205d0c0                genAboutPage
-                0x000000008205d164                sendStaticWebPage
-                0x000000008205d334                sendEventLogPage
-                0x000000008205d60c                sendSMBIOSWebPage
-                0x000000008205d6d0                sendRmoteCtlPage
-                0x000000008205d7b8                sendWebPages
- .text          0x000000008205df48     0x1454 obj/wcom_opt.o
-                0x000000008205df48                read_hm_sensor
-                0x000000008205e100                OOBResponseTask
- .text          0x000000008205f39c        0x0 obj/const.o
- .text          0x000000008205f39c        0x0 obj/hook.o
+ .text          0x000000008203bc70      0x13c obj/app_sp.o
+                0x000000008203bd09                bsp_KCS_RKVM_NCSI_shareHandler
+                0x000000008203bd1d                bsp_FUN0_EHCI_shareHandler
+                0x000000008203bd2d                Function0_Interrupt_shareHandler
+                0x000000008203bd71                RISC_FRE_divide
+ .text          0x000000008203bdac      0x43c obj/OOBMAC_COMMON_sp.o
+                0x000000008203bdad                OOB_access_IB_channel
+                0x000000008203bde1                OOB_READ_IB
+                0x000000008203be2d                OOB_WRITE_IB
+                0x000000008203be71                OOB_WRITE_IB_BIT
+                0x000000008203bf5d                OOBMAC_sharepin_mode_set
+                0x000000008203c025                OOBMAC_gpio_init
+                0x000000008203c11d                OOBMAC_gpio_output
+                0x000000008203c175                OOBMAC_gpio_input
+                0x000000008203c195                OOBMAC_gpio_input_general
+ .text          0x000000008203c1e8     0xc0d4 obj/dash_sp.o
+                0x000000008203c1e9                UpdateComputerSystemCIM
+                0x000000008203c259                getEnableState
+                0x000000008203c2ad                getRequestedState
+                0x000000008203c2f9                getOperationalStatus
+                0x000000008203c341                getMemoryType
+                0x000000008203c389                getAccess
+                0x000000008203c3bd                getHealthState
+                0x000000008203c431                getSwIdInstanceCount
+                0x000000008203c49d                getbiosAttrInstanceCount
+                0x000000008203c509                getMemInstanceCount
+                0x000000008203c575                getProcessorInstanceCount
+                0x000000008203c5e1                getbiosEleInstanceCount
+                0x000000008203c649                getFanInstanceCount
+                0x000000008203c6b1                getSensorInstanceCount
+                0x000000008203c719                getCommonInstanceCount
+                0x000000008203c8f5                returnOperationSys
+                0x000000008203ca69                getBIOSElemProperty
+                0x000000008203cb01                getBIOSAttrProperty
+                0x000000008203cb49                getCommonProperty
+                0x000000008203cf6d                getPowerMangSrvProperty
+                0x000000008203d009                getTestCIMProperty_debug
+                0x000000008203d03d                getOsPropertyFromIdata
+                0x000000008203d04d                getOperationSysProperty
+                0x000000008203d175                getComputerSysProperty
+                0x000000008203d275                getPowerMangCapProperty
+                0x000000008203d311                NewMem
+                0x000000008203d369                ReleaseBuf
+                0x000000008203d3b1                TmpNewMem
+                0x000000008203d409                TmpReleaseBuf
+                0x000000008203d451                generate_uuid
+                0x000000008203d555                strback
+                0x000000008203d56d                str2hex
+                0x000000008203d5d9                subscribe
+                0x000000008203d659                unsubscribe
+                0x000000008203d6e5                sendpacket
+                0x000000008203d75d                ReleaseProfile
+                0x000000008203d779                releaseSoftwareIdCIM
+                0x000000008203d7c1                releaseBIOSElementCIM
+                0x000000008203d809                releaseBIOSAttrCIM
+                0x000000008203d851                releaseProcessorCIM
+                0x000000008203d899                releaseMemoryCIM
+                0x000000008203d8e1                releaseSensorCIM
+                0x000000008203d929                releaseFanCIM
+                0x000000008203d971                releaseCommonCIM
+                0x000000008203db4d                releaseOperationSysCIM
+                0x000000008203db7d                releaseCardCIM
+                0x000000008203dbc5                releaseChassisCIM
+                0x000000008203dc0d                ClearSendBuf
+                0x000000008203dc49                new_send_list
+                0x000000008203dc85                insertlen
+                0x000000008203dd19                ProfileEntry
+                0x000000008203de0d                SearchEnd
+                0x000000008203de81                GetInstanceCount
+                0x000000008203dfc1                GetElement
+                0x000000008203e039                SetElement
+                0x000000008203e07d                SelectElement
+                0x000000008203e1c9                SearchIndex
+                0x000000008203e229                DefaultRoleInstance
+                0x000000008203e3d9                DefaultLogInstance
+                0x000000008203e5b5                DefaultIndicationInstance
+                0x000000008203e7dd                DefaultPldmInstance
+                0x000000008203eb3d                DefaultInbandInstance
+                0x000000008203f26d                UpdateOperationSysCIM
+                0x000000008203f2b5                UpdateSoftwareIdCIM
+                0x000000008203f2f9                GetTotalValue
+                0x000000008203f375                DefaultSensorInstance
+                0x000000008203fa09                UpdateFanCIM
+                0x000000008203fa5d                UpdateSensorCIM
+                0x000000008203faa5                DefaultPrivilegeInstance
+                0x000000008203fca5                DefaultElementConformsInstance
+                0x000000008203fe31                DefaultRegisterInstance
+                0x0000000082040051                DefaultBiosInstance
+                0x0000000082040369                UpdateBIOSAttrCIM
+                0x00000000820403ad                InitialRegister
+                0x00000000820403ed                ParserNsData
+                0x0000000082040571                PutBodyElement
+                0x000000008204090d                gen_nsdata
+                0x00000000820409e9                gen_action
+                0x0000000082040bb5                wsman_identify_stub
+                0x0000000082040de1                create_release_response_envelope
+                0x0000000082040ea5                create_delete_response_envelope
+                0x0000000082041045                create_create_response_envelope
+                0x0000000082041289                create_enumerate_response_envelope
+                0x00000000820413d1                create_evt_getstatus_response_envelope
+                0x00000000820414cd                create_evt_renew_response_envelope
+                0x00000000820415c9                auth_anon
+                0x0000000082041629                auth_error
+                0x0000000082041771                response_fault
+                0x00000000820418a9                ParserAction
+                0x0000000082041939                ResetUsed
+                0x000000008204196d                InitElement
+                0x00000000820419d1                getUserState
+                0x0000000082041a29                DefaultAccountInstance
+                0x0000000082041c01                DefaultInstance
+                0x0000000082042b01                UpdateProcessorCIM
+                0x0000000082042b55                UpdateMemoryCIM
+                0x0000000082042ba9                UpdateCommonCIM
+                0x0000000082042e99                UpdateBIOSElementCIM
+                0x0000000082042ee9                genXML
+                0x00000000820432fd                create_pull_response_envelope
+                0x0000000082043b3d                create_get_response_envelope
+                0x0000000082043c3d                create_put_response_envelope
+                0x0000000082043d51                create_subscribe_response_envelope
+                0x0000000082043fd1                create_unsubscribe_response_envelope
+                0x00000000820440f9                create_invoke_response_envelope
+                0x0000000082044425                register_endpoint
+                0x0000000082044509                SearchKey
+                0x0000000082044749                SearchReference
+                0x00000000820448c1                EnableUser
+                0x000000008204493d                md_RequestStateChange
+                0x0000000082044d5d                md_RequestPowerStateChange
+                0x0000000082044e79                md_ApplyBootConfigSetting
+                0x0000000082044e7d                md_CreateBootConfigSetting
+                0x0000000082044ef5                md_ChangeBootOrderPldm
+                0x000000008204501d                md_SetBootConfigRole
+                0x00000000820450d5                md_CreateAccount
+                0x0000000082045289                md_AssignRoles
+                0x0000000082045401                md_ModifyRole
+                0x000000008204559d                md_CreateRole
+                0x000000008204577d                md_DeleteRole
+                0x00000000820457f9                md_FirmwareUpdate
+                0x0000000082045815                md_CreateOpaque
+                0x0000000082045931                md_ReadWriteOpaque
+                0x0000000082045b91                md_ReassignOwnershipOpaque
+                0x0000000082045ce5                md_SetBIOSAttribute
+                0x0000000082045da9                md_RestoreBIOSDefaults
+                0x0000000082045df5                CheckSensor
+                0x0000000082045e25                ParserBody
+                0x0000000082046bd5                check_envelope
+                0x000000008204716d                ParserElement
+                0x000000008204740d                parseelt
+                0x000000008204742d                check_missing
+                0x000000008204746d                debug_printfIP
+                0x0000000082047499                ConnectControl
+                0x00000000820477c5                wsinit
+                0x0000000082047891                wsman
+                0x0000000082047fa5                wsmanSrv
+                0x000000008204806d                wsmanSrvIPv6
+                0x0000000082048121                wsmanSrvTLS
+                0x00000000820481ed                wsmanSrvTLSIPv6
+ .text          0x00000000820482bc      0x844 obj/tcr_sp.o
+                0x00000000820482bd                bsp_tcr_init
+                0x00000000820484b5                tcrrx
+                0x00000000820486b1                bsp_kcs_init_patch
+                0x00000000820487b9                bsp_tcr_handler
+                0x0000000082048909                bsp_kcs_handler_patch
+                0x00000000820489fd                tcrread
+                0x0000000082048a89                stopTCR
+ .text          0x0000000082048b00      0xa48 obj/language_sp.o
+                0x0000000082048b01                setLanguageType
+                0x0000000082048d5d                buildKeyworkTable_foreign
+                0x000000008204952d                buildKeyworkTable
+ .text          0x0000000082049548      0x7cc obj/eventlog_sp.o
+                0x0000000082049549                getEventLogParser
+ .text          0x0000000082049d14      0x1b8 obj/gmac_sp.o
+                0x0000000082049d15                bsp_inband_push_ack
+                0x0000000082049dcd                bsp_get_inband_data
+ .text          0x0000000082049ecc      0x414 obj/bsp_sp.o
+                0x0000000082049ecd                setIPAddress_withoutFlash
+                0x0000000082049f8d                bsp_timer_reinit
+                0x000000008204a04d                SetPowerSavingParameter
+                0x000000008204a051                bsp_setup_R
+                0x000000008204a089                bsp_IODrvAP_exist
+                0x000000008204a0a9                ReadIBReg
+                0x000000008204a0e5                WriteIBReg
+                0x000000008204a125                lan_wake
+                0x000000008204a175                UMAC_RST
+                0x000000008204a1e1                OOB_READ_IB_0
+                0x000000008204a21d                OOB_WRITE_IB_0
+                0x000000008204a25d                usb_otg_patch
+ .text          0x000000008204a2e0      0x518 obj/sensor_sp.o
+                0x000000008204a3b5                set_pldm_snr_slave_address
+                0x000000008204a405                ParserSensor
+                0x000000008204a73d                pldm_snr_read
+ .text          0x000000008204a7f8        0x0 obj/netlib_sp.o
+ .text          0x000000008204a7f8     0x144c obj/x509parse_sp.o
+                0x000000008204a8e1                asn1_get_tag
+                0x000000008204ab5d                asn1_get_int
+                0x000000008204abb1                asn1_get_char
+                0x000000008204ac01                asn1_get_uint
+                0x000000008204ac55                x509parse_dn_gets
+                0x000000008204ae25                x509parse_time_expired
+                0x000000008204ae79                x509parse_revoked
+                0x000000008204aeb9                x509parse_verify
+                0x000000008204b0c9                x509_free
+                0x000000008204b16d                x509parse_crt
+                0x000000008204b7ad                x509_crl_free
+                0x000000008204b845                x509parse_crl
+ .text          0x000000008204bc44      0x40c obj/lib_sp.o
+                0x000000008204bc45                allocIPPkt_4bytesAlignment
+                0x000000008204bcc5                makeAlertEvent
+                0x000000008204bcc9                setdirtylen
+                0x000000008204bcf9                writeflash
+                0x000000008204bef9                AcquireIbOobMutex
+                0x000000008204bf69                ReleaseIbOobMutex
+                0x000000008204bf91                setSleepDeep
+                0x000000008204bfa1                TCRDisable
+                0x000000008204bfc5                TCREnable
+                0x000000008204bfe9                getFwLogParser
+ .text          0x000000008204c050      0x194 obj/arp_sp.o
+                0x000000008204c051                findEtherAddr
+ .text          0x000000008204c1e4      0x5a4 obj/rtskt_sp.o
+                0x000000008204c1e5                getDNSAnsRRPos
+                0x000000008204c211                getIPAddrPos
+                0x000000008204c391                getPortNumber
+                0x000000008204c3c1                rtSktEnableRMCPPortFilter
+                0x000000008204c3c5                rtSktDisableRMCPPortFilter
+                0x000000008204c3c9                rtGethostbyname
+ .text          0x000000008204c788      0x10c obj/ip_sp.o
+                0x000000008204c789                ipInput
+ .text          0x000000008204c894      0xaa8 obj/tcp_sp.o
+                0x000000008204c895                removePCB
+                0x000000008204c9fd                matchIntf
+                0x000000008204ca21                reserveIBPort
+                0x000000008204cae9                SetIBPF
+                0x000000008204cb29                SetOOBPF
+                0x000000008204cba9                removePortFilterTableEP
+                0x000000008204cdb1                reloadFilterTableEP
+                0x000000008204cf4d                setNewIBTCAMPortPF
+                0x000000008204d0e5                setPortFilterTableEP
+ .text          0x000000008204d33c        0x0 obj/dhcp_sp.o
+ .text          0x000000008204d33c     0x1c8c obj/pldm_sp.o
+                0x000000008204d33d                _unicode
+                0x000000008204d39d                AddItem
+                0x000000008204d3cd                ReleasePldm
+                0x000000008204d409                SearchAttr
+                0x000000008204d47d                SetValue
+                0x000000008204d625                InitialPLDM
+                0x000000008204d78d                getPLDMElement
+                0x000000008204d7b9                CreateAttrVal
+                0x000000008204d839                handle_pldm_br_phoenix
+                0x000000008204d989                handle_pldm_br_ami
+                0x000000008204dcf5                handle_pldm_bw
+                0x000000008204dcf9                setPLDMEndPoint
+                0x000000008204dd25                handle_pldm_tags
+                0x000000008204de85                pldm_handle_setgettime
+                0x000000008204df1d                smbus_process_pldm_br_ami
+                0x000000008204e1e9                smbus_process_pldm_br_phoenix
+                0x000000008204e36d                smbus_process_pldm_bw
+ .text          0x000000008204efc8      0x8d8 obj/flash_opt.o
+                0x000000008204efc8                CompareSMBIOS
+                0x000000008204f090                FlashTask
+ .text          0x000000008204f8a0      0x624 obj/asf_opt.o
+                0x000000008204f8a0                bsp_set_pldm_slave_address
+                0x000000008204f908                bsp_set_asftbl
+                0x000000008204f990                ParserASFTable
+ .text          0x000000008204fec4     0x1d00 obj/genpage_opt.o
+                0x000000008204fec4                biosPage
+                0x0000000082050348                sysInfoPage
+                0x00000000820504c8                basedBoardPage
+                0x0000000082050648                chassisPage
+                0x00000000820507c8                sysBootPage
+                0x00000000820508e8                processorPage
+                0x0000000082050af8                phyMemArrayPage
+                0x0000000082050cf4                cachePage
+                0x0000000082050eb4                portConnectorPage
+                0x0000000082051088                sysSlotPage
+                0x0000000082051258                memDevPage
+                0x00000000820513fc                memArrayMapAddrPage
+                0x00000000820515cc                onBoardDevPage
+                0x0000000082051798                sysEventLogPage
+                0x0000000082051ac8                genSMBIOSWebPage
+ .text          0x0000000082051bc4     0x1a04 obj/post_opt.o
+                0x0000000082051ee0                verifyIPField
+                0x0000000082051ef0                netSetIPv4Value
+                0x0000000082052078                netSetIPv6Value
+                0x000000008205220c                netSet
+                0x0000000082052be8                serviceSet
+                0x0000000082052dbc                remoteCtlSet
+                0x00000000820532d4                tlsAuth
+                0x00000000820534d4                urltoken
+ .text          0x00000000820535c8     0x280c obj/http_opt.o
+                0x00000000820536b4                isLegalAuthcredential
+                0x0000000082053798                setAuthCredential
+                0x0000000082053970                releaseAuthCredential
+                0x0000000082053a70                basicAuth
+                0x0000000082053c54                digestAuth
+                0x0000000082054d90                webPost
+                0x0000000082054ff4                parsePostRequest
+                0x0000000082055530                httpPost
+                0x000000008205560c                httpGet
+                0x00000000820557ac                http_debug
+                0x0000000082055890                getLanguageType
+                0x0000000082055964                httpRx
+                0x0000000082055ba8                getHttpHeaderInfo
+                0x0000000082055dcc                initTCPService
+ .text          0x0000000082055dd4     0x2dd4 obj/tls_opt.o
+                0x0000000082055dd4                getCertificate
+                0x0000000082055e20                createSSL
+                0x0000000082055e5c                authedSSL
+                0x0000000082055ec0                getPCBMatchSSL
+                0x00000000820561c4                parseRecordLayer
+                0x00000000820562fc                tlsEncodeData
+                0x0000000082056518                deCodeTLSData
+                0x0000000082056b30                processCertificateVerify
+                0x0000000082056bcc                makeTLSRecordLayer
+                0x0000000082056bf0                processClientHello
+                0x0000000082056d20                processClientHelloSSLv2
+                0x0000000082056f0c                serverHello
+                0x0000000082057078                serverCertificate
+                0x000000008205716c                serverHelloDone
+                0x00000000820571d8                serverCertificateReq
+                0x0000000082057258                serverKeyExchange
+                0x00000000820572e8                sendServerHelloSequence
+                0x0000000082057640                tlsPktSend
+                0x0000000082057690                processClientKeyExchange
+                0x0000000082057750                parseChangeCipherSpec
+                0x0000000082057798                parseClientFinish
+                0x0000000082057b9c                serverFinish
+                0x0000000082057dd8                sendServerFinish
+                0x0000000082057f5c                doServerHandshake
+                0x00000000820582e8                doTLSAccept
+                0x0000000082058a30                sendTLSWebPage
+                0x0000000082058b38                sendTLSAlert
+ .text          0x0000000082058ba8     0x5350 obj/htm_opt.o
+                0x0000000082058ba8                atoull
+                0x0000000082058c90                parseBytesToSizeString
+                0x0000000082058d74                genWelcomePage
+                0x0000000082058db4                genBannerPage
+                0x0000000082058de0                sendWebPagePkt
+                0x0000000082058ee4                genInfoPage
+                0x0000000082059140                genOperationSystemPage
+                0x000000008205921c                genPROCESSORPage
+                0x00000000820596a8                genMemoryPage
+                0x0000000082059c0c                genFanPage
+                0x000000008205a010                genSensorPage
+                0x000000008205a420                genAssetPage
+                0x000000008205b3a0                genBIOSPage
+                0x000000008205b890                genSoftwareIdentityPage
+                0x000000008205bc9c                genComputerSystemPage
+                0x000000008205bf14                genShowCounterPage
+                0x000000008205bfb0                genClearCounterPage
+                0x000000008205c04c                chkSMBIOSReqPages
+                0x000000008205c2fc                getWebPageID
+                0x000000008205c77c                genSrvSetPage
+                0x000000008205c7d4                IPtoStr
+                0x000000008205c834                IPv6toStr
+                0x000000008205c8e0                genNetSetPage
+                0x000000008205ce80                genNetSetv6Page
+                0x000000008205d070                genAboutPage
+                0x000000008205d114                sendStaticWebPage
+                0x000000008205d2e4                sendEventLogPage
+                0x000000008205d5bc                sendSMBIOSWebPage
+                0x000000008205d680                sendRmoteCtlPage
+                0x000000008205d768                sendWebPages
+ .text          0x000000008205def8     0x1454 obj/wcom_opt.o
+                0x000000008205def8                read_hm_sensor
+                0x000000008205e0b0                OOBResponseTask
+ .text          0x000000008205f34c        0x0 obj/const.o
+ .text          0x000000008205f34c        0x0 obj/hook.o
  *(.text.startup)
- .text.startup  0x000000008205f39c       0x9c obj/app_sp.o
-                0x000000008205f39d                main
-                0x000000008203bcc0                __text_start_lma = LOADADDR (.text)
-                0x000000008203bcc0                __text_start_vma = ADDR (.text)
+ .text.startup  0x000000008205f34c       0x9c obj/app_sp.o
+                0x000000008205f34d                main
+                0x000000008203bc70                __text_start_lma = LOADADDR (.text)
+                0x000000008203bc70                __text_start_vma = ADDR (.text)
                 0x0000000000023778                __text_size = SIZEOF (.text)
 
-.text.unlikely  0x000000008205f438       0xbc
+.text.unlikely  0x000000008205f3e8       0xbc
  .text.unlikely
-                0x000000008205f438       0xbc obj/x509parse_sp.o
+                0x000000008205f3e8       0xbc obj/x509parse_sp.o
 
-.rodata         0x000000008205f4f4     0xedc8
-                0x000000008205f4f4                . = ALIGN (0x4)
+.rodata         0x000000008205f4a4     0xeda8
+                0x000000008205f4a4                . = ALIGN (0x4)
  *(.roexcept)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x000000008205f4f4       0x18 obj/app_sp.o
- .rodata.cst4   0x000000008205f50c       0x18 obj/app_sp.o
- .rodata.cst4   0x000000008205f524       0x18 obj/OOBMAC_COMMON_sp.o
+                0x000000008205f4a4       0x18 obj/app_sp.o
+ .rodata.cst4   0x000000008205f4bc       0x18 obj/app_sp.o
+ .rodata.cst4   0x000000008205f4d4       0x18 obj/OOBMAC_COMMON_sp.o
  .rodata.str1.4
-                0x000000008205f53c       0xd7 obj/ssh_sp.o
+                0x000000008205f4ec       0xd7 obj/ssh_sp.o
                                          0xd8 (size before relaxing)
- *fill*         0x000000008205f613        0x1 
- .rodata        0x000000008205f614       0xf0 obj/ssh_sp.o
-                0x000000008205f638                dh_p_val
-                0x000000008205f6b8                SSHCompressAlog
-                0x000000008205f6c0                SSHMacAlogSrv2Cli
-                0x000000008205f6cc                SSHEnAlog
-                0x000000008205f6d8                SSHSrvHostKeyAlog
-                0x000000008205f6e0                SSHKexAlog
-                0x000000008205f6fc                CRLF
-                0x000000008205f700                dh_g_val
+ *fill*         0x000000008205f5c3        0x1 
+ .rodata        0x000000008205f5c4       0xf0 obj/ssh_sp.o
+                0x000000008205f5e8                dh_p_val
+                0x000000008205f668                SSHCompressAlog
+                0x000000008205f670                SSHMacAlogSrv2Cli
+                0x000000008205f67c                SSHEnAlog
+                0x000000008205f688                SSHSrvHostKeyAlog
+                0x000000008205f690                SSHKexAlog
+                0x000000008205f6ac                CRLF
+                0x000000008205f6b0                dh_g_val
  .rodata.str1.4
-                0x000000008205f704     0x532a obj/dash_sp.o
+                0x000000008205f6b4     0x532a obj/dash_sp.o
                                        0x56b8 (size before relaxing)
- *fill*         0x0000000082064a2e        0x2 
- .rodata        0x0000000082064a30      0xdd4 obj/dash_sp.o
-                0x0000000082064c00                _RegProfile
-                0x0000000082064db8                _Profile
-                0x0000000082065408                _PowerManagementCapabilities
-                0x000000008206568c                hello_nego
-                0x0000000082065718                hello_err
-                0x000000008206578c                hello
- .rodata.cst4   0x0000000082065804       0x20 obj/dash_sp.o
+ *fill*         0x00000000820649de        0x2 
+ .rodata        0x00000000820649e0      0xdd4 obj/dash_sp.o
+                0x0000000082064bb0                _RegProfile
+                0x0000000082064d68                _Profile
+                0x00000000820653b8                _PowerManagementCapabilities
+                0x000000008206563c                hello_nego
+                0x00000000820656c8                hello_err
+                0x000000008206573c                hello
+ .rodata.cst4   0x00000000820657b4       0x20 obj/dash_sp.o
  .rodata.str1.4
-                0x0000000082065824      0x517 obj/client_sp.o
+                0x00000000820657d4      0x517 obj/client_sp.o
                                         0x600 (size before relaxing)
- *fill*         0x0000000082065d3b        0x1 
- .rodata.cst4   0x0000000082065d3c       0x78 obj/tcr_sp.o
+ *fill*         0x0000000082065ceb        0x1 
+ .rodata.cst4   0x0000000082065cec       0x78 obj/tcr_sp.o
                                          0x7c (size before relaxing)
  .rodata.str1.4
-                0x0000000082065db4      0x1af obj/language_sp.o
+                0x0000000082065d64      0x1af obj/language_sp.o
                                         0x1b0 (size before relaxing)
- *fill*         0x0000000082065f63        0x1 
- .rodata.cst4   0x0000000082065f64        0x8 obj/language_sp.o
+ *fill*         0x0000000082065f13        0x1 
+ .rodata.cst4   0x0000000082065f14        0x8 obj/language_sp.o
  .rodata.str1.4
-                0x0000000082065f6c      0x7ad obj/eventlog_sp.o
+                0x0000000082065f1c      0x7ad obj/eventlog_sp.o
                                         0x7cc (size before relaxing)
- *fill*         0x0000000082066719        0x3 
- .rodata.cst4   0x000000008206671c       0x40 obj/eventlog_sp.o
- .rodata.cst4   0x000000008206675c       0x40 obj/bsp_sp.o
+ *fill*         0x00000000820666c9        0x3 
+ .rodata.cst4   0x00000000820666cc       0x40 obj/eventlog_sp.o
+ .rodata.cst4   0x000000008206670c       0x40 obj/bsp_sp.o
                                          0x50 (size before relaxing)
  .rodata.str1.4
-                0x000000008206679c        0xe obj/sensor_sp.o
+                0x000000008206674c        0xe obj/sensor_sp.o
                                          0x10 (size before relaxing)
- *fill*         0x00000000820667aa        0x2 
+ *fill*         0x000000008206675a        0x2 
  .rodata.str1.4
-                0x00000000820667ac       0xe2 obj/x509parse_sp.o
+                0x000000008206675c       0xe2 obj/x509parse_sp.o
                                          0xe8 (size before relaxing)
- *fill*         0x000000008206688e        0x2 
+ *fill*         0x000000008206683e        0x2 
  .rodata.str1.4
-                0x0000000082066890       0x8e obj/lib_sp.o
+                0x0000000082066840       0x8e obj/lib_sp.o
                                          0x90 (size before relaxing)
- *fill*         0x000000008206691e        0x2 
- .rodata.cst4   0x0000000082066920        0xc obj/lib_sp.o
+ *fill*         0x00000000820668ce        0x2 
+ .rodata.cst4   0x00000000820668d0        0xc obj/lib_sp.o
                                          0x10 (size before relaxing)
- .rodata.cst4   0x000000008206692c        0xc obj/rtskt_sp.o
- .rodata        0x0000000082066938        0x8 obj/tcp_sp.o
-                0x0000000082066938                Default_RSV_Port
- .rodata.cst4   0x0000000082066940        0x8 obj/tcp_sp.o
+ .rodata.cst4   0x00000000820668dc        0xc obj/rtskt_sp.o
+ .rodata        0x00000000820668e8        0x8 obj/tcp_sp.o
+                0x00000000820668e8                Default_RSV_Port
+ .rodata.cst4   0x00000000820668f0        0x8 obj/tcp_sp.o
  .rodata.str1.4
-                0x0000000082066948       0x16 obj/icmp_sp.o
+                0x00000000820668f8       0x16 obj/icmp_sp.o
                                          0x18 (size before relaxing)
- *fill*         0x000000008206695e        0x2 
+ *fill*         0x000000008206690e        0x2 
  .rodata.str1.4
-                0x0000000082066960       0x15 obj/usb_sp.o
+                0x0000000082066910       0x15 obj/usb_sp.o
                                          0x30 (size before relaxing)
- *fill*         0x0000000082066975        0x3 
- .rodata        0x0000000082066978       0x6c obj/usb_sp.o
-                0x0000000082066980                RtHttpHdr
- .rodata.cst4   0x00000000820669e4        0x8 obj/usb_sp.o
- .rodata        0x00000000820669ec      0x2a4 obj/usbdesc_sp.o
-                0x00000000820669ec                disc_conf
-                0x0000000082066a78                disc_sense
-                0x0000000082066aa0                disc_info
-                0x0000000082066ac4                mode_sense
-                0x0000000082066ad8                iso_conf
-                0x0000000082066ae8                iso_toc
-                0x0000000082066b00                inquiry_data
-                0x0000000082066b6c                Device_Qualifier
-                0x0000000082066b78                str3
-                0x0000000082066bd8                str2
-                0x0000000082066bf8                str1
-                0x0000000082066c08                str0
-                0x0000000082066c0c                other_speed
-                0x0000000082066c2c                descriptors_cbi
-                0x0000000082066c54                descriptors_bulk
-                0x0000000082066c74                usb_sector_size
-                0x0000000082066c7c                device_desc
+ *fill*         0x0000000082066925        0x3 
+ .rodata        0x0000000082066928       0x6c obj/usb_sp.o
+                0x0000000082066930                RtHttpHdr
+ .rodata.cst4   0x0000000082066994        0x8 obj/usb_sp.o
+ .rodata        0x000000008206699c      0x2a4 obj/usbdesc_sp.o
+                0x000000008206699c                disc_conf
+                0x0000000082066a28                disc_sense
+                0x0000000082066a50                disc_info
+                0x0000000082066a74                mode_sense
+                0x0000000082066a88                iso_conf
+                0x0000000082066a98                iso_toc
+                0x0000000082066ab0                inquiry_data
+                0x0000000082066b1c                Device_Qualifier
+                0x0000000082066b28                str3
+                0x0000000082066b88                str2
+                0x0000000082066ba8                str1
+                0x0000000082066bb8                str0
+                0x0000000082066bbc                other_speed
+                0x0000000082066bdc                descriptors_cbi
+                0x0000000082066c04                descriptors_bulk
+                0x0000000082066c24                usb_sector_size
+                0x0000000082066c2c                device_desc
  .rodata.str1.4
-                0x0000000082066c90        0x5 obj/pldm_sp.o
+                0x0000000082066c40        0x5 obj/pldm_sp.o
                                           0x8 (size before relaxing)
- *fill*         0x0000000082066c95        0x3 
- .rodata.cst4   0x0000000082066c98        0x8 obj/pldm_sp.o
+ *fill*         0x0000000082066c45        0x3 
+ .rodata.cst4   0x0000000082066c48        0x8 obj/pldm_sp.o
  .rodata.str1.4
-                0x0000000082066ca0       0x20 obj/usbdevice_interrupt_sp.o
- .rodata.cst4   0x0000000082066cc0       0xc0 obj/usbdevice_interrupt_sp.o
+                0x0000000082066c50       0x20 obj/usbdevice_interrupt_sp.o
+ .rodata.cst4   0x0000000082066c70       0xc0 obj/usbdevice_interrupt_sp.o
                                          0xe0 (size before relaxing)
  .rodata.str1.4
-                0x0000000082066d80       0x46 obj/mmd_sp.o
+                0x0000000082066d30       0x46 obj/mmd_sp.o
                                          0x48 (size before relaxing)
- *fill*         0x0000000082066dc6        0x2 
- .rodata.cst4   0x0000000082066dc8       0x10 obj/mmd_sp.o
+ *fill*         0x0000000082066d76        0x2 
+ .rodata.cst4   0x0000000082066d78       0x10 obj/mmd_sp.o
                                          0x18 (size before relaxing)
- .rodata.cst4   0x0000000082066dd8        0x8 obj/mdio_bitbang_sp.o
+ .rodata.cst4   0x0000000082066d88        0x8 obj/mdio_bitbang_sp.o
                                           0xc (size before relaxing)
- .rodata.cst4   0x0000000082066de0        0x8 obj/testio_gpio_sp.o
+ .rodata.cst4   0x0000000082066d90        0x8 obj/testio_gpio_sp.o
                                          0x18 (size before relaxing)
  .rodata.str1.4
-                0x0000000082066de8        0xa obj/i2c_gpio_sp.o
+                0x0000000082066d98        0xa obj/i2c_gpio_sp.o
                                           0xc (size before relaxing)
- *fill*         0x0000000082066df2        0x2 
+ *fill*         0x0000000082066da2        0x2 
  .rodata.str1.4
-                0x0000000082066df4       0x68 obj/i2c_gpio_master_sp.o
- .rodata.cst4   0x0000000082066e5c        0x4 obj/i2c_gpio_master_sp.o
+                0x0000000082066da4       0x48 obj/i2c_gpio_master_sp.o
+ .rodata.cst4   0x0000000082066dec        0x4 obj/i2c_gpio_master_sp.o
                                           0x8 (size before relaxing)
  .rodata.str1.4
-                0x0000000082066e60       0x79 obj/telnet_opt.o
+                0x0000000082066df0       0x79 obj/telnet_opt.o
                                          0x7c (size before relaxing)
- *fill*         0x0000000082066ed9        0x3 
- .rodata        0x0000000082066edc       0x2c obj/telnet_opt.o
-                0x0000000082066f04                lf
+ *fill*         0x0000000082066e69        0x3 
+ .rodata        0x0000000082066e6c       0x2c obj/telnet_opt.o
+                0x0000000082066e94                lf
  .rodata.str1.4
-                0x0000000082066f08       0x62 obj/flash_opt.o
+                0x0000000082066e98       0x62 obj/flash_opt.o
                                          0x64 (size before relaxing)
- *fill*         0x0000000082066f6a        0x2 
- .rodata        0x0000000082066f6c       0x3c obj/flash_opt.o
+ *fill*         0x0000000082066efa        0x2 
+ .rodata        0x0000000082066efc       0x3c obj/flash_opt.o
  .rodata.str1.4
-                0x0000000082066fa8        0x5 obj/asf_opt.o
+                0x0000000082066f38        0x5 obj/asf_opt.o
                                           0x8 (size before relaxing)
- *fill*         0x0000000082066fad        0x3 
+ *fill*         0x0000000082066f3d        0x3 
  .rodata.str1.4
-                0x0000000082066fb0      0xa43 obj/genpage_opt.o
+                0x0000000082066f40      0xa43 obj/genpage_opt.o
                                         0xac8 (size before relaxing)
- *fill*         0x00000000820679f3        0x1 
- .rodata        0x00000000820679f4      0x55c obj/genpage_opt.o
+ *fill*         0x0000000082067983        0x1 
+ .rodata        0x0000000082067984      0x55c obj/genpage_opt.o
  .rodata.str1.4
-                0x0000000082067f50       0xcc obj/post_opt.o
+                0x0000000082067ee0       0xcc obj/post_opt.o
                                          0xe8 (size before relaxing)
- .rodata        0x000000008206801c       0x30 obj/post_opt.o
+ .rodata        0x0000000082067fac       0x30 obj/post_opt.o
  .rodata.str1.4
-                0x000000008206804c      0x1c5 obj/http_opt.o
+                0x0000000082067fdc      0x1c5 obj/http_opt.o
                                         0x1e4 (size before relaxing)
- *fill*         0x0000000082068211        0x3 
- .rodata        0x0000000082068214      0x3c4 obj/http_opt.o
-                0x0000000082068254                WebUnauthAD
-                0x00000000820682c8                WebUnauthDigest
-                0x0000000082068368                WebUnauthBasic
-                0x00000000820683e0                UnauthDigest
-                0x0000000082068490                UnauthBasic
-                0x0000000082068508                body
-                0x0000000082068570                responseHeader
+ *fill*         0x00000000820681a1        0x3 
+ .rodata        0x00000000820681a4      0x3c4 obj/http_opt.o
+                0x00000000820681e4                WebUnauthAD
+                0x0000000082068258                WebUnauthDigest
+                0x00000000820682f8                WebUnauthBasic
+                0x0000000082068370                UnauthDigest
+                0x0000000082068420                UnauthBasic
+                0x0000000082068498                body
+                0x0000000082068500                responseHeader
  .rodata.str1.4
                 0x0000000000000000      0x1c5 obj/tls_opt.o
                                           0x4 (size before relaxing)
  .rodata.str1.4
-                0x00000000820685d8      0x787 obj/htm_opt.o
+                0x0000000082068568      0x787 obj/htm_opt.o
                                         0xb9c (size before relaxing)
- *fill*         0x0000000082068d5f        0x1 
- .rodata        0x0000000082068d60     0x4cc8 obj/htm_opt.o
-                0x000000008206d6ec                rdcss
-                0x000000008206d95c                cookieHdrHtm
-                0x000000008206d9b4                headerHtm
-                0x000000008206d9f4                okPage
+ *fill*         0x0000000082068cef        0x1 
+ .rodata        0x0000000082068cf0     0x4cc8 obj/htm_opt.o
+                0x000000008206d67c                rdcss
+                0x000000008206d8ec                cookieHdrHtm
+                0x000000008206d944                headerHtm
+                0x000000008206d984                okPage
  .rodata.str1.4
-                0x000000008206da28       0xa0 obj/wcom_opt.o
+                0x000000008206d9b8       0xa0 obj/wcom_opt.o
                                          0xd0 (size before relaxing)
- .rodata        0x000000008206dac8      0x168 obj/wcom_opt.o
- .rodata        0x000000008206dc30      0x5fc obj/const.o
-                0x000000008206dd40                RMCP_IANA
-                0x000000008206dd44                asf_ctldata
-                0x000000008206dd54                asfalerts
-                0x000000008206de54                snrinfo
-                0x000000008206dea4                asf_legacy_sensor_num
-                0x000000008206dea5                asf_alerts_num
-                0x000000008206dea8                snrtbl
-                0x000000008206debc                snrstatestr
-                0x000000008206df64                pwrtbl
-                0x000000008206df84                bootopts
-                0x000000008206e17c                tcr_hsstr
-                0x000000008206e194                tcr_hslen
-                0x000000008206e198                pldmsuccessbr
-                0x000000008206e1a8                pldmsuccessbw
-                0x000000008206e1b8                MCTPVerSupport
-                0x000000008206e1cc                PLDMSNR
-                0x000000008206e1dc                RTKUDID
-                0x000000008206e1f0                macpattern
- .rodata        0x000000008206e22c       0x90 obj/hook.o
-                0x000000008206e2bc                . = ALIGN (0x4)
+ .rodata        0x000000008206da58      0x168 obj/wcom_opt.o
+ .rodata        0x000000008206dbc0      0x5fc obj/const.o
+                0x000000008206dcd0                RMCP_IANA
+                0x000000008206dcd4                asf_ctldata
+                0x000000008206dce4                asfalerts
+                0x000000008206dde4                snrinfo
+                0x000000008206de34                asf_legacy_sensor_num
+                0x000000008206de35                asf_alerts_num
+                0x000000008206de38                snrtbl
+                0x000000008206de4c                snrstatestr
+                0x000000008206def4                pwrtbl
+                0x000000008206df14                bootopts
+                0x000000008206e10c                tcr_hsstr
+                0x000000008206e124                tcr_hslen
+                0x000000008206e128                pldmsuccessbr
+                0x000000008206e138                pldmsuccessbw
+                0x000000008206e148                MCTPVerSupport
+                0x000000008206e15c                PLDMSNR
+                0x000000008206e16c                RTKUDID
+                0x000000008206e180                macpattern
+ .rodata        0x000000008206e1bc       0x90 obj/hook.o
+                0x000000008206e24c                . = ALIGN (0x4)
 
-.data           0x00000000800cbb48     0x37b4 load address 0x000000008206e2bc
-                0x00000000800cbb48                . = ALIGN (0x4)
+.data           0x00000000800cbaf8     0x37b4 load address 0x000000008206e24c
+                0x00000000800cbaf8                . = ALIGN (0x4)
  *(.data)
- .data          0x00000000800cbb48        0x0 obj/app_sp.o
- .data          0x00000000800cbb48        0x0 obj/OOBMAC_COMMON_sp.o
- .data          0x00000000800cbb48       0x20 obj/ssh_sp.o
-                0x00000000800cbb48                SSHNameList
- .data          0x00000000800cbb68     0x2b98 obj/dash_sp.o
-                0x00000000800cbb7c                e_action
-                0x00000000800cbbec                MemoryType_value
-                0x00000000800cbc54                RequestedState_value
-                0x00000000800cbc88                OperationalStatus_value
-                0x00000000800cbcd8                SoftwareElementState_value
-                0x00000000800cbce8                softidProp_class
-                0x00000000800cbd20                powMangCapProp_powChg
-                0x00000000800cbd44                power_state_value
-                0x00000000800cbd8c                sys_reqState_value
-                0x00000000800cbdc0                sys_enState_value
-                0x00000000800cbdec                compSys_Dedicated_value
-                0x00000000800cbe88                _OpaqueManagementDataService
-                0x00000000800cbec4                _OpaqueManagementData
-                0x00000000800cbf84                _RemoteServiceAccessPoint
-                0x00000000800cbffc                _RemoteAccessAvailableToElement
-                0x00000000800cc020                _BindsTo
-                0x00000000800cc044                _SoftwareInstallationService
-                0x00000000800cc080                _BIOSPassword
-                0x00000000800cc0c8                _ConcreteComponent
-                0x00000000800cc110                _SystemBIOS
-                0x00000000800cc134                _ConcreteDependency
-                0x00000000800cc158                _SAPSAPDependency
-                0x00000000800cc17c                _DHCPCapabilities
-                0x00000000800cc1c4                _USBDevice
-                0x00000000800cc218                _HostedAccessPoint
-                0x00000000800cc2a8                _ServiceAccessBySAP
-                0x00000000800cc2f0                _AssociatedCooling
-                0x00000000800cc314                _DHCPProtocolEndpoint
-                0x00000000800cc3a4                _USBTCPProtocolEndpoint
-                0x00000000800cc404                _TCPProtocolEndpoint
-                0x00000000800cc464                _Chip
-                0x00000000800cc4dc                _Slot
-                0x00000000800cc53c                _DNSProtocolEndpoint
-                0x00000000800cc590                _OperatingSystem
-                0x00000000800cc5d8                _USBRedirectionSAP
-                0x00000000800cc65c                _USBRedirectionService
-                0x00000000800cc6e0                _USBRedirectionCapabilities
-                0x00000000800cc77c                _BIOSAttribute
-                0x00000000800cc7c4                _BIOSElement
-                0x00000000800cc818                _BIOSServiceCapabilities
-                0x00000000800cc860                _BIOSService
-                0x00000000800cc89c                _TextRedirectionSAP
-                0x00000000800cc914                _TextRedirectionService
-                0x00000000800cc998                _LogEntry
-                0x00000000800cca04                _LogManagesRecord
-                0x00000000800cca28                _RecordLog
-                0x00000000800cca88                _StaticIPAssignmentSettingData
-                0x00000000800ccadc                _IPProtocolEndpoint
-                0x00000000800ccb84                _AlertIndication
-                0x00000000800ccb9c                _AssignedIdentity
-                0x00000000800ccbc0                _UserContact
-                0x00000000800ccbfc                _Identity
-                0x00000000800ccc20                _Privilege
-                0x00000000800ccc80                _Account
-                0x00000000800ccd04                _ServiceAvailableToElement
-                0x00000000800ccd28                _Realizes
-                0x00000000800ccd4c                _PhysicalAssetCapabilities
-                0x00000000800ccd7c                _Chassis
-                0x00000000800cce18                _RoleLimitedToTarget
-                0x00000000800cce3c                _Role
-                0x00000000800cce84                _RoleBasedManagementCapabilities
-                0x00000000800ccee4                _RoleBasedAuthorizationService
-                0x00000000800ccf2c                _AccountManagementCapabilities
-                0x00000000800ccf80                _AccountManagementService
-                0x00000000800ccfe0                _Container
-                0x00000000800cd004                _Card
-                0x00000000800cd088                _PhysicalMemory
-                0x00000000800cd130                _PhysicalPackage
-                0x00000000800cd148                _PhysicalElement
-                0x00000000800cd190                _PhysicalFrame
-                0x00000000800cd1a8                _PhysicalConnector
-                0x00000000800cd1c0                _PhysicalComponent
-                0x00000000800cd1e4                _PowerSupply
-                0x00000000800cd274                _AssociatedSensor
-                0x00000000800cd298                _Fan
-                0x00000000800cd334                _NumericSensor
-                0x00000000800cd4e4                _SoftwareIdentity
-                0x00000000800cd580                _OwningCollectionElement
-                0x00000000800cd5c8                _IndicationSubscription
-                0x00000000800cd5ec                _FilterCollectionSubscription
-                0x00000000800cd640                _MemberOfCollection
-                0x00000000800cd688                _ListenerDestinationWSManagement
-                0x00000000800cd6e8                _FilterCollection
-                0x00000000800cd718                _IndicationFilter
-                0x00000000800cd784                _IndicationServiceSettingData
-                0x00000000800cd7d8                _IndicationService
-                0x00000000800cd85c                _AssociatedPowerManagementService
-                0x00000000800cd8e0                _SystemPackaging
-                0x00000000800cd904                _ComputerSystemPackage
-                0x00000000800cd934                _SystemDevice
-                0x00000000800cd9e8                _ServiceAffectsElement
-                0x00000000800cdad8                _OrderedComponent
-                0x00000000800cdb08                _ElementSettingData
-                0x00000000800cdb50                _ReferencedProfile
-                0x00000000800cdb74                _ElementConformsToProfile
-                0x00000000800cdb98                _HostedService
-                0x00000000800cdc94                _PowerManagementService
-                0x00000000800cdce8                _BootServiceCapabilities
-                0x00000000800cdd30                _BootSourceSetting
-                0x00000000800cdd6c                _BootConfigSetting
-                0x00000000800cdd90                _BootService
-                0x00000000800cddd8                _CacheMemory
-                0x00000000800cde8c                _Memory
-                0x00000000800cdf40                _AssociatedCacheMemory
-                0x00000000800cdfac                _Processor
-                0x00000000800ce0b4                _ComputerSystem
-                0x00000000800ce1c8                _ManagedElement
-                0x00000000800ce1ec                _RegisteredProfile
-                0x00000000800ce240                _EnabledLogicalElementCapabilities
-                0x00000000800ce2a0                _ElementCapabilities
-                0x00000000800ce378                Ns
-                0x00000000800ce4a4                bodyelement
-                0x00000000800ce57c                inband_status
-                0x00000000800ce580                scode
-                0x00000000800ce67f                AssociatedCooling
-                0x00000000800ce680                NextInstance
-                0x00000000800ce684                PowerChangeCapabilities
-                0x00000000800ce688                request_state
-                0x00000000800ce68c                client_state
-                0x00000000800ce690                dhcp_state
-                0x00000000800ce694                enabled_state
-                0x00000000800ce698                power_state
-                0x00000000800ce69c                state
-                0x00000000800ce6a0                new_gateway
-                0x00000000800ce6b0                new_netmask
-                0x00000000800ce6c0                new_ip
-                0x00000000800ce6d0                local_gateway
-                0x00000000800ce6e0                local_netmask
-                0x00000000800ce6f0                local_ip
- .data          0x00000000800ce700       0x3c obj/client_sp.o
-                0x00000000800ce700                _EventAlertIndication
- .data          0x00000000800ce73c        0x0 obj/tcr_sp.o
- .data          0x00000000800ce73c        0x0 obj/language_sp.o
- .data          0x00000000800ce73c        0x0 obj/eventlog_sp.o
- .data          0x00000000800ce73c        0x0 obj/gmac_sp.o
- .data          0x00000000800ce73c        0x4 obj/bsp_sp.o
-                0x00000000800ce73c                BSP_CPU_DEFAULT_FREQ
- .data          0x00000000800ce740        0x2 obj/sensor_sp.o
- .data          0x00000000800ce742        0x0 obj/netlib_sp.o
- .data          0x00000000800ce742        0x0 obj/x509parse_sp.o
- *fill*         0x00000000800ce742        0x2 
- .data          0x00000000800ce744        0x8 obj/lib_sp.o
-                0x00000000800ce744                bsp_wait_cnt
-                0x00000000800ce748                m_LucidTimer
- .data          0x00000000800ce74c        0x0 obj/arp_sp.o
- .data          0x00000000800ce74c        0x0 obj/rtskt_sp.o
- .data          0x00000000800ce74c        0x0 obj/ip_sp.o
- .data          0x00000000800ce74c        0x0 obj/tcp_sp.o
- .data          0x00000000800ce74c        0x0 obj/dhcp_sp.o
- .data          0x00000000800ce74c        0x0 obj/icmp_sp.o
- .data          0x00000000800ce74c       0x54 obj/usb_sp.o
-                0x00000000800ce74c                tip
-                0x00000000800ce750                fn
- .data          0x00000000800ce7a0        0x0 obj/usb_ata_sp.o
- .data          0x00000000800ce7a0       0x4c obj/usbdesc_sp.o
-                0x00000000800ce7a0                device_report_type1
- .data          0x00000000800ce7ec        0x0 obj/udp_sp.o
- .data          0x00000000800ce7ec        0x1 obj/pldm_sp.o
- .data          0x00000000800ce7ed        0x0 obj/usbdevice_interrupt_sp.o
- .data          0x00000000800ce7ed        0x0 obj/parammd_sp.o
- .data          0x00000000800ce7ed        0x0 obj/mmd_sp.o
- .data          0x00000000800ce7ed        0x0 obj/mdio_bitbang_sp.o
- .data          0x00000000800ce7ed        0x0 obj/testio_gpio_sp.o
- .data          0x00000000800ce7ed        0x0 obj/i2c_gpio_sp.o
- *fill*         0x00000000800ce7ed        0x3 
- .data          0x00000000800ce7f0       0x10 obj/i2c_gpio_master_sp.o
-                0x00000000800ce7f0                i2c_retry_maxcnt
-                0x00000000800ce7f4                i2c_retry_period
-                0x00000000800ce7f8                max_reg_retry_cnt
-                0x00000000800ce7fc                slaveaddr
-                0x00000000800ce7fd                BitR
- .data          0x00000000800ce800        0x0 obj/init_opt.o
- .data          0x00000000800ce800      0x114 obj/telnet_opt.o
-                0x00000000800ce800                TelUnknowCMDMsg
-                0x00000000800ce814                TelHelpMsg
-                0x00000000800ce88c                TelByeByeMsg
-                0x00000000800ce898                TelLoginMsg
-                0x00000000800ce8e8                TelLoginSuccMsg
-                0x00000000800ce900                TelPwd
-                0x00000000800ce90c                TelLogin
- .data          0x00000000800ce914        0x0 obj/flash_opt.o
- .data          0x00000000800ce914        0x0 obj/asf_opt.o
- .data          0x00000000800ce914       0x84 obj/genpage_opt.o
-                0x00000000800ce914                pageFun
- .data          0x00000000800ce998      0x19c obj/post_opt.o
-                0x00000000800ce998                settingSuccess
-                0x00000000800ce9d0                IBChgIPWarrningMsg
-                0x00000000800cea14                pwdError
-                0x00000000800cea4c                invalidParameters
-                0x00000000800cea84                unKnownOperation
-                0x00000000800ceabc                echoDisable
-                0x00000000800ceaf8                echoEnable
- .data          0x00000000800ceb34        0x0 obj/http_opt.o
- .data          0x00000000800ceb34        0x0 obj/tls_opt.o
- .data          0x00000000800ceb34      0x454 obj/htm_opt.o
- .data          0x00000000800cef88        0x4 obj/wcom_opt.o
-                0x00000000800cef88                m_isUpdateSMBIOS
- .data          0x00000000800cef8c      0x370 obj/const.o
-                0x00000000800cef8c                dpdefault
- .data          0x00000000800cf2fc        0x0 obj/hook.o
+ .data          0x00000000800cbaf8        0x0 obj/app_sp.o
+ .data          0x00000000800cbaf8        0x0 obj/OOBMAC_COMMON_sp.o
+ .data          0x00000000800cbaf8       0x20 obj/ssh_sp.o
+                0x00000000800cbaf8                SSHNameList
+ .data          0x00000000800cbb18     0x2b98 obj/dash_sp.o
+                0x00000000800cbb2c                e_action
+                0x00000000800cbb9c                MemoryType_value
+                0x00000000800cbc04                RequestedState_value
+                0x00000000800cbc38                OperationalStatus_value
+                0x00000000800cbc88                SoftwareElementState_value
+                0x00000000800cbc98                softidProp_class
+                0x00000000800cbcd0                powMangCapProp_powChg
+                0x00000000800cbcf4                power_state_value
+                0x00000000800cbd3c                sys_reqState_value
+                0x00000000800cbd70                sys_enState_value
+                0x00000000800cbd9c                compSys_Dedicated_value
+                0x00000000800cbe38                _OpaqueManagementDataService
+                0x00000000800cbe74                _OpaqueManagementData
+                0x00000000800cbf34                _RemoteServiceAccessPoint
+                0x00000000800cbfac                _RemoteAccessAvailableToElement
+                0x00000000800cbfd0                _BindsTo
+                0x00000000800cbff4                _SoftwareInstallationService
+                0x00000000800cc030                _BIOSPassword
+                0x00000000800cc078                _ConcreteComponent
+                0x00000000800cc0c0                _SystemBIOS
+                0x00000000800cc0e4                _ConcreteDependency
+                0x00000000800cc108                _SAPSAPDependency
+                0x00000000800cc12c                _DHCPCapabilities
+                0x00000000800cc174                _USBDevice
+                0x00000000800cc1c8                _HostedAccessPoint
+                0x00000000800cc258                _ServiceAccessBySAP
+                0x00000000800cc2a0                _AssociatedCooling
+                0x00000000800cc2c4                _DHCPProtocolEndpoint
+                0x00000000800cc354                _USBTCPProtocolEndpoint
+                0x00000000800cc3b4                _TCPProtocolEndpoint
+                0x00000000800cc414                _Chip
+                0x00000000800cc48c                _Slot
+                0x00000000800cc4ec                _DNSProtocolEndpoint
+                0x00000000800cc540                _OperatingSystem
+                0x00000000800cc588                _USBRedirectionSAP
+                0x00000000800cc60c                _USBRedirectionService
+                0x00000000800cc690                _USBRedirectionCapabilities
+                0x00000000800cc72c                _BIOSAttribute
+                0x00000000800cc774                _BIOSElement
+                0x00000000800cc7c8                _BIOSServiceCapabilities
+                0x00000000800cc810                _BIOSService
+                0x00000000800cc84c                _TextRedirectionSAP
+                0x00000000800cc8c4                _TextRedirectionService
+                0x00000000800cc948                _LogEntry
+                0x00000000800cc9b4                _LogManagesRecord
+                0x00000000800cc9d8                _RecordLog
+                0x00000000800cca38                _StaticIPAssignmentSettingData
+                0x00000000800cca8c                _IPProtocolEndpoint
+                0x00000000800ccb34                _AlertIndication
+                0x00000000800ccb4c                _AssignedIdentity
+                0x00000000800ccb70                _UserContact
+                0x00000000800ccbac                _Identity
+                0x00000000800ccbd0                _Privilege
+                0x00000000800ccc30                _Account
+                0x00000000800cccb4                _ServiceAvailableToElement
+                0x00000000800cccd8                _Realizes
+                0x00000000800cccfc                _PhysicalAssetCapabilities
+                0x00000000800ccd2c                _Chassis
+                0x00000000800ccdc8                _RoleLimitedToTarget
+                0x00000000800ccdec                _Role
+                0x00000000800cce34                _RoleBasedManagementCapabilities
+                0x00000000800cce94                _RoleBasedAuthorizationService
+                0x00000000800ccedc                _AccountManagementCapabilities
+                0x00000000800ccf30                _AccountManagementService
+                0x00000000800ccf90                _Container
+                0x00000000800ccfb4                _Card
+                0x00000000800cd038                _PhysicalMemory
+                0x00000000800cd0e0                _PhysicalPackage
+                0x00000000800cd0f8                _PhysicalElement
+                0x00000000800cd140                _PhysicalFrame
+                0x00000000800cd158                _PhysicalConnector
+                0x00000000800cd170                _PhysicalComponent
+                0x00000000800cd194                _PowerSupply
+                0x00000000800cd224                _AssociatedSensor
+                0x00000000800cd248                _Fan
+                0x00000000800cd2e4                _NumericSensor
+                0x00000000800cd494                _SoftwareIdentity
+                0x00000000800cd530                _OwningCollectionElement
+                0x00000000800cd578                _IndicationSubscription
+                0x00000000800cd59c                _FilterCollectionSubscription
+                0x00000000800cd5f0                _MemberOfCollection
+                0x00000000800cd638                _ListenerDestinationWSManagement
+                0x00000000800cd698                _FilterCollection
+                0x00000000800cd6c8                _IndicationFilter
+                0x00000000800cd734                _IndicationServiceSettingData
+                0x00000000800cd788                _IndicationService
+                0x00000000800cd80c                _AssociatedPowerManagementService
+                0x00000000800cd890                _SystemPackaging
+                0x00000000800cd8b4                _ComputerSystemPackage
+                0x00000000800cd8e4                _SystemDevice
+                0x00000000800cd998                _ServiceAffectsElement
+                0x00000000800cda88                _OrderedComponent
+                0x00000000800cdab8                _ElementSettingData
+                0x00000000800cdb00                _ReferencedProfile
+                0x00000000800cdb24                _ElementConformsToProfile
+                0x00000000800cdb48                _HostedService
+                0x00000000800cdc44                _PowerManagementService
+                0x00000000800cdc98                _BootServiceCapabilities
+                0x00000000800cdce0                _BootSourceSetting
+                0x00000000800cdd1c                _BootConfigSetting
+                0x00000000800cdd40                _BootService
+                0x00000000800cdd88                _CacheMemory
+                0x00000000800cde3c                _Memory
+                0x00000000800cdef0                _AssociatedCacheMemory
+                0x00000000800cdf5c                _Processor
+                0x00000000800ce064                _ComputerSystem
+                0x00000000800ce178                _ManagedElement
+                0x00000000800ce19c                _RegisteredProfile
+                0x00000000800ce1f0                _EnabledLogicalElementCapabilities
+                0x00000000800ce250                _ElementCapabilities
+                0x00000000800ce328                Ns
+                0x00000000800ce454                bodyelement
+                0x00000000800ce52c                inband_status
+                0x00000000800ce530                scode
+                0x00000000800ce62f                AssociatedCooling
+                0x00000000800ce630                NextInstance
+                0x00000000800ce634                PowerChangeCapabilities
+                0x00000000800ce638                request_state
+                0x00000000800ce63c                client_state
+                0x00000000800ce640                dhcp_state
+                0x00000000800ce644                enabled_state
+                0x00000000800ce648                power_state
+                0x00000000800ce64c                state
+                0x00000000800ce650                new_gateway
+                0x00000000800ce660                new_netmask
+                0x00000000800ce670                new_ip
+                0x00000000800ce680                local_gateway
+                0x00000000800ce690                local_netmask
+                0x00000000800ce6a0                local_ip
+ .data          0x00000000800ce6b0       0x3c obj/client_sp.o
+                0x00000000800ce6b0                _EventAlertIndication
+ .data          0x00000000800ce6ec        0x0 obj/tcr_sp.o
+ .data          0x00000000800ce6ec        0x0 obj/language_sp.o
+ .data          0x00000000800ce6ec        0x0 obj/eventlog_sp.o
+ .data          0x00000000800ce6ec        0x0 obj/gmac_sp.o
+ .data          0x00000000800ce6ec        0x4 obj/bsp_sp.o
+                0x00000000800ce6ec                BSP_CPU_DEFAULT_FREQ
+ .data          0x00000000800ce6f0        0x2 obj/sensor_sp.o
+ .data          0x00000000800ce6f2        0x0 obj/netlib_sp.o
+ .data          0x00000000800ce6f2        0x0 obj/x509parse_sp.o
+ *fill*         0x00000000800ce6f2        0x2 
+ .data          0x00000000800ce6f4        0x8 obj/lib_sp.o
+                0x00000000800ce6f4                bsp_wait_cnt
+                0x00000000800ce6f8                m_LucidTimer
+ .data          0x00000000800ce6fc        0x0 obj/arp_sp.o
+ .data          0x00000000800ce6fc        0x0 obj/rtskt_sp.o
+ .data          0x00000000800ce6fc        0x0 obj/ip_sp.o
+ .data          0x00000000800ce6fc        0x0 obj/tcp_sp.o
+ .data          0x00000000800ce6fc        0x0 obj/dhcp_sp.o
+ .data          0x00000000800ce6fc        0x0 obj/icmp_sp.o
+ .data          0x00000000800ce6fc       0x54 obj/usb_sp.o
+                0x00000000800ce6fc                tip
+                0x00000000800ce700                fn
+ .data          0x00000000800ce750        0x0 obj/usb_ata_sp.o
+ .data          0x00000000800ce750       0x4c obj/usbdesc_sp.o
+                0x00000000800ce750                device_report_type1
+ .data          0x00000000800ce79c        0x0 obj/udp_sp.o
+ .data          0x00000000800ce79c        0x1 obj/pldm_sp.o
+ .data          0x00000000800ce79d        0x0 obj/usbdevice_interrupt_sp.o
+ .data          0x00000000800ce79d        0x0 obj/parammd_sp.o
+ .data          0x00000000800ce79d        0x0 obj/mmd_sp.o
+ .data          0x00000000800ce79d        0x0 obj/mdio_bitbang_sp.o
+ .data          0x00000000800ce79d        0x0 obj/testio_gpio_sp.o
+ .data          0x00000000800ce79d        0x0 obj/i2c_gpio_sp.o
+ *fill*         0x00000000800ce79d        0x3 
+ .data          0x00000000800ce7a0       0x10 obj/i2c_gpio_master_sp.o
+                0x00000000800ce7a0                i2c_retry_maxcnt
+                0x00000000800ce7a4                i2c_retry_period
+                0x00000000800ce7a8                max_reg_retry_cnt
+                0x00000000800ce7ac                slaveaddr
+                0x00000000800ce7ad                BitR
+ .data          0x00000000800ce7b0        0x0 obj/init_opt.o
+ .data          0x00000000800ce7b0      0x114 obj/telnet_opt.o
+                0x00000000800ce7b0                TelUnknowCMDMsg
+                0x00000000800ce7c4                TelHelpMsg
+                0x00000000800ce83c                TelByeByeMsg
+                0x00000000800ce848                TelLoginMsg
+                0x00000000800ce898                TelLoginSuccMsg
+                0x00000000800ce8b0                TelPwd
+                0x00000000800ce8bc                TelLogin
+ .data          0x00000000800ce8c4        0x0 obj/flash_opt.o
+ .data          0x00000000800ce8c4        0x0 obj/asf_opt.o
+ .data          0x00000000800ce8c4       0x84 obj/genpage_opt.o
+                0x00000000800ce8c4                pageFun
+ .data          0x00000000800ce948      0x19c obj/post_opt.o
+                0x00000000800ce948                settingSuccess
+                0x00000000800ce980                IBChgIPWarrningMsg
+                0x00000000800ce9c4                pwdError
+                0x00000000800ce9fc                invalidParameters
+                0x00000000800cea34                unKnownOperation
+                0x00000000800cea6c                echoDisable
+                0x00000000800ceaa8                echoEnable
+ .data          0x00000000800ceae4        0x0 obj/http_opt.o
+ .data          0x00000000800ceae4        0x0 obj/tls_opt.o
+ .data          0x00000000800ceae4      0x454 obj/htm_opt.o
+ .data          0x00000000800cef38        0x4 obj/wcom_opt.o
+                0x00000000800cef38                m_isUpdateSMBIOS
+ .data          0x00000000800cef3c      0x370 obj/const.o
+                0x00000000800cef3c                dpdefault
+ .data          0x00000000800cf2ac        0x0 obj/hook.o
  *(.sdata)
  *(.lit4)
  *(.lit8)
-                0x00000000800cf2fc                . = ALIGN (0x4)
-                0x000000008206e2bc                __data_start_lma = LOADADDR (.data)
-                0x00000000800cbb48                __data_start_vma = ADDR (.data)
+                0x00000000800cf2ac                . = ALIGN (0x4)
+                0x000000008206e24c                __data_start_lma = LOADADDR (.data)
+                0x00000000800cbaf8                __data_start_vma = ADDR (.data)
                 0x00000000000037b4                __data_size = SIZEOF (.data)
 
-.bss            0x00000000800cf2fc     0x7108 load address 0x0000000082071a70
-                0x00000000800cf2fc                __bss_start = .
+.bss            0x00000000800cf2ac     0x7108 load address 0x0000000082071a00
+                0x00000000800cf2ac                __bss_start = .
  *(.sbss)
  *(.bss)
- .bss           0x00000000800cf2fc        0x0 obj/app_sp.o
- .bss           0x00000000800cf2fc        0x0 obj/OOBMAC_COMMON_sp.o
- .bss           0x00000000800cf2fc        0x8 obj/ssh_sp.o
-                0x00000000800cf2fc                debugssh
-                0x00000000800cf300                NewSSHCli
- .bss           0x00000000800cf304      0x2fc obj/dash_sp.o
-                0x00000000800cf304                _ManagedSystemElement
-                0x00000000800cf310                AttrValBuf
-                0x00000000800cf314                OpaqueMask
-                0x00000000800cf318                AttrValOff
-                0x00000000800cf31c                m_PhyMemCIM
-                0x00000000800cf320                m_ChipCIM
-                0x00000000800cf324                m_SlotCIM
-                0x00000000800cf328                m_ChassisCIM
-                0x00000000800cf32c                m_CardCIM
-                0x00000000800cf330                m_SensorCIM
-                0x00000000800cf334                m_fanCIM
-                0x00000000800cf338                m_OperationSysCIM
-                0x00000000800cf33c                m_memoryCIM
-                0x00000000800cf340                m_processorCIM
-                0x00000000800cf344                m_biosElement
-                0x00000000800cf348                m_biosAttr
-                0x00000000800cf34c                m_softId
-                0x00000000800cf350                memuse
-                0x00000000800cf354                change_sub
-                0x00000000800cf358                LogEnd
-                0x00000000800cf35c                SetDHCP
-                0x00000000800cf35d                SelectorEnabled
-                0x00000000800cf35e                SubClassProperties
-                0x00000000800cf360                Method
-                0x00000000800cf45f                StartingBoot
-                0x00000000800cf460                p_selector
-                0x00000000800cf560                access_info
-                0x00000000800cf5e0                AllClass
-                0x00000000800cf5e4                tmp_memtail
-                0x00000000800cf5e8                tmp_memhead
-                0x00000000800cf5ec                memtail
-                0x00000000800cf5f0                memhead
- .bss           0x00000000800cf600        0x4 obj/client_sp.o
-                0x00000000800cf600                EventStartOff
- .bss           0x00000000800cf604       0x10 obj/tcr_sp.o
- .bss           0x00000000800cf614        0x0 obj/language_sp.o
- .bss           0x00000000800cf614        0x0 obj/eventlog_sp.o
- .bss           0x00000000800cf614        0x8 obj/gmac_sp.o
-                0x00000000800cf614                PCI_BRIDGE_WAIT
-                0x00000000800cf618                CMAC_STOP
- .bss           0x00000000800cf61c       0x14 obj/bsp_sp.o
-                0x00000000800cf61c                usb_pcie_wt
-                0x00000000800cf620                usb_pcie_rd
-                0x00000000800cf624                usb_mode_wt
-                0x00000000800cf628                usb_mode_rd
- .bss           0x00000000800cf630        0x4 obj/sensor_sp.o
- .bss           0x00000000800cf634        0x0 obj/netlib_sp.o
- .bss           0x00000000800cf634        0x0 obj/x509parse_sp.o
- .bss           0x00000000800cf634       0x10 obj/lib_sp.o
-                0x00000000800cf634                stop_sleep_couter
-                0x00000000800cf638                sleepControler
-                0x00000000800cf63c                last_notice_tick
-                0x00000000800cf640                idle_times
- .bss           0x00000000800cf644        0x0 obj/arp_sp.o
- .bss           0x00000000800cf644        0x0 obj/rtskt_sp.o
- .bss           0x00000000800cf644        0x0 obj/ip_sp.o
- .bss           0x00000000800cf644        0x0 obj/tcp_sp.o
- .bss           0x00000000800cf644        0x0 obj/dhcp_sp.o
- .bss           0x00000000800cf644        0x0 obj/icmp_sp.o
- .bss           0x00000000800cf644        0xc obj/usb_sp.o
- .bss           0x00000000800cf650        0x2 obj/usb_ata_sp.o
- .bss           0x00000000800cf652        0x0 obj/usbdesc_sp.o
- .bss           0x00000000800cf652        0x0 obj/udp_sp.o
- *fill*         0x00000000800cf652        0x2 
- .bss           0x00000000800cf654       0x30 obj/pldm_sp.o
- .bss           0x00000000800cf684       0x18 obj/usbdevice_interrupt_sp.o
- .bss           0x00000000800cf69c        0x0 obj/parammd_sp.o
- .bss           0x00000000800cf69c        0x0 obj/mmd_sp.o
- .bss           0x00000000800cf69c        0x0 obj/mdio_bitbang_sp.o
- .bss           0x00000000800cf69c        0x0 obj/testio_gpio_sp.o
- .bss           0x00000000800cf69c        0x0 obj/i2c_gpio_sp.o
- .bss           0x00000000800cf69c        0x2 obj/i2c_gpio_master_sp.o
-                0x00000000800cf69c                BitW
-                0x00000000800cf69d                started
- .bss           0x00000000800cf69e        0x0 obj/init_opt.o
- .bss           0x00000000800cf69e        0x6 obj/telnet_opt.o
-                0x00000000800cf69e                NewTelCli
- .bss           0x00000000800cf6a4        0x0 obj/flash_opt.o
- .bss           0x00000000800cf6a4        0x0 obj/asf_opt.o
- .bss           0x00000000800cf6a4        0x0 obj/genpage_opt.o
- .bss           0x00000000800cf6a4        0x0 obj/post_opt.o
- .bss           0x00000000800cf6a4        0x0 obj/http_opt.o
- .bss           0x00000000800cf6a4        0x4 obj/tls_opt.o
- .bss           0x00000000800cf6a8        0x4 obj/htm_opt.o
-                0x00000000800cf6a8                COOKIE_Idx
- .bss           0x00000000800cf6ac        0x0 obj/wcom_opt.o
- .bss           0x00000000800cf6ac        0x0 obj/const.o
- .bss           0x00000000800cf6ac        0x0 obj/hook.o
+ .bss           0x00000000800cf2ac        0x0 obj/app_sp.o
+ .bss           0x00000000800cf2ac        0x0 obj/OOBMAC_COMMON_sp.o
+ .bss           0x00000000800cf2ac        0x8 obj/ssh_sp.o
+                0x00000000800cf2ac                debugssh
+                0x00000000800cf2b0                NewSSHCli
+ .bss           0x00000000800cf2b4      0x2fc obj/dash_sp.o
+                0x00000000800cf2b4                _ManagedSystemElement
+                0x00000000800cf2c0                AttrValBuf
+                0x00000000800cf2c4                OpaqueMask
+                0x00000000800cf2c8                AttrValOff
+                0x00000000800cf2cc                m_PhyMemCIM
+                0x00000000800cf2d0                m_ChipCIM
+                0x00000000800cf2d4                m_SlotCIM
+                0x00000000800cf2d8                m_ChassisCIM
+                0x00000000800cf2dc                m_CardCIM
+                0x00000000800cf2e0                m_SensorCIM
+                0x00000000800cf2e4                m_fanCIM
+                0x00000000800cf2e8                m_OperationSysCIM
+                0x00000000800cf2ec                m_memoryCIM
+                0x00000000800cf2f0                m_processorCIM
+                0x00000000800cf2f4                m_biosElement
+                0x00000000800cf2f8                m_biosAttr
+                0x00000000800cf2fc                m_softId
+                0x00000000800cf300                memuse
+                0x00000000800cf304                change_sub
+                0x00000000800cf308                LogEnd
+                0x00000000800cf30c                SetDHCP
+                0x00000000800cf30d                SelectorEnabled
+                0x00000000800cf30e                SubClassProperties
+                0x00000000800cf310                Method
+                0x00000000800cf40f                StartingBoot
+                0x00000000800cf410                p_selector
+                0x00000000800cf510                access_info
+                0x00000000800cf590                AllClass
+                0x00000000800cf594                tmp_memtail
+                0x00000000800cf598                tmp_memhead
+                0x00000000800cf59c                memtail
+                0x00000000800cf5a0                memhead
+ .bss           0x00000000800cf5b0        0x4 obj/client_sp.o
+                0x00000000800cf5b0                EventStartOff
+ .bss           0x00000000800cf5b4       0x10 obj/tcr_sp.o
+ .bss           0x00000000800cf5c4        0x0 obj/language_sp.o
+ .bss           0x00000000800cf5c4        0x0 obj/eventlog_sp.o
+ .bss           0x00000000800cf5c4        0x8 obj/gmac_sp.o
+                0x00000000800cf5c4                PCI_BRIDGE_WAIT
+                0x00000000800cf5c8                CMAC_STOP
+ .bss           0x00000000800cf5cc       0x14 obj/bsp_sp.o
+                0x00000000800cf5cc                usb_pcie_wt
+                0x00000000800cf5d0                usb_pcie_rd
+                0x00000000800cf5d4                usb_mode_wt
+                0x00000000800cf5d8                usb_mode_rd
+ .bss           0x00000000800cf5e0        0x4 obj/sensor_sp.o
+ .bss           0x00000000800cf5e4        0x0 obj/netlib_sp.o
+ .bss           0x00000000800cf5e4        0x0 obj/x509parse_sp.o
+ .bss           0x00000000800cf5e4       0x10 obj/lib_sp.o
+                0x00000000800cf5e4                stop_sleep_couter
+                0x00000000800cf5e8                sleepControler
+                0x00000000800cf5ec                last_notice_tick
+                0x00000000800cf5f0                idle_times
+ .bss           0x00000000800cf5f4        0x0 obj/arp_sp.o
+ .bss           0x00000000800cf5f4        0x0 obj/rtskt_sp.o
+ .bss           0x00000000800cf5f4        0x0 obj/ip_sp.o
+ .bss           0x00000000800cf5f4        0x0 obj/tcp_sp.o
+ .bss           0x00000000800cf5f4        0x0 obj/dhcp_sp.o
+ .bss           0x00000000800cf5f4        0x0 obj/icmp_sp.o
+ .bss           0x00000000800cf5f4        0xc obj/usb_sp.o
+ .bss           0x00000000800cf600        0x2 obj/usb_ata_sp.o
+ .bss           0x00000000800cf602        0x0 obj/usbdesc_sp.o
+ .bss           0x00000000800cf602        0x0 obj/udp_sp.o
+ *fill*         0x00000000800cf602        0x2 
+ .bss           0x00000000800cf604       0x30 obj/pldm_sp.o
+ .bss           0x00000000800cf634       0x18 obj/usbdevice_interrupt_sp.o
+ .bss           0x00000000800cf64c        0x0 obj/parammd_sp.o
+ .bss           0x00000000800cf64c        0x0 obj/mmd_sp.o
+ .bss           0x00000000800cf64c        0x0 obj/mdio_bitbang_sp.o
+ .bss           0x00000000800cf64c        0x0 obj/testio_gpio_sp.o
+ .bss           0x00000000800cf64c        0x0 obj/i2c_gpio_sp.o
+ .bss           0x00000000800cf64c        0x2 obj/i2c_gpio_master_sp.o
+                0x00000000800cf64c                BitW
+                0x00000000800cf64d                started
+ .bss           0x00000000800cf64e        0x0 obj/init_opt.o
+ .bss           0x00000000800cf64e        0x6 obj/telnet_opt.o
+                0x00000000800cf64e                NewTelCli
+ .bss           0x00000000800cf654        0x0 obj/flash_opt.o
+ .bss           0x00000000800cf654        0x0 obj/asf_opt.o
+ .bss           0x00000000800cf654        0x0 obj/genpage_opt.o
+ .bss           0x00000000800cf654        0x0 obj/post_opt.o
+ .bss           0x00000000800cf654        0x0 obj/http_opt.o
+ .bss           0x00000000800cf654        0x4 obj/tls_opt.o
+ .bss           0x00000000800cf658        0x4 obj/htm_opt.o
+                0x00000000800cf658                COOKIE_Idx
+ .bss           0x00000000800cf65c        0x0 obj/wcom_opt.o
+ .bss           0x00000000800cf65c        0x0 obj/const.o
+ .bss           0x00000000800cf65c        0x0 obj/hook.o
  *(.scommon)
  *(COMMON)
- COMMON         0x00000000800cf6ac     0x5a00 obj/app_sp.o
-                0x00000000800cf6ac                IndicationStk
-                0x00000000800cfeac                DHCPv4Stk
-                0x00000000800d02ac                TaskSMBUSLOGStk
-                0x00000000800d0aac                TaskSNRReadStk
-                0x00000000800d0eac                TCPTimerStk
-                0x00000000800d14ac                TelnetSrvStk
-                0x00000000800d18ac                TaskWSMANTLSStk
-                0x00000000800d22ac                TaskWSMANStk
-                0x00000000800d2cac                TaskTCPStk
-                0x00000000800d3aac                TaskSMBUSStk
-                0x00000000800d3eac                AppTaskStartStk
-                0x00000000800d42ac                OOBResponseStk
-                0x00000000800d46ac                TaskUSBStk
-                0x00000000800d4cac                TaskFlashStk
- COMMON         0x00000000800d50ac        0x4 obj/OOBMAC_COMMON_sp.o
-                0x00000000800d50ac                cpu_sr
- COMMON         0x00000000800d50b0      0x388 obj/dash_sp.o
-                0x00000000800d50b0                m_dashPtype
-                0x00000000800d50b4                xuuid
-                0x00000000800d50d4                Role
-                0x00000000800d5154                m_processorInstance
-                0x00000000800d5168                current_state
-                0x00000000800d5178                m_biosAttrInstance
-                0x00000000800d51a0                m_biosEleInstance
-                0x00000000800d51b4                health_state
-                0x00000000800d51c4                currentPort
-                0x00000000800d51c6                new_power
-                0x00000000800d51c8                m_swIdInstance
-                0x00000000800d522c                m_ChipInstance
-                0x00000000800d5240                m_CardInstance
-                0x00000000800d5254                ResultRole
-                0x00000000800d52d4                m_ChassisInstance
-                0x00000000800d52e8                to
-                0x00000000800d52ec                m_SlotInstance
-                0x00000000800d5314                m_sensorInstance
-                0x00000000800d5328                m_memInstance
-                0x00000000800d533c                sk
-                0x00000000800d5340                bind_port
-                0x00000000800d5344                m_PhyMemInstance
-                0x00000000800d536c                privilege
-                0x00000000800d538c                boot_seq
-                0x00000000800d539c                ResourceURI
-                0x00000000800d541c                PLDMptr
-                0x00000000800d5420                OpaqueBuf
-                0x00000000800d5424                m_fanInstance
- COMMON         0x00000000800d5438       0x70 obj/client_sp.o
-                0x00000000800d5438                EData
-                0x00000000800d543c                dest
-                0x00000000800d544c                c_subhead
-                0x00000000800d5450                source
-                0x00000000800d5460                uri
-                0x00000000800d54a0                buf
-                0x00000000800d54a4                port
- COMMON         0x00000000800d54a8       0xc8 obj/language_sp.o
-                0x00000000800d54a8                s_eventLog
-                0x00000000800d54ac                s_matchCondition_f
-                0x00000000800d54b0                s_startxxx_f
-                0x00000000800d54b4                s_gigaEthControl
-                0x00000000800d54b8                s_opSystem
-                0x00000000800d54bc                s_dashtech
-                0x00000000800d54c0                s_about_f
-                0x00000000800d54c4                s_networkSetting
-                0x00000000800d54c8                s_opSystem_f
-                0x00000000800d54cc                s_serviceSetting_f
-                0x00000000800d54d0                s_matchCondition
-                0x00000000800d54d4                s_fan
-                0x00000000800d54d8                s_mailAccount
-                0x00000000800d54dc                s_realtek
-                0x00000000800d54e0                s_eventLog_f
-                0x00000000800d54e4                s_asset
-                0x00000000800d54e8                s_bios_f
-                0x00000000800d54ec                s_realtek_f
-                0x00000000800d54f0                s_sensorstring_f
-                0x00000000800d54f4                s_startxxx
-                0x00000000800d54f8                s_memDevice_f
-                0x00000000800d54fc                s_cpu_f
-                0x00000000800d5500                s_about
-                0x00000000800d5504                s_realtekCop_f
-                0x00000000800d5508                s_memDevice
-                0x00000000800d550c                s_asset_f
-                0x00000000800d5510                s_welcome_f
-                0x00000000800d5514                s_dashtech_f
-                0x00000000800d5518                s_welstr_f
-                0x00000000800d551c                s_computerSys_f
-                0x00000000800d5520                s_networkSetting_f
-                0x00000000800d5524                s_mailWakeup
-                0x00000000800d5528                s_mailWakeup_f
-                0x00000000800d552c                s_softwIdentity
-                0x00000000800d5530                s_cpu
-                0x00000000800d5534                s_systemInfo_f
-                0x00000000800d5538                s_sensorstring
-                0x00000000800d553c                s_remoteControl
-                0x00000000800d5540                s_gigaEthControl_f
-                0x00000000800d5544                s_welcome
-                0x00000000800d5548                s_mailAccount_f
-                0x00000000800d554c                s_bios
-                0x00000000800d5550                s_serviceSetting
-                0x00000000800d5554                s_systemInfo
-                0x00000000800d5558                s_welstr
-                0x00000000800d555c                s_computerSys
-                0x00000000800d5560                s_realtekCop
-                0x00000000800d5564                s_fan_f
-                0x00000000800d5568                s_remoteControl_f
-                0x00000000800d556c                s_softwIdentity_f
- COMMON         0x00000000800d5570        0xc obj/gmac_sp.o
-                0x00000000800d5570                RISC_ACC_STATUS
-                0x00000000800d5574                RISC_ACC_BYTEEN
-                0x00000000800d5578                RISC_RW_SEL
- COMMON         0x00000000800d557c       0xc0 obj/bsp_sp.o
-                0x00000000800d557c                TCRMsg
-                0x00000000800d55fc                USBMsg
- COMMON         0x00000000800d563c       0x7c obj/lib_sp.o
-                0x00000000800d563c                mLanguageType
-                0x00000000800d5640                dirty_ext
- COMMON         0x00000000800d56b8        0xc obj/usb_sp.o
-                0x00000000800d56b8                usbSrv
-                0x00000000800d56bc                USBQ
-                0x00000000800d56c0                USBTxSem
- COMMON         0x00000000800d56c4        0x9 obj/usb_ata_sp.o
-                0x00000000800d56c4                lcErr
-                0x00000000800d56c8                usbcs
-                0x00000000800d56cc                lc
- *fill*         0x00000000800d56cd        0x3 
- COMMON         0x00000000800d56d0      0x120 obj/usbdesc_sp.o
-                0x00000000800d56d0                usbcb
- COMMON         0x00000000800d57f0        0x4 obj/mmd_sp.o
-                0x00000000800d57f0                Freq_MMD
- COMMON         0x00000000800d57f4        0x4 obj/testio_gpio_sp.o
-                0x00000000800d57f4                Freq_TESTIO
- COMMON         0x00000000800d57f8       0x80 obj/i2c_gpio_master_sp.o
-                0x00000000800d57f8                read_data
- COMMON         0x00000000800d5878      0xa04 obj/telnet_opt.o
-                0x00000000800d5878                uInfo
-                0x00000000800d587c                TelnetClientStk
- COMMON         0x00000000800d627c        0x4 obj/flash_opt.o
-                0x00000000800d627c                m_whocallSMBIOS
- COMMON         0x00000000800d6280        0x4 obj/asf_opt.o
-                0x00000000800d6280                asfconfig
- COMMON         0x00000000800d6284      0x16c obj/http_opt.o
-                0x00000000800d6284                m_httpAuthcredential
-                0x00000000800d63ec                WebSem
- COMMON         0x00000000800d63f0        0xc obj/htm_opt.o
-                0x00000000800d63f0                COOKIE_ID
- COMMON         0x00000000800d63fc        0x8 obj/wcom_opt.o
-                0x00000000800d63fc                m_CalChksum
-                0x00000000800d6400                m_ShouldChksum
- COMMON         0x00000000800d6404        0x0 obj/const.o
-                0x00000000800d6404                . = ALIGN (0x4)
-                0x00000000800d6404                __bss_end = .
+ COMMON         0x00000000800cf65c     0x5a00 obj/app_sp.o
+                0x00000000800cf65c                IndicationStk
+                0x00000000800cfe5c                DHCPv4Stk
+                0x00000000800d025c                TaskSMBUSLOGStk
+                0x00000000800d0a5c                TaskSNRReadStk
+                0x00000000800d0e5c                TCPTimerStk
+                0x00000000800d145c                TelnetSrvStk
+                0x00000000800d185c                TaskWSMANTLSStk
+                0x00000000800d225c                TaskWSMANStk
+                0x00000000800d2c5c                TaskTCPStk
+                0x00000000800d3a5c                TaskSMBUSStk
+                0x00000000800d3e5c                AppTaskStartStk
+                0x00000000800d425c                OOBResponseStk
+                0x00000000800d465c                TaskUSBStk
+                0x00000000800d4c5c                TaskFlashStk
+ COMMON         0x00000000800d505c        0x4 obj/OOBMAC_COMMON_sp.o
+                0x00000000800d505c                cpu_sr
+ COMMON         0x00000000800d5060      0x388 obj/dash_sp.o
+                0x00000000800d5060                m_dashPtype
+                0x00000000800d5064                xuuid
+                0x00000000800d5084                Role
+                0x00000000800d5104                m_processorInstance
+                0x00000000800d5118                current_state
+                0x00000000800d5128                m_biosAttrInstance
+                0x00000000800d5150                m_biosEleInstance
+                0x00000000800d5164                health_state
+                0x00000000800d5174                currentPort
+                0x00000000800d5176                new_power
+                0x00000000800d5178                m_swIdInstance
+                0x00000000800d51dc                m_ChipInstance
+                0x00000000800d51f0                m_CardInstance
+                0x00000000800d5204                ResultRole
+                0x00000000800d5284                m_ChassisInstance
+                0x00000000800d5298                to
+                0x00000000800d529c                m_SlotInstance
+                0x00000000800d52c4                m_sensorInstance
+                0x00000000800d52d8                m_memInstance
+                0x00000000800d52ec                sk
+                0x00000000800d52f0                bind_port
+                0x00000000800d52f4                m_PhyMemInstance
+                0x00000000800d531c                privilege
+                0x00000000800d533c                boot_seq
+                0x00000000800d534c                ResourceURI
+                0x00000000800d53cc                PLDMptr
+                0x00000000800d53d0                OpaqueBuf
+                0x00000000800d53d4                m_fanInstance
+ COMMON         0x00000000800d53e8       0x70 obj/client_sp.o
+                0x00000000800d53e8                EData
+                0x00000000800d53ec                dest
+                0x00000000800d53fc                c_subhead
+                0x00000000800d5400                source
+                0x00000000800d5410                uri
+                0x00000000800d5450                buf
+                0x00000000800d5454                port
+ COMMON         0x00000000800d5458       0xc8 obj/language_sp.o
+                0x00000000800d5458                s_eventLog
+                0x00000000800d545c                s_matchCondition_f
+                0x00000000800d5460                s_startxxx_f
+                0x00000000800d5464                s_gigaEthControl
+                0x00000000800d5468                s_opSystem
+                0x00000000800d546c                s_dashtech
+                0x00000000800d5470                s_about_f
+                0x00000000800d5474                s_networkSetting
+                0x00000000800d5478                s_opSystem_f
+                0x00000000800d547c                s_serviceSetting_f
+                0x00000000800d5480                s_matchCondition
+                0x00000000800d5484                s_fan
+                0x00000000800d5488                s_mailAccount
+                0x00000000800d548c                s_realtek
+                0x00000000800d5490                s_eventLog_f
+                0x00000000800d5494                s_asset
+                0x00000000800d5498                s_bios_f
+                0x00000000800d549c                s_realtek_f
+                0x00000000800d54a0                s_sensorstring_f
+                0x00000000800d54a4                s_startxxx
+                0x00000000800d54a8                s_memDevice_f
+                0x00000000800d54ac                s_cpu_f
+                0x00000000800d54b0                s_about
+                0x00000000800d54b4                s_realtekCop_f
+                0x00000000800d54b8                s_memDevice
+                0x00000000800d54bc                s_asset_f
+                0x00000000800d54c0                s_welcome_f
+                0x00000000800d54c4                s_dashtech_f
+                0x00000000800d54c8                s_welstr_f
+                0x00000000800d54cc                s_computerSys_f
+                0x00000000800d54d0                s_networkSetting_f
+                0x00000000800d54d4                s_mailWakeup
+                0x00000000800d54d8                s_mailWakeup_f
+                0x00000000800d54dc                s_softwIdentity
+                0x00000000800d54e0                s_cpu
+                0x00000000800d54e4                s_systemInfo_f
+                0x00000000800d54e8                s_sensorstring
+                0x00000000800d54ec                s_remoteControl
+                0x00000000800d54f0                s_gigaEthControl_f
+                0x00000000800d54f4                s_welcome
+                0x00000000800d54f8                s_mailAccount_f
+                0x00000000800d54fc                s_bios
+                0x00000000800d5500                s_serviceSetting
+                0x00000000800d5504                s_systemInfo
+                0x00000000800d5508                s_welstr
+                0x00000000800d550c                s_computerSys
+                0x00000000800d5510                s_realtekCop
+                0x00000000800d5514                s_fan_f
+                0x00000000800d5518                s_remoteControl_f
+                0x00000000800d551c                s_softwIdentity_f
+ COMMON         0x00000000800d5520        0xc obj/gmac_sp.o
+                0x00000000800d5520                RISC_ACC_STATUS
+                0x00000000800d5524                RISC_ACC_BYTEEN
+                0x00000000800d5528                RISC_RW_SEL
+ COMMON         0x00000000800d552c       0xc0 obj/bsp_sp.o
+                0x00000000800d552c                TCRMsg
+                0x00000000800d55ac                USBMsg
+ COMMON         0x00000000800d55ec       0x7c obj/lib_sp.o
+                0x00000000800d55ec                mLanguageType
+                0x00000000800d55f0                dirty_ext
+ COMMON         0x00000000800d5668        0xc obj/usb_sp.o
+                0x00000000800d5668                usbSrv
+                0x00000000800d566c                USBQ
+                0x00000000800d5670                USBTxSem
+ COMMON         0x00000000800d5674        0x9 obj/usb_ata_sp.o
+                0x00000000800d5674                lcErr
+                0x00000000800d5678                usbcs
+                0x00000000800d567c                lc
+ *fill*         0x00000000800d567d        0x3 
+ COMMON         0x00000000800d5680      0x120 obj/usbdesc_sp.o
+                0x00000000800d5680                usbcb
+ COMMON         0x00000000800d57a0        0x4 obj/mmd_sp.o
+                0x00000000800d57a0                Freq_MMD
+ COMMON         0x00000000800d57a4        0x4 obj/testio_gpio_sp.o
+                0x00000000800d57a4                Freq_TESTIO
+ COMMON         0x00000000800d57a8       0x80 obj/i2c_gpio_master_sp.o
+                0x00000000800d57a8                read_data
+ COMMON         0x00000000800d5828      0xa04 obj/telnet_opt.o
+                0x00000000800d5828                uInfo
+                0x00000000800d582c                TelnetClientStk
+ COMMON         0x00000000800d622c        0x4 obj/flash_opt.o
+                0x00000000800d622c                m_whocallSMBIOS
+ COMMON         0x00000000800d6230        0x4 obj/asf_opt.o
+                0x00000000800d6230                asfconfig
+ COMMON         0x00000000800d6234      0x16c obj/http_opt.o
+                0x00000000800d6234                m_httpAuthcredential
+                0x00000000800d639c                WebSem
+ COMMON         0x00000000800d63a0        0xc obj/htm_opt.o
+                0x00000000800d63a0                COOKIE_ID
+ COMMON         0x00000000800d63ac        0x8 obj/wcom_opt.o
+                0x00000000800d63ac                m_CalChksum
+                0x00000000800d63b0                m_ShouldChksum
+ COMMON         0x00000000800d63b4        0x0 obj/const.o
+                0x00000000800d63b4                . = ALIGN (0x4)
+                0x00000000800d63b4                __bss_end = .
 
 .eh_frame
  *(.eh_frame)
@@ -1702,7 +1704,7 @@ LOAD obj/hook.o
 .reginfo        0x0000000000000000       0x18
  .reginfo       0x0000000000000000       0x18 obj/app_sp.o
 
-.pdr            0x0000000000000000     0x4900
+.pdr            0x0000000000000000     0x4940
  .pdr           0x0000000000000000       0xc0 obj/app_sp.o
  .pdr           0x00000000000000c0      0x120 obj/OOBMAC_COMMON_sp.o
  .pdr           0x00000000000001e0      0x380 obj/ssh_sp.o
@@ -1734,19 +1736,19 @@ LOAD obj/hook.o
  .pdr           0x0000000000002ee0      0x180 obj/mdio_bitbang_sp.o
  .pdr           0x0000000000003060      0x400 obj/testio_gpio_sp.o
  .pdr           0x0000000000003460      0x220 obj/i2c_gpio_sp.o
- .pdr           0x0000000000003680      0x240 obj/i2c_gpio_master_sp.o
- .pdr           0x00000000000038c0       0x60 obj/init_opt.o
- .pdr           0x0000000000003920      0x2a0 obj/telnet_opt.o
- .pdr           0x0000000000003bc0       0x40 obj/flash_opt.o
- .pdr           0x0000000000003c00       0x80 obj/asf_opt.o
- .pdr           0x0000000000003c80      0x1e0 obj/genpage_opt.o
- .pdr           0x0000000000003e60      0x120 obj/post_opt.o
- .pdr           0x0000000000003f80      0x220 obj/http_opt.o
- .pdr           0x00000000000041a0      0x360 obj/tls_opt.o
- .pdr           0x0000000000004500      0x3c0 obj/htm_opt.o
- .pdr           0x00000000000048c0       0x40 obj/wcom_opt.o
- .pdr           0x0000000000004900        0x0 obj/const.o
- .pdr           0x0000000000004900        0x0 obj/hook.o
+ .pdr           0x0000000000003680      0x280 obj/i2c_gpio_master_sp.o
+ .pdr           0x0000000000003900       0x60 obj/init_opt.o
+ .pdr           0x0000000000003960      0x2a0 obj/telnet_opt.o
+ .pdr           0x0000000000003c00       0x40 obj/flash_opt.o
+ .pdr           0x0000000000003c40       0x80 obj/asf_opt.o
+ .pdr           0x0000000000003cc0      0x1e0 obj/genpage_opt.o
+ .pdr           0x0000000000003ea0      0x120 obj/post_opt.o
+ .pdr           0x0000000000003fc0      0x220 obj/http_opt.o
+ .pdr           0x00000000000041e0      0x360 obj/tls_opt.o
+ .pdr           0x0000000000004540      0x3c0 obj/htm_opt.o
+ .pdr           0x0000000000004900       0x40 obj/wcom_opt.o
+ .pdr           0x0000000000004940        0x0 obj/const.o
+ .pdr           0x0000000000004940        0x0 obj/hook.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
@@ -1945,7 +1947,7 @@ LOAD obj/hook.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000    0x6ca71
+.debug_info     0x0000000000000000    0x6cb1a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x2237 obj/app_sp.o
  .debug_info    0x0000000000002237      0x8ba obj/OOBMAC_COMMON_sp.o
@@ -1978,21 +1980,21 @@ LOAD obj/hook.o
  .debug_info    0x0000000000043850      0x9b2 obj/mdio_bitbang_sp.o
  .debug_info    0x0000000000044202     0x1f72 obj/testio_gpio_sp.o
  .debug_info    0x0000000000046174      0xfe1 obj/i2c_gpio_sp.o
- .debug_info    0x0000000000047155     0x10f6 obj/i2c_gpio_master_sp.o
- .debug_info    0x000000000004824b     0x12d6 obj/init_opt.o
- .debug_info    0x0000000000049521     0x3c9a obj/telnet_opt.o
- .debug_info    0x000000000004d1bb     0x1194 obj/flash_opt.o
- .debug_info    0x000000000004e34f     0x1a97 obj/asf_opt.o
- .debug_info    0x000000000004fde6     0x2639 obj/genpage_opt.o
- .debug_info    0x000000000005241f     0x3c61 obj/post_opt.o
- .debug_info    0x0000000000056080     0x4581 obj/http_opt.o
- .debug_info    0x000000000005a601     0x4158 obj/tls_opt.o
- .debug_info    0x000000000005e759     0x9082 obj/htm_opt.o
- .debug_info    0x00000000000677db     0x307e obj/wcom_opt.o
- .debug_info    0x000000000006a859     0x208d obj/const.o
- .debug_info    0x000000000006c8e6      0x18b obj/hook.o
+ .debug_info    0x0000000000047155     0x119f obj/i2c_gpio_master_sp.o
+ .debug_info    0x00000000000482f4     0x12d6 obj/init_opt.o
+ .debug_info    0x00000000000495ca     0x3c9a obj/telnet_opt.o
+ .debug_info    0x000000000004d264     0x1194 obj/flash_opt.o
+ .debug_info    0x000000000004e3f8     0x1a97 obj/asf_opt.o
+ .debug_info    0x000000000004fe8f     0x2639 obj/genpage_opt.o
+ .debug_info    0x00000000000524c8     0x3c61 obj/post_opt.o
+ .debug_info    0x0000000000056129     0x4581 obj/http_opt.o
+ .debug_info    0x000000000005a6aa     0x4158 obj/tls_opt.o
+ .debug_info    0x000000000005e802     0x9082 obj/htm_opt.o
+ .debug_info    0x0000000000067884     0x307e obj/wcom_opt.o
+ .debug_info    0x000000000006a902     0x208d obj/const.o
+ .debug_info    0x000000000006c98f      0x18b obj/hook.o
 
-.debug_abbrev   0x0000000000000000     0x9717
+.debug_abbrev   0x0000000000000000     0x9728
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x3b9 obj/app_sp.o
  .debug_abbrev  0x00000000000003b9      0x215 obj/OOBMAC_COMMON_sp.o
@@ -2025,21 +2027,21 @@ LOAD obj/hook.o
  .debug_abbrev  0x0000000000005ecb      0x2dd obj/mdio_bitbang_sp.o
  .debug_abbrev  0x00000000000061a8      0x453 obj/testio_gpio_sp.o
  .debug_abbrev  0x00000000000065fb      0x324 obj/i2c_gpio_sp.o
- .debug_abbrev  0x000000000000691f      0x3a1 obj/i2c_gpio_master_sp.o
- .debug_abbrev  0x0000000000006cc0      0x2d9 obj/init_opt.o
- .debug_abbrev  0x0000000000006f99      0x52d obj/telnet_opt.o
- .debug_abbrev  0x00000000000074c6      0x323 obj/flash_opt.o
- .debug_abbrev  0x00000000000077e9      0x2f3 obj/asf_opt.o
- .debug_abbrev  0x0000000000007adc      0x2e7 obj/genpage_opt.o
- .debug_abbrev  0x0000000000007dc3      0x4eb obj/post_opt.o
- .debug_abbrev  0x00000000000082ae      0x446 obj/http_opt.o
- .debug_abbrev  0x00000000000086f4      0x50c obj/tls_opt.o
- .debug_abbrev  0x0000000000008c00      0x447 obj/htm_opt.o
- .debug_abbrev  0x0000000000009047      0x3da obj/wcom_opt.o
- .debug_abbrev  0x0000000000009421      0x25a obj/const.o
- .debug_abbrev  0x000000000000967b       0x9c obj/hook.o
+ .debug_abbrev  0x000000000000691f      0x3b2 obj/i2c_gpio_master_sp.o
+ .debug_abbrev  0x0000000000006cd1      0x2d9 obj/init_opt.o
+ .debug_abbrev  0x0000000000006faa      0x52d obj/telnet_opt.o
+ .debug_abbrev  0x00000000000074d7      0x323 obj/flash_opt.o
+ .debug_abbrev  0x00000000000077fa      0x2f3 obj/asf_opt.o
+ .debug_abbrev  0x0000000000007aed      0x2e7 obj/genpage_opt.o
+ .debug_abbrev  0x0000000000007dd4      0x4eb obj/post_opt.o
+ .debug_abbrev  0x00000000000082bf      0x446 obj/http_opt.o
+ .debug_abbrev  0x0000000000008705      0x50c obj/tls_opt.o
+ .debug_abbrev  0x0000000000008c11      0x447 obj/htm_opt.o
+ .debug_abbrev  0x0000000000009058      0x3da obj/wcom_opt.o
+ .debug_abbrev  0x0000000000009432      0x25a obj/const.o
+ .debug_abbrev  0x000000000000968c       0x9c obj/hook.o
 
-.debug_line     0x0000000000000000     0xc40f
+.debug_line     0x0000000000000000     0xc411
  *(.debug_line)
  .debug_line    0x0000000000000000      0x19d obj/app_sp.o
  .debug_line    0x000000000000019d      0x1c3 obj/OOBMAC_COMMON_sp.o
@@ -2072,21 +2074,21 @@ LOAD obj/hook.o
  .debug_line    0x0000000000008040      0x183 obj/mdio_bitbang_sp.o
  .debug_line    0x00000000000081c3      0x464 obj/testio_gpio_sp.o
  .debug_line    0x0000000000008627      0x329 obj/i2c_gpio_sp.o
- .debug_line    0x0000000000008950      0x2c1 obj/i2c_gpio_master_sp.o
- .debug_line    0x0000000000008c11      0x1cd obj/init_opt.o
- .debug_line    0x0000000000008dde      0x61a obj/telnet_opt.o
- .debug_line    0x00000000000093f8      0x35a obj/flash_opt.o
- .debug_line    0x0000000000009752      0x2c7 obj/asf_opt.o
- .debug_line    0x0000000000009a19      0x49c obj/genpage_opt.o
- .debug_line    0x0000000000009eb5      0x532 obj/post_opt.o
- .debug_line    0x000000000000a3e7      0x6b7 obj/http_opt.o
- .debug_line    0x000000000000aa9e      0x870 obj/tls_opt.o
- .debug_line    0x000000000000b30e      0xab1 obj/htm_opt.o
- .debug_line    0x000000000000bdbf      0x4d3 obj/wcom_opt.o
- .debug_line    0x000000000000c292      0x11d obj/const.o
- .debug_line    0x000000000000c3af       0x60 obj/hook.o
+ .debug_line    0x0000000000008950      0x2c3 obj/i2c_gpio_master_sp.o
+ .debug_line    0x0000000000008c13      0x1cd obj/init_opt.o
+ .debug_line    0x0000000000008de0      0x61a obj/telnet_opt.o
+ .debug_line    0x00000000000093fa      0x35a obj/flash_opt.o
+ .debug_line    0x0000000000009754      0x2c7 obj/asf_opt.o
+ .debug_line    0x0000000000009a1b      0x49c obj/genpage_opt.o
+ .debug_line    0x0000000000009eb7      0x532 obj/post_opt.o
+ .debug_line    0x000000000000a3e9      0x6b7 obj/http_opt.o
+ .debug_line    0x000000000000aaa0      0x870 obj/tls_opt.o
+ .debug_line    0x000000000000b310      0xab1 obj/htm_opt.o
+ .debug_line    0x000000000000bdc1      0x4d3 obj/wcom_opt.o
+ .debug_line    0x000000000000c294      0x11d obj/const.o
+ .debug_line    0x000000000000c3b1       0x60 obj/hook.o
 
-.debug_frame    0x0000000000000000     0x4e44
+.debug_frame    0x0000000000000000     0x4e70
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0xac obj/app_sp.o
  .debug_frame   0x00000000000000ac       0xf0 obj/OOBMAC_COMMON_sp.o
@@ -2115,19 +2117,19 @@ LOAD obj/hook.o
  .debug_frame   0x0000000000002e64      0x150 obj/mdio_bitbang_sp.o
  .debug_frame   0x0000000000002fb4      0x3dc obj/testio_gpio_sp.o
  .debug_frame   0x0000000000003390      0x210 obj/i2c_gpio_sp.o
- .debug_frame   0x00000000000035a0      0x21c obj/i2c_gpio_master_sp.o
- .debug_frame   0x00000000000037bc       0x68 obj/init_opt.o
- .debug_frame   0x0000000000003824      0x30c obj/telnet_opt.o
- .debug_frame   0x0000000000003b30       0x70 obj/flash_opt.o
- .debug_frame   0x0000000000003ba0       0xa0 obj/asf_opt.o
- .debug_frame   0x0000000000003c40      0x33c obj/genpage_opt.o
- .debug_frame   0x0000000000003f7c      0x1a8 obj/post_opt.o
- .debug_frame   0x0000000000004124      0x344 obj/http_opt.o
- .debug_frame   0x0000000000004468      0x43c obj/tls_opt.o
- .debug_frame   0x00000000000048a4      0x52c obj/htm_opt.o
- .debug_frame   0x0000000000004dd0       0x74 obj/wcom_opt.o
+ .debug_frame   0x00000000000035a0      0x248 obj/i2c_gpio_master_sp.o
+ .debug_frame   0x00000000000037e8       0x68 obj/init_opt.o
+ .debug_frame   0x0000000000003850      0x30c obj/telnet_opt.o
+ .debug_frame   0x0000000000003b5c       0x70 obj/flash_opt.o
+ .debug_frame   0x0000000000003bcc       0xa0 obj/asf_opt.o
+ .debug_frame   0x0000000000003c6c      0x33c obj/genpage_opt.o
+ .debug_frame   0x0000000000003fa8      0x1a8 obj/post_opt.o
+ .debug_frame   0x0000000000004150      0x344 obj/http_opt.o
+ .debug_frame   0x0000000000004494      0x43c obj/tls_opt.o
+ .debug_frame   0x00000000000048d0      0x52c obj/htm_opt.o
+ .debug_frame   0x0000000000004dfc       0x74 obj/wcom_opt.o
 
-.debug_str      0x0000000000000000     0xb9b7
+.debug_str      0x0000000000000000     0xb9c6
  *(.debug_str)
  .debug_str     0x0000000000000000     0x1006 obj/app_sp.o
                                        0x11e6 (size before relaxing)
@@ -2191,34 +2193,34 @@ LOAD obj/hook.o
                                         0x836 (size before relaxing)
  .debug_str     0x00000000000097e0      0x188 obj/i2c_gpio_sp.o
                                         0x5a3 (size before relaxing)
- .debug_str     0x0000000000009968      0x1ce obj/i2c_gpio_master_sp.o
-                                        0x520 (size before relaxing)
- .debug_str     0x0000000000009b36      0x132 obj/init_opt.o
+ .debug_str     0x0000000000009968      0x1dd obj/i2c_gpio_master_sp.o
+                                        0x52f (size before relaxing)
+ .debug_str     0x0000000000009b45      0x132 obj/init_opt.o
                                         0x9ec (size before relaxing)
- .debug_str     0x0000000000009c68      0x199 obj/telnet_opt.o
+ .debug_str     0x0000000000009c77      0x199 obj/telnet_opt.o
                                        0x183e (size before relaxing)
- .debug_str     0x0000000000009e01       0xfa obj/flash_opt.o
+ .debug_str     0x0000000000009e10       0xfa obj/flash_opt.o
                                         0x7a2 (size before relaxing)
- .debug_str     0x0000000000009efb       0x97 obj/asf_opt.o
+ .debug_str     0x0000000000009f0a       0x97 obj/asf_opt.o
                                         0xd85 (size before relaxing)
- .debug_str     0x0000000000009f92      0x4cd obj/genpage_opt.o
+ .debug_str     0x0000000000009fa1      0x4cd obj/genpage_opt.o
                                         0xfea (size before relaxing)
- .debug_str     0x000000000000a45f      0x5cd obj/post_opt.o
+ .debug_str     0x000000000000a46e      0x5cd obj/post_opt.o
                                        0x15b0 (size before relaxing)
- .debug_str     0x000000000000aa2c      0x24e obj/http_opt.o
+ .debug_str     0x000000000000aa3b      0x24e obj/http_opt.o
                                        0x14d2 (size before relaxing)
- .debug_str     0x000000000000ac7a      0x519 obj/tls_opt.o
+ .debug_str     0x000000000000ac89      0x519 obj/tls_opt.o
                                        0x1417 (size before relaxing)
- .debug_str     0x000000000000b193      0x50c obj/htm_opt.o
+ .debug_str     0x000000000000b1a2      0x50c obj/htm_opt.o
                                        0x1d25 (size before relaxing)
- .debug_str     0x000000000000b69f      0x1bc obj/wcom_opt.o
+ .debug_str     0x000000000000b6ae      0x1bc obj/wcom_opt.o
                                        0x1266 (size before relaxing)
- .debug_str     0x000000000000b85b      0x14f obj/const.o
+ .debug_str     0x000000000000b86a      0x14f obj/const.o
                                        0x1259 (size before relaxing)
- .debug_str     0x000000000000b9aa        0xd obj/hook.o
+ .debug_str     0x000000000000b9b9        0xd obj/hook.o
                                         0x27d (size before relaxing)
 
-.debug_loc      0x0000000000000000    0x25552
+.debug_loc      0x0000000000000000    0x255c7
  *(.debug_loc)
  .debug_loc     0x0000000000000000       0x60 obj/app_sp.o
  .debug_loc     0x0000000000000060      0x883 obj/OOBMAC_COMMON_sp.o
@@ -2247,16 +2249,16 @@ LOAD obj/hook.o
  .debug_loc     0x00000000000169c9      0x68b obj/mdio_bitbang_sp.o
  .debug_loc     0x0000000000017054     0x16c3 obj/testio_gpio_sp.o
  .debug_loc     0x0000000000018717      0x7ca obj/i2c_gpio_sp.o
- .debug_loc     0x0000000000018ee1      0x83d obj/i2c_gpio_master_sp.o
- .debug_loc     0x000000000001971e      0xeb4 obj/telnet_opt.o
- .debug_loc     0x000000000001a5d2      0x94c obj/flash_opt.o
- .debug_loc     0x000000000001af1e      0x222 obj/asf_opt.o
- .debug_loc     0x000000000001b140     0x120b obj/genpage_opt.o
- .debug_loc     0x000000000001c34b     0x17bf obj/post_opt.o
- .debug_loc     0x000000000001db0a     0x1cec obj/http_opt.o
- .debug_loc     0x000000000001f7f6     0x249c obj/tls_opt.o
- .debug_loc     0x0000000000021c92     0x2b10 obj/htm_opt.o
- .debug_loc     0x00000000000247a2      0xdb0 obj/wcom_opt.o
+ .debug_loc     0x0000000000018ee1      0x8b2 obj/i2c_gpio_master_sp.o
+ .debug_loc     0x0000000000019793      0xeb4 obj/telnet_opt.o
+ .debug_loc     0x000000000001a647      0x94c obj/flash_opt.o
+ .debug_loc     0x000000000001af93      0x222 obj/asf_opt.o
+ .debug_loc     0x000000000001b1b5     0x120b obj/genpage_opt.o
+ .debug_loc     0x000000000001c3c0     0x17bf obj/post_opt.o
+ .debug_loc     0x000000000001db7f     0x1cec obj/http_opt.o
+ .debug_loc     0x000000000001f86b     0x249c obj/tls_opt.o
+ .debug_loc     0x0000000000021d07     0x2b10 obj/htm_opt.o
+ .debug_loc     0x0000000000024817      0xdb0 obj/wcom_opt.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2281,52 +2283,52 @@ LOAD obj/hook.o
  *(.gptab.bss)
  *(.gptab.sbss)
 
-.mdebug.abi32   0x00000000800cf2fc        0x0
+.mdebug.abi32   0x00000000800cf2ac        0x0
  *(.mdebug.abi32)
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/app_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/OOBMAC_COMMON_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/ssh_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/dash_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/client_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/tcr_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/language_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/eventlog_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/gmac_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/bsp_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/sensor_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/netlib_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/x509parse_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/lib_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/arp_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/rtskt_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/ip_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/tcp_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/dhcp_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/icmp_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/usb_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/usb_ata_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/usbdesc_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/udp_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/pldm_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/usbdevice_interrupt_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/parammd_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/mmd_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/mdio_bitbang_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/testio_gpio_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/i2c_gpio_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/i2c_gpio_master_sp.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/init_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/telnet_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/flash_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/asf_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/genpage_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/post_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/http_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/tls_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/htm_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/wcom_opt.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/const.o
- .mdebug.abi32  0x00000000800cf2fc        0x0 obj/hook.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/app_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/OOBMAC_COMMON_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/ssh_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/dash_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/client_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/tcr_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/language_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/eventlog_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/gmac_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/bsp_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/sensor_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/netlib_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/x509parse_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/lib_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/arp_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/rtskt_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/ip_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/tcp_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/dhcp_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/icmp_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/usb_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/usb_ata_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/usbdesc_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/udp_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/pldm_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/usbdevice_interrupt_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/parammd_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/mmd_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/mdio_bitbang_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/testio_gpio_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/i2c_gpio_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/i2c_gpio_master_sp.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/init_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/telnet_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/flash_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/asf_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/genpage_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/post_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/http_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/tls_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/htm_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/wcom_opt.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/const.o
+ .mdebug.abi32  0x00000000800cf2ac        0x0 obj/hook.o
 
 .mdebug.abiN32
  *(.mdebug.abiN32)
@@ -2352,14 +2354,14 @@ LOAD obj/hook.o
 /DISCARD/
  *(.note.GNU-stack)
 LOAD dashlib/fplib/dashrom.elf
-                0x000000000133eced                __BUILD_DATE = 0x133eced
-                0x000000000ac01b34                __BUILD_NUMBER = 0xac01b34
+                0x000000000133ecf5                __BUILD_DATE = 0x133ecf5
+                0x000000000ac151ac                __BUILD_NUMBER = 0xac151ac
                 0x0000000000000001                __MAJOR_VER = 0x1
                 0x0000000000000003                __MINOR_VER = 0x3
                 0x0000000000000001                __EXTRA_VER = 0x1
 OUTPUT(./obj/dash_dbg.exe elf32-littlemips)
 
-.debug_ranges   0x0000000000000000      0x818
+.debug_ranges   0x0000000000000000      0x7e0
  .debug_ranges  0x0000000000000000       0x18 obj/app_sp.o
  .debug_ranges  0x0000000000000018      0x1a8 obj/ssh_sp.o
  .debug_ranges  0x00000000000001c0       0x30 obj/dash_sp.o
@@ -2374,11 +2376,11 @@ OUTPUT(./obj/dash_dbg.exe elf32-littlemips)
  .debug_ranges  0x0000000000000480       0x18 obj/pldm_sp.o
  .debug_ranges  0x0000000000000498       0x18 obj/mdio_bitbang_sp.o
  .debug_ranges  0x00000000000004b0       0xd8 obj/testio_gpio_sp.o
- .debug_ranges  0x0000000000000588       0xd8 obj/i2c_gpio_master_sp.o
- .debug_ranges  0x0000000000000660       0x30 obj/telnet_opt.o
- .debug_ranges  0x0000000000000690       0x18 obj/asf_opt.o
- .debug_ranges  0x00000000000006a8       0x30 obj/genpage_opt.o
- .debug_ranges  0x00000000000006d8       0x60 obj/post_opt.o
- .debug_ranges  0x0000000000000738       0x20 obj/tls_opt.o
- .debug_ranges  0x0000000000000758       0x78 obj/htm_opt.o
- .debug_ranges  0x00000000000007d0       0x48 obj/wcom_opt.o
+ .debug_ranges  0x0000000000000588       0xa0 obj/i2c_gpio_master_sp.o
+ .debug_ranges  0x0000000000000628       0x30 obj/telnet_opt.o
+ .debug_ranges  0x0000000000000658       0x18 obj/asf_opt.o
+ .debug_ranges  0x0000000000000670       0x30 obj/genpage_opt.o
+ .debug_ranges  0x00000000000006a0       0x60 obj/post_opt.o
+ .debug_ranges  0x0000000000000700       0x20 obj/tls_opt.o
+ .debug_ranges  0x0000000000000720       0x78 obj/htm_opt.o
+ .debug_ranges  0x0000000000000798       0x48 obj/wcom_opt.o

@@ -10,7 +10,7 @@
 #define SDA GPIO13
 #define SCL GPIO12
 
-#define I2CSPEED 10
+#define I2CSPEED 300
 
 
 BOOLEAN started = 0; // global data
@@ -33,6 +33,10 @@ enum I2C_CMD
 	I2C_Read,
 };
 
+void I2C_delay_S()
+{
+    wait_us_S((1000/I2CSPEED)/2);
+}
 
 void I2C_delay()
 {
@@ -59,7 +63,19 @@ void wait_us(INT32U usec)
         asm("nop");asm("nop");asm("nop");asm("nop");asm("nop");
         asm("nop");asm("nop");asm("nop");asm("nop");asm("nop");
         asm("nop");asm("nop");asm("nop");asm("nop");asm("nop");//50 NOP
-        asm("nop");
+
+    }
+}
+void wait_us_S(INT32U usec)
+{
+    volatile INT32U i;
+//#ifdef DYANMIC_CPU_SLOW
+//    for (i = 0 ; i < usec; i++)
+//#else
+    for (i = 0 ; i < usec*4; i++)
+//#endif
+    {
+        asm("nop");asm("nop");asm("nop");asm("nop");asm("nop");
     }
 }
 
@@ -201,8 +217,9 @@ INT8U i2c_read_bit( void )
     INT8U bit;
 
     // bossino, release clk, necessary for APPLE ACP
+    set_gpio_output(SDA,1);
     init_gpio_dir(SDA,INPUT,0);
-    get_gpio_input(SDA);
+    //get_gpio_input(SDA);
 
     // Wait for SDA value to be written by slave, minimum of 4us for standard mode
     I2C_delay();
@@ -243,9 +260,10 @@ INT8U i2c_write_byte_M( BOOLEAN send_start, BOOLEAN send_stop, INT8U byte)
     {
         i2c_write_bit( ( byte & 0x80 ) != 0 );
         byte <<= 1;
+		wait_us_S(1);
     }
 
-    I2C_delay();
+    //I2C_delay();
 	
     nack = i2c_read_bit();
 
@@ -411,39 +429,56 @@ void I2C_gpio_init(void)
 	init_gpio_dir(SDA,OUTPUT,1);
 	init_gpio_dir(SCL,OUTPUT,1);
 	int success = 1;
-	//UINT data[8] = {0xc0,0x00,0xff,0xff,0xff,0x00,0x00};
+	int answer;
 	printk("ENter GPIO_Write \r\n");
+
 	
-	//i2c_cp_write_multibyte(0x64,7,data);
-	
-	
+	OSTimeDly(900);
+
+	//init_gpio_dir(SDA,OUTPUT,1);
+	//init_gpio_dir(SCL,OUTPUT,1);
 /*
+
+	for(answer=0;answer<255;answer++)
+	{
+		success = i2c_write_byte_M(true,true,answer<<1 | 0);
+		if(success==0)
+		{
+		printk("123\r\n");
+		printk("%d \r\n",answer);
+		//break;
+		}
+	}
+*/
+
+	
+	OSTimeDly(10);
 	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
 	if(success == 0)
 		{
 		//printk("1\r\n");
-		success = i2c_write_byte_M(false,false,0x44);
+		success = i2c_write_byte_M(false,false,0x24);
 		if(success == 0)
 			{
 			//printk("2\r\n");
-			success = i2c_write_byte_M(false,false,0x00);
+			success = i2c_write_byte_M(false,false,0xC0);
 			if(success == 0)
 				{
 				//printk("3\r\n");
-				success = i2c_write_byte_M(false,false,0xC0);
+				success = i2c_write_byte_M(false,false,0x00);
 				if(success == 0)
 					{
 					//printk("4\r\n");
-					success = i2c_write_byte_M(false,false,0xAA);
-					success = i2c_write_byte_M(false,false,0xAA);
-					success = i2c_write_byte_M(false,false,0xAA);
+					success = i2c_write_byte_M(false,false,0x01);
+					success = i2c_write_byte_M(false,false,0x02);
+					success = i2c_write_byte_M(false,false,0x03);
 					success = i2c_write_byte_M(false,false,0x00);
 					success = i2c_write_byte_M(false,true,0x00);
 					}
 				}
 			}
 		}
-*/
+
 /*
 	success = i2c_write_byte_M(true,false, ((0x68<<1) | 0) );
 	if(success == 0)
@@ -457,6 +492,7 @@ void I2C_gpio_init(void)
 			}
 		}
 */
+/*
 		INT8U i;
 		INT8U  reg_data;
 		INT8U  reg_data_0x00 = 0;
@@ -500,7 +536,7 @@ void I2C_gpio_init(void)
 		printk("%d\r\n",reg_data_0x00);
 		i2c_cp_read_multibyte(0x03, 1, &reg_data_0x00);
 		printk("%d\r\n",reg_data_0x00);
-
+*/
 /*
 	success = i2c_write_byte_M(true,false, ((0x68<<1) | 0) );
 	if(success == 0)

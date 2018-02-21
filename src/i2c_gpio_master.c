@@ -457,7 +457,7 @@ void I2C_gpio_init(void)
 	if(success == 0)
 		{
 		//printk("1\r\n");
-		success = i2c_write_byte_M(false,false,0x24);
+		success = i2c_write_byte_M(false,false,0x44);
 		if(success == 0)
 			{
 			//printk("2\r\n");
@@ -469,11 +469,12 @@ void I2C_gpio_init(void)
 				if(success == 0)
 					{
 					//printk("4\r\n");
+					success = i2c_write_byte_M(false,false,0xF7);
+					success = i2c_write_byte_M(false,false,0xF7);
 					success = i2c_write_byte_M(false,false,0x01);
 					success = i2c_write_byte_M(false,false,0x02);
-					success = i2c_write_byte_M(false,false,0x03);
-					success = i2c_write_byte_M(false,false,0x00);
 					success = i2c_write_byte_M(false,true,0x00);
+					//success = i2c_write_byte_M(false,true,0x00);
 					}
 				}
 			}

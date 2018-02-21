@@ -1947,7 +1947,7 @@ LOAD obj/hook.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000    0x6cb1a
+.debug_info     0x0000000000000000    0x6cb1c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x2237 obj/app_sp.o
  .debug_info    0x0000000000002237      0x8ba obj/OOBMAC_COMMON_sp.o
@@ -1980,19 +1980,19 @@ LOAD obj/hook.o
  .debug_info    0x0000000000043850      0x9b2 obj/mdio_bitbang_sp.o
  .debug_info    0x0000000000044202     0x1f72 obj/testio_gpio_sp.o
  .debug_info    0x0000000000046174      0xfe1 obj/i2c_gpio_sp.o
- .debug_info    0x0000000000047155     0x119f obj/i2c_gpio_master_sp.o
- .debug_info    0x00000000000482f4     0x12d6 obj/init_opt.o
- .debug_info    0x00000000000495ca     0x3c9a obj/telnet_opt.o
- .debug_info    0x000000000004d264     0x1194 obj/flash_opt.o
- .debug_info    0x000000000004e3f8     0x1a97 obj/asf_opt.o
- .debug_info    0x000000000004fe8f     0x2639 obj/genpage_opt.o
- .debug_info    0x00000000000524c8     0x3c61 obj/post_opt.o
- .debug_info    0x0000000000056129     0x4581 obj/http_opt.o
- .debug_info    0x000000000005a6aa     0x4158 obj/tls_opt.o
- .debug_info    0x000000000005e802     0x9082 obj/htm_opt.o
- .debug_info    0x0000000000067884     0x307e obj/wcom_opt.o
- .debug_info    0x000000000006a902     0x208d obj/const.o
- .debug_info    0x000000000006c98f      0x18b obj/hook.o
+ .debug_info    0x0000000000047155     0x11a1 obj/i2c_gpio_master_sp.o
+ .debug_info    0x00000000000482f6     0x12d6 obj/init_opt.o
+ .debug_info    0x00000000000495cc     0x3c9a obj/telnet_opt.o
+ .debug_info    0x000000000004d266     0x1194 obj/flash_opt.o
+ .debug_info    0x000000000004e3fa     0x1a97 obj/asf_opt.o
+ .debug_info    0x000000000004fe91     0x2639 obj/genpage_opt.o
+ .debug_info    0x00000000000524ca     0x3c61 obj/post_opt.o
+ .debug_info    0x000000000005612b     0x4581 obj/http_opt.o
+ .debug_info    0x000000000005a6ac     0x4158 obj/tls_opt.o
+ .debug_info    0x000000000005e804     0x9082 obj/htm_opt.o
+ .debug_info    0x0000000000067886     0x307e obj/wcom_opt.o
+ .debug_info    0x000000000006a904     0x208d obj/const.o
+ .debug_info    0x000000000006c991      0x18b obj/hook.o
 
 .debug_abbrev   0x0000000000000000     0x9728
  *(.debug_abbrev)
@@ -2354,8 +2354,8 @@ LOAD obj/hook.o
 /DISCARD/
  *(.note.GNU-stack)
 LOAD dashlib/fplib/dashrom.elf
-                0x000000000133ecf5                __BUILD_DATE = 0x133ecf5
-                0x000000000ac151ac                __BUILD_NUMBER = 0xac151ac
+                0x000000000133ecfd                __BUILD_DATE = 0x133ecfd
+                0x000000000ac2891c                __BUILD_NUMBER = 0xac2891c
                 0x0000000000000001                __MAJOR_VER = 0x1
                 0x0000000000000003                __MINOR_VER = 0x3
                 0x0000000000000001                __EXTRA_VER = 0x1

@@ -435,29 +435,14 @@ void I2C_gpio_init(void)
 	
 	OSTimeDly(900);
 
-	//init_gpio_dir(SDA,OUTPUT,1);
-	//init_gpio_dir(SCL,OUTPUT,1);
-/*
-
-	for(answer=0;answer<255;answer++)
-	{
-		success = i2c_write_byte_M(true,true,answer<<1 | 0);
-		if(success==0)
-		{
-		printk("123\r\n");
-		printk("%d \r\n",answer);
-		//break;
-		}
-	}
-*/
 
 	
-	OSTimeDly(10);
+
 	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
 	if(success == 0)
 		{
 		//printk("1\r\n");
-		success = i2c_write_byte_M(false,false,0x44);
+		success = i2c_write_byte_M(false,false,0x21);
 		if(success == 0)
 			{
 			//printk("2\r\n");
@@ -469,10 +454,40 @@ void I2C_gpio_init(void)
 				if(success == 0)
 					{
 					//printk("4\r\n");
-					success = i2c_write_byte_M(false,false,0xF7);
-					success = i2c_write_byte_M(false,false,0xF7);
-					success = i2c_write_byte_M(false,false,0x01);
-					success = i2c_write_byte_M(false,false,0x02);
+					success = i2c_write_byte_M(false,false,0x43);
+					success = i2c_write_byte_M(false,false,0x43);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,true,0x00);
+					//success = i2c_write_byte_M(false,true,0x00);
+					}
+				}
+			}
+		}
+	OSTimeDly(200);
+
+
+
+	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
+	if(success == 0)
+		{
+		//printk("1\r\n");
+		success = i2c_write_byte_M(false,false,0x21);
+		if(success == 0)
+			{
+			//printk("2\r\n");
+			success = i2c_write_byte_M(false,false,0xC0);
+			if(success == 0)
+				{
+				//printk("3\r\n");
+				success = i2c_write_byte_M(false,false,0x02);
+				if(success == 0)
+					{
+					//printk("4\r\n");
+					success = i2c_write_byte_M(false,false,0x43);
+					success = i2c_write_byte_M(false,false,0x43);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,false,0x00);
 					success = i2c_write_byte_M(false,true,0x00);
 					//success = i2c_write_byte_M(false,true,0x00);
 					}
@@ -480,6 +495,128 @@ void I2C_gpio_init(void)
 			}
 		}
 
+	OSTimeDly(200);
+
+
+
+	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
+	if(success == 0)
+		{
+		//printk("1\r\n");
+		success = i2c_write_byte_M(false,false,0x21);
+		if(success == 0)
+			{
+			//printk("2\r\n");
+			success = i2c_write_byte_M(false,false,0xC0);
+			if(success == 0)
+				{
+				//printk("3\r\n");
+				success = i2c_write_byte_M(false,false,0x04);
+				if(success == 0)
+					{
+					//printk("4\r\n");
+					success = i2c_write_byte_M(false,false,0x43);
+					success = i2c_write_byte_M(false,false,0x43);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,true,0x00);
+					//success = i2c_write_byte_M(false,true,0x00);
+					}
+				}
+			}
+		}
+
+/*	OSTimeDly(200);
+
+
+	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
+	if(success == 0)
+		{
+		//printk("1\r\n");
+		success = i2c_write_byte_M(false,false,0x41);
+		if(success == 0)
+			{
+			//printk("2\r\n");
+			success = i2c_write_byte_M(false,false,0xC0);
+			if(success == 0)
+				{
+				//printk("3\r\n");
+				success = i2c_write_byte_M(false,false,0x00);
+				if(success == 0)
+					{
+					//printk("4\r\n");
+					success = i2c_write_byte_M(false,false,0x32);
+					success = i2c_write_byte_M(false,false,0x01);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,true,0x00);
+					//success = i2c_write_byte_M(false,true,0x00);
+					}
+				}
+			}
+		}
+	OSTimeDly(200);
+
+
+
+	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
+	if(success == 0)
+		{
+		//printk("1\r\n");
+		success = i2c_write_byte_M(false,false,0x41);
+		if(success == 0)
+			{
+			//printk("2\r\n");
+			success = i2c_write_byte_M(false,false,0xC0);
+			if(success == 0)
+				{
+				//printk("3\r\n");
+				success = i2c_write_byte_M(false,false,0x02);
+				if(success == 0)
+					{
+					//printk("4\r\n");
+					success = i2c_write_byte_M(false,false,0x33);
+					success = i2c_write_byte_M(false,false,0x33);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,true,0x00);
+					//success = i2c_write_byte_M(false,true,0x00);
+					}
+				}
+			}
+		}
+
+	OSTimeDly(200);
+
+
+
+	success = i2c_write_byte_M(true,false,(0x68<<1 | 0) ); //0x6d<<1 | 0
+	if(success == 0)
+		{
+		//printk("1\r\n");
+		success = i2c_write_byte_M(false,false,0x41);
+		if(success == 0)
+			{
+			//printk("2\r\n");
+			success = i2c_write_byte_M(false,false,0xC0);
+			if(success == 0)
+				{
+				//printk("3\r\n");
+				success = i2c_write_byte_M(false,false,0x04);
+				if(success == 0)
+					{
+					//printk("4\r\n");
+					success = i2c_write_byte_M(false,false,0x35);
+					success = i2c_write_byte_M(false,false,0x35);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,false,0x00);
+					success = i2c_write_byte_M(false,true,0x00);
+					//success = i2c_write_byte_M(false,true,0x00);
+					}
+				}
+			}
+		}
+*/
 /*
 	success = i2c_write_byte_M(true,false, ((0x68<<1) | 0) );
 	if(success == 0)

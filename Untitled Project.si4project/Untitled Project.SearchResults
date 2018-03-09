@@ -1,3 +1,3 @@
----- IPv4_ADR_LEN Matches (2 in 0 files) ----
-_IPv4PseudoHdr in ip.h (src\include) :   unsigned char src[IPv4_ADR_LEN];
-_IPv4PseudoHdr in ip.h (src\include) :   unsigned char dest[IPv4_ADR_LEN];          /* source and destination IP addresses */
+---- MMD_Init Matches (2 in 2 files) ----
+mmd.c (src) line 858 : void MMD_Init (){
+CMD_Parsing in usb_ata.c (src) : 			MMD_Init () ;
